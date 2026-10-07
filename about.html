@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concordia Genome Foundry</title>
+  <meta name="description"
+    content="Learn about the origins, current status, facilities, and the multi-disciplinary team driving Concordia Genome Foundry.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .about-story-section {
+      padding: 3rem 0;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .story-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .story-body {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Section-Level Spacing */
+    :root {
+      --about-major-gap: 96px;
+      --about-minor-gap: 52px;
+    }
+
+    @media (max-width: 1024px) {
+      :root {
+        --about-major-gap: 72px;
+        --about-minor-gap: 44px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --about-major-gap: 56px;
+        --about-minor-gap: 36px;
+      }
+    }
+
+    .about-major-section {
+      margin-block-end: var(--about-major-gap);
+    }
+
+    .about-minor-section {
+      margin-block-end: var(--about-minor-gap);
+    }
+
+    .about-major-padding {
+      padding-block: var(--about-major-gap);
+    }
+  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/icons/genome_foundry_logo.svg" alt="Genome Foundry Logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="about.html" class="active">About</a>
+      </div>
+      <div class="nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="mobile-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-nav" class="mobile-nav">
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="about.html" class="active">About</a>
+      </div>
+      <div class="mobile-nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Built to Move Biology Forward.</h1>
+      <p>The Concordia Genome Foundry brings together
+        automated bioengineering, mammalian workflow development, and microbial bioprocessing capabilities to help
+        researchers and companies build, test, validate, and scale biological systems.</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Section: Story & Facility -->
+    <section class="about-story-section">
+      <div class="container-wide">
+        <!-- Thesis Section (Restyled) -->
+        <div class="about-major-section">
+          <div class="badge" style="margin-bottom: 1rem; text-transform: uppercase;">WHY A BIOFOUNDRY</div>
+          <div style="position: relative;">
+            <style>
+              .execution-motif-container {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 700px;
+                opacity: 0.22;
+                pointer-events: none;
+                z-index: 0;
+                user-select: none;
+                overflow: hidden;
+              }
+
+              @media (max-width: 1024px) {
+                .execution-motif-container {
+                  width: 550px;
+                  opacity: 0.12;
+                }
+              }
+
+              @media (max-width: 768px) {
+                .execution-motif-container {
+                  width: 450px;
+                  opacity: 0.04;
+                  right: -2rem;
+                }
+
+                .motif-lines,
+                .motif-nodes {
+                  display: none;
+                }
+              }
+            </style>
+
+            <div class="execution-motif-container" aria-hidden="true">
+              <svg viewBox="0 0 600 450" width="100%" height="100%" preserveAspectRatio="xMaxYMin slice"
+                xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="well-grid" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+                    <circle cx="15" cy="15" r="5" fill="none" stroke="#64748b" stroke-width="1.2" />
+                    <circle cx="15" cy="15" r="1.5" fill="#94a3b8" />
+                  </pattern>
+                  <linearGradient id="fade-mask" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="white" stop-opacity="0" />
+                    <stop offset="25%" stop-color="white" stop-opacity="1" />
+                  </linearGradient>
+                  <linearGradient id="fade-mask-y" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="white" stop-opacity="1" />
+                    <stop offset="80%" stop-color="white" stop-opacity="1" />
+                    <stop offset="100%" stop-color="white" stop-opacity="0" />
+                  </linearGradient>
+                  <mask id="grid-mask">
+                    <rect x="250" y="0" width="350" height="450" fill="url(#fade-mask)" />
+                  </mask>
+                  <mask id="grid-mask-y">
+                    <rect x="0" y="0" width="600" height="450" fill="url(#fade-mask-y)" />
+                  </mask>
+                </defs>
+
+                <g mask="url(#grid-mask-y)">
+                  <!-- Microplate base -->
+                  <rect x="250" y="30" width="340" height="390" fill="none" stroke="#cbd5e1" stroke-width="2" rx="12"
+                    mask="url(#grid-mask)" />
+                  <rect x="256" y="36" width="328" height="378" fill="url(#well-grid)" mask="url(#grid-mask)" rx="8" />
+
+                  <!-- Connecting lines entering the grid -->
+                  <g class="motif-lines" stroke="#0d9488" stroke-width="1.5" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" opacity="0.8">
+                    <path d="M 50 81 h 80 l 30 30 h 111" />
+                    <path d="M 30 201 h 60 l 30 -30 h 151" />
+                    <path d="M 70 231 h 201" />
+                    <path d="M 40 261 h 90 l 30 30 h 111" />
+
+                    <!-- Lines branching inside the grid -->
+                    <path d="M 271 171 h 60 l 30 -30 h 60" />
+                    <path d="M 271 231 h 30 l 30 30 h 150" />
+                    <path d="M 361 141 h 30 l 30 -30 h 30" />
+                    <path d="M 331 261 h 60 l 30 30 h 60" />
+                  </g>
+
+                  <!-- Nodes / Junctions -->
+                  <g class="motif-nodes" fill="#0f766e">
+                    <!-- Input nodes -->
+                    <circle cx="50" cy="81" r="3" />
+                    <circle cx="30" cy="201" r="3" />
+                    <circle cx="70" cy="231" r="3" />
+                    <circle cx="40" cy="261" r="3" />
+
+                    <!-- Bend nodes -->
+                    <circle cx="130" cy="81" r="2.5" />
+                    <circle cx="160" cy="111" r="2.5" />
+
+                    <circle cx="90" cy="201" r="2.5" />
+                    <circle cx="120" cy="171" r="2.5" />
+
+                    <circle cx="130" cy="261" r="2.5" />
+                    <circle cx="160" cy="291" r="2.5" />
+
+                    <!-- Grid entry nodes -->
+                    <circle cx="271" cy="111" r="3" />
+                    <circle cx="271" cy="171" r="3" />
+                    <circle cx="271" cy="231" r="3" />
+                    <circle cx="271" cy="291" r="3" />
+
+                    <!-- Inner grid branching nodes -->
+                    <circle cx="331" cy="171" r="2.5" />
+                    <circle cx="361" cy="141" r="2.5" />
+                    <circle cx="421" cy="141" r="2.5" />
+
+                    <circle cx="301" cy="231" r="2.5" />
+                    <circle cx="331" cy="261" r="2.5" />
+                    <circle cx="481" cy="261" r="2.5" />
+
+                    <circle cx="391" cy="141" r="2.5" />
+                    <circle cx="421" cy="111" r="2.5" />
+                    <circle cx="451" cy="111" r="2.5" />
+
+                    <circle cx="391" cy="261" r="2.5" />
+                    <circle cx="421" cy="291" r="2.5" />
+                    <circle cx="481" cy="291" r="2.5" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <div style="position: relative; z-index: 2; max-width: 800px;">
+              <h2 class="story-title section-heading-medium">Standardize the execution layer.</h2>
+              <p class="story-body">The pace of biology-based innovation is often constrained by slow research cycles,
+                where researchers can test only a narrow set of factors, hypotheses, or conditions at a time because
+                experimental workflows remain largely artisanal and difficult to parallelize.</p>
+              <p class="story-body">Where the unit operations of engineering biology are mature, repetitive, and
+                procedural, biofoundry infrastructure standardizes that essential execution layer, automates it, and
+                makes
+                it scalable. That scalability shifts the boundaries of exploration, making it possible to build, test,
+                and
+                learn at an unprecedented depth and pace.</p>
+              <p class="story-body" style="margin-bottom: 0;">That shift also frees researchers to focus on the work
+                that
+                matters most: generating scientific insight from results, making smarter design choices, asking better
+                questions, and solving the next problem.</p>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          .founder-card {
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            background: #fff;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+          }
+
+          .founder-card-left {
+            flex: 1 1 300px;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .founder-card-divider {
+            width: 1px;
+            background: var(--border-color);
+            align-self: stretch;
+            display: none;
+          }
+
+          .founder-card-right {
+            flex: 2 1 400px;
+          }
+
+          @media (min-width: 768px) {
+            .founder-card {
+              flex-direction: row;
+              align-items: center;
+            }
+
+            .founder-card-divider {
+              display: block;
+            }
+
+            .founder-card-right {
+              padding-left: 2rem;
+            }
+          }
+
+          .about-translation {
+            /* Margin handled by utility classes */
+          }
+
+          .translation-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+          }
+
+          .mini-summary-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+
+          @media (min-width: 900px) {
+            .translation-grid {
+              grid-template-columns: minmax(320px, 0.9fr) minmax(520px, 1.1fr);
+            }
+
+            .about-translation .translation-image {
+              padding-top: 3rem;
+            }
+
+            .mini-summary-grid {
+              grid-template-columns: repeat(3, 1fr);
+            }
+          }
+
+          .mini-summary-block {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+          }
+
+          .support-note {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            text-align: center;
+          }
+
+          @media (min-width: 768px) {
+            .support-note {
+              flex-direction: row;
+              text-align: left;
+              padding: 2rem 3rem;
+            }
+          }
+
+          .support-icon {
+            flex-shrink: 0;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+          }
+
+          .capabilities-diagram {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            width: 100%;
+          }
+
+          @media (min-width: 900px) {
+            .capabilities-diagram {
+              grid-template-columns: repeat(3, 1fr);
+            }
+          }
+
+          .cap-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+          }
+
+          .cap-img-container {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+          }
+
+          .cap-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .cap-content {
+            padding: 1.5rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+          }
+        </style>
+        <!-- Story 1: History -->
+        <div class="about-minor-section">
+          <div class="badge" style="margin-bottom: 1rem; text-transform: uppercase;">ORIGINS</div>
+          <div class="story-grid" style="align-items: start;">
+            <div>
+              <h2 class="story-title section-heading-medium">Canada’s First Biofoundry</h2>
+              <p class="story-body">
+                Established in 2017 as Canada’s first biofoundry, the platform has since expanded alongside
+                Concordia’s
+                bioprocessing infrastructure.
+              </p>
+              <p class="story-body">
+                The facility was created to bring automation, standardization, and high-throughput experimentation to
+                biological engineering research, enabling researchers to design, build, and test biological systems at
+                a
+                scale that would otherwise be difficult to achieve.
+              </p>
+              <p class="story-body">
+                Initially built around strain engineering and synthetic biology, the platform's capabilities now span
+                automated mammalian
+                cell engineering, microbial bioprocess development, and sustainable biomanufacturing infrastructure.
+              </p>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+              <div
+                style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); aspect-ratio: 16 / 10; width: 100%; max-height: 400px;">
+                <img src="assets/images/hu-01.webp" alt="Applied Science Hub building"
+                  style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <p
+                style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; margin-top: 6px; text-align: left;">
+                Applied Science Hub, home to Concordia’s bioprocessing facility
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Founder Perspective Card -->
+        <div class="founder-card about-major-section">
+          <div class="founder-card-left">
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+              <img src="assets/images/team/VincentMartin.webp" alt="Vincent Martin"
+                style="width: 112px; height: 112px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+              <div>
+                <div
+                  style="font-size: 0.75rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
+                  Founder Perspective</div>
+                <div style="font-weight: 700; font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.25rem;">
+                  Vincent Martin</div>
+                <div style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.3;">Founder and Former
+                  Director, Concordia Genome Foundry<br>Professor Emeritus, Biology, Concordia University</div>
+              </div>
+            </div>
+          </div>
+          <div class="founder-card-divider"></div>
+          <div class="founder-card-right">
+            <p
+              style="font-size: 1.35rem; font-weight: 500; color: var(--text-primary); line-height: 1.4; margin-bottom: 1rem; font-style: italic;">
+              “Now researchers can come to the Genome Foundry and work on thousands of genes at a time.”
+            </p>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+              On the power of automation to unlock natural and synthetic biological diversity.
+            </p>
+          </div>
+          <!-- Quote source: Concordia 2018 Genome Foundry story -->
+        </div>
+
+        <!-- Story 2: Today -->
+        <section class="about-translation about-major-section">
+          <div class="badge" style="margin-bottom: 1rem; text-transform: uppercase;">OUR ROLE TODAY</div>
+          <div class="translation-grid" style="align-items: start;">
+            <div class="translation-copy">
+              <h2 class="story-title section-heading-medium" style="text-wrap: balance;">From Proof of Concept Toward
+                Translation</h2>
+              <p class="story-body" style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1rem;">
+                We support researchers, startups, companies, and collaborators at many points in the development of
+                biological systems and applications.
+              </p>
+              <p class="story-body" style="margin-bottom: 1rem;">
+                Projects enter the platform at different points. Some involve designing and testing biological systems,
+                developing assays, screening candidates, or identifying promising leads. Others focus on improving
+                reproducibility, performance, manufacturability, process robustness, or readiness for larger-scale
+                development.
+              </p>
+              <p class="story-body" style="margin: 0; margin-bottom: 2rem;">
+                Our role is to provide the infrastructure, automation, workflows, and expertise needed to generate
+                reliable evidence, resolve technical questions, and help promising biological systems move toward useful
+                applications.
+              </p>
+
+              <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+                <a href="capabilities.html"
+                  style="background: linear-gradient(90deg, #8B0045 0%, #1E3A8A 100%); border: none; color: #fff; border-radius: 999px; font-size: 0.95rem; font-weight: 600; padding: 0.75rem 1.75rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: opacity 0.2s;">
+                  Explore Our Capabilities &rarr;
+                </a>
+                <a href="publications.html"
+                  style="font-size: 0.95rem; font-weight: 600; color: var(--accent-primary); text-decoration: underline; text-underline-offset: 4px;">
+                  See Research &amp; Impact &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="translation-image"
+              style="display: flex; flex-direction: column; align-items: flex-start; gap: 2rem;">
+              
+
+              <!-- Single wide visual replacement -->
+              <div class="translation-single-visual" style="width: 100%;">
+                <div
+                  style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); aspect-ratio: 16 / 10; width: 100%; max-height: 380px;">
+                  <img src="assets/images/Foundry_space-01.webp" alt="Concordia Genome Foundry interior lab space"
+                    style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Support / Funding Note -->
+        <div class="support-note about-major-section">
+          <div class="support-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21h18"></path>
+              <path d="M3 10h18"></path>
+              <path d="M5 6l7-3 7 3"></path>
+              <path d="M4 10v11"></path>
+              <path d="M20 10v11"></path>
+              <path d="M8 14v3"></path>
+              <path d="M12 14v3"></path>
+              <path d="M16 14v3"></path>
+            </svg>
+          </div>
+          <div class="support-content" style="flex: 1;">
+            <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 0.75rem; color: #0f172a; line-height: 1.3;">
+              Supported by a Public Research Ecosystem
+            </h3>
+            <p class="story-body" style="font-size: 1rem; margin: 0; line-height: 1.6;">
+              Supported by Concordia University, the Canada Foundation for Innovation, the Government of Québec, and a
+              growing ecosystem of partners.
+            </p>
+          </div>
+          <div class="support-action" style="flex-shrink: 0;">
+            <a href="partners.html"
+              style="background: #f8fafc; border: 1px solid #e5e7eb; color: #0f172a; border-radius: 999px; font-size: 0.9rem; font-weight: 700; padding: 0.75rem 1.25rem; text-decoration: none; display: inline-block; transition: background 0.2s, border-color 0.2s;">
+              View partners &amp; supporters &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section: Meet the Team -->
+    <section class="section" id="about" style="background: var(--bg-secondary); padding: 4rem 0 5rem;">
+      <div class="container-wide">
+        <h2 class="h2 section-heading-large" style="text-align: center;">Meet the Team</h2>
+        <p class="subtitle" style="margin: 1rem auto 2.5rem; text-align: center; max-width: 800px;">
+          An agile, multidisciplinary team dedicated to helping complex biology projects move from idea to execution.
+        </p>
+
+        <div class="team-grid">
+
+          <!-- Member 1: Christopher Brett -->
+          <div class="team-member">
+            <div class="team-avatar-container">
+              <div class="team-avatar">
+                <img src="assets/images/team/ChristopherBrett.png" alt="Christopher Brett">
+              </div>
+              <a href="https://www.linkedin.com/in/christopher-brett-734025177/" target="_blank" class="team-linkedin" aria-label="LinkedIn Profile">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+            </div>
+            <div class="team-info">
+              <h4>Christopher Brett</h4>
+              <p>Director, Genome Foundry</p>
+              <a href="mailto:christopher.brett@concordia.ca" class="team-email">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                christopher.brett@concordia.ca
+              </a>
+            </div>
+          </div>
+
+          <!-- Member 2: Steve Shih -->
+          <div class="team-member">
+            <div class="team-avatar-container">
+              <div class="team-avatar">
+                <img src="assets/images/team/SteveShih.webp" alt="Steve Shih">
+              </div>
+              <a href="https://www.linkedin.com/in/steve-shih-14b27159/" target="_blank" class="team-linkedin" aria-label="LinkedIn Profile">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+            </div>
+            <div class="team-info">
+              <h4>Steve Shih</h4>
+              <p>Director, Genome Foundry</p>
+              <a href="mailto:steve.shih@concordia.ca" class="team-email">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                steve.shih@concordia.ca
+              </a>
+            </div>
+          </div>
+
+          <!-- Member 3: David Walsh -->
+          <div class="team-member">
+            <div class="team-avatar-container">
+              <div class="team-avatar">
+                <img src="assets/images/team/DavidWalsh.webp" alt="David Walsh">
+              </div>
+              <a href="https://ca.linkedin.com/in/david-walsh-b41bb324" target="_blank" class="team-linkedin" aria-label="LinkedIn Profile">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+            </div>
+            <div class="team-info">
+              <h4>David Walsh</h4>
+              <p>Director, Bioprocessing</p>
+              <a href="mailto:david.walsh@concordia.ca" class="team-email">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                david.walsh@concordia.ca
+              </a>
+            </div>
+          </div>
+
+          <!-- Member 4: Audrey Morin -->
+          <div class="team-member">
+            <div class="team-avatar-container">
+              <div class="team-avatar">
+                <img src="assets/images/team/AudreyMorin.webp" alt="Audrey Morin">
+              </div>
+              <a href="https://www.linkedin.com/in/audrey-morin-57236489/" target="_blank" class="team-linkedin" aria-label="LinkedIn Profile">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+            </div>
+            <div class="team-info">
+              <h4>Audrey Morin</h4>
+              <p>Research Operations Manager</p>
+              <a href="mailto:audrey.morin@concordia.ca" class="team-email">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                audrey.morin@concordia.ca
+              </a>
+            </div>
+          </div>
+
+          <!-- Member 5: Nicholas Gold -->
+          <div class="team-member">
+            <div class="team-avatar-container">
+              <div class="team-avatar">
+                <img src="assets/images/team/NicholasGold.webp" alt="Nicholas Gold">
+              </div>
+              <a href="https://www.linkedin.com/in/nicholas-gold-8a8207254/" target="_blank" class="team-linkedin" aria-label="LinkedIn Profile">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+            </div>
+            <div class="team-info">
+              <h4>Nicholas Gold</h4>
+              <p>Senior Advisor, Business Dev &amp; Partnerships</p>
+              <a href="mailto:nicholas.gold@concordia.ca" class="team-email">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                nicholas.gold@concordia.ca
+              </a>
+            </div>
+          </div>
+
+          <!-- Member 6: Mindy Melgar -->
+          <div class="team-member">
+            <div class="team-avatar-container">
+              <div class="team-avatar">
+                <img src="assets/images/team/MindyMelgar.webp" alt="Mindy Melgar">
+              </div>
+              <a href="https://www.linkedin.com/in/mindy-melgar-76b7b689/" target="_blank" class="team-linkedin" aria-label="LinkedIn Profile">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+            </div>
+            <div class="team-info">
+              <h4>Mindy Melgar</h4>
+              <p>Platform Lead, Genome Foundry</p>
+              <a href="mailto:mindy.melgar@concordia.ca" class="team-email">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                mindy.melgar@concordia.ca
+              </a>
+            </div>
+          </div>
+
+          <!-- Member 7: Angela Quach -->
+          <div class="team-member">
+            <div class="team-avatar-container">
+              <div class="team-avatar">
+                <img src="assets/images/team/AngelaQuach.webp" alt="Angela Quach">
+              </div>
+              <a href="https://www.linkedin.com/in/angela-quach-6648a4189/" target="_blank" class="team-linkedin" aria-label="LinkedIn Profile">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+            </div>
+            <div class="team-info">
+              <h4>Angela Quach</h4>
+              <p>Cell Editing Specialist, Genome Foundry</p>
+              <a href="mailto:angela.quach@concordia.ca" class="team-email">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                angela.quach@concordia.ca
+              </a>
+            </div>
+          </div>
+
+          <!-- Member 8: Lalit Kumar -->
+          <div class="team-member">
+            <div class="team-avatar-container">
+              <div class="team-avatar">
+                <img src="assets/images/team/LalitKumar.webp" alt="Lalit Kumar">
+              </div>
+              <a href="https://www.linkedin.com/in/lalitkumar2019/" target="_blank" class="team-linkedin" aria-label="LinkedIn Profile">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+            </div>
+            <div class="team-info">
+              <h4>Lalit Kumar</h4>
+              <p>Supervisor, Bioprocessing</p>
+              <a href="mailto:lalit.kumar@concordia.ca" class="team-email">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                lalit.kumar@concordia.ca
+              </a>
+            </div>
+          </div>
+
+          <!-- Member 9: Raha Omran -->
+          <div class="team-member">
+            <div class="team-avatar-container">
+              <div class="team-avatar">
+                <img src="assets/images/team/RahaOmran2.webp" alt="Raha Omran">
+              </div>
+              <a href="https://www.linkedin.com/in/rahaomran/" target="_blank" class="team-linkedin" aria-label="LinkedIn Profile">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+            </div>
+            <div class="team-info">
+              <h4>Raha Omran</h4>
+              <p>Supervisor, Bioprocessing</p>
+              <a href="mailto:raha.omran@concordia.ca" class="team-email">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                raha.omran@concordia.ca
+              </a>
+            </div>
+          </div>
+
+          <!-- Member 10: Flavia Araujo -->
+          <div class="team-member">
+            <div class="team-avatar-container">
+              <div class="team-avatar">
+                <img src="assets/images/team/FlaviaAraujo.webp" alt="Flavia Araujo">
+              </div>
+              <a href="https://www.linkedin.com/in/flaviarba" target="_blank" class="team-linkedin" aria-label="LinkedIn Profile">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+            </div>
+            <div class="team-info">
+              <h4>Flavia Araujo</h4>
+              <p>Computer Scientist</p>
+              <a href="mailto:flavia.araujo@concordia.ca" class="team-email">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                flavia.araujo@concordia.ca
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="container-wide about-major-section" style="margin-top: var(--about-major-gap);">
+      <div class="moderate-bottom-cta">
+        <h2>Want to work with the platform?</h2>
+        <p>Tell us about your project, workflow, or platform access needs. We’ll help identify the right next step.</p>
+        <div class="cta-buttons">
+          <a href="WorkWithUs.html" class="btn btn-primary">Work With Us</a>
+          <a href="capabilities.html" class="btn btn-outline">Explore Capabilities</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer"
+    style="background: #07111F; color: #f0f2f5; padding: clamp(32px, 5vw, 48px) 1.5rem clamp(18px, 3vw, 24px);">
+    <div class="container-wide" style="max-width: 1200px; margin: 0 auto;">
+      <div class="footer-main-row"
+        style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem; margin-bottom: 2rem;">
+
+        <!-- Left Side: Brand -->
+        <div class="footer-brand" style="flex: 1 1 300px;">
+          <!-- Using invert to make the logo white for dark background -->
+          <img src="assets/icons/genome_foundry_logo.svg" alt="Concordia Genome Foundry"
+            style="max-width: 150px; width: 100%; height: auto; margin-bottom: 1rem; display: block; filter: brightness(0) invert(1);">
+          <p style="font-size: 14px; line-height: 1.5; color: #a1a1aa; margin-bottom: 0.75rem; max-width: 480px;">
+            An integrated research platform bringing together high-throughput bioengineering, microbial and mammalian
+            workflow development, and microbial bioprocessing under one roof.
+          </p>
+          <p
+            style="font-size: 13px; font-weight: 600; color: #d4d4d8; letter-spacing: 0.05em; text-transform: uppercase; margin: 0;">
+            A Concordia University research platform.
+          </p>
+        </div>
+
+        <!-- Right Side: Links -->
+        <div class="footer-contact" style="display: flex; flex-wrap: wrap; gap: 3rem; padding-top: 0.25rem;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <a href="mailto:genomefoundry@concordia.ca" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              genomefoundry@concordia.ca
+            </a>
+            <a href="https://www.linkedin.com/company/concordia-genome-foundry/" target="_blank" rel="noopener"
+              class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="WorkWithUs.html" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+              Work With Us
+            </a>
+            <a href="partners.html" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Our Partners &amp; Supporters
+            </a>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">Explore</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="about.html" style="color: inherit; text-decoration: none; transition: opacity 0.2s;">About</a>
+              <a href="capabilities.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Capabilities</a>
+              <a href="publications.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Research &amp; Impact</a>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">User
+              Tools</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="https://foundry.concordia.ca/bookr/"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrument
+                Booking</a>
+              <a href="https://foundry-lims.concordia.ca/"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;"
+                title="Concordia network or authorized access may be required."
+                aria-label="LIMS, Concordia access may be required">LIMS (Concordia access)</a>
+            </div>
+            <span
+              style="font-size: 0.75rem; color: #6b7280; display: block; margin-top: 0.75rem; max-width: 150px; line-height: 1.4;">For
+              trained users
+              with active accounts.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom-row"
+        style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 13px; color: #a1a1aa;">
+        <p style="margin: 0;">&copy; 2026 Concordia Genome Foundry. All rights reserved.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="https://www.concordia.ca/privacy.html" target="_blank" rel="noopener noreferrer"
+            style="color: #a1a1aa; text-decoration: none; transition: color 0.2s;">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

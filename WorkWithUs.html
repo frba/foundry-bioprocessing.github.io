@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concordia Genome Foundry</title>
+  <meta name="description"
+    content="Tell us what you’re trying to build, test, validate, or scale. We’ll help identify the right platform capabilities, engagement model, and next steps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 64px;
+      max-width: 1150px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .visit-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+
+    .contact-icon-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .contact-icon-link:hover {
+      opacity: 0.8;
+    }
+
+    .contact-card {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 20px;
+      padding: clamp(2rem, 5vw, 3rem);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+    }
+
+    .contact-process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-process-card {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      padding: 1.25rem;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-process-number {
+      display: inline-flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: #f0f4f8;
+      color: #000000;
+      font-weight: 600;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      margin-top: 2px;
+    }
+    
+    .contact-process-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-process-card h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--text-primary);
+      margin-top: 2px;
+    }
+
+    .contact-process-card p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Arrows between cards on desktop */
+    @media (min-width: 900px) {
+      .contact-process-card:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -1.25rem;
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid rgba(0, 0, 0, 0.15);
+        border-right: 2px solid rgba(0, 0, 0, 0.15);
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+
+    @media (max-width: 899px) {
+      .contact-process-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .contact-process-steps {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body style="background: #ffffff;">
+
+  <!-- Header -->
+  <nav class="navbar" id="navbar">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/icons/genome_foundry_logo.svg" alt="Genome Foundry Logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="WorkWithUs.html" class="active">Work With Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="mobile-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-nav" class="mobile-nav">
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="WorkWithUs.html" class="active">Work With Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="mobile-nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- 1. Page hero -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <h1>Let’s Talk About Your Project</h1>
+        <p>
+          Tell us what you're trying to discover, build, test, characterize, automate, or scale. Whether you're
+          exploring a new idea, developing a workflow, or looking for access to specialized capabilities, we can help
+          identify the right next steps.
+        </p>
+        <p>
+          Each project is scoped around the research question, workflow, materials, deliverables, and level of platform involvement required. Depending on the need, we may work with teams through research services, collaborative research, training, direct platform use, hosted arrangements, or technical support.
+        </p>
+      </div>
+    </section>
+
+    <!-- Possible Starting Points section -->
+    <section id="possible-starting-points" class="section"
+      style="padding: 4rem 1.5rem; background: var(--bg-primary); scroll-margin-top: 100px;">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <h2 class="h2" style="font-size: 2rem; margin-bottom: 1rem;">Possible Starting Points</h2>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <!-- Row 1 -->
+          <div style="padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.05);">
+            <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">“We need
+              to build or modify a biological system.”</h4>
+            <p style="color: var(--text-secondary); margin: 0; line-height: 1.5;">Construct design, DNA assembly,
+              microbial or mammalian engineering, variant generation, and cell-based workflows.</p>
+          </div>
+          <!-- Row 2 -->
+          <div style="padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.05);">
+            <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">“We need
+              to test, screen, or characterize something.”</h4>
+            <p style="color: var(--text-secondary); margin: 0; line-height: 1.5;">Assays, phenotyping, analytical
+              workflows, sequencing preparation, HPLC, mass spectrometry, and microscopy-supported studies.</p>
+          </div>
+          <!-- Row 3 -->
+          <div style="padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.05);">
+            <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">“We need
+              to automate or scale a workflow.”</h4>
+            <p style="color: var(--text-secondary); margin: 0; line-height: 1.5;">Liquid handling, assay
+              miniaturization, workflow optimization, high-throughput implementation, and automation-enabled process
+              development.</p>
+          </div>
+          <!-- Row 4 -->
+          <div>
+            <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">“We need
+              access, training, or technical support.”</h4>
+            <p style="color: var(--text-secondary); margin: 0; line-height: 1.5;">Research services, collaborative
+              projects, platform access, hosted arrangements, training, and staff-assisted technical work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ways to Engage Section -->
+    <section class="section ways-to-engage" aria-labelledby="engage-title">
+      <style>
+        .ways-to-engage {
+          background-color: #f8fafc;
+          padding: 6rem 1.5rem;
+          border-top: 1px solid #e2e8f0;
+          border-bottom: 1px solid #e2e8f0;
+        }
+        .engage-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .engage-eyebrow {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #64748b;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          margin-bottom: 1rem;
+          display: block;
+        }
+        .engage-title {
+          font-size: clamp(2rem, 3vw, 2.5rem);
+          font-weight: 800;
+          color: #0f172a;
+          margin-bottom: 1rem;
+          line-height: 1.2;
+        }
+        .engage-intro {
+          font-size: 1.125rem;
+          color: #475569;
+          line-height: 1.6;
+          max-width: 800px;
+          margin-bottom: 0.5rem;
+        }
+        .engage-clarification {
+          font-size: 1.05rem;
+          color: #64748b;
+          margin-bottom: 4rem;
+        }
+        .engage-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-bottom: 4rem;
+        }
+        @media (min-width: 768px) {
+          .engage-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (min-width: 1100px) {
+          .engage-grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+        .engage-card {
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
+          border-radius: 8px;
+          padding: 2rem;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+        }
+        .engage-card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
+        .engage-card-1::before { background-color: #9f1239; } /* burgundy */
+        .engage-card-2::before { background-color: #1e40af; } /* blue */
+        .engage-card-3::before { background-color: #0f766e; } /* teal */
+        .engage-card-4::before { background-color: #b45309; } /* amber */
+        
+        .engage-icon {
+          color: #475569;
+          margin-bottom: 1.5rem;
+        }
+        .engage-card-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin-bottom: 1rem;
+        }
+        .engage-desc {
+          font-size: 1rem;
+          color: #475569;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+          flex-grow: 1;
+        }
+        .engage-expectations {
+          font-size: 0.9rem;
+          color: #64748b;
+          line-height: 1.5;
+          padding-top: 1rem;
+          border-top: 1px solid #e2e8f0;
+        }
+        
+        .engage-notes {
+          text-align: center;
+          font-size: 0.95rem;
+          color: #64748b;
+          margin-bottom: 4rem;
+        }
+        
+        @media (max-width: 639px) {
+          .engage-notes {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+          }
+          .engage-bullet {
+            display: none;
+          }
+        }
+        
+        .engage-disclosure {
+          display: inline-block;
+          text-align: left;
+        }
+        .engage-disclosure summary {
+          cursor: pointer;
+          color: #0f172a;
+          font-weight: 600;
+          text-decoration: underline;
+          text-decoration-color: #cbd5e1;
+          text-underline-offset: 4px;
+          margin: 0 0.5rem;
+          padding: 0.2rem 0;
+          transition: all 0.2s ease;
+        }
+        .engage-disclosure summary:hover {
+          color: #3b82f6;
+          text-decoration-color: #3b82f6;
+        }
+        
+        /* The popover content */
+        .engage-disclosure-content {
+          margin-top: 1rem;
+          padding: 1.25rem;
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
+          border-radius: 6px;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          font-size: 0.9rem;
+          color: #475569;
+          line-height: 1.5;
+          max-width: 500px;
+          text-align: left;
+          position: absolute;
+          z-index: 10;
+        }
+        
+        @media (max-width: 639px) {
+          .engage-disclosure-content {
+            position: static;
+            box-shadow: none;
+            background: #f1f5f9;
+            margin-top: 0.5rem;
+            width: 100%;
+          }
+          .engage-disclosure {
+            display: block;
+            width: 100%;
+          }
+        }
+        
+        .engage-transition {
+          text-align: center;
+          padding-top: 2rem;
+          border-top: 1px solid #cbd5e1;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+        .engage-transition p {
+          font-size: 1.1rem;
+          color: #475569;
+          margin-bottom: 1.5rem;
+        }
+        .engage-inquiry-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #1e3a8a;
+          text-decoration: none;
+          padding-bottom: 2px;
+          border-bottom: 1px solid transparent;
+          transition: all 0.2s ease;
+        }
+        .engage-inquiry-link-arrow {
+          display: inline-block;
+          transition: transform 0.2s ease;
+        }
+        .engage-inquiry-link:hover, .engage-inquiry-link:focus {
+          color: #172554;
+          border-bottom-color: #172554;
+          outline: none;
+        }
+        .engage-inquiry-link:hover .engage-inquiry-link-arrow, .engage-inquiry-link:focus .engage-inquiry-link-arrow {
+          transform: translateX(3px);
+        }
+        .engage-inquiry-link:focus-visible {
+          outline: 2px solid #93c5fd;
+          outline-offset: 4px;
+        }
+      </style>
+
+      <div class="engage-inner">
+        <span class="engage-eyebrow">WAYS TO ENGAGE</span>
+        <h2 id="engage-title" class="engage-title">Different projects need different ways to work together.</h2>
+        <p class="engage-intro">The right engagement model depends on the project goals, required capabilities, team involvement, timeline, and level of platform access.</p>
+        <p class="engage-clarification">These models are flexible and may be combined or adapted around the project.</p>
+        
+        <div class="engage-grid">
+          <!-- Card 1 -->
+          <div class="engage-card engage-card-1">
+            <div class="engage-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 class="engage-card-title">Research Services</h3>
+            <p class="engage-desc">Client-scoped research support with defined project goals, execution plans, and deliverables. Deliverables may include data, reports, protocols, engineered materials, biological samples, or other project-specific outputs.</p>
+            <div class="engage-expectations">Scope, timelines, deliverables, responsibilities, and costs are agreed before work begins.</div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="engage-card engage-card-2">
+            <div class="engage-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                <path d="m9 14 2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="engage-card-title">Research Collaborations</h3>
+            <p class="engage-desc">Collaborative projects built around shared scientific goals, shared research outputs, and jointly developed workplans. These may involve co-developed methods, shared data generation, publications, translational development, or intellectual property considerations.</p>
+            <div class="engage-expectations">Collaborations depend on scientific alignment, available capacity, funding, and clearly defined roles.</div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="engage-card engage-card-3">
+            <div class="engage-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <h3 class="engage-card-title">Direct &amp; Hosted Access</h3>
+            <p class="engage-desc">Access the platform through training, supported instrument use, or hosted project arrangements. Users may be trained to operate selected equipment themselves, or work with platform staff for assisted equipment usage and defined technical tasks.</p>
+            <div class="engage-expectations">Access depends on project suitability, training, scheduling, biosafety requirements, platform policies, and available capacity.</div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="engage-card engage-card-4">
+            <div class="engage-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="6" cy="19" r="3" />
+                <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
+                <circle cx="18" cy="5" r="3" />
+              </svg>
+            </div>
+            <h3 class="engage-card-title">Partnership Pathways</h3>
+            <p class="engage-desc">Explore longer-term opportunities involving platform-enabled research, translational development, infrastructure access, ecosystem partnerships, public funding, or strategic collaboration.</p>
+            <div class="engage-expectations">Partnership structures are developed case by case and may extend beyond a conventional service project.</div>
+          </div>
+        </div>
+
+        <div class="engage-notes">
+          Important considerations: 
+          <details class="engage-disclosure">
+            <summary>Commercial intent</summary>
+            <div class="engage-disclosure-content">
+              For projects with commercial intent, clients and partners are responsible for confirming material rights, licensing requirements, and freedom-to-operate considerations for their intended use.
+            </div>
+          </details>
+          <span class="engage-bullet">&middot;</span>
+          <details class="engage-disclosure">
+            <summary>Public funding</summary>
+            <div class="engage-disclosure-content">
+              Funding and support models vary by project. Depending on eligibility, project structure, partner type, and available programs, different engagement pathways may be supported through public funding, institutional programs, partner contributions, or other funding mechanisms.
+            </div>
+          </details>
+        </div>
+        
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const disclosures = document.querySelectorAll('.engage-disclosure');
+            
+            // Close other disclosures when one is opened
+            disclosures.forEach((disclosure) => {
+              disclosure.addEventListener('toggle', (event) => {
+                if (disclosure.open) {
+                  disclosures.forEach((otherDisclosure) => {
+                    if (otherDisclosure !== disclosure && otherDisclosure.open) {
+                      otherDisclosure.open = false;
+                    }
+                  });
+                }
+              });
+            });
+
+            // Close on outside click or escape
+            document.addEventListener('click', (event) => {
+              const openDisclosure = document.querySelector('.engage-disclosure[open]');
+              if (openDisclosure && !openDisclosure.contains(event.target)) {
+                openDisclosure.open = false;
+              }
+            });
+            
+            document.addEventListener('keydown', (event) => {
+              if (event.key === 'Escape') {
+                const openDisclosure = document.querySelector('.engage-disclosure[open]');
+                if (openDisclosure) {
+                  openDisclosure.open = false;
+                  openDisclosure.querySelector('summary').focus();
+                }
+              }
+            });
+          });
+        </script>
+
+        <div class="engage-transition">
+          <p>Not sure which model fits? Tell us about the project and we’ll help identify the right approach.</p>
+          <a href="#contact" class="engage-inquiry-link">Send an inquiry <span class="engage-inquiry-link-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Main contact section -->
+    <section id="contact" class="section" style="padding: 4rem 1.5rem; background: #ffffff;">
+      <!-- PART 1: Top row with contact info and form -->
+      <div class="contact-grid" style="margin-bottom: 4rem;">
+
+        <!-- Left column: Work With Us block -->
+        <div style="display: flex; flex-direction: column; position: relative;">
+          <h2 class="h2" style="margin-bottom: 1.5rem; font-size: 2.5rem; font-weight: 700;">Contact Us</h2>
+
+          <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem; z-index: 1;">
+            <div>
+              <span
+                style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary); display: block; margin-bottom: 0.25rem;">Email</span>
+              <a href="mailto:genomefoundry@concordia.ca"
+                style="color: var(--text-primary); text-decoration: none; font-size: 1.1rem; transition: opacity 0.2s;">
+                genomefoundry@concordia.ca
+              </a>
+            </div>
+
+            <div>
+              <span
+                style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary); display: block; margin-bottom: 0.25rem;">LinkedIn</span>
+              <a href="https://www.linkedin.com/company/concordia-genome-foundry/" target="_blank" rel="noopener"
+                style="color: #004085; text-decoration: none; font-size: 1.1rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; transition: opacity 0.2s;">
+                Concordia Genome Foundry
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Restored Brand Visual -->
+          <div
+            style="flex-grow: 1; display: flex; align-items: center; justify-content: center; position: relative; min-height: 300px; padding: 2rem 0;">
+            <i class="fas fa-dna"
+              style="color: rgba(0,0,0,0.03); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg); font-size: 18.4rem;"></i>
+            <img src="assets/images/GF-logo.webp" alt="Genome Foundry Logo"
+              style="max-height: 285px; max-width: 95%; position: relative; z-index: 1;">
+          </div>
+        </div>
+
+        <!-- Right column: Inquiry form -->
+        <div class="contact-card">
+          <h3 class="h3" style="margin-bottom: 0.5rem; font-size: 1.5rem;">Send an Inquiry</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Share a few details and
+            we’ll get back to you.</p>
+
+          <!-- TODO: Integrate backend form submission for genomefoundry@concordia.ca -->
+          <form id="contact-page-form" action="https://formspree.io/f/meewznpe" method="POST">
+            <div class="form-row"
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label"
+                  style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Name</label>
+                <input type="text" name="name" class="form-input" placeholder="Full name"
+                  style="width: 100%; padding: 0.75rem 1rem; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; transition: border-color 0.2s;"
+                  required>
+              </div>
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label"
+                  style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Organization</label>
+                <input type="text" name="organization" class="form-input" placeholder="Your organization"
+                  style="width: 100%; padding: 0.75rem 1rem; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; transition: border-color 0.2s;"
+                  required>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+              <label class="form-label"
+                style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Email</label>
+              <input type="email" name="email" class="form-input" placeholder="you@organization.ca"
+                style="width: 100%; padding: 0.75rem 1rem; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; transition: border-color 0.2s;"
+                required>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+              <label class="form-label"
+                style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Inquiry
+                Area</label>
+              <select name="inquiry_area" class="form-input"
+                style="width: 100%; padding: 0.75rem 1rem; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; transition: border-color 0.2s; background-color: #fff; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23333%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.2em;"
+                required>
+                <option value="" disabled selected>Select an area</option>
+                <option value="general">General inquiry</option>
+                <option value="biofoundry">Biofoundry services</option>
+                <option value="mammalian">Mammalian workflows</option>
+                <option value="bioprocessing">Bioprocessing / scale-up</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="hosted">Hosted access</option>
+                <option value="partnership">Partnership or referral</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 2rem;">
+              <label class="form-label"
+                style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Message</label>
+              <textarea name="message" class="form-textarea"
+                placeholder="Tell us about your project, goals, and any relevant details..."
+                style="width: 100%; padding: 0.75rem 1rem; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; min-height: 120px; resize: vertical; transition: border-color 0.2s; font-family: inherit;"
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-accent"
+              style="width: 100%; border-radius: 9999px; padding: 0.85rem;">Submit Inquiry</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- PART 2: What happens next section -->
+      <div style="max-width: 1150px; margin: 0 auto; padding-top: 3rem; border-top: 1px solid rgba(0,0,0,0.08);">
+        <div style="margin-bottom: 2.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin: 0; white-space: nowrap;">What happens next</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0; flex: 1; min-width: 300px;">
+            After you contact us, someone from business development or the relevant platform team may suggest a short intro call.
+          </p>
+        </div>
+
+        <div class="contact-process-steps">
+          <div class="contact-process-card">
+            <div class="contact-process-number">1</div>
+            <div class="contact-process-content">
+              <h4>Review</h4>
+              <p>We review your project goals, materials, timelines, and technical requirements.</p>
+            </div>
+          </div>
+          <div class="contact-process-card">
+            <div class="contact-process-number">2</div>
+            <div class="contact-process-content">
+              <h4>Route</h4>
+              <p>We identify the relevant platform capabilities, access model, and possible project pathway.</p>
+            </div>
+          </div>
+          <div class="contact-process-card">
+            <div class="contact-process-number">3</div>
+            <div class="contact-process-content">
+              <h4>Protect</h4>
+              <p>If needed, we can arrange an NDA before discussing confidential details.</p>
+            </div>
+          </div>
+          <div class="contact-process-card">
+            <div class="contact-process-number">4</div>
+            <div class="contact-process-content">
+              <h4>Scope</h4>
+              <p>We prepare a scope, cost estimate, and next-step plan for review.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding-top: 0.5rem;">
+          <div style="color: #004085; margin-top: 2px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <h4 style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">For
+              external and commercial projects</h4>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin: 0; max-width: none;">
+              We maintain confidentiality, support appropriate intellectual property arrangements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Visit Us / Location section -->
+    <section class="section" style="padding: 4rem 1.5rem; background: #ffffff; border-top: 1px solid rgba(0,0,0,0.05);">
+      <div class="visit-grid">
+        <!-- Left: Address & Map Button -->
+        <div>
+          <h2 class="h2" style="margin-bottom: 1rem; font-size: 2rem;">Visit Us</h2>
+          <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+            Our platform operates from facilities at Concordia University’s Loyola Campus.
+          </p>
+
+          <div style="display: flex; gap: 1rem; margin-bottom: 2.5rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"
+              style="flex-shrink: 0; color: var(--accent-primary); margin-top: 4px;">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <div style="font-size: 0.95rem; line-height: 1.6; color: var(--text-primary);">
+              <strong>Concordia University, Loyola Campus</strong><br>
+              GE Building<br>
+              7141 Sherbrooke St W<br>
+              Montreal, Quebec H4B 1R6<br>
+              Canada
+            </div>
+          </div>
+
+          <a href="https://maps.app.goo.gl/YQ4kNYyifvacDUiw5" target="_blank" rel="noopener" class="btn btn-outline"
+            style="display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 9999px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            Open in Google Maps
+          </a>
+        </div>
+
+        <!-- Right: Building Image -->
+        <div>
+          <!-- TODO: Replace with local building image if hu-01.webp is not correct -->
+          <img src="assets/images/GE.webp" alt="Concordia University Applied Science Hub"
+            style="width: 100%; height: 360px; object-fit: cover; border-radius: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.05);">
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- 7. Footer -->
+  <footer class="footer"
+    style="background: #07111F; color: #f0f2f5; padding: clamp(32px, 5vw, 48px) 1.5rem clamp(18px, 3vw, 24px);">
+    <div class="container-wide" style="max-width: 1200px; margin: 0 auto;">
+      <div class="footer-main-row"
+        style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem; margin-bottom: 2rem;">
+
+        <!-- Left Side: Brand -->
+        <div class="footer-brand" style="flex: 1 1 300px;">
+          <!-- Using invert to make the logo white for dark background -->
+          <img src="assets/icons/genome_foundry_logo.svg" alt="Concordia Genome Foundry"
+            style="max-width: 150px; width: 100%; height: auto; margin-bottom: 1rem; display: block; filter: brightness(0) invert(1);">
+          <p style="font-size: 14px; line-height: 1.5; color: #a1a1aa; margin-bottom: 0.75rem; max-width: 480px;">
+            An integrated research platform bringing together high-throughput bioengineering, microbial and mammalian
+            workflow development, and microbial bioprocessing under one roof.
+          </p>
+          <p
+            style="font-size: 13px; font-weight: 600; color: #d4d4d8; letter-spacing: 0.05em; text-transform: uppercase; margin: 0;">
+            A Concordia University research platform.
+          </p>
+        </div>
+
+        <!-- Right Side: Links -->
+        <div class="footer-contact" style="display: flex; flex-wrap: wrap; gap: 3rem; padding-top: 0.25rem;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <a href="mailto:genomefoundry@concordia.ca" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              genomefoundry@concordia.ca
+            </a>
+            <a href="https://www.linkedin.com/company/concordia-genome-foundry/" target="_blank" rel="noopener"
+              class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="WorkWithUs.html" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+              Work With Us
+            </a>
+            <a href="partners.html" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Our Partners &amp; Supporters
+            </a>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">Explore</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="about.html" style="color: inherit; text-decoration: none; transition: opacity 0.2s;">About</a>
+              <a href="capabilities.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Capabilities</a>
+              <a href="publications.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Research &amp; Impact</a>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">User
+              Tools</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="https://foundry.concordia.ca/bookr/"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrument
+                Booking</a>
+              <a href="https://foundry-lims.concordia.ca/"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;"
+                title="Concordia network or authorized access may be required."
+                aria-label="LIMS, Concordia access may be required">LIMS (Concordia access)</a>
+            </div>
+            <span
+              style="font-size: 0.75rem; color: #6b7280; display: block; margin-top: 0.75rem; max-width: 150px; line-height: 1.4;">For
+              trained users
+              with active accounts.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom-row"
+        style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 13px; color: #a1a1aa;">
+        <p style="margin: 0;">&copy; 2026 Concordia Genome Foundry. All rights reserved.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="https://www.concordia.ca/privacy.html" target="_blank" rel="noopener noreferrer"
+            style="color: #a1a1aa; text-decoration: none; transition: color 0.2s;">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,2945 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concordia Genome Foundry</title>
+  <meta name="description"
+    content="An integrated biological engineering and translation infrastructure platform. From high-throughput build and test to bioprocess development and scale-up.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/icons/genome_foundry_logo.svg" alt="Genome Foundry Logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="mobile-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-nav" class="mobile-nav">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="mobile-nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Experimental Toggle Wrapper -->
+  <div id="homepage-testing-wrapper" data-show-dark-hero-test="true" data-show-dark-research-streams="true"
+    data-show-light-research-streams="false">
+
+    <!-- Global Decorative Background (Watermark) -->
+    <div id="global-bg-layer" aria-hidden="true">
+      <div class="bg-element bg-element-1"></div>
+    </div>
+
+    <style>
+      /* Global Background System (Watermark) */
+      #homepage-testing-wrapper {
+        position: relative;
+        z-index: 1;
+        overflow-x: hidden;
+      }
+
+      #global-bg-layer {
+        /* TURN OFF SWITCH: Change 'block' to 'none' to easily disable the watermark */
+        display: block;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .bg-element {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        opacity: 0.08;
+        will-change: transform;
+      }
+
+      .bg-element-1 {
+        width: 140vw;
+        height: 140vw;
+        max-width: 1800px;
+        max-height: 1800px;
+        top: -20%;
+        left: -30%;
+        background-image: url('assets/images/GF-DNA-logo.webp');
+      }
+
+      @media (max-width: 768px) {
+        .bg-element-1 {
+          width: 150vw;
+          height: 150vw;
+          top: 15%;
+          left: -25%;
+          opacity: 0.07;
+        }
+
+        /* Pull watermark to the front on mobile so it isn't hidden by solid cards or sections */
+        #global-bg-layer {
+          z-index: 9999 !important;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .bg-element {
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+
+      #homepage-testing-wrapper[data-show-dark-research-streams="false"] #research-streams-dark-test {
+        display: none;
+      }
+
+      #homepage-testing-wrapper[data-show-light-research-streams="false"] #research-streams-light-test {
+        display: none;
+      }
+
+      #homepage-testing-wrapper[data-show-dark-research-streams="false"] #streams-comparison-label,
+      #homepage-testing-wrapper[data-show-light-research-streams="false"] #streams-comparison-label {
+        display: none;
+      }
+    </style>
+
+
+
+    <div id="homepage-redesign-v1">
+      <!-- Experimental dark homepage hero for visual comparison. Current redesigned hero preserved below. -->
+      <section id="homepage-hero-dark-test" aria-label="Dark Homepage Hero">
+        <div class="dark-hero-inner">
+          <div class="dark-hero-content">
+            <span class="dark-hero-eyebrow">BUILD MORE. TEST MORE. LEARN MORE.</span>
+            <h1 class="dark-hero-title">Engineer Biology with a Biofoundry.</h1>
+            <p class="dark-hero-body">
+              Automation-enabled infrastructure for building, testing, characterizing, and scaling biological
+              systems—from engineered microorganisms to mammalian cell models and microbial bioprocesses.
+            </p>
+            <p class="dark-hero-audience">
+              For academic researchers, startups, industry teams, and translational partners.
+            </p>
+            <div class="dark-hero-cta">
+              <a href="WorkWithUs.html" class="dark-btn">
+                Work With Us
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="dark-hero-media">
+            <video autoplay muted loop playsinline>
+              <source src="assets/videos/vantage-01.webm" type="video/webm">
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <div class="temporary-comparison-label"
+        style="display: none; text-align: center; background: #e2e8f0; padding: 0.5rem; font-size: 0.85rem; color: #475569; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">
+        Current Light Hero Below — Temporary Comparison
+      </div>
+
+      <style>
+        #homepage-testing-wrapper[data-show-dark-hero-test="false"] #homepage-hero-dark-test,
+        #homepage-testing-wrapper[data-show-dark-hero-test="false"] #homepage-hero-dark-test+.temporary-comparison-label {
+          display: none;
+        }
+
+        #homepage-hero-dark-test {
+          background-color: #0f172a;
+          position: relative;
+          padding: calc(94px + 3rem) 1.5rem 4rem 1.5rem;
+          overflow: hidden;
+        }
+
+        .dark-hero-inner {
+          max-width: 1400px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+          position: relative;
+          z-index: 2;
+        }
+
+        .dark-hero-content {
+          max-width: 600px;
+        }
+
+        .dark-hero-eyebrow {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #ef4444;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 0.75rem;
+          display: block;
+        }
+
+        .dark-hero-title {
+          font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+          font-weight: 800;
+          line-height: 1.1;
+          color: #ffffff;
+          margin-bottom: 1.5rem;
+          letter-spacing: -0.02em;
+        }
+
+        .dark-hero-subtitle {
+          font-family: var(--font-mono, 'JetBrains Mono', monospace);
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: #94a3b8;
+          margin-bottom: 1.25rem;
+        }
+
+        .dark-hero-body {
+          font-size: 1.125rem;
+          color: #cbd5e1;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+        }
+
+        .dark-hero-audience {
+          font-size: 1.05rem;
+          color: #94a3b8;
+          font-weight: 600;
+          border-left: 3px solid #ef4444;
+          padding-left: 1rem;
+          margin-bottom: 2.5rem;
+        }
+
+        .dark-hero-cta .dark-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: #ffffff;
+          color: #0f172a;
+          padding: 0.85rem 1.75rem;
+          border-radius: 6px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .dark-hero-cta .dark-btn svg {
+          transition: transform 0.2s ease;
+        }
+
+        .dark-hero-cta .dark-btn:hover,
+        .dark-hero-cta .dark-btn:focus {
+          background: #f8fafc;
+          transform: translateY(-1px);
+          outline: none;
+        }
+
+        .dark-hero-cta .dark-btn:focus-visible {
+          outline: 2px solid #ffffff;
+          outline-offset: 4px;
+        }
+
+        .dark-hero-cta .dark-btn:hover svg,
+        .dark-hero-cta .dark-btn:focus svg {
+          transform: translateX(2px);
+        }
+
+        .dark-hero-media {
+          position: relative;
+          border-radius: 8px;
+          overflow: hidden;
+          background: #020617;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-hero-media::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 15%;
+          background: linear-gradient(to right, #0f172a, transparent);
+          pointer-events: none;
+        }
+
+        .dark-hero-media video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          opacity: 0.9;
+        }
+
+        @media (min-width: 900px) {
+          #homepage-hero-dark-test {
+            padding: calc(94px + 4rem) 2rem 5rem 2rem;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+          }
+
+          .dark-hero-inner {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            width: 100%;
+          }
+
+          .dark-hero-content {
+            flex: 0 0 38%;
+            max-width: 500px;
+          }
+
+          .dark-hero-media {
+            flex: 0 0 60%;
+            max-width: 800px;
+            margin-right: -2rem;
+          }
+        }
+
+        @media (min-width: 1200px) {
+          .dark-hero-media {
+            margin-right: -4rem;
+          }
+        }
+      </style>
+      <style>
+        .redesign-hp-hero {
+          background-color: rgba(255, 255, 255, 0.95);
+          position: relative;
+          padding: calc(94px + 3rem) 1.5rem 4rem 1.5rem;
+        }
+
+        .redesign-hp-hero-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+          position: relative;
+          z-index: 2;
+        }
+
+        .redesign-hp-content {
+          max-width: 600px;
+        }
+
+        .redesign-hp-eyebrow {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #900707;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 0.75rem;
+          display: block;
+        }
+
+        .redesign-hp-title {
+          font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+          font-weight: 800;
+          line-height: 1.1;
+          color: #0f172a;
+          margin-bottom: 1.25rem;
+          letter-spacing: -0.02em;
+        }
+
+        .redesign-hp-subtitle {
+          font-family: var(--font-mono, 'JetBrains Mono', monospace);
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: #475569;
+          margin-bottom: 1.25rem;
+        }
+
+        .redesign-hp-body {
+          font-size: 1.125rem;
+          color: #334155;
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+        }
+
+        .redesign-hp-audience {
+          font-size: 1.05rem;
+          color: #475569;
+          font-weight: 600;
+          border-left: 3px solid #900707;
+          padding-left: 1rem;
+          margin-bottom: 2.5rem;
+        }
+
+        .redesign-hp-cta .redesign-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: #0f172a;
+          color: #ffffff;
+          padding: 0.8rem 2rem;
+          border-radius: 9999px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: background 0.2s ease;
+        }
+
+        .redesign-hp-cta .redesign-btn:hover {
+          background: #1e293b;
+        }
+
+        .redesign-hp-media {
+          position: relative;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+          background: #0b1120;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+        }
+
+        .redesign-hp-media video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          opacity: 0.95;
+        }
+
+        @media (min-width: 900px) {
+          .redesign-hp-hero {
+            padding: calc(94px + 4rem) 2rem 5rem 2rem;
+          }
+
+          .redesign-hp-hero-inner {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+          }
+
+          .redesign-hp-content {
+            flex: 0 0 48%;
+            max-width: 520px;
+          }
+
+          .redesign-hp-media {
+            flex: 0 0 46%;
+            max-width: 600px;
+          }
+        }
+
+        /* Adjust watermark specifically when the redesign is shown */
+        #homepage-testing-wrapper[data-show-redesign="true"] #global-bg-layer .bg-element-1 {
+          opacity: 0.03;
+          top: -25%;
+          left: -10%;
+        }
+
+        /* Execution Band */
+        .redesign-exec-band {
+          background-color: #f8fafc;
+          border-bottom: 1px solid #e2e8f0;
+          padding: 2.5rem 1.5rem;
+        }
+
+        .redesign-exec-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          gap: 1.5rem;
+          grid-template-columns: 1fr;
+        }
+
+        .redesign-exec-item {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          position: relative;
+        }
+
+        .redesign-exec-title {
+          font-family: var(--font-mono, 'JetBrains Mono', monospace);
+          font-size: 1.125rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .redesign-exec-desc {
+          font-size: 1rem;
+          color: #475569;
+          line-height: 1.5;
+          margin: 0;
+        }
+
+        @media (min-width: 640px) {
+          .redesign-exec-inner {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem 2rem;
+          }
+
+          .redesign-exec-item {
+            padding-bottom: 0;
+            border-bottom: none;
+          }
+        }
+
+        @media (min-width: 1100px) {
+          .redesign-exec-band {
+            padding: 3rem 2rem;
+          }
+
+          .redesign-exec-inner {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem 2rem;
+          }
+
+          .redesign-exec-item {
+            display: contents;
+          }
+
+          .redesign-exec-title {
+            grid-row: 1;
+            align-items: center;
+          }
+
+          .redesign-exec-desc {
+            grid-row: 2;
+          }
+        }
+
+        .exec-arrow {
+          display: inline-block;
+          margin-left: 0.5rem;
+          color: #94a3b8;
+          font-weight: 400;
+        }
+
+        .scale-arrow {
+          letter-spacing: -2px;
+          margin-left: 1rem;
+        }
+
+        /* Outputs Section */
+        .redesign-outputs-section {
+          background-color: #f8fafc;
+          position: relative;
+          padding: 6rem 1.5rem;
+          border-bottom: 1px solid #e2e8f0;
+        }
+
+        .redesign-outputs-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .redesign-outputs-header {
+          text-align: center;
+          max-width: 700px;
+          margin-bottom: 4rem;
+        }
+
+        .redesign-outputs-eyebrow {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #900707;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 0.75rem;
+          display: block;
+        }
+
+        .redesign-outputs-title {
+          font-size: clamp(2rem, 4vw, 2.75rem);
+          font-weight: 800;
+          line-height: 1.1;
+          color: #0f172a;
+          margin-bottom: 1.25rem;
+          letter-spacing: -0.02em;
+        }
+
+        .redesign-outputs-desc {
+          font-size: 1.125rem;
+          color: #475569;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        .redesign-outputs-grid {
+          display: grid;
+          gap: 2rem;
+          width: 100%;
+          grid-template-columns: 1fr;
+        }
+
+        .redesign-output-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .redesign-output-icon {
+          width: 60px;
+          height: 60px;
+          margin-bottom: 1.25rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #f1f5f9;
+          border-radius: 50%;
+          padding: 12px;
+        }
+
+        .redesign-output-icon svg {
+          width: 100%;
+          height: 100%;
+          stroke: #1e3a8a;
+          stroke-width: 1.5;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          fill: none;
+        }
+
+        .redesign-output-label {
+          font-size: 1.05rem;
+          font-weight: 600;
+          color: #0f172a;
+          line-height: 1.3;
+        }
+
+        @media (max-width: 639px) {
+          .redesign-outputs-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem 1rem;
+          }
+        }
+
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .redesign-outputs-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem 2rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .redesign-outputs-section {
+            padding: 5rem 1.5rem;
+          }
+
+          .redesign-outputs-grid {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+          }
+
+          .redesign-output-item {
+            border-right: 1px solid #e2e8f0;
+            padding: 0 1rem;
+          }
+
+          .redesign-output-item:last-child {
+            border-right: none;
+          }
+        }
+
+        /* Research Streams Section */
+        .redesign-streams-section {
+          background-color: #ffffff;
+          padding: 6rem 1.5rem;
+          border-bottom: 1px solid #e2e8f0;
+          position: relative;
+        }
+
+        .redesign-streams-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .redesign-streams-header {
+          text-align: center;
+          max-width: 800px;
+          margin: 0 auto 5rem auto;
+        }
+
+        .redesign-streams-eyebrow {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #900707;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 0.75rem;
+          display: block;
+        }
+
+        .redesign-streams-title {
+          font-size: clamp(2rem, 4vw, 2.75rem);
+          font-weight: 800;
+          line-height: 1.1;
+          color: #0f172a;
+          margin-bottom: 1.25rem;
+          letter-spacing: -0.02em;
+        }
+
+        .redesign-streams-desc {
+          font-size: 1.125rem;
+          color: #475569;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        .redesign-streams-layout {
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+          align-items: stretch;
+        }
+
+        .redesign-stream-panel {
+          flex: 1;
+          padding: 2.5rem 2.5rem;
+          border-radius: 4px;
+          border: 1px solid #e2e8f0;
+          box-shadow: none;
+        }
+
+        .stream-microbial {
+          background-color: #f0fdf4;
+          /* Pale neutral-green */
+        }
+
+        .stream-mammalian {
+          background-color: #faf5ff;
+          /* Pale neutral-purple */
+        }
+
+        @media (max-width: 767px) {
+          .redesign-streams-layout {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .redesign-stream-center {
+            order: 1;
+            margin-bottom: 2rem;
+          }
+
+          .stream-microbial {
+            order: 2;
+            margin-bottom: 1rem;
+          }
+
+          .stream-mammalian {
+            order: 3;
+          }
+        }
+
+
+        .redesign-streams-link {
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: #1e3a8a;
+          /* Navy blue */
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: all 0.2s ease;
+        }
+
+        .redesign-streams-link:hover,
+        .redesign-streams-link:focus {
+          color: #172554;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+          outline: 2px solid #1e3a8a;
+          outline-offset: 4px;
+        }
+
+        .redesign-streams-link:focus:not(:focus-visible) {
+          outline: none;
+        }
+
+        .redesign-stream-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin-bottom: 1rem;
+        }
+
+        .redesign-stream-summary {
+          font-size: 1.05rem;
+          color: #334155;
+          line-height: 1.5;
+          margin-bottom: 1.75rem;
+        }
+
+        .redesign-stream-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+
+        .redesign-stream-list li {
+          font-size: 0.95rem;
+          font-weight: 600;
+          color: #475569;
+          padding-left: 1.25rem;
+          position: relative;
+        }
+
+        .redesign-stream-list li::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0.45rem;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: #94a3b8;
+        }
+
+        .redesign-stream-center {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+          position: relative;
+        }
+
+        .redesign-engine-diagram {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .redesign-engine-connector {
+          position: absolute;
+          top: 50%;
+          height: 1px;
+          border-top: 2px dotted #cbd5e1;
+          z-index: 1;
+          display: none;
+        }
+
+        .redesign-engine-loop {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          background-color: #f8fafc;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .engine-loop-svg {
+          z-index: 1;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: rotate(45deg);
+        }
+
+        .engine-node {
+          z-index: 10;
+          position: absolute;
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: #0f172a;
+          background: #ffffff;
+          padding: 0.2rem 0.6rem;
+          border-radius: 9999px;
+          border: 1px solid #e2e8f0;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .node-design {
+          top: -12px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .node-build {
+          right: -28px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .node-test {
+          bottom: -12px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .node-learn {
+          left: -28px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .engine-core {
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+          padding: 0.5rem;
+        }
+
+        .engine-core-label {
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: #0f172a;
+          line-height: 1.3;
+        }
+
+        .redesign-engine-footer {
+          font-family: var(--font-mono, 'JetBrains Mono', monospace);
+          font-size: 0.85rem;
+          color: #64748b;
+          text-align: center;
+          max-width: 320px;
+          line-height: 1.6;
+        }
+
+        /* Tablet Layout */
+        @media (min-width: 768px) {
+          .redesign-streams-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 2rem;
+          }
+
+          .redesign-stream-center {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            margin-bottom: 2rem;
+          }
+
+          .stream-microbial {
+            grid-column: 1;
+            grid-row: 2;
+          }
+
+          .stream-mammalian {
+            grid-column: 2;
+            grid-row: 2;
+          }
+        }
+
+        /* Wide Desktop Layout */
+        @media (min-width: 1100px) {
+          .redesign-streams-layout {
+            grid-template-columns: 1fr auto 1fr;
+            grid-template-rows: 1fr;
+            align-items: stretch;
+            gap: 2rem;
+          }
+
+          .redesign-stream-center {
+            grid-column: 2;
+            grid-row: 1;
+            width: 320px;
+            margin-bottom: 0;
+          }
+
+          .stream-microbial {
+            grid-column: 1;
+            grid-row: 1;
+          }
+
+          .stream-mammalian {
+            grid-column: 3;
+            grid-row: 1;
+          }
+
+          .redesign-engine-connector {
+            display: block;
+            width: 70px;
+          }
+
+          .left-connector {
+            right: 100%;
+          }
+
+          .right-connector {
+            left: 100%;
+          }
+        }
+      </style>
+
+      <!-- Light homepage hero retained for rollback; currently hidden after selection of the dark hero direction. -->
+      <section class="redesign-hp-hero" aria-label="Homepage Hero" style="display: none;">
+        <div class="redesign-hp-hero-inner">
+          <div class="redesign-hp-content">
+            <span class="redesign-hp-eyebrow">BUILD MORE. TEST MORE. LEARN MORE.</span>
+            <h1 class="redesign-hp-title">Engineer Biology. Foundry Style.</h1>
+            <h3 class="redesign-hp-subtitle">Expand the search. Improve the outcome.</h3>
+            <p class="redesign-hp-body">
+              Automation-enabled infrastructure for building, testing, characterizing, and scaling biological
+              systems—from engineered microorganisms to mammalian cell models and microbial bioprocesses.
+            </p>
+            <p class="redesign-hp-audience">
+              For academic researchers, startups, industry teams, and translational partners.
+            </p>
+            <div class="redesign-hp-cta">
+              <a href="WorkWithUs.html" class="redesign-btn">
+                Work With Us
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="redesign-hp-media">
+            <video autoplay muted loop playsinline>
+              <source src="assets/videos/vantage-01.webm" type="video/webm">
+            </video>
+          </div>
+
+        </div>
+      </section>
+
+
+      <section class="redesign-exec-band" aria-label="Platform Execution Flow">
+        <div class="redesign-exec-inner">
+          <div class="redesign-exec-item">
+            <h2 class="redesign-exec-title">Design <span class="exec-arrow">&rarr;</span></h2>
+            <p class="redesign-exec-desc">Define the biological question, identify relevant factors, and establish
+              starting designs and experimental strategy.</p>
+          </div>
+          <div class="redesign-exec-item">
+            <h2 class="redesign-exec-title">Build <span class="exec-arrow">&rarr;</span></h2>
+            <p class="redesign-exec-desc">Create biological systems, libraries, and variants using parallel,
+              automation-enabled workflows.</p>
+          </div>
+          <div class="redesign-exec-item">
+            <h2 class="redesign-exec-title">Test <span class="exec-arrow">&rarr;</span></h2>
+            <p class="redesign-exec-desc">Run screens, assays, and analytical measurements across designs and
+              conditions.</p>
+          </div>
+          <div class="redesign-exec-item">
+            <h2 class="redesign-exec-title">Learn &amp; Iterate <span class="exec-arrow scale-arrow">⇢</span></h2>
+            <p class="redesign-exec-desc">Review results, select promising directions, and steer the next
+              build&ndash;test cycle.</p>
+          </div>
+          <div class="redesign-exec-item">
+            <h2 class="redesign-exec-title">Scale</h2>
+            <p class="redesign-exec-desc">Advance relevant microbial systems toward process development and production.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Previous standalone outputs and applications sections retained for rollback after consolidation. -->
+      <section class="redesign-outputs-section hidden-for-consolidation" aria-label="What We Help Build">
+        <div class="redesign-outputs-inner">
+          <header class="redesign-outputs-header">
+            <span class="redesign-outputs-eyebrow">WHAT WE HELP BUILD</span>
+            <h2 class="redesign-outputs-title">From engineered cells to bio-based products.</h2>
+            <p class="redesign-outputs-desc">
+              The platform supports the construction, testing, characterization, and development of diverse biological
+              systems and outputs.
+            </p>
+          </header>
+
+          <div class="redesign-outputs-grid">
+            <div class="redesign-output-item">
+              <div class="redesign-output-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8" />
+                  <circle cx="12" cy="12" r="2.5" />
+                  <path d="M22 12h-2 M12 22v-2 M2 12h2 M12 2v2" />
+                </svg>
+              </div>
+              <span class="redesign-output-label">Engineered cells</span>
+            </div>
+
+            <div class="redesign-output-item">
+              <div class="redesign-output-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="6" cy="18" r="3" />
+                  <circle cx="12" cy="6" r="3" />
+                  <circle cx="18" cy="18" r="3" />
+                  <path d="M7.5 15.5l3-7 M13.5 8.5l3 7" />
+                </svg>
+              </div>
+              <span class="redesign-output-label">Proteins</span>
+            </div>
+
+            <div class="redesign-output-item">
+              <div class="redesign-output-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="12 5 18 8.5 18 15.5 12 19 6 15.5 6 8.5" />
+                  <line x1="18" y1="15.5" x2="22" y2="18" />
+                  <line x1="6" y1="15.5" x2="2" y2="18" />
+                  <line x1="12" y1="5" x2="12" y2="1" />
+                </svg>
+              </div>
+              <span class="redesign-output-label">Small molecules</span>
+            </div>
+
+            <div class="redesign-output-item">
+              <div class="redesign-output-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 18v-6" />
+                  <circle cx="12" cy="20" r="2" />
+                  <path d="M8 8a6 6 0 018 0" />
+                  <path d="M5 5a10 10 0 0114 0" />
+                </svg>
+              </div>
+              <span class="redesign-output-label">Biosensors</span>
+            </div>
+
+            <div class="redesign-output-item">
+              <div class="redesign-output-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <g transform="rotate(-45 12 12)">
+                    <rect x="4" y="8" width="16" height="8" rx="4" />
+                    <line x1="12" y1="8" x2="12" y2="16" />
+                  </g>
+                </svg>
+              </div>
+              <span class="redesign-output-label">Therapeutic technologies</span>
+            </div>
+
+            <div class="redesign-output-item">
+              <div class="redesign-output-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M10 2v6l-6 12a2 2 0 002 2h12a2 2 0 002-2l-6-12V2" />
+                  <line x1="8" y1="2" x2="16" y2="2" />
+                  <line x1="7" y1="16" x2="17" y2="16" />
+                </svg>
+              </div>
+              <span class="redesign-output-label">Bio-based products</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <style>
+        .dark-streams-section {
+          background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+          padding: 6rem 1.5rem;
+          color: #94a3b8;
+          border-top: 1px solid #1e293b;
+        }
+
+        .dark-streams-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .dark-streams-header {
+          max-width: 700px;
+          margin-bottom: 5rem;
+        }
+
+        .dark-streams-eyebrow {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #38bdf8;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 0.75rem;
+          display: block;
+        }
+
+        .dark-streams-title {
+          font-size: clamp(2rem, 3.5vw, 2.75rem);
+          font-weight: 800;
+          line-height: 1.15;
+          color: #f8fafc;
+          margin-bottom: 1.25rem;
+        }
+
+        .dark-streams-desc {
+          font-size: 1.125rem;
+          line-height: 1.6;
+          color: #e2e8f0;
+        }
+
+        .shared-engine-container {
+          margin-bottom: 3rem;
+        }
+
+        .shared-engine-label {
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: #94a3b8;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          margin-bottom: 0.75rem;
+          display: block;
+        }
+
+        .shared-foundry-functions {
+          display: grid;
+          gap: 1.5rem 1rem;
+          margin-bottom: 0.5rem;
+          grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 600px) {
+          .shared-foundry-functions {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (min-width: 850px) {
+          .shared-foundry-functions {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        @media (min-width: 1100px) {
+          .shared-foundry-functions {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+          }
+        }
+
+        .foundry-function-item {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+        }
+
+        @media (min-width: 1100px) {
+          .foundry-function-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+            padding-right: 1rem;
+            border-right: 1px solid #334155;
+          }
+
+          .foundry-function-item:last-child {
+            border-right: none;
+            padding-right: 0;
+          }
+        }
+
+        .foundry-icon {
+          flex-shrink: 0;
+          width: 24px;
+          height: 24px;
+          color: #94a3b8;
+        }
+
+        .foundry-function-label {
+          font-size: 0.95rem;
+          color: #ffffff;
+          font-weight: 500;
+          line-height: 1.3;
+        }
+
+        .shared-engine-divider {
+          height: 1px;
+          background: #334155;
+          margin-top: 1.5rem;
+          width: 100%;
+        }
+
+        .dark-streams-layout {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 4rem;
+          margin-bottom: 4rem;
+        }
+
+        @media (min-width: 850px) {
+          .dark-streams-layout {
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+          }
+        }
+
+        /* Internal surfaces */
+        .dark-stream-panel {
+          background-color: #0b0f14;
+          border: 1px solid rgba(255, 255, 255, 0.10);
+          border-radius: 8px;
+          padding: 2.5rem;
+          position: relative;
+          z-index: 1;
+        }
+
+        .dark-stream-accent-left {
+          width: 40px;
+          height: 3px;
+          background: #2dd4bf;
+          margin-bottom: 1.5rem;
+        }
+
+        .dark-stream-accent-right {
+          width: 40px;
+          height: 3px;
+          background: #a855f7;
+          margin-bottom: 1.5rem;
+        }
+
+        .dark-stream-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #f8fafc;
+          margin-bottom: 1rem;
+        }
+
+        .dark-stream-intro {
+          font-size: 1.05rem;
+          line-height: 1.5;
+          color: #cbd5e1;
+          margin-bottom: 2rem;
+        }
+
+        .dark-stream-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding-top: 1.5rem;
+        }
+
+        @media (min-width: 500px) {
+          .dark-stream-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 1rem;
+          }
+        }
+
+        .dark-stream-item {
+          font-size: 0.95rem;
+          font-weight: 600;
+          color: #e2e8f0;
+          display: flex;
+          align-items: flex-start;
+        }
+
+        .dark-stream-item::before {
+          content: "—";
+          color: #475569;
+          margin-right: 0.5rem;
+        }
+
+        .dark-explore-footer {
+          display: flex;
+          justify-content: flex-start;
+        }
+
+        @media (min-width: 850px) {
+          .dark-explore-footer {
+            justify-content: flex-end;
+          }
+        }
+
+        .dark-explore-link {
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: #0f172a;
+          background: #ffffff;
+          padding: 0.75rem 1.5rem;
+          border-radius: 6px;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: all 0.2s ease;
+          border: 1px solid #ffffff;
+        }
+
+        .explore-link-arrow {
+          display: inline-block;
+          transition: transform 0.2s ease;
+        }
+
+        .dark-explore-link:hover,
+        .dark-explore-link:focus {
+          background: #f1f5f9;
+          color: #0f172a;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+          outline: none;
+        }
+
+        .dark-explore-link:hover .explore-link-arrow,
+        .dark-explore-link:focus .explore-link-arrow {
+          transform: translateX(3px);
+        }
+
+        .dark-explore-link:focus-visible {
+          outline: 2px solid #93c5fd;
+          outline-offset: 4px;
+        }
+      </style>
+
+      <div id="research-streams-dark-test">
+        <section class="dark-streams-section" aria-labelledby="dark-streams-title">
+          <div class="dark-streams-inner">
+            <header class="dark-streams-header">
+              <span class="dark-streams-eyebrow">ONE INTEGRATED PLATFORM</span>
+              <h2 id="dark-streams-title" class="dark-streams-title">Two research streams. One shared execution engine.
+              </h2>
+              <p class="dark-streams-desc">
+                Shared automation, high-throughput experimentation, analytical workflows, and data-supported
+                decision-making strengthen execution across both research streams.
+              </p>
+            </header>
+
+            <div class="shared-engine-container" style="display: none;">
+              <span class="shared-engine-label">SHARED FOUNDRY INFRASTRUCTURE</span>
+              <!-- Shared foundry infrastructure icon strip retained for rollback; currently hidden to simplify the research-stream section. -->
+              <div class="shared-foundry-functions">
+                <div class="foundry-function-item">
+                  <div class="foundry-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="10" y="12" width="44" height="30" rx="3" />
+                      <path d="M24 52h16" />
+                      <path d="M32 42v10" />
+                      <path d="M25 27h14" />
+                      <path d="M25 27l5-5" />
+                      <path d="M25 27l5 5" />
+                      <path d="M39 27l-5-5" />
+                      <path d="M39 27l-5 5" />
+                    </svg>
+                  </div>
+                  <span class="foundry-function-label">Project specification</span>
+                </div>
+
+                <div class="foundry-function-item">
+                  <div class="foundry-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 10v44" />
+                      <path d="M32 10v44" />
+                      <path d="M46 10v44" />
+                      <circle cx="18" cy="25" r="5" />
+                      <circle cx="32" cy="39" r="5" />
+                      <circle cx="46" cy="21" r="5" />
+                    </svg>
+                  </div>
+                  <span class="foundry-function-label">Workflow definition</span>
+                </div>
+
+                <div class="foundry-function-item">
+                  <div class="foundry-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M8 54h20" />
+                      <path d="M14 54V39a6 6 0 0 1 6-6h5" />
+                      <circle cx="27" cy="33" r="5" />
+                      <path d="M31 29l10-10" />
+                      <circle cx="44" cy="16" r="5" />
+                      <path d="M47 20l6 8" />
+                      <path d="M53 28l-5 5" />
+                      <path d="M53 28h6" />
+                      <path d="M17 39h11" />
+                      <path d="M39 45c8-8 8-18 0-26" />
+                      <path d="M49 45c-8-8-8-18 0-26" />
+                      <path d="M40 26h8" />
+                      <path d="M40 34h8" />
+                      <path d="M40 42h8" />
+                    </svg>
+                  </div>
+                  <span class="foundry-function-label">Automated execution</span>
+                </div>
+
+                <div class="foundry-function-item">
+                  <div class="foundry-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 6c20 12 20 40 0 52" />
+                      <path d="M42 6c-20 12-20 40 0 52" />
+                      <path d="M24 14h16" />
+                      <path d="M20 24h24" />
+                      <path d="M20 40h24" />
+                      <path d="M24 50h16" />
+                    </svg>
+                  </div>
+                  <span class="foundry-function-label">Assembly &amp; engineering</span>
+                </div>
+
+                <div class="foundry-function-item">
+                  <div class="foundry-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="10" y="14" width="44" height="36" rx="4" />
+                      <circle cx="20" cy="24" r="3" />
+                      <circle cx="32" cy="24" r="3" />
+                      <circle cx="44" cy="24" r="3" />
+                      <circle cx="20" cy="34" r="3" />
+                      <circle cx="32" cy="34" r="3" />
+                      <circle cx="44" cy="34" r="3" />
+                      <circle cx="20" cy="44" r="3" />
+                      <circle cx="32" cy="44" r="3" />
+                      <circle cx="44" cy="44" r="3" />
+                    </svg>
+                  </div>
+                  <span class="foundry-function-label">Screening &amp; analysis</span>
+                </div>
+              </div>
+              <div class="shared-engine-divider" aria-hidden="true"></div>
+            </div>
+
+            <div class="dark-streams-layout">
+              <!-- Left Stream -->
+              <div class="dark-stream-panel">
+                <div class="dark-stream-accent-left" aria-hidden="true"></div>
+                <h3 class="dark-stream-title">Microbial Engineering to Biomanufacturing</h3>
+                <p class="dark-stream-intro">Support microbial engineering workflows that extend toward bioprocess
+                  development and scale-up.</p>
+                <div class="dark-stream-grid">
+                  <div class="dark-stream-item">Strain engineering</div>
+                  <div class="dark-stream-item">Screening and optimization</div>
+                  <div class="dark-stream-item">Process development</div>
+                  <div class="dark-stream-item">Scale-up and production</div>
+                </div>
+              </div>
+
+              <!-- Right Stream -->
+              <div class="dark-stream-panel">
+                <div class="dark-stream-accent-right" aria-hidden="true"></div>
+                <h3 class="dark-stream-title">Mammalian Cell Engineering</h3>
+                <p class="dark-stream-intro">Support mammalian cell engineering workflows for complex models, assays,
+                  and candidate evaluation.</p>
+                <div class="dark-stream-grid">
+                  <div class="dark-stream-item">Cell engineering</div>
+                  <div class="dark-stream-item">Disease and biological models</div>
+                  <div class="dark-stream-item">Screening and functional assays</div>
+                  <div class="dark-stream-item">Cell-line development and characterization</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dark-explore-footer">
+              <a href="capabilities.html" class="dark-explore-link">Explore Capabilities <span
+                  class="explore-link-arrow">&rarr;</span></a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Light research-stream comparison retained for rollback; currently hidden after selection of the dark editorial version. -->
+      <div id="streams-comparison-label" class="temporary-comparison-label"
+        style="display: none; text-align: center; background-color: #f1f5f9; padding: 0.75rem; font-size: 0.85rem; font-weight: 600; color: #475569; margin: 0;">
+        Light DBTL Version Below &mdash; Temporary Comparison</div>
+
+      <div id="research-streams-light-test" style="display: none;">
+        <!-- Restored light DBTL-wheel version -->
+        <section class="redesign-streams-section" aria-labelledby="streams-title-light">
+          <div class="redesign-streams-inner">
+            <header class="redesign-streams-header">
+              <span class="redesign-streams-eyebrow">ONE INTEGRATED PLATFORM</span>
+              <h2 id="streams-title-light" class="redesign-streams-title">Two research streams. One shared execution
+                engine.</h2>
+              <p class="redesign-streams-desc">
+                Shared automation, high-throughput experimentation, analytical workflows, and data-supported
+                decision-making connect biological design with screening, characterization, and scale.
+              </p>
+            </header>
+
+            <div class="redesign-streams-layout">
+              <!-- Left Stream -->
+              <div class="redesign-stream-panel stream-microbial">
+                <h3 class="redesign-stream-title">Microbial Engineering to Biomanufacturing</h3>
+                <p class="redesign-stream-summary">Support microbial engineering workflows that extend toward bioprocess
+                  development and scale-up.</p>
+                <ul class="redesign-stream-list">
+                  <li>Strain engineering</li>
+                  <li>Screening and optimization</li>
+                  <li>Process development</li>
+                  <li>Scale-up and production</li>
+                </ul>
+              </div>
+
+              <!-- Center Engine -->
+              <div class="redesign-stream-center">
+                <div class="redesign-engine-diagram">
+                  <!-- Connectors to left and right panels -->
+                  <div class="redesign-engine-connector left-connector" aria-hidden="true"></div>
+                  <div class="redesign-engine-connector right-connector" aria-hidden="true"></div>
+
+                  <div class="redesign-engine-loop">
+                    <div class="engine-node node-design">Design</div>
+                    <div class="engine-node node-build">Build</div>
+                    <div class="engine-node node-test">Test</div>
+                    <div class="engine-node node-learn">Learn</div>
+                    <div class="engine-core">
+                      <span class="engine-core-label">Shared Platform Engine</span>
+                    </div>
+                    <!-- Decorative dashed circle and arrows -->
+                    <svg class="engine-loop-svg" viewBox="0 0 100 100" aria-hidden="true" style="overflow: visible;">
+                      <defs>
+                        <marker id="dbtl-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                          <path d="M 0 0 L 6 3 L 0 6 Z" fill="#64748b" />
+                        </marker>
+                      </defs>
+                      <circle cx="50" cy="50" r="48" fill="none" stroke="#cbd5e1" stroke-width="1.5"
+                        stroke-dasharray="4 4" />
+                      <!-- Curved Directional Arrows -->
+                      <path d="M 32.3 11.9 A 42 42 0 0 1 67.7 11.9" fill="none" stroke="#64748b" stroke-width="2"
+                        stroke-linecap="round" marker-end="url(#dbtl-arrow)" />
+                      <path d="M 88.1 32.3 A 42 42 0 0 1 88.1 67.7" fill="none" stroke="#64748b" stroke-width="2"
+                        stroke-linecap="round" marker-end="url(#dbtl-arrow)" />
+                      <path d="M 67.7 88.1 A 42 42 0 0 1 32.3 88.1" fill="none" stroke="#64748b" stroke-width="2"
+                        stroke-linecap="round" marker-end="url(#dbtl-arrow)" />
+                      <path d="M 11.9 67.7 A 42 42 0 0 1 11.9 32.3" fill="none" stroke="#64748b" stroke-width="2"
+                        stroke-linecap="round" marker-end="url(#dbtl-arrow)" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="redesign-engine-footer">
+                  Automation &middot; Experimentation &middot; Analysis &middot; Data
+                </p>
+              </div>
+
+              <!-- Right Stream -->
+              <div class="redesign-stream-panel stream-mammalian">
+                <h3 class="redesign-stream-title">Mammalian Cell Engineering</h3>
+                <p class="redesign-stream-summary">Support mammalian cell engineering workflows for complex models,
+                  assays, and candidate evaluation.</p>
+                <ul class="redesign-stream-list">
+                  <li>Cell engineering</li>
+                  <li>Disease and biological models</li>
+                  <li>Screening and functional assays</li>
+                  <li>Cell-line development and characterization</li>
+                </ul>
+              </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+              <a href="capabilities.html" class="redesign-streams-link">Explore Capabilities &rarr;</a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <style>
+        .redesign-apps-section {
+          background-color: #ffffff;
+          padding: 6rem 1.5rem;
+        }
+
+        .redesign-apps-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .redesign-apps-header {
+          text-align: center;
+          max-width: 800px;
+          margin: 0 auto 4rem auto;
+        }
+
+        .redesign-apps-eyebrow {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #900707;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 0.75rem;
+          display: block;
+        }
+
+        .redesign-apps-title {
+          font-size: clamp(2rem, 4vw, 2.75rem);
+          font-weight: 800;
+          line-height: 1.1;
+          color: #0f172a;
+          margin-bottom: 1.25rem;
+          letter-spacing: -0.02em;
+        }
+
+        .redesign-apps-desc {
+          font-size: 1.125rem;
+          color: #475569;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        .redesign-apps-layout {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+          .redesign-apps-layout {
+            flex-direction: row;
+          }
+
+          .redesign-app-panel {
+            flex: 1;
+          }
+        }
+
+        .redesign-app-panel {
+          position: relative;
+          padding: 3rem;
+          border-radius: 16px;
+          overflow: hidden;
+          color: #ffffff;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .panel-microbial {
+          background: linear-gradient(135deg, #0f766e 0%, #064e3b 100%);
+        }
+
+        .panel-mammalian {
+          background: linear-gradient(135deg, #4338ca 0%, #312e81 100%);
+        }
+
+        .redesign-app-watermark {
+          position: absolute;
+          width: 400px;
+          height: 400px;
+          background-image: url('assets/images/GF-DNA-logo.webp');
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          opacity: 0.06;
+          right: -100px;
+          bottom: -100px;
+          pointer-events: none;
+        }
+
+        .redesign-app-title {
+          font-size: 1.75rem;
+          font-weight: 700;
+          margin-bottom: 0.75rem;
+          position: relative;
+          z-index: 1;
+        }
+
+        .redesign-app-supporting {
+          font-size: 1.1rem;
+          line-height: 1.5;
+          margin-bottom: 2rem;
+          opacity: 0.9;
+          position: relative;
+          z-index: 1;
+        }
+
+        .redesign-app-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          position: relative;
+          z-index: 1;
+        }
+
+        .redesign-app-list li {
+          font-size: 1.05rem;
+          font-weight: 500;
+          padding-left: 1.5rem;
+          position: relative;
+        }
+
+        .redesign-app-list li::before {
+          content: "→";
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 0.7;
+        }
+
+        .redesign-apps-footer {
+          margin-top: 4rem;
+          text-align: center;
+        }
+
+        .redesign-apps-link {
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: #0f172a;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: color 0.2s;
+        }
+
+        .redesign-apps-link:hover,
+        .redesign-apps-link:focus {
+          color: #900707;
+          outline: 2px solid #900707;
+          outline-offset: 4px;
+        }
+      </style>
+
+      <!-- Previous standalone outputs and applications sections retained for rollback after consolidation. -->
+      <section class="redesign-apps-section hidden-for-consolidation" aria-labelledby="apps-title">
+        <div class="redesign-apps-inner">
+          <header class="redesign-apps-header">
+            <span class="redesign-apps-eyebrow">WHERE THE PLATFORM IS APPLIED</span>
+            <h2 id="apps-title" class="redesign-apps-title">From biological discovery to scalable production.</h2>
+            <p class="redesign-apps-desc">
+              Researchers use the platform across microbial engineering, biomanufacturing, mammalian cell biology,
+              therapeutic discovery, and emerging areas of biological design.
+            </p>
+          </header>
+
+          <div class="redesign-apps-layout">
+            <div class="redesign-app-panel panel-microbial">
+
+              <h3 class="redesign-app-title">Microbial &amp; Biomanufacturing Applications</h3>
+              <p class="redesign-app-supporting">Engineer microbial systems, evaluate production performance, and move
+                promising processes toward scale.</p>
+              <ul class="redesign-app-list">
+                <li>Sustainable chemicals and materials</li>
+                <li>Agriculture and environmental biotechnology</li>
+                <li>Food, nutrition, and fermentation</li>
+                <li>Industrial biotechnology</li>
+                <li>Enzymes, proteins, and biomolecules</li>
+                <li>Microbial process development and scale-up</li>
+              </ul>
+            </div>
+
+            <div class="redesign-app-panel panel-mammalian">
+
+              <h3 class="redesign-app-title">Mammalian &amp; Discovery Applications</h3>
+              <p class="redesign-app-supporting">Build and study complex mammalian systems for discovery, screening,
+                modelling, and therapeutic research.</p>
+              <ul class="redesign-app-list">
+                <li>Drug discovery and screening</li>
+                <li>Disease modelling and basic research</li>
+                <li>Cell and gene therapy development</li>
+                <li>Functional genomics</li>
+                <li>Cell-line and assay development</li>
+                <li>AI-enabled biological design</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="redesign-apps-footer">
+            <a href="capabilities.html" class="redesign-apps-link">Explore platform capabilities &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        .hidden-for-consolidation {
+          display: none !important;
+        }
+
+        .combined-outputs-apps-section {
+          background-color: #ffffff;
+          padding: 6rem 1.5rem;
+          border-bottom: 1px solid #e2e8f0;
+        }
+
+        .combined-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 2;
+        }
+
+        .combined-header {
+          text-align: center;
+          max-width: 800px;
+          margin: 0 auto 4rem auto;
+        }
+
+        .combined-eyebrow {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #900707;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 0.75rem;
+          display: block;
+        }
+
+        .combined-title {
+          font-size: clamp(2rem, 4vw, 2.75rem);
+          font-weight: 800;
+          line-height: 1.1;
+          color: #0f172a;
+          margin-bottom: 1.25rem;
+          letter-spacing: -0.02em;
+        }
+
+        .combined-desc {
+          font-size: 1.125rem;
+          color: #475569;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        /* Outputs Row */
+        .combined-outputs-row {
+          display: grid;
+          gap: 1.5rem;
+          margin-bottom: 4rem;
+        }
+
+        @media (min-width: 1024px) {
+          .combined-outputs-row {
+            grid-template-columns: repeat(6, 1fr);
+          }
+
+          .combined-output-item {
+            border-right: 1px solid #e2e8f0;
+            padding: 0 1rem;
+          }
+
+          .combined-output-item:last-child {
+            border-right: none;
+          }
+        }
+
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .combined-outputs-row {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem 2rem;
+          }
+        }
+
+        @media (max-width: 639px) {
+          .combined-outputs-row {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem 1rem;
+          }
+        }
+
+        .combined-output-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .combined-output-icon {
+          width: 60px;
+          height: 60px;
+          margin-bottom: 1.25rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #f8fafc;
+          border-radius: 50%;
+          padding: 12px;
+        }
+
+        .combined-output-icon svg {
+          width: 100%;
+          height: 100%;
+          stroke: #1e3a8a;
+          stroke-width: 1.5;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          fill: none;
+        }
+
+        .combined-output-label {
+          font-size: 1.05rem;
+          font-weight: 600;
+          color: #0f172a;
+          line-height: 1.3;
+        }
+
+        /* Transition Label */
+        .combined-transition-label {
+          text-align: center;
+          font-size: 1.125rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin: 0 auto 2.5rem auto;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+        }
+
+        .combined-transition-label::before,
+        .combined-transition-label::after {
+          content: "";
+          flex: 1;
+          height: 1px;
+          background-color: #e2e8f0;
+          max-width: 100px;
+        }
+
+        /* Applications Grid */
+        .combined-apps-grid {
+          display: grid;
+          gap: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+          .combined-apps-grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .combined-apps-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 639px) {
+          .combined-apps-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .combined-app-group {
+          background-color: #f8fafc;
+          border: 1px solid #e2e8f0;
+          border-radius: 8px;
+          padding: 1.5rem;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .combined-app-title {
+          font-size: 1.125rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin-bottom: 1rem;
+          padding-bottom: 0.75rem;
+          position: relative;
+        }
+
+        .combined-app-title::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 24px;
+          height: 2px;
+          background-color: #900707;
+        }
+
+        .combined-app-terms {
+          font-size: 0.95rem;
+          color: #475569;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        .redesign-app-icon-pair {
+          display: flex;
+          gap: 16px;
+          margin-bottom: 0.85rem;
+          color: #1e3a8a;
+        }
+
+        .redesign-app-icon-pair svg {
+          width: 32px;
+          height: 32px;
+          stroke: currentColor;
+          fill: none;
+        }
+
+        @media (max-width: 639px) {
+          .redesign-app-icon-pair svg {
+            width: 28px;
+            height: 28px;
+          }
+        }
+      </style>
+
+      <section class="combined-outputs-apps-section" aria-label="Outputs and Applications">
+        <div class="combined-inner">
+          <header class="combined-header">
+            <span class="combined-eyebrow">BROAD OUTPUTS AND APPLICATION SPACES</span>
+            <h2 class="combined-title">Biological systems, technologies, and products across a broad application
+              landscape.</h2>
+            <p class="combined-desc">Biofoundries combine automation and high-throughput experimentation to accelerate
+              the development of:</p>
+          </header>
+
+          <div class="combined-outputs-row">
+            <div class="combined-output-item">
+              <div class="combined-output-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8" />
+                  <circle cx="12" cy="12" r="2.5" />
+                  <path d="M22 12h-2 M12 22v-2 M2 12h2 M12 2v2" />
+                </svg>
+              </div>
+              <span class="combined-output-label">Engineered cells</span>
+            </div>
+            <div class="combined-output-item">
+              <div class="combined-output-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="6" cy="18" r="3" />
+                  <circle cx="12" cy="6" r="3" />
+                  <circle cx="18" cy="18" r="3" />
+                  <path d="M7.5 15.5l3-7 M13.5 8.5l3 7" />
+                </svg>
+              </div>
+              <span class="combined-output-label">Proteins</span>
+            </div>
+            <div class="combined-output-item">
+              <div class="combined-output-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <polygon points="12 5 18 8.5 18 15.5 12 19 6 15.5 6 8.5" />
+                  <line x1="18" y1="15.5" x2="22" y2="18" />
+                  <line x1="6" y1="15.5" x2="2" y2="18" />
+                  <line x1="12" y1="5" x2="12" y2="1" />
+                </svg>
+              </div>
+              <span class="combined-output-label">Small molecules</span>
+            </div>
+            <div class="combined-output-item">
+              <div class="combined-output-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 18v-6" />
+                  <circle cx="12" cy="20" r="2" />
+                  <path d="M8 8a6 6 0 018 0" />
+                  <path d="M5 5a10 10 0 0114 0" />
+                </svg>
+              </div>
+              <span class="combined-output-label">Biosensors</span>
+            </div>
+            <div class="combined-output-item">
+              <div class="combined-output-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <g transform="rotate(-45 12 12)">
+                    <rect x="4" y="8" width="16" height="8" rx="4" />
+                    <line x1="12" y1="8" x2="12" y2="16" />
+                  </g>
+                </svg>
+              </div>
+              <span class="combined-output-label">Therapeutic technologies</span>
+            </div>
+            <div class="combined-output-item">
+              <div class="combined-output-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M10 2v6l-6 12a2 2 0 002 2h12a2 2 0 002-2l-6-12V2" />
+                  <line x1="8" y1="2" x2="16" y2="2" />
+                  <line x1="7" y1="16" x2="17" y2="16" />
+                </svg>
+              </div>
+              <span class="combined-output-label">Bio-based products</span>
+            </div>
+          </div>
+
+          <div class="combined-transition-label">Application areas</div>
+
+          <div class="combined-apps-grid">
+            <div class="combined-app-group">
+              <div class="redesign-app-icon-pair" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+                  <path d="M17 18h1" />
+                  <path d="M12 18h1" />
+                  <path d="M7 18h1" />
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                  <path d="M3 3v5h5" />
+                </svg>
+              </div>
+              <h3 class="combined-app-title">Industrial &amp; Sustainable Biomanufacturing</h3>
+              <p class="combined-app-terms">Biopolymers &middot; Bio-based materials &middot; Chemicals &middot; Natural
+                products &middot; Enzymes &middot; Fermentation</p>
+            </div>
+            <div class="combined-app-group">
+              <div class="redesign-app-icon-pair" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M7 20h10" />
+                  <path d="M10 20c5.5-2.5.8-6.4 3-10" />
+                  <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" />
+                  <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z" />
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" />
+                  <circle cx="10" cy="14" r="1.5" />
+                  <circle cx="15" cy="11" r="2" />
+                  <circle cx="9" cy="9" r="2" />
+                </svg>
+              </div>
+              <h3 class="combined-app-title">Food, Agriculture &amp; Environmental Biotechnology</h3>
+              <p class="combined-app-terms">Alternative proteins &middot; Novel ingredients &middot; Crop biologicals
+                &middot; Plant biotechnology &middot; Microbiomes &middot; Waste-to-value</p>
+            </div>
+            <div class="combined-app-group">
+              <div class="redesign-app-icon-pair" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M21 7 6.82 21.18a2.83 2.83 0 0 1-3.99-.01v0a2.83 2.83 0 0 1 0-4L17 3" />
+                  <path d="m16 2 6 6" />
+                  <path d="M12 16H4" />
+                </svg>
+              </div>
+              <h3 class="combined-app-title">Therapeutic Discovery &amp; Cell Engineering</h3>
+              <p class="combined-app-terms">Drug discovery &middot; Cell and gene therapy research &middot; Disease
+                models &middot; Cell engineering &middot; Functional assays</p>
+            </div>
+            <div class="combined-app-group">
+              <div class="redesign-app-icon-pair" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="16" y="16" width="6" height="6" rx="1" />
+                  <rect x="2" y="16" width="6" height="6" rx="1" />
+                  <rect x="9" y="2" width="6" height="6" rx="1" />
+                  <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" />
+                  <path d="M12 12V8" />
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                  <line x1="3" y1="9" x2="21" y2="9" />
+                  <line x1="3" y1="15" x2="21" y2="15" />
+                  <line x1="9" y1="3" x2="9" y2="21" />
+                  <line x1="15" y1="3" x2="15" y2="21" />
+                </svg>
+              </div>
+              <h3 class="combined-app-title">Screening, Modelling &amp; Biological Design</h3>
+              <p class="combined-app-terms">Assay development &middot; Phenotypic screening &middot; Functional genomics
+                &middot; Candidate selection &middot; AI-enabled design &middot; Programmable biology</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        .redesign-testimonials-section {
+          background-color: #f8fafc;
+          padding: 6rem 1.5rem;
+          border-top: 1px solid #e2e8f0;
+          position: relative;
+        }
+
+        .redesign-testimonials-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 2;
+        }
+
+        .redesign-testimonials-header {
+          text-align: center;
+          max-width: 760px;
+          margin: 0 auto 4rem auto;
+        }
+
+        .redesign-testimonials-eyebrow {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #900707;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 0.75rem;
+          display: block;
+        }
+
+        .redesign-testimonials-title {
+          font-size: clamp(2rem, 4vw, 2.75rem);
+          font-weight: 800;
+          line-height: 1.1;
+          color: #0f172a;
+          letter-spacing: -0.02em;
+        }
+
+        .redesign-testimonials-layout {
+          display: grid;
+          gap: 2rem;
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+
+        @media (min-width: 768px) {
+          .redesign-testimonials-layout {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .redesign-testimonials-layout {
+            grid-template-columns: 1.4fr 1fr;
+          }
+        }
+
+        .redesign-testimonial-card {
+          background-color: #ffffff;
+          border: 1px solid #e2e8f0;
+          border-radius: 12px;
+          padding: 2.5rem;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .featured-testimonial {
+          grid-row: span 2;
+        }
+
+        .redesign-testimonial-quote {
+          font-size: 1.25rem;
+          line-height: 1.6;
+          color: #1e293b;
+          margin: 0 0 2rem 0;
+        }
+
+        .redesign-testimonial-quote-small {
+          font-size: 1.05rem;
+          line-height: 1.6;
+          color: #334155;
+          margin: 0 0 1.5rem 0;
+        }
+
+        .redesign-testimonial-author {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          border-top: 1px solid #f1f5f9;
+          padding-top: 1.5rem;
+        }
+
+        .redesign-author-photo {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          object-fit: cover;
+          background-color: #e2e8f0;
+        }
+
+        .redesign-author-details {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .redesign-author-name {
+          font-weight: 700;
+          font-size: 1rem;
+          color: #0f172a;
+          margin-bottom: 0.15rem;
+        }
+
+        .redesign-author-title {
+          font-size: 0.9rem;
+          color: #64748b;
+        }
+      </style>
+
+      <!-- <section class="redesign-testimonials-section" aria-label="Testimonials">
+        <div class="redesign-testimonials-inner">
+          <header class="redesign-testimonials-header">
+            <span class="redesign-testimonials-eyebrow">FROM OUR RESEARCH COMMUNITY</span>
+            <h2 class="redesign-testimonials-title">What researchers say about working with the platform.</h2>
+          </header>
+
+          <div class="redesign-testimonials-layout">
+            <div class="redesign-testimonial-card featured-testimonial">
+              <blockquote class="redesign-testimonial-quote">
+                "The bioprocessing team has been a valuable partner for our development work. Their expertise and
+                experience facilitated onboarding our fungal organism, adapting our protocol, and transferring our
+                process from shake flasks to 3- to 20-liter bioreactor scale. Along the way, they were accessible,
+                flexible, and collaborative, and welcomed our on-site presence during the work. We look forward to
+                continuing this work with them as we move toward pilot scale."
+              </blockquote>
+              <div class="redesign-testimonial-author">
+                <img src="assets/images/clients/Mahsa Alimi.webp" alt="Mahsa Alimi" class="redesign-author-photo">
+                <div class="redesign-author-details">
+                  <span class="redesign-author-name">Mahsa Alimi</span>
+                  <span class="redesign-author-title">Co-Founder &amp; CSO, Biosam</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="redesign-testimonial-card">
+              <blockquote class="redesign-testimonial-quote-small">
+                "Direct access to the platform helped us use the Echo acoustic droplet ejection system for precise
+                reagent printing as part of our prototype development. The team supported method onboarding, trained us
+                on the workflow, and gave us access to specialized instrumentation that would have been difficult to
+                build internally. It has been a practical way to move our R&D forward while staying lean."
+              </blockquote>
+              <div class="redesign-testimonial-author">
+                <img src="assets/images/clients/Vahid Hamidi.webp" alt="Vahid Hamidi" class="redesign-author-photo">
+                <div class="redesign-author-details">
+                  <span class="redesign-author-name">Vahid Hamidi</span>
+                  <span class="redesign-author-title">Co-Founder &amp; CSO, Labionyx</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- <style>
+        .redesign-engage-section {
+          background-color: #ffffff;
+          padding: 6rem 1.5rem;
+          position: relative;
+        }
+
+        .redesign-engage-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .redesign-engage-header {
+          text-align: center;
+          margin: 0 auto 4rem auto;
+          max-width: 720px;
+        }
+
+        .redesign-engage-eyebrow {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #900707;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 0.75rem;
+          display: block;
+        }
+
+        .redesign-engage-title {
+          font-size: clamp(2rem, 4vw, 2.75rem);
+          font-weight: 800;
+          line-height: 1.1;
+          color: #0f172a;
+          margin-bottom: 1.25rem;
+          letter-spacing: -0.02em;
+        }
+
+        .redesign-engage-desc {
+          font-size: 1.125rem;
+          color: #475569;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        .redesign-engage-grid {
+          display: grid;
+          gap: 2rem;
+          grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 640px) {
+          .redesign-engage-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem 2rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .redesign-engage-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+          }
+
+          .redesign-engage-item {
+            padding-right: 2rem;
+            border-right: 1px solid #e2e8f0;
+          }
+
+          .redesign-engage-item:last-child {
+            padding-right: 0;
+            border-right: none;
+          }
+        }
+
+        /* Mobile horizontal separators */
+        @media (max-width: 1023px) {
+          .redesign-engage-item {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+          }
+
+          .redesign-engage-item:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+          }
+        }
+
+        .redesign-engage-item {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .redesign-engage-item-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin-bottom: 0.75rem;
+        }
+
+        .redesign-engage-item-desc {
+          font-size: 1.05rem;
+          color: #475569;
+          line-height: 1.5;
+          margin: 0;
+        }
+
+        .redesign-engage-icon {
+          margin-bottom: 0.85rem;
+          color: #1e3a8a;
+        }
+
+        .redesign-engage-icon svg {
+          width: 32px;
+          height: 32px;
+          stroke: currentColor;
+          fill: none;
+        }
+
+        @media (max-width: 639px) {
+          .redesign-engage-icon svg {
+            width: 28px;
+            height: 28px;
+          }
+        }
+
+        .redesign-engage-footer {
+          margin-top: 5rem;
+          text-align: center;
+        }
+
+        .redesign-engage-link {
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: #0f172a;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: color 0.2s;
+        }
+
+        .redesign-engage-link:hover,
+        .redesign-engage-link:focus {
+          color: #900707;
+          outline: 2px solid #900707;
+          outline-offset: 4px;
+        }
+      </style>
+
+      <section class="redesign-engage-section" aria-labelledby="engage-title">
+        <div class="redesign-engage-inner">
+          <header class="redesign-engage-header">
+            <span class="redesign-engage-eyebrow">WAYS TO WORK WITH US</span>
+            <h2 id="engage-title" class="redesign-engage-title">Different projects need different ways to engage.</h2>
+            <p class="redesign-engage-desc">
+              Access the platform through research services, collaborations, direct or hosted access, and longer-term
+              partnerships.
+            </p>
+          </header>
+
+          <div class="redesign-engage-grid">
+            <div class="redesign-engage-item">
+              <div class="redesign-engage-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3 class="redesign-engage-item-title">Research Services</h3>
+              <p class="redesign-engage-item-desc">End-to-end execution of defined experimental workflows by the
+                platform team.</p>
+            </div>
+            <div class="redesign-engage-item">
+              <div class="redesign-engage-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                  <path d="m9 14 2 2 4-4" />
+                </svg>
+              </div>
+              <h3 class="redesign-engage-item-title">Research Collaborations</h3>
+              <p class="redesign-engage-item-desc">Joint research programs that combine platform capabilities with
+                partner expertise.</p>
+            </div>
+            <div class="redesign-engage-item">
+              <div class="redesign-engage-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </div>
+              <h3 class="redesign-engage-item-title">Direct &amp; Hosted Access</h3>
+              <p class="redesign-engage-item-desc">Use specialized infrastructure directly, with onboarding, training,
+                and technical support.</p>
+            </div>
+            <div class="redesign-engage-item">
+              <div class="redesign-engage-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="6" cy="19" r="3" />
+                  <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
+                  <circle cx="18" cy="5" r="3" />
+                </svg>
+              </div>
+              <h3 class="redesign-engage-item-title">Partnership Pathways</h3>
+              <p class="redesign-engage-item-desc">Strategic or longer-term engagements that connect research,
+                infrastructure, and translation.</p>
+            </div>
+          </div>
+
+          <div class="redesign-engage-footer">
+            <a href="WorkWithUs.html" class="redesign-engage-link">Explore ways to work with us &rarr;</a>
+          </div>
+        </div>
+      </section> -->
+
+      <style>
+        .redesign-cta-section {
+          background-color: #f2f4f5;
+          padding: 5rem 1.5rem 9rem 1.5rem;
+          position: relative;
+          overflow: hidden;
+          text-align: center;
+          border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .redesign-cta-bg {
+          display: none;
+        }
+
+        .redesign-cta-inner {
+          max-width: 720px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 2;
+        }
+
+        .redesign-cta-title {
+          font-size: clamp(2.25rem, 4vw, 3rem);
+          font-weight: 800;
+          line-height: 1.1;
+          color: #0f172a;
+          margin-bottom: 1.25rem;
+          letter-spacing: -0.02em;
+        }
+
+        .redesign-cta-desc {
+          font-size: 1.15rem;
+          color: #475569;
+          line-height: 1.6;
+          margin-bottom: 2.5rem;
+        }
+
+        .redesign-cta-buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          align-items: center;
+          justify-content: center;
+        }
+
+        @media (min-width: 640px) {
+          .redesign-cta-buttons {
+            flex-direction: row;
+          }
+        }
+
+        .redesign-cta-primary {
+          background-color: #0f172a;
+          color: #ffffff;
+          font-weight: 700;
+          font-size: 1.05rem;
+          padding: 0.85rem 1.75rem;
+          border-radius: 6px;
+          text-decoration: none;
+          transition: background-color 0.2s, color 0.2s, transform 0.2s;
+          border: 1px solid transparent;
+          width: 100%;
+        }
+
+        @media (min-width: 640px) {
+          .redesign-cta-primary {
+            width: auto;
+          }
+        }
+
+        .redesign-cta-primary:hover,
+        .redesign-cta-primary:focus {
+          background-color: #1e293b;
+          transform: translateY(-1px);
+          outline: none;
+        }
+
+        .redesign-cta-primary:focus-visible {
+          outline: 2px solid #0f172a;
+          outline-offset: 4px;
+        }
+
+        .redesign-cta-secondary {
+          background-color: transparent;
+          color: #0f172a;
+          font-weight: 600;
+          font-size: 1.05rem;
+          padding: 0.85rem 1.75rem;
+          border-radius: 6px;
+          text-decoration: none;
+          transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+          border: 1px solid #0f172a;
+          width: 100%;
+        }
+
+        @media (min-width: 640px) {
+          .redesign-cta-secondary {
+            width: auto;
+          }
+        }
+
+        .redesign-cta-secondary:hover,
+        .redesign-cta-secondary:focus {
+          background-color: rgba(15, 23, 42, 0.05);
+          border-color: #0f172a;
+          transform: translateY(-1px);
+          outline: none;
+        }
+
+        .redesign-cta-secondary:focus-visible {
+          outline: 2px solid #0f172a;
+          outline-offset: 4px;
+        }
+      </style>
+
+      <section class="redesign-cta-section" aria-labelledby="cta-title">
+        <img src="assets/images/GF-DNA-logo.webp" alt="" class="redesign-cta-bg">
+        <div class="redesign-cta-inner">
+          <h2 id="cta-title" class="redesign-cta-title">Ready to accelerate your research?</h2>
+          <p class="redesign-cta-desc">
+            Tell us what you are building, testing, studying, or scaling. We’ll help identify the right platform
+            capabilities, access model, and next step.
+          </p>
+          <div class="redesign-cta-buttons">
+            <a href="WorkWithUs.html" class="redesign-cta-primary">Work With Us</a>
+            <a href="capabilities.html" class="redesign-cta-secondary">Explore Capabilities</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer"
+    style="margin-top: 0; background: #07111F; color: #f0f2f5; padding: clamp(32px, 5vw, 48px) 1.5rem clamp(18px, 3vw, 24px);">
+    <div class="container-wide" style="max-width: 1200px; margin: 0 auto;">
+      <div class="footer-main-row"
+        style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem; margin-bottom: 2rem;">
+
+        <!-- Left Side: Brand -->
+        <div class="footer-brand" style="flex: 1 1 300px;">
+          <a href="index.html" aria-label="Concordia Genome Foundry homepage"
+            style="display: block; width: fit-content; text-decoration: none;">
+            <img src="assets/icons/genome_foundry_logo.svg" alt="Concordia Genome Foundry"
+              style="max-width: 150px; width: 100%; height: auto; margin-bottom: 1rem; display: block; filter: brightness(0) invert(1);">
+          </a>
+          <p style="font-size: 14px; line-height: 1.5; color: #a1a1aa; margin-bottom: 0.75rem; max-width: 480px;">
+            An integrated research platform bringing together high-throughput bioengineering, microbial and mammalian
+            workflow development, and microbial bioprocessing under one roof.
+          </p>
+          <p
+            style="font-size: 13px; font-weight: 600; color: #d4d4d8; letter-spacing: 0.05em; text-transform: uppercase; margin: 0;">
+            A Concordia University research platform.
+          </p>
+        </div>
+
+        <!-- Right Side: Links -->
+        <div class="footer-contact" style="display: flex; flex-wrap: wrap; gap: 3rem; padding-top: 0.25rem;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <a href="mailto:genomefoundry@concordia.ca" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              genomefoundry@concordia.ca
+            </a>
+            <a href="https://www.linkedin.com/company/concordia-genome-foundry/" target="_blank" rel="noopener"
+              class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="WorkWithUs.html" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+              Work With Us
+            </a>
+            <a href="partners.html" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Our Partners &amp; Supporters
+            </a>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">Explore</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="about.html" style="color: inherit; text-decoration: none; transition: opacity 0.2s;">About</a>
+              <a href="capabilities.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Capabilities</a>
+              <a href="publications.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Research &amp; Impact</a>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">User
+              Tools</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="https://foundry.concordia.ca/bookr/"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrument
+                Booking</a>
+              <a href="https://foundry-lims.concordia.ca/"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;"
+                title="Concordia network or authorized access may be required."
+                aria-label="LIMS, Concordia access may be required">LIMS (Concordia access)</a>
+            </div>
+            <span
+              style="font-size: 0.75rem; color: #6b7280; display: block; margin-top: 0.75rem; max-width: 150px; line-height: 1.4;">For
+              trained users
+              with active accounts.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom-row"
+        style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 13px; color: #a1a1aa;">
+        <p style="margin: 0;">&copy; 2026 Concordia Genome Foundry. All rights reserved.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="https://www.concordia.ca/privacy.html" target="_blank" rel="noopener noreferrer"
+            style="color: #a1a1aa; text-decoration: none; transition: color 0.2s;">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="wwu-modal-overlay" id="wwu-modal-overlay">
+    <div class="wwu-modal" id="wwu-dynamic-modal" role="dialog" aria-labelledby="wwu-modal-title" aria-modal="true"
+      tabindex="-1">
+      <div class="wwu-modal-header">
+        <h3 id="wwu-modal-title" class="wwu-modal-title"></h3>
+        <button class="wwu-modal-close" id="wwu-modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="wwu-modal-body" id="wwu-modal-body">
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

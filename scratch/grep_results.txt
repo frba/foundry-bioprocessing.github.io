@@ -1,0 +1,17 @@
+449: .iteration-panels {
+458: .iter-panel {
+468: .iter-panel.foundry {
+518: .iter-panel-icon {
+529: .foundry .iter-panel-icon {
+535: .bioprocessing .iter-panel-icon {
+793: .iteration-panels {
+799: .iter-panel.foundry {
+847: .iter-panel.bioprocessing {
+2899: .iter-panel,
+2907: .iter-panel *,
+2928: .iter-panel-icon {
+2933: .iter-panel-icon svg {
+3105: .iter-panel.mammalian {
+3106: /* Inherits from .iter-panel */
+3109: .iter-panel.mammalian:hover {
+3114: .mammalian .iter-panel-icon {

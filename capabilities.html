@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capabilities | Concordia Genome Foundry</title>
+  <meta name="description"
+    content="Discover our technology platform across synthetic biology, mammalian cell engineering, and microbial bioprocessing cores.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .tech-core-section {
+      padding: 6rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .tech-core-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .tech-core-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .tech-core-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .tech-core-layout .core-image-col {
+        padding-top: 3.75rem;
+      }
+    }
+
+    .core-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .core-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .core-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .spec-item {
+      padding: 1rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+    }
+
+    .spec-val {
+      font-family: var(--font-mono);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .spec-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Core Color Scheme */
+    .tech-core-foundry {
+      --core-accent: #0369a1;
+      --core-accent-soft: #e0f2fe;
+      --core-border: #bae6fd;
+    }
+
+    .tech-core-mammalian {
+      --core-accent: #6b21a8;
+      --core-accent-soft: #f3e8ff;
+      --core-border: #e9d5ff;
+    }
+
+    .tech-core-bioprocessing {
+      --core-accent: #166534;
+      --core-accent-soft: #dcfce7;
+      --core-border: #bbf7d0;
+    }
+
+    /* Apply colors to accent elements */
+    .tech-core-section .capacity-pill {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      color: #334155;
+    }
+
+    .tech-core-section .thumbnail.active,
+    .tech-core-section .thumbnail:hover,
+    .tech-core-section .thumbnail:focus-visible {
+      border-color: #cbd5e1;
+      outline: none;
+    }
+
+    .tech-core-section .thumbnail.active {
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    }
+
+    .tech-core-section .spec-val {
+      color: var(--core-accent, var(--accent-primary));
+    }
+
+    .jump-pill {
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      transition: filter 0.2s ease;
+    }
+
+    .jump-pill:hover {
+      filter: brightness(0.95);
+    }
+
+    @media (max-width: 900px) {
+      .jump-pill {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .jump-pill {
+        white-space: normal;
+        text-align: center;
+      }
+    }
+
+    /* Regional Watermarks */
+    #tech-bg-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .tech-bg-element {
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: 0.08;
+      will-change: transform;
+    }
+
+    .tech-bg-1 {
+      width: 140vw;
+      height: 140vw;
+      max-width: 1800px;
+      max-height: 1800px;
+      top: 5%;
+      left: -30%;
+      background-image: url('assets/images/GF-logo.webp');
+    }
+
+    .tech-bg-2 {
+      width: 140vw;
+      height: 140vw;
+      max-width: 1800px;
+      max-height: 1800px;
+      top: 70%;
+      right: -30%;
+      background-image: url('assets/images/BP-logo.webp');
+    }
+
+    @media (max-width: 768px) {
+      .tech-bg-1 {
+        width: 160vw;
+        height: 160vw;
+        top: 2%;
+        left: -30%;
+        opacity: 0.07;
+      }
+
+      .tech-bg-2 {
+        width: 160vw;
+        height: 160vw;
+        top: 68%;
+        right: -30%;
+        opacity: 0.07;
+      }
+
+      /* Frost effect so watermark shows through solid sections on mobile */
+      .tech-core-section,
+      .page-hero,
+      .moderate-bottom-cta {
+        background: rgba(255, 255, 255, 0.92) !important;
+      }
+
+      .tech-core-mammalian {
+        background: rgba(248, 249, 250, 0.92) !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tech-bg-element {
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/icons/genome_foundry_logo.svg" alt="Genome Foundry Logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="capabilities.html" class="active">Capabilities</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="mobile-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-nav" class="mobile-nav">
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="capabilities.html" class="active">Capabilities</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="mobile-nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div id="capabilities-wrapper">
+
+
+    <div id="capabilities-redesign-v1">
+      <!-- Experimental Capabilities redesign will be built here in stages. -->
+      <style>
+        .redesign-hero {
+          background-color: #0b1120;
+          color: #f8fafc;
+          position: relative;
+          overflow: hidden;
+          padding: calc(94px + 3rem) 1.5rem 0 1.5rem;
+          min-height: auto;
+        }
+
+        #redesign-microbial-engineering,
+        #redesign-mammalian-engineering,
+        #redesign-bioprocessing {
+          scroll-margin-top: 120px;
+        }
+
+        .redesign-hero-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr;
+          position: relative;
+          z-index: 2;
+        }
+
+        .redesign-hero-content {
+          max-width: 600px;
+          padding-bottom: 3rem;
+        }
+
+        .redesign-eyebrow {
+          font-size: 0.875rem;
+          font-weight: 700;
+          color: #bae6fd;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 1.25rem;
+          display: block;
+        }
+
+        .redesign-hero-title {
+          font-size: clamp(2rem, 3.5vw, 3rem);
+          font-weight: 800;
+          line-height: 1.15;
+          color: #ffffff;
+          margin-bottom: 1.5rem;
+          letter-spacing: -0.02em;
+        }
+
+        .redesign-hero-body {
+          font-size: 1.125rem;
+          color: #cbd5e1;
+          line-height: 1.6;
+          margin-bottom: 2.5rem;
+        }
+
+        .redesign-jump-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1.25rem;
+        }
+
+        @media (min-width: 1000px) {
+          .redesign-jump-links {
+            flex-wrap: nowrap;
+          }
+
+          .redesign-jump-link {
+            white-space: nowrap;
+          }
+        }
+
+        .redesign-jump-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.25rem;
+          padding: 0.25rem 0;
+          font-size: 1rem;
+          font-weight: 600;
+          color: #38bdf8;
+          text-decoration: none;
+          border-bottom: 1px solid transparent;
+          transition: color 0.2s, border-bottom-color 0.2s;
+        }
+
+        .redesign-jump-link:hover,
+        .redesign-jump-link:focus-visible {
+          color: #bae6fd;
+          border-bottom-color: #bae6fd;
+          outline: none;
+        }
+
+        .redesign-hero-image-col {
+          position: relative;
+          width: calc(100% + 3rem);
+          margin-left: -1.5rem;
+          height: 250px;
+          border-radius: 0;
+        }
+
+        .redesign-hero-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          display: block;
+        }
+
+        /* Desktop layout */
+        @media (min-width: 900px) {
+          .redesign-hero {
+            padding: 94px 0 0 0;
+            height: clamp(400px, 50vh, 470px);
+            display: flex;
+            align-items: center;
+          }
+
+          .redesign-hero-inner {
+            grid-template-columns: 55% 45%;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            gap: 2rem;
+            padding: 0 2rem;
+          }
+
+          .redesign-hero-content {
+            padding-bottom: 0;
+            max-width: none;
+          }
+
+          .redesign-hero-image-col {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 55%;
+            height: 100%;
+            margin-left: 0;
+          }
+
+          /* Fade gradient on left edge of the image to blend into background */
+          .redesign-hero-image-col::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(to right, #0b1120 0%, transparent 100%);
+          }
+        }
+      </style>
+
+      <section class="redesign-hero" aria-label="Capabilities Overview">
+        <div class="redesign-hero-inner">
+          <div class="redesign-hero-content">
+            <h1 class="redesign-hero-title">Capabilities</h1>
+            <p class="redesign-hero-body">An integrated platform for synthetic biology, mammalian cell engineering, and
+              microbial bioprocessing—combining automation, high-throughput experimentation, and advanced analytics to
+              accelerate discovery to impact.</p>
+
+            <div class="redesign-jump-links">
+              <a href="#redesign-microbial-engineering" class="redesign-jump-link">Microbial Engineering &darr;</a>
+              <a href="#redesign-mammalian-engineering" class="redesign-jump-link">Mammalian Cell Engineering &darr;</a>
+              <a href="#redesign-bioprocessing" class="redesign-jump-link">Bioprocessing &amp; Scale-Up &darr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="redesign-hero-image-col" aria-hidden="true">
+          <img src="assets/images/vantage-06.webp" alt="Automated liquid handler working with well plates"
+            class="redesign-hero-image">
+        </div>
+      </section>
+
+      <!-- REDESIGN: AT A GLANCE -->
+      <style>
+        .redesign-at-a-glance {
+          background-color: #ffffff;
+          padding: 3.5rem 1.5rem;
+        }
+
+        .redesign-section-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .redesign-section-eyebrow {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #0f172a;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 2rem;
+          display: block;
+        }
+
+        .redesign-aag-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        @media (min-width: 768px) {
+          .redesign-aag-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+          }
+        }
+
+        .redesign-aag-col {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+        }
+
+        @media (min-width: 768px) {
+          .redesign-aag-col:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -1.25rem;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: #e2e8f0;
+          }
+        }
+
+        .redesign-aag-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin-bottom: 1rem;
+          line-height: 1.25;
+        }
+
+        .redesign-aag-title a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .redesign-aag-title a:hover,
+        .redesign-aag-title a:focus-visible {
+          color: #0284c7;
+          text-decoration: underline;
+          text-decoration-thickness: 2px;
+          text-underline-offset: 4px;
+          outline: none;
+        }
+
+        .redesign-aag-summary {
+          font-size: 1rem;
+          color: #334155;
+          line-height: 1.5;
+          margin-bottom: 1rem;
+          flex-grow: 1;
+        }
+
+        .redesign-aag-diff {
+          font-size: 0.875rem;
+          font-weight: 600;
+          color: #0284c7;
+          letter-spacing: 0.02em;
+        }
+
+        /* REDESIGN: SHARED ENABLING CAPABILITIES */
+        .redesign-shared-cap {
+          background-color: #f8fafc;
+          padding: 3.5rem 1.5rem;
+          border-top: 1px solid #e2e8f0;
+          border-bottom: 1px solid #e2e8f0;
+        }
+
+        .redesign-shared-header {
+          margin-bottom: 2.5rem;
+        }
+
+        .redesign-shared-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #0f172a;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 0.75rem;
+        }
+
+        .redesign-shared-subtitle {
+          font-size: 1.125rem;
+          color: #475569;
+        }
+
+        .redesign-shared-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+
+        @media (min-width: 640px) {
+          .redesign-shared-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .redesign-shared-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem 2rem;
+          }
+        }
+
+        @media (min-width: 1200px) {
+          .redesign-shared-grid {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2rem;
+          }
+
+          .redesign-shared-item {
+            position: relative;
+          }
+
+          .redesign-shared-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -1rem;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            width: 1px;
+            background-color: #cbd5e1;
+          }
+        }
+
+        .redesign-shared-item-title {
+          font-size: 1.125rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin-bottom: 0.5rem;
+        }
+
+        .redesign-shared-item-desc {
+          font-size: 1rem;
+          color: #475569;
+          line-height: 1.5;
+        }
+      </style>
+
+      <!-- <section class="redesign-at-a-glance" aria-labelledby="aag-heading">
+        <div class="redesign-section-inner">
+          <span id="aag-heading" class="redesign-section-eyebrow">AT A GLANCE</span>
+
+          <div class="redesign-aag-grid">
+            <div class="redesign-aag-col">
+              <h2 class="redesign-aag-title"><a href="#redesign-microbial-engineering">Synthetic Biology &amp; Microbial
+                  Engineering</a></h2>
+              <p class="redesign-aag-summary">Design, build, and screen microbial systems in parallel.</p>
+              <div class="redesign-aag-diff">Automated &middot; High-throughput &middot; Data-rich</div>
+            </div>
+
+            <div class="redesign-aag-col">
+              <h2 class="redesign-aag-title"><a href="#redesign-mammalian-engineering">Mammalian Cell Engineering</a>
+              </h2>
+              <p class="redesign-aag-summary">Build, perturb, screen, and isolate complex mammalian cell systems.</p>
+              <div class="redesign-aag-diff">Parallel &middot; Reproducible &middot; Multi-well</div>
+            </div>
+
+            <div class="redesign-aag-col">
+              <h2 class="redesign-aag-title"><a href="#redesign-bioprocessing">Microbial Bioprocessing &amp;
+                  Scale-Up</a></h2>
+              <p class="redesign-aag-summary">Move microbial systems from process-relevant screening toward pilot-scale
+                production.</p>
+              <div class="redesign-aag-diff">Screen &middot; Optimize &middot; Scale</div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="redesign-shared-cap" aria-labelledby="shared-heading">
+        <div class="redesign-section-inner">
+          <div class="redesign-shared-header">
+            <h2 id="shared-heading" class="redesign-shared-title">SHARED ENABLING CAPABILITIES</h2>
+          </div>
+
+          <div class="redesign-shared-grid">
+            <div class="redesign-shared-item">
+              <h3 class="redesign-shared-item-title">Sequencing &amp; Library Preparation</h3>
+              <p class="redesign-shared-item-desc">Barcoded sample preparation, sequencing workflows, and molecular
+                analysis.</p>
+            </div>
+
+            <div class="redesign-shared-item">
+              <h3 class="redesign-shared-item-title">Genotyping &amp; qPCR</h3>
+              <p class="redesign-shared-item-desc">Targeted confirmation, expression analysis, and variant
+                characterization.</p>
+            </div>
+
+            <div class="redesign-shared-item">
+              <h3 class="redesign-shared-item-title">Flow cytometry / FACS</h3>
+              <p class="redesign-shared-item-desc">Population analysis, single-cell measurements, and cell sorting.</p>
+            </div>
+
+            <div class="redesign-shared-item">
+              <h3 class="redesign-shared-item-title">Imaging &amp; Phenotyping</h3>
+              <p class="redesign-shared-item-desc">High-content imaging, microscopy, plate-based measurements, and
+                phenotypic analysis.</p>
+            </div>
+
+            <div class="redesign-shared-item">
+              <h3 class="redesign-shared-item-title">HPLC &amp; Mass Spectrometry</h3>
+              <p class="redesign-shared-item-desc">Product, metabolite, and analytical characterization.</p>
+            </div>
+
+            <div class="redesign-shared-item">
+              <h3 class="redesign-shared-item-title">Automation &amp; Data Workflows</h3>
+              <p class="redesign-shared-item-desc">Liquid handling, robotic execution, workflow integration, and
+                data-supported decisions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>
+        /* REDESIGN: DETAIL SECTIONS */
+        .redesign-detail-section {
+          padding: 3rem 1.5rem;
+          background-color: #ffffff;
+          border-bottom: 1px solid #e2e8f0;
+        }
+
+        .redesign-detail-section:nth-of-type(even) {
+          background-color: #f8fafc;
+        }
+
+        .redesign-detail-inner {
+          max-width: 1440px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .redesign-detail-header,
+        .redesign-detail-content {
+          width: 100%;
+        }
+
+        @media (min-width: 900px) {
+          .redesign-detail-inner {
+            display: grid;
+            grid-template-columns: minmax(38%, 42%) 1fr;
+            gap: 4rem;
+            align-items: start;
+          }
+        }
+
+        .redesign-detail-content-column {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .redesign-detail-title {
+          font-size: 2rem;
+          font-weight: 800;
+          color: #0f172a;
+          margin-bottom: 0.75rem;
+          line-height: 1.2;
+          letter-spacing: -0.02em;
+        }
+
+        .redesign-detail-lead {
+          font-size: 1.25rem;
+          color: #334155;
+          margin-bottom: 1.5rem;
+          line-height: 1.5;
+        }
+
+        .redesign-detail-groups {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+          .redesign-detail-groups {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem 1.5rem;
+          }
+        }
+
+        @media (min-width: 1100px) {
+          .redesign-detail-groups {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (min-width: 1350px) {
+          .redesign-detail-groups {
+            grid-template-columns: repeat(4, 1fr);
+          }
+
+          .redesign-detail-group {
+            position: relative;
+            padding-right: 1.5rem;
+          }
+
+          .redesign-detail-group:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: #e2e8f0;
+          }
+        }
+
+        .redesign-detail-group-title {
+          font-size: 1.125rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin-bottom: 0.5rem;
+        }
+
+        .redesign-detail-group-desc {
+          font-size: 0.95rem;
+          color: #475569;
+          line-height: 1.5;
+        }
+
+        .redesign-detail-specs {
+          border-top: 1px solid #e2e8f0;
+          padding-top: 1.25rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+          .redesign-detail-specs {
+            gap: 0.75rem;
+          }
+        }
+
+        @media (min-width: 1100px) {
+          .redesign-detail-specs {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0.75rem 2rem;
+          }
+        }
+
+        .redesign-detail-spec {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+        }
+
+        @media (min-width: 640px) {
+          .redesign-detail-spec {
+            flex-direction: row;
+            align-items: baseline;
+            gap: 0.75rem;
+          }
+        }
+
+        .redesign-detail-spec-label {
+          font-size: 0.9rem;
+          font-weight: 700;
+          color: #0f172a;
+          white-space: nowrap;
+        }
+
+        .redesign-detail-spec-value {
+          font-size: 0.95rem;
+          color: #475569;
+        }
+
+        .redesign-gallery {
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          width: 100%;
+        }
+
+        .redesign-gallery-hero {
+          display: none;
+          width: 100%;
+          aspect-ratio: 16 / 10;
+          background-color: #f1f5f9;
+          border-radius: 0.5rem;
+          overflow: hidden;
+          position: relative;
+        }
+
+        @media (min-width: 1100px) {
+          .redesign-gallery-hero {
+            display: block;
+          }
+        }
+
+        .redesign-gallery-hero img,
+        .redesign-gallery-hero video,
+        .redesign-gallery-hero iframe {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border: none;
+        }
+
+        .redesign-gallery-hero img.contain-img {
+          object-fit: contain;
+        }
+
+        .redesign-gallery-hero img.microscopy-img {
+          object-fit: cover;
+          object-position: center;
+          width: 100%;
+          height: 100%;
+          transform: scale(1.04);
+        }
+
+        .redesign-gallery-carousel {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          gap: 1rem;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          padding-bottom: 0.5rem;
+        }
+
+        .redesign-gallery-carousel::-webkit-scrollbar {
+          display: none;
+        }
+
+        @media (min-width: 1100px) {
+          .redesign-gallery-carousel {
+            flex-wrap: wrap;
+            overflow-x: visible;
+            scroll-snap-type: none;
+            gap: 0.5rem;
+            padding-bottom: 0;
+          }
+        }
+
+        .redesign-gallery-item {
+          flex: 0 0 100%;
+          scroll-snap-align: center;
+          aspect-ratio: 16 / 10;
+          background-color: #f1f5f9;
+          border-radius: 0.5rem;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+          border: none;
+          padding: 0;
+        }
+
+        @media (min-width: 1100px) {
+          .redesign-gallery-item {
+            flex: 0 0 80px;
+            aspect-ratio: 16 / 10;
+            border-radius: 0.25rem;
+            opacity: 0.6;
+            transition: opacity 0.2s, box-shadow 0.2s;
+          }
+
+          .redesign-gallery-item:hover {
+            opacity: 1;
+          }
+
+          .redesign-gallery-item.active {
+            opacity: 1;
+            box-shadow: 0 0 0 2px #0284c7;
+          }
+        }
+
+        .redesign-gallery-item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        .redesign-gallery-item img.contain-img {
+          object-fit: contain;
+        }
+
+        .redesign-gallery-item video,
+        .redesign-gallery-item iframe {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border: none;
+          display: block;
+        }
+
+        .redesign-gallery-play-overlay {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 48px;
+          height: 48px;
+          background-color: rgba(0, 0, 0, 0.6);
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.25rem;
+          pointer-events: none;
+        }
+
+        @media (min-width: 1100px) {
+          .redesign-gallery-play-overlay {
+            width: 24px;
+            height: 24px;
+            font-size: 0.75rem;
+          }
+        }
+
+        .redesign-gallery-hero-play {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 64px;
+          height: 64px;
+          background-color: rgba(15, 23, 42, 0.8);
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          cursor: pointer;
+          border: 2px solid rgba(255, 255, 255, 0.5);
+          transition: background-color 0.2s, transform 0.2s;
+          padding: 0;
+          z-index: 10;
+        }
+
+        .redesign-gallery-hero-play:hover,
+        .redesign-gallery-hero-play:focus {
+          background-color: rgba(2, 132, 199, 0.9);
+          transform: translate(-50%, -50%) scale(1.05);
+          outline: 2px solid white;
+          outline-offset: 2px;
+        }
+
+        .redesign-gallery-mobile-controls {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 0.25rem;
+        }
+
+        @media (min-width: 1100px) {
+          .redesign-gallery-mobile-controls {
+            display: none;
+          }
+        }
+
+        .redesign-gallery-counter {
+          font-size: 0.85rem;
+          font-weight: 600;
+          color: #64748b;
+        }
+
+        .redesign-gallery-caption {
+          font-size: 0.9rem;
+          color: #475569;
+          line-height: 1.4;
+          margin-top: 0.25rem;
+        }
+
+        /* REDESIGN: CTAs AND NEW SECTIONS */
+        .redesign-detail-link-container {
+          margin-top: 0.5rem;
+          display: flex;
+          justify-content: flex-start;
+        }
+
+        @media (min-width: 1100px) {
+          .redesign-detail-link-container {
+            margin-top: 0;
+            margin-left: auto;
+            justify-content: flex-end;
+            align-self: center;
+          }
+        }
+
+        .redesign-detail-workflow-link {
+          font-size: 0.95rem;
+          font-weight: 600;
+          color: #0369a1;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          padding: 0.5rem 0;
+          transition: color 0.2s;
+          outline-offset: 4px;
+        }
+
+        .redesign-detail-workflow-link span {
+          transition: transform 0.2s;
+        }
+
+        .redesign-detail-workflow-link:hover,
+        .redesign-detail-workflow-link:focus {
+          color: #0ea5e9;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+
+        .redesign-detail-workflow-link:hover span,
+        .redesign-detail-workflow-link:focus span {
+          transform: translateX(4px);
+        }
+
+        /* How Projects Engage */
+        .redesign-engagement-section {
+          background-color: #f8fafc;
+          padding: 4rem 1.5rem;
+          border-bottom: 1px solid #e2e8f0;
+        }
+
+        .redesign-engagement-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        @media (min-width: 900px) {
+          .redesign-engagement-inner {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+          }
+        }
+
+        .redesign-engagement-content {
+          flex: 1;
+        }
+
+        .redesign-engagement-title {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #64748b;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 1rem;
+        }
+
+        .redesign-engagement-body {
+          font-size: 1.1rem;
+          color: #334155;
+          line-height: 1.6;
+        }
+
+        .redesign-engagement-action {
+          flex: 0 0 auto;
+        }
+
+        .redesign-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 600;
+          font-size: 1rem;
+          padding: 0.75rem 1.5rem;
+          text-decoration: none;
+          transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+        .redesign-btn:focus {
+          outline: 2px solid #0369a1;
+          outline-offset: 2px;
+        }
+
+        .redesign-btn-outline {
+          color: #0f172a;
+          background-color: transparent;
+          border: 1px solid #cbd5e1;
+        }
+
+        .redesign-btn-outline:hover {
+          background-color: #f1f5f9;
+          border-color: #94a3b8;
+        }
+
+        .redesign-btn-primary {
+          background-color: #0f172a;
+          color: #ffffff;
+          border: 1px solid #0f172a;
+        }
+
+        .redesign-btn-primary:hover {
+          background-color: #1e293b;
+        }
+
+        .redesign-btn-secondary {
+          background-color: transparent;
+          color: #0f172a;
+          border: 1px solid #cbd5e1;
+        }
+
+        .redesign-btn-secondary:hover {
+          background-color: #f8fafc;
+          border-color: #94a3b8;
+        }
+
+        /* Final CTA Section */
+        .redesign-final-cta-section {
+          padding: 5rem 1.5rem;
+          background-color: #ffffff;
+          text-align: center;
+        }
+
+        .redesign-final-cta-inner {
+          max-width: 800px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .redesign-final-cta-title {
+          font-size: 2.25rem;
+          font-weight: 800;
+          color: #0f172a;
+          margin-bottom: 1rem;
+          letter-spacing: -0.02em;
+        }
+
+        .redesign-final-cta-body {
+          font-size: 1.15rem;
+          color: #475569;
+          line-height: 1.6;
+          margin-bottom: 2.5rem;
+          max-width: 600px;
+        }
+
+        .redesign-final-cta-actions {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          width: 100%;
+          max-width: 320px;
+        }
+
+        @media (min-width: 640px) {
+          .redesign-final-cta-actions {
+            flex-direction: row;
+            justify-content: center;
+            max-width: none;
+            width: auto;
+          }
+        }
+      </style>
+
+      <section id="redesign-microbial-engineering" class="redesign-detail-section" aria-labelledby="microbial-title">
+        <div class="redesign-detail-inner">
+          <div class="redesign-detail-media-column">
+            <div class="redesign-gallery">
+              <div class="redesign-gallery-hero">
+                <img src="assets/images/biomek-01.webp" alt="View automated liquid handling platform">
+              </div>
+
+              <div class="redesign-gallery-mobile-controls">
+                <span class="redesign-gallery-counter">1 / 5</span>
+              </div>
+
+              <div class="redesign-gallery-carousel">
+                <button class="redesign-gallery-item active" type="button" data-type="image"
+                  data-src="assets/images/biomek-01.webp"
+                  data-caption="Automated liquid handling for parallel microbial engineering workflows"
+                  aria-label="View automated liquid handling platform">
+                  <img src="assets/images/biomek-01.webp" alt="View automated liquid handling platform">
+                </button>
+
+                <button class="redesign-gallery-item" type="button" data-type="video" data-video-source="youtube"
+                  data-video-url="https://www.youtube.com/embed/MmtrvzMpuZc?autoplay=1&amp;mute=1"
+                  data-caption="Automated setup of miniaturized reaction, cloning, and genotyping workflows"
+                  aria-label="Play integrated reaction setup workflow">
+                  <img src="assets/images/inspire-01.webp" alt="Play integrated reaction setup workflow">
+                  <span class="redesign-gallery-play-overlay">&#9654;</span>
+                </button>
+
+                <button class="redesign-gallery-item" type="button" data-type="video" data-video-source="local"
+                  data-video-url="assets/videos/qpix.webm"
+                  data-caption="Automated identification and isolation of microbial colonies"
+                  aria-label="Play automated colony-picking workflow">
+                  <img src="assets/images/omnitray.webp" alt="Play automated colony-picking workflow">
+                  <span class="redesign-gallery-play-overlay">&#9654;</span>
+                </button>
+
+                <button class="redesign-gallery-item" type="button" data-type="video" data-video-source="youtube"
+                  data-video-url="https://www.youtube.com/embed/pIAdLISmk8k?autoplay=1&amp;mute=1"
+                  data-caption="Growth-triggered sampling and kinetic fluorescence measurements"
+                  aria-label="Play kinetic growth and measurement workflow">
+                  <img src="assets/images/maestro-01.webp" alt="Play kinetic growth and measurement workflow">
+                  <span class="redesign-gallery-play-overlay">&#9654;</span>
+                </button>
+
+                <button class="redesign-gallery-item" type="button" data-type="image" data-src="assets/images/qtof.webp"
+                  data-caption="Mass-spectrometry-supported profiling of metabolites and biological products"
+                  aria-label="View LC-MS analytical platform">
+                  <img src="assets/images/qtof.webp" alt="View LC-MS analytical platform">
+                </button>
+              </div>
+
+              <div class="redesign-gallery-caption">Automated liquid handling for parallel microbial engineering
+                workflows</div>
+            </div>
+          </div>
+
+          <div class="redesign-detail-content-column">
+            <div class="redesign-detail-header">
+              <h2 id="microbial-title" class="redesign-detail-title">Synthetic Biology &amp; Microbial Strain
+                Engineering</h2>
+              <p class="redesign-detail-lead">Engineer and screen microbial systems in parallel.</p>
+            </div>
+
+            <div class="redesign-detail-content">
+              <div class="redesign-detail-groups">
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Library Construction &amp; Reaction Setup</h3>
+                  <p class="redesign-detail-group-desc">Build plasmids, pathways, CRISPR libraries, and arrayed or
+                    pooled designs using automated, miniaturized reaction setup.</p>
+                </div>
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Genetic Engineering &amp; Host Modification</h3>
+                  <p class="redesign-detail-group-desc">Introduce targeted modifications, expression systems, and
+                    multi-gene constructs across supported microbial hosts.</p>
+                </div>
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Functional Screening &amp; Phenotyping</h3>
+                  <p class="redesign-detail-group-desc">Screen microbial variants using colony handling, kinetic
+                    measurements, fluorescence, imaging, and phenotypic analysis.</p>
+                </div>
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Molecular &amp; Analytical Characterization</h3>
+                  <p class="redesign-detail-group-desc">Connect promising hits to sequencing preparation, genotyping,
+                    qPCR, HPLC, mass spectrometry, and other analytical readouts.</p>
+                </div>
+              </div>
+
+              <div class="redesign-detail-specs">
+                <div class="redesign-detail-spec">
+                  <span class="redesign-detail-spec-label">Hosts:</span>
+                  <span class="redesign-detail-spec-value">E. coli &middot; yeast &middot; other supported microbial
+                    hosts</span>
+                </div>
+                <div class="redesign-detail-spec">
+                  <span class="redesign-detail-spec-label">Formats:</span>
+                  <span class="redesign-detail-spec-value">96-well &middot; 384-well &middot; 1,536-well plates</span>
+                </div>
+                <div class="redesign-detail-spec">
+                  <span class="redesign-detail-spec-label">Throughput:</span>
+                  <span class="redesign-detail-spec-value">Thousands of reactions and strains in parallel</span>
+                </div>
+
+                <div class="redesign-detail-link-container">
+                  <a href="WorkWithUs.html" class="redesign-detail-workflow-link">Discuss a workflow <span
+                      aria-hidden="true">&rarr;</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="redesign-mammalian-engineering" class="redesign-detail-section" aria-labelledby="mammalian-title">
+        <div class="redesign-detail-inner">
+          <div class="redesign-detail-media-column">
+            <div class="redesign-gallery">
+              <div class="redesign-gallery-hero">
+                <img src="assets/images/vantage-07_blu.webp" alt="View automated iPSC culture platform">
+              </div>
+
+              <div class="redesign-gallery-mobile-controls">
+                <span class="redesign-gallery-counter">1 / 4</span>
+              </div>
+
+              <div class="redesign-gallery-carousel">
+                <button class="redesign-gallery-item active" type="button" data-type="image"
+                  data-src="assets/images/vantage-07_blu.webp"
+                  data-caption="Automated liquid handling within a controlled mammalian cell-culture environment"
+                  aria-label="View automated mammalian cell-culture platform">
+                  <img src="assets/images/vantage-07_blu.webp" alt="View automated mammalian cell-culture platform">
+                </button>
+
+                <button class="redesign-gallery-item" type="button" data-type="video" data-video-source="youtube"
+                  data-video-url="https://www.youtube.com/embed/9scKEQXyKrA?autoplay=1&amp;mute=1"
+                  data-caption="Automation-supported cell seeding, culture maintenance, and passaging"
+                  aria-label="Play automated mammalian cell-passaging workflow">
+                  <img src="assets/images/vantage-02.webp" alt="Play automated mammalian cell-passaging workflow">
+                  <span class="redesign-gallery-play-overlay">&#9654;</span>
+                </button>
+
+                <button class="redesign-gallery-item" type="button" data-type="image"
+                  data-src="assets/images/ipscs.webp" data-caption="Image-based assessment of iPSC culture confluence"
+                  aria-label="View bright-field iPSC confluence image">
+                  <img src="assets/images/ipscs.webp" alt="View bright-field iPSC confluence image"
+                    class="microscopy-img">
+                </button>
+              </div>
+
+              <div class="redesign-gallery-caption">Automated culture and passaging for adherent and suspension lines
+              </div>
+            </div>
+          </div>
+
+          <div class="redesign-detail-content-column">
+            <div class="redesign-detail-header">
+              <h2 id="mammalian-title" class="redesign-detail-title">Mammalian Cell Engineering</h2>
+              <p class="redesign-detail-lead">Develop and screen complex engineered mammalian cell models.</p>
+            </div>
+
+            <div class="redesign-detail-content">
+              <div class="redesign-detail-groups">
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Automated Culture &amp; Expansion</h3>
+                  <p class="redesign-detail-group-desc">Maintain, expand, and passage mammalian cell models using
+                    automated multi-well workflows and integrated imaging.</p>
+                </div>
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Cell Modification &amp; Delivery</h3>
+                  <p class="redesign-detail-group-desc">Introduce editing tools, expression systems, and other
+                    perturbations using nucleofection, transfection, or viral delivery.</p>
+                </div>
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Screening &amp; Functional Analysis</h3>
+                  <p class="redesign-detail-group-desc">Measure cellular responses using imaging, plate-based assays,
+                    Flow cytometry / FACS, sequencing preparation, and phenotyping.</p>
+                </div>
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Clonal Isolation &amp; Cell-Line Development</h3>
+                  <p class="redesign-detail-group-desc">Isolate, expand, and validate engineered cells using single-cell
+                    sorting, imaging, genotyping, sequencing, and related confirmation workflows.</p>
+                </div>
+              </div>
+
+              <div class="redesign-detail-specs">
+                <div class="redesign-detail-spec">
+                  <span class="redesign-detail-spec-label">Cell Types:</span>
+                  <span class="redesign-detail-spec-value">iPSCs &middot; stem cells &middot; primary cells &middot;
+                    engineered cell lines</span>
+                </div>
+                <div class="redesign-detail-spec">
+                  <span class="redesign-detail-spec-label">Formats:</span>
+                  <span class="redesign-detail-spec-value">96-well and higher-density multi-well workflows</span>
+                </div>
+                <div class="redesign-detail-spec">
+                  <span class="redesign-detail-spec-label">Throughput:</span>
+                  <span class="redesign-detail-spec-value">96-well nucleofection &middot; parallel screening and
+                    analysis</span>
+                </div>
+
+                <div class="redesign-detail-link-container">
+                  <a href="WorkWithUs.html" class="redesign-detail-workflow-link">Discuss a workflow <span
+                      aria-hidden="true">&rarr;</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="redesign-bioprocessing" class="redesign-detail-section" aria-labelledby="bioprocessing-title">
+        <div class="redesign-detail-inner">
+          <div class="redesign-detail-media-column">
+            <div class="redesign-gallery">
+              <div class="redesign-gallery-hero">
+                <img src="assets/images/minibio-03.webp" alt="View parallel small-scale bioreactors">
+              </div>
+
+              <div class="redesign-gallery-mobile-controls">
+                <span class="redesign-gallery-counter">1 / 6</span>
+              </div>
+
+              <div class="redesign-gallery-carousel">
+
+                <button class="redesign-gallery-item active" type="button" data-type="image"
+                  data-src="assets/images/minibio-03.webp"
+                  data-caption="Parallel process development in controlled small-scale 1 L bioreactors"
+                  aria-label="View parallel small-scale bioreactors">
+                  <img src="assets/images/minibio-03.webp" alt="View parallel small-scale bioreactors">
+                </button>
+
+                <button class="redesign-gallery-item" type="button" data-type="video" data-video-source="local"
+                  data-video-url="assets/videos/bioreactor-02.webm"
+                  data-caption="Active microbial cultivation under controlled fermentation conditions in 20 L bioreactors"
+                  aria-label="Play active bioreactor cultivation video">
+                  <img src="assets/images/ezcontrol-03.webp" alt="Play active bioreactor cultivation video">
+                  <span class="redesign-gallery-play-overlay">&#9654;</span>
+                </button>
+
+                <button class="redesign-gallery-item" type="button" data-type="image"
+                  data-src="assets/images/bioengineering150-01.webp"
+                  data-caption="Pilot-scale microbial fermentation system at 150 L"
+                  aria-label="View 150 L pilot-scale bioreactor">
+                  <img src="assets/images/bioengineering150-01.webp" alt="View 150 L pilot-scale bioreactor">
+                </button>
+                <!-- This is hidden
+                <button class="redesign-gallery-item" type="button" data-type="image"
+                  data-src="assets/images/hplc-01.webp"
+                  data-caption="HPLC-UV/RI for carbohydrate, organic acid, and alcohol analysis"
+                  aria-label="View HPLC-UV/RI system">
+                  <img src="assets/images/hplc-01.webp" alt="View HPLC-UV/RI system">
+                </button>
+-->
+                <button class="redesign-gallery-item" type="button" data-type="image" data-src="assets/images/tff.webp"
+                  data-caption="Tangential flow filtration for concentration and product recovery"
+                  aria-label="View tangential flow filtration system">
+                  <img src="assets/images/tff.webp" alt="View tangential flow filtration system">
+                </button>
+
+                <button class="redesign-gallery-item" type="button" data-type="image"
+                  data-src="assets/images/spraydryer.webp"
+                  data-caption="Spray drying for formulation and powder production"
+                  aria-label="View spray dryer system">
+                  <img src="assets/images/spraydryer.webp" alt="View spray dryer system">
+                </button>
+
+                <button class="redesign-gallery-item" type="button" data-type="image"
+                  data-src="assets/images/lyophilizer.webp"
+                  data-caption="Freeze drying for formulation and product stabilization"
+                  aria-label="View lyophilization system">
+                  <img src="assets/images/lyophilizer.webp" alt="View lyophilization system">
+                </button>
+              </div>
+
+              <div class="redesign-gallery-caption">Parallel process development in controlled small-scale 1 L
+                bioreactors
+              </div>
+            </div>
+          </div>
+
+          <div class="redesign-detail-content-column">
+            <div class="redesign-detail-header">
+              <h2 id="bioprocessing-title" class="redesign-detail-title">Microbial Bioprocessing &amp; Scale-Up</h2>
+              <p class="redesign-detail-lead">Move microbial systems from process-relevant screening toward pilot-scale
+                production.</p>
+            </div>
+
+            <div class="redesign-detail-content">
+              <div class="redesign-detail-groups">
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Process Development &amp; Screening</h3>
+                  <p class="redesign-detail-group-desc">Evaluate microbial candidates under controlled, process-relevant
+                    conditions using parallel small-scale systems.</p>
+                </div>
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Fermentation Scale-Up</h3>
+                  <p class="redesign-detail-group-desc">Develop and scale batch, fed-batch, or continuous processes
+                    across multiple working-volume steps.</p>
+                </div>
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Process Optimization &amp; Analytics</h3>
+                  <p class="redesign-detail-group-desc">Refine media, feeding strategies, operating parameters,
+                    productivity, yield, and process performance.</p>
+                </div>
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Downstream Processing &amp; Recovery</h3>
+                  <p class="redesign-detail-group-desc">Recover, concentrate, separate, or stabilize biomass, proteins,
+                    products, and process intermediates.</p>
+                </div>
+              </div>
+
+              <div class="redesign-detail-specs">
+                <div class="redesign-detail-spec">
+                  <span class="redesign-detail-spec-label">Working Volume Range:</span>
+                  <span class="redesign-detail-spec-value">200 mL to 200 L</span>
+                </div>
+                <div class="redesign-detail-spec">
+                  <span class="redesign-detail-spec-label">Modes:</span>
+                  <span class="redesign-detail-spec-value">Batch &middot; fed-batch &middot; continuous</span>
+                </div>
+                <div class="redesign-detail-spec">
+                  <span class="redesign-detail-spec-label">Systems:</span>
+                  <span class="redesign-detail-spec-value">Parallel mini-bioreactors through pilot-scale
+                    fermenters</span>
+                </div>
+
+                <div class="redesign-detail-link-container">
+                  <a href="WorkWithUs.html" class="redesign-detail-workflow-link">Discuss a workflow <span
+                      aria-hidden="true">&rarr;</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How Projects Engage Section -->
+      <section class="redesign-engagement-section" aria-labelledby="engagement-title">
+        <div class="redesign-engagement-inner">
+          <div class="redesign-engagement-content">
+            <h2 id="engagement-title" class="redesign-engagement-title">HOW PROJECTS ENGAGE</h2>
+            <p class="redesign-engagement-body">
+              Projects engage with the platform at different points. Some begin with a research question, an engineering
+              or screening workflow, a biological model, an existing microbial or mammalian system, a
+              process-development need, or access to specialized equipment and expertise. We help identify and integrate
+              the capabilities needed for the project.
+            </p>
+          </div>
+          <div class="redesign-engagement-action">
+            <!-- Temporary CTA retained for stakeholder review; may be removed to reduce duplication. -->
+            <a href="WorkWithUs.html" class="redesign-btn redesign-btn-outline">Work With Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA Section -->
+      <section class="redesign-final-cta-section" aria-labelledby="final-cta-title">
+        <div class="redesign-final-cta-inner">
+          <h2 id="final-cta-title" class="redesign-final-cta-title">Want to work with the platform?</h2>
+          <p class="redesign-final-cta-body">
+            Tell us about your project, workflow, platform-access need, or technical challenge. We’ll help identify the
+            right capabilities and next step.
+          </p>
+          <div class="redesign-final-cta-actions">
+            <a href="WorkWithUs.html" class="redesign-btn redesign-btn-primary">Work With Us</a>
+            <a href="publications.html" class="redesign-btn redesign-btn-secondary">See Research &amp; Impact</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Redesign Gallery Logic -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const redesignGalleries = document.querySelectorAll('.redesign-gallery');
+
+          redesignGalleries.forEach(gallery => {
+            const hero = gallery.querySelector('.redesign-gallery-hero');
+            const caption = gallery.querySelector('.redesign-gallery-caption');
+            const counter = gallery.querySelector('.redesign-gallery-counter');
+            const items = gallery.querySelectorAll('.redesign-gallery-item');
+            const carousel = gallery.querySelector('.redesign-gallery-carousel');
+
+            if (!hero || !items.length) return;
+
+            function showPoster(container, item, isHero) {
+              const type = item.dataset.type;
+              const imgElement = item.querySelector('img');
+              const src = imgElement ? imgElement.src : '';
+              const alt = imgElement ? imgElement.alt : '';
+              const imgClass = imgElement ? imgElement.className : '';
+
+              if (type === 'image') {
+                container.innerHTML = `<img src="${src}" alt="${alt}" class="${imgClass}">`;
+              } else if (type === 'video') {
+                if (isHero) {
+                  container.innerHTML = `
+                    <img src="${src}" alt="${alt}" class="${imgClass}">
+                    <button class="redesign-gallery-hero-play" aria-label="Play video">
+                      &#9654;
+                    </button>
+                  `;
+                  const playBtn = container.querySelector('.redesign-gallery-hero-play');
+                  playBtn.addEventListener('click', () => {
+                    playVideo(container, item);
+                  });
+                } else {
+                  container.innerHTML = `
+                    <img src="${src}" alt="${alt}" class="${imgClass}">
+                    <span class="redesign-gallery-play-overlay">&#9654;</span>
+                  `;
+                }
+              }
+            }
+
+            function playVideo(container, item) {
+              const videoUrl = item.dataset.videoUrl;
+              const videoSource = item.dataset.videoSource || 'youtube';
+
+              if (videoSource === 'youtube') {
+                container.innerHTML = `
+                  <iframe
+                    src="${videoUrl}"
+                    title="Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                `;
+              } else if (videoSource === 'local') {
+                const videoType = videoUrl.endsWith('.webm') ? 'video/webm' : 'video/mp4';
+                container.innerHTML = `
+                  <video
+                    controls
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                  >
+                    <source src="${videoUrl}" type="${videoType}">
+                    Your browser does not support the video tag.
+                  </video>
+                `;
+              }
+            }
+
+            items.forEach((item, index) => {
+              item.addEventListener('click', (e) => {
+                if (window.innerWidth < 1100) {
+                  if (item.dataset.type === 'video' && !item.querySelector('video, iframe')) {
+                    playVideo(item, item);
+                  }
+                  return;
+                }
+
+                items.forEach(t => t.classList.remove('active'));
+                item.classList.add('active');
+
+                if (caption && item.dataset.caption) {
+                  caption.textContent = item.dataset.caption;
+                }
+
+                showPoster(hero, item, true);
+              });
+            });
+
+            if (carousel && counter && caption) {
+              let scrollTimeout;
+              carousel.addEventListener('scroll', () => {
+                if (window.innerWidth >= 1100) return;
+
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                  const scrollLeft = carousel.scrollLeft;
+                  const itemWidth = items[0].offsetWidth;
+
+                  const activeIndex = Math.round(scrollLeft / itemWidth);
+
+                  if (activeIndex >= 0 && activeIndex < items.length) {
+                    items.forEach((t, idx) => {
+                      if (idx !== activeIndex && t.dataset.type === 'video' && t.querySelector('video, iframe')) {
+                        showPoster(t, t, false);
+                      }
+                      t.classList.remove('active');
+                    });
+                    items[activeIndex].classList.add('active');
+                    counter.textContent = `${activeIndex + 1} / ${items.length}`;
+                    caption.textContent = items[activeIndex].dataset.caption || '';
+                  }
+                }, 50);
+              });
+            }
+          });
+        });
+      </script>
+    </div>
+
+
+
+
+  </div> <!-- /#capabilities-testing-wrapper -->
+
+  <!-- Footer -->
+  <footer class="footer"
+    style="background: #07111F; color: #f0f2f5; padding: clamp(32px, 5vw, 48px) 1.5rem clamp(18px, 3vw, 24px);">
+    <div class="container-wide" style="max-width: 1200px; margin: 0 auto;">
+      <div class="footer-main-row"
+        style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem; margin-bottom: 2rem;">
+
+        <!-- Left Side: Brand -->
+        <div class="footer-brand" style="flex: 1 1 300px;">
+          <!-- Using invert to make the logo white for dark background -->
+          <img src="assets/icons/genome_foundry_logo.svg" alt="Concordia Genome Foundry"
+            style="max-width: 150px; width: 100%; height: auto; margin-bottom: 1rem; display: block; filter: brightness(0) invert(1);">
+          <p style="font-size: 14px; line-height: 1.5; color: #a1a1aa; margin-bottom: 0.75rem; max-width: 480px;">
+            An integrated research platform bringing together high-throughput bioengineering, microbial and mammalian
+            workflow development, and microbial bioprocessing under one roof.
+          </p>
+          <p
+            style="font-size: 13px; font-weight: 600; color: #d4d4d8; letter-spacing: 0.05em; text-transform: uppercase; margin: 0;">
+            A Concordia University research platform.
+          </p>
+        </div>
+
+        <!-- Right Side: Links -->
+        <div class="footer-contact" style="display: flex; flex-wrap: wrap; gap: 3rem; padding-top: 0.25rem;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <a href="mailto:genomefoundry@concordia.ca" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              genomefoundry@concordia.ca
+            </a>
+            <a href="https://www.linkedin.com/company/concordia-genome-foundry/" target="_blank" rel="noopener"
+              class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="WorkWithUs.html" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+              Work With Us
+            </a>
+            <a href="partners.html" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Our Partners &amp; Supporters
+            </a>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">Explore</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="about.html" style="color: inherit; text-decoration: none; transition: opacity 0.2s;">About</a>
+              <a href="capabilities.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Capabilities</a>
+              <a href="publications.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Research &amp; Impact</a>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">User
+              Tools</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="https://foundry.concordia.ca/bookr/"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrument
+                Booking</a>
+              <a href="https://foundry-lims.concordia.ca/"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;"
+                title="Concordia network or authorized access may be required."
+                aria-label="LIMS, Concordia access may be required">LIMS (Concordia access)</a>
+            </div>
+            <span
+              style="font-size: 0.75rem; color: #6b7280; display: block; margin-top: 0.75rem; max-width: 150px; line-height: 1.4;">For
+              trained users
+              with active accounts.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom-row"
+        style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 13px; color: #a1a1aa;">
+        <p style="margin: 0;">&copy; 2026 Concordia Genome Foundry. All rights reserved.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="https://www.concordia.ca/privacy.html" target="_blank" rel="noopener noreferrer"
+            style="color: #a1a1aa; text-decoration: none; transition: color 0.2s;">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

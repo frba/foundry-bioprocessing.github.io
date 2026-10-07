@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concordia Genome Foundry</title>
+  <meta name="description"
+    content="The Concordia Genome Foundry works within a broad ecosystem of funders, philanthropic supporters, research collaborators, institutional partners, and innovation organizations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/icons/genome_foundry_logo.svg" alt="Genome Foundry Logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-nav" class="mobile-nav">
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="mobile-nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <h1>Partners &amp; Supporters</h1>
+      <p>The Concordia Genome Foundry works within a broad ecosystem of funders, philanthropic supporters, research collaborators, institutional partners, and innovation organizations. This page recognizes organizations that have funded, supported, collaborated with, or helped connect the platform with the broader research and innovation ecosystem.</p>
+
+    </div>
+  </section>
+
+  <main>
+    <!-- Section 1: Funders & Philanthropic Supporters -->
+    <section class="section partners-section" id="funders" style="padding-top: 3.5rem; padding-bottom: 2rem;">
+      <div class="container-medium">
+        <h2 class="h2" style="text-align: center; margin-bottom: 0.5rem; font-size: clamp(1.6rem, 2.2vw, 2.25rem);">Funders &amp; Philanthropic Supporters</h2>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto 2.5rem auto;">
+          Organizations whose funding, institutional support, or philanthropic contributions have helped build, sustain, and expand the platform’s infrastructure and operations.
+        </p>
+        <div class="partners-grid" id="funders-grid">
+          <!-- Funders dynamically loaded via js/main.js -->
+        </div>
+
+        <!-- Philanthropic giving note -->
+        <div class="partners-advancement-note" style="text-align: center; margin-top: 3.5rem; font-size: 0.85rem; color: var(--text-secondary);">
+          <p style="margin: 0;">
+            Philanthropic giving is managed through Concordia University Advancement.
+            <a href="https://www.concordia.ca/alumni-friends/about-us/contact-us.html" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">Contact Advancement &rarr;</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Research, Innovation & Ecosystem Partners -->
+    <section class="section partners-section" id="ecosystem" style="padding-top: 2rem; padding-bottom: 3.5rem;">
+      <div class="container-medium">
+        <h2 class="h2" style="text-align: center; margin-bottom: 0.5rem; font-size: clamp(1.6rem, 2.2vw, 2.25rem);">Research, Innovation &amp; Ecosystem Partners</h2>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto 2.5rem auto;">
+          Organizations connected through research collaboration, platform engagement, ecosystem development, referrals, training, or innovation support.
+        </p>
+        <div class="partners-grid" id="ecosystem-grid">
+          <!-- Ecosystem partners dynamically loaded via js/main.js -->
+        </div>
+      </div>
+    </section>
+
+
+    <div class="container-wide">
+      <div class="moderate-bottom-cta">
+        <h2>Interested in working with us?</h2>
+        <p>We work with researchers, companies, institutions, and ecosystem partners through projects, services, collaborations, and platform access.</p>
+        <div class="cta-buttons">
+          <a href="WorkWithUs.html" class="btn btn-primary">Work With Us</a>
+          <a href="capabilities.html" class="btn btn-outline">Explore Capabilities</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer"
+    style="background: #07111F; color: #f0f2f5; padding: clamp(32px, 5vw, 48px) 1.5rem clamp(18px, 3vw, 24px);">
+    <div class="container-wide" style="max-width: 1200px; margin: 0 auto;">
+      <div class="footer-main-row"
+        style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem; margin-bottom: 2rem;">
+
+        <!-- Left Side: Brand -->
+        <div class="footer-brand" style="flex: 1 1 300px;">
+          <!-- Using invert to make the logo white for dark background -->
+          <img src="assets/icons/genome_foundry_logo.svg" alt="Concordia Genome Foundry"
+            style="max-width: 150px; width: 100%; height: auto; margin-bottom: 1rem; display: block; filter: brightness(0) invert(1);">
+          <p style="font-size: 14px; line-height: 1.5; color: #a1a1aa; margin-bottom: 0.75rem; max-width: 480px;">
+            An integrated research platform bringing together high-throughput bioengineering, microbial and mammalian
+            workflow development, and microbial bioprocessing under one roof.
+          </p>
+          <p
+            style="font-size: 13px; font-weight: 600; color: #d4d4d8; letter-spacing: 0.05em; text-transform: uppercase; margin: 0;">
+            A Concordia University research platform.
+          </p>
+        </div>
+
+        <!-- Right Side: Links -->
+        <div class="footer-contact" style="display: flex; flex-wrap: wrap; gap: 3rem; padding-top: 0.25rem;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <a href="mailto:genomefoundry@concordia.ca" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              genomefoundry@concordia.ca
+            </a>
+            <a href="https://www.linkedin.com/company/concordia-genome-foundry/" target="_blank" rel="noopener"
+              class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="WorkWithUs.html" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+              Work With Us
+            </a>
+            <a href="partners.html" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Our Partners &amp; Supporters
+            </a>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">Explore</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="about.html" style="color: inherit; text-decoration: none; transition: opacity 0.2s;">About</a>
+              <a href="capabilities.html" style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Capabilities</a>
+              <a href="publications.html" style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Research &amp; Impact</a>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">User
+              Tools</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="https://foundry.concordia.ca/bookr/" style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrument
+                Booking</a>
+              <a href="https://foundry-lims.concordia.ca/" style="color: inherit; text-decoration: none; transition: opacity 0.2s;" title="Concordia network or authorized access may be required." aria-label="LIMS, Concordia access may be required">LIMS (Concordia access)</a>
+            </div>
+            <span style="font-size: 0.75rem; color: #6b7280; display: block; margin-top: 0.75rem; max-width: 150px; line-height: 1.4;">For trained users
+              with active accounts.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom-row"
+        style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 13px; color: #a1a1aa;">
+        <p style="margin: 0;">&copy; 2026 Concordia Genome Foundry. All rights reserved.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="https://www.concordia.ca/privacy.html" target="_blank" rel="noopener noreferrer" style="color: #a1a1aa; text-decoration: none; transition: color 0.2s;">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+

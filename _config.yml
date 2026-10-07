@@ -1,0 +1,33 @@
+# Site settings
+title: Concordia Genome Foundry
+description: An integrated research platform for high-throughput bioengineering, microbial and mammalian workflow development, and microbial bioprocessing.
+url: "https://foundry-bioprocessing.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+theme: null
+
+# Exclude non-site files from the build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - "*.rb"
+  - "*.ps1"
+  - "*.py"
+  - "*.txt"
+  - archive/
+  - docs/
+  - scripts/
+  - scratch/
+  - _site/
+  - .jekyll-cache/
+  - .github/
+  - .vscode/
+  - history.txt
+  - work_history.txt
+  - syntax.log
+  - site-copy-export-home-about-technology.md
+  - "*.backup"
+  - "*.md"
