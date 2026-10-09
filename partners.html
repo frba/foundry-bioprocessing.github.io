@@ -60,11 +60,177 @@
     </div>
   </nav>
 
-  <section class="page-hero">
-    <div class="page-hero-inner">
-      <h1>Partners &amp; Supporters</h1>
-      <p>The Concordia Genome Foundry works within a broad ecosystem of funders, philanthropic supporters, research collaborators, institutional partners, and innovation organizations. This page recognizes organizations that have funded, supported, collaborated with, or helped connect the platform with the broader research and innovation ecosystem.</p>
+  <style>
+    .redesign-hero {
+      background-color: #0b1120;
+      color: #f8fafc;
+      position: relative;
+      overflow: hidden;
+      padding: calc(94px + 3rem) 1.5rem 0 1.5rem;
+      min-height: auto;
+    }
 
+    #funders,
+    #ecosystem {
+      scroll-margin-top: 120px;
+    }
+
+    .redesign-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+      z-index: 2;
+    }
+
+    .redesign-hero-content {
+      max-width: 600px;
+      padding-bottom: 3rem;
+    }
+
+    .redesign-eyebrow {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #bae6fd;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .redesign-hero-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .redesign-hero-body {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+
+    .redesign-jump-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 1000px) {
+      .redesign-jump-links {
+        flex-wrap: nowrap;
+      }
+
+      .redesign-jump-link {
+        white-space: nowrap;
+      }
+    }
+
+    .redesign-jump-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #38bdf8;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-bottom-color 0.2s;
+    }
+
+    .redesign-jump-link:hover,
+    .redesign-jump-link:focus-visible {
+      color: #bae6fd;
+      border-bottom-color: #bae6fd;
+      outline: none;
+    }
+
+    .redesign-hero-image-col {
+      position: relative;
+      width: calc(100% + 3rem);
+      margin-left: -1.5rem;
+      height: 250px;
+      border-radius: 0;
+    }
+
+    .redesign-hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Desktop layout */
+    @media (min-width: 900px) {
+      .redesign-hero {
+        padding: 94px 0 0 0;
+        height: clamp(400px, 50vh, 470px);
+        display: flex;
+        align-items: center;
+      }
+
+      .redesign-hero-inner {
+        grid-template-columns: 55% 45%;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        gap: 2rem;
+        padding: 0 2rem;
+      }
+
+      .redesign-hero-content {
+        padding-bottom: 0;
+        max-width: none;
+      }
+
+      .redesign-hero-image-col {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 55%;
+        height: 100%;
+        margin-left: 0;
+      }
+
+      /* Fade gradient on left edge of the image to blend into background */
+      .redesign-hero-image-col::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(to right, #0b1120 0%, transparent 100%);
+      }
+    }
+  </style>
+
+  <section class="redesign-hero" aria-label="Partners &amp; Supporters Overview">
+    <div class="redesign-hero-inner">
+      <div class="redesign-hero-content">
+        <h1 class="redesign-hero-title">Partners &amp; Supporters</h1>
+        <p class="redesign-hero-body">The Concordia Genome Foundry works within a broad ecosystem of funders,
+          philanthropic supporters, research collaborators, institutional partners, and innovation organizations.</p> 
+          <!-- This page recognizes organizations that have funded, supported, collaborated with, or helped connect the platform
+          with the broader research and innovation ecosystem. -->
+
+        <div class="redesign-jump-links">
+          <a href="#funders" class="redesign-jump-link">Funders &amp; Supporters &darr;</a>
+          <a href="#ecosystem" class="redesign-jump-link">Ecosystem Partners &darr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="redesign-hero-image-col" aria-hidden="true">
+      <img src="assets/images/campus-partners.png" alt="Concordia Campus and Partners"
+        class="redesign-hero-image">
     </div>
   </section>
 
