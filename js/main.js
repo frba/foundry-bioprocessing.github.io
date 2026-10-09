@@ -388,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: "Hosted Access",
       photo: "assets/images/clients/Michael Dennis.webp",
       logo: "assets/images/clients/pHathom.svg",
-      active: false,
+      active: true,
       placeholder: true
     },
     {
@@ -481,6 +481,46 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
       testimonialGrid.appendChild(card);
+    });
+  }
+
+  // Startup Residency Logic
+  const startupResidencyGrid = document.getElementById('startup-residency-grid');
+  const startups = [
+    {
+      name: "Neiges Biotechnologies",
+      file: "NEIGES_logo_nobackground_padding_blackletter.png",
+      url: "https://www.linkedin.com/company/neiges-biotechnologies/home/"
+    },
+    {
+      name: "pHathom",
+      file: "pHathom_Logo_Dark_Horizontal.png",
+      url: "https://www.linkedin.com/company/phathomtech/home/"
+    }
+  ];
+
+  if (startupResidencyGrid) {
+    startups.forEach(startup => {
+      const card = document.createElement('a');
+      card.className = 'startup-logo-card';
+      card.href = startup.url;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+      card.setAttribute('aria-label', `Visit ${startup.name} on LinkedIn`);
+
+      const img = document.createElement('img');
+      img.src = `assets/images/startups/${startup.file}`;
+      img.alt = `${startup.name} logo`;
+      img.className = 'startup-logo-img';
+
+      const tooltip = document.createElement('div');
+      tooltip.className = 'startup-tooltip';
+      tooltip.textContent = startup.name;
+
+      card.appendChild(img);
+      card.appendChild(tooltip);
+
+      startupResidencyGrid.appendChild(card);
     });
   }
 
