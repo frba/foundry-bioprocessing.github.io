@@ -1110,94 +1110,127 @@
         </div>
       </section>
 
-      <!-- Previous standalone outputs and applications sections retained for rollback after consolidation. -->
-      <section class="redesign-outputs-section hidden-for-consolidation" aria-label="What We Help Build">
-        <div class="redesign-outputs-inner">
-          <header class="redesign-outputs-header">
-            <span class="redesign-outputs-eyebrow">WHAT WE HELP BUILD</span>
-            <h2 class="redesign-outputs-title">From engineered cells to bio-based products.</h2>
-            <p class="redesign-outputs-desc">
-              The platform supports the construction, testing, characterization, and development of diverse biological
-              systems and outputs.
+      <!-- From genetic and strain variants to mammalian cell engineering. -->
+      <section class="redesign-scope-section" aria-label="Biological Scope and Platform Workflows">
+        <style>
+          .redesign-scope-section {
+            background-color: #ffffff;
+            border-bottom: 1px solid #dce4ec;
+            padding: 4.5rem 1.5rem;
+          }
+
+          .redesign-scope-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2.75rem;
+            align-items: center;
+          }
+
+          .redesign-scope-content {
+            width: 100%;
+          }
+
+          .redesign-scope-title {
+            font-family: var(--font-sans, 'Inter', -apple-system, sans-serif);
+            font-size: clamp(1.45rem, 2.25vw, 1.875rem);
+            font-weight: 600;
+            line-height: 1.32;
+            color: #0f233a;
+            margin: 0 0 1.75rem 0;
+            letter-spacing: -0.015em;
+          }
+
+          .redesign-scope-title strong {
+            font-weight: 800;
+            color: #0f233a;
+          }
+
+          .redesign-scope-desc {
+            font-family: var(--font-sans, 'Inter', -apple-system, sans-serif);
+            font-size: 1rem;
+            line-height: 1.55;
+            color: #334155;
+            margin: 0;
+            max-width: 620px;
+          }
+
+          .redesign-scope-media {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .redesign-scope-card {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .redesign-scope-graphic {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px -8px rgba(15, 23, 42, 0.06), 0 4px 8px -2px rgba(15, 23, 42, 0.02);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+          }
+
+          .redesign-scope-graphic:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 36px -10px rgba(15, 23, 42, 0.1), 0 6px 12px -3px rgba(15, 23, 42, 0.04);
+          }
+
+          @media (min-width: 992px) {
+            .redesign-scope-section {
+              padding: 5rem 2rem;
+            }
+
+            .redesign-scope-inner {
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              gap: 4rem;
+            }
+
+            .redesign-scope-content {
+              flex: 1 1 560px;
+              max-width: 620px;
+            }
+
+            .redesign-scope-media {
+              flex: 0 0 460px;
+              max-width: 480px;
+              justify-content: flex-end;
+            }
+          }
+        </style>
+
+        <div class="redesign-scope-inner">
+          <div class="redesign-scope-content">
+            <h2 class="redesign-scope-title">
+              From <strong>genetic and strain variants</strong> to
+              <strong>mammalian cell engineering and assays</strong>,
+              our platforms help researchers explore
+              more biological designs and experimental
+              conditions.
+            </h2>
+            <p class="redesign-scope-desc">
+              We develop and adapt automated workflows for DNA assembly, transformation, culturing, testing, and screening at higher throughput.
             </p>
-          </header>
+          </div>
 
-          <div class="redesign-outputs-grid">
-            <div class="redesign-output-item">
-              <div class="redesign-output-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8" />
-                  <circle cx="12" cy="12" r="2.5" />
-                  <path d="M22 12h-2 M12 22v-2 M2 12h2 M12 2v2" />
-                </svg>
-              </div>
-              <span class="redesign-output-label">Engineered cells</span>
-            </div>
-
-            <div class="redesign-output-item">
-              <div class="redesign-output-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="6" cy="18" r="3" />
-                  <circle cx="12" cy="6" r="3" />
-                  <circle cx="18" cy="18" r="3" />
-                  <path d="M7.5 15.5l3-7 M13.5 8.5l3 7" />
-                </svg>
-              </div>
-              <span class="redesign-output-label">Proteins</span>
-            </div>
-
-            <div class="redesign-output-item">
-              <div class="redesign-output-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <polygon points="12 5 18 8.5 18 15.5 12 19 6 15.5 6 8.5" />
-                  <line x1="18" y1="15.5" x2="22" y2="18" />
-                  <line x1="6" y1="15.5" x2="2" y2="18" />
-                  <line x1="12" y1="5" x2="12" y2="1" />
-                </svg>
-              </div>
-              <span class="redesign-output-label">Small molecules</span>
-            </div>
-
-            <div class="redesign-output-item">
-              <div class="redesign-output-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 18v-6" />
-                  <circle cx="12" cy="20" r="2" />
-                  <path d="M8 8a6 6 0 018 0" />
-                  <path d="M5 5a10 10 0 0114 0" />
-                </svg>
-              </div>
-              <span class="redesign-output-label">Biosensors</span>
-            </div>
-
-            <div class="redesign-output-item">
-              <div class="redesign-output-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <g transform="rotate(-45 12 12)">
-                    <rect x="4" y="8" width="16" height="8" rx="4" />
-                    <line x1="12" y1="8" x2="12" y2="16" />
-                  </g>
-                </svg>
-              </div>
-              <span class="redesign-output-label">Therapeutic technologies</span>
-            </div>
-
-            <div class="redesign-output-item">
-              <div class="redesign-output-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M10 2v6l-6 12a2 2 0 002 2h12a2 2 0 002-2l-6-12V2" />
-                  <line x1="8" y1="2" x2="16" y2="2" />
-                  <line x1="7" y1="16" x2="17" y2="16" />
-                </svg>
-              </div>
-              <span class="redesign-output-label">Bio-based products</span>
+          <div class="redesign-scope-media">
+            <div class="redesign-scope-card">
+              <img src="assets/images/microplate-grid.svg" alt="Automated microplate screening grid showing high-throughput biological variants" class="redesign-scope-graphic" width="460" height="246" loading="lazy">
             </div>
           </div>
         </div>
       </section>
-
-
-
       <style>
         .dark-streams-section {
           background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -1454,153 +1487,7 @@
         }
       </style>
 
-      <div id="research-streams-dark-test">
-        <section class="dark-streams-section" aria-labelledby="dark-streams-title">
-          <div class="dark-streams-inner">
-            <header class="dark-streams-header">
-              <span class="dark-streams-eyebrow">ONE INTEGRATED PLATFORM</span>
-              <h2 id="dark-streams-title" class="dark-streams-title">Two research streams. One shared execution engine.
-              </h2>
-              <p class="dark-streams-desc">
-                Shared automation, high-throughput experimentation, analytical workflows, and data-supported
-                decision-making strengthen execution across both research streams.
-              </p>
-            </header>
-
-            <div class="shared-engine-container" style="display: none;">
-              <span class="shared-engine-label">SHARED FOUNDRY INFRASTRUCTURE</span>
-              <!-- Shared foundry infrastructure icon strip retained for rollback; currently hidden to simplify the research-stream section. -->
-              <div class="shared-foundry-functions">
-                <div class="foundry-function-item">
-                  <div class="foundry-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor"
-                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="10" y="12" width="44" height="30" rx="3" />
-                      <path d="M24 52h16" />
-                      <path d="M32 42v10" />
-                      <path d="M25 27h14" />
-                      <path d="M25 27l5-5" />
-                      <path d="M25 27l5 5" />
-                      <path d="M39 27l-5-5" />
-                      <path d="M39 27l-5 5" />
-                    </svg>
-                  </div>
-                  <span class="foundry-function-label">Project specification</span>
-                </div>
-
-                <div class="foundry-function-item">
-                  <div class="foundry-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor"
-                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M18 10v44" />
-                      <path d="M32 10v44" />
-                      <path d="M46 10v44" />
-                      <circle cx="18" cy="25" r="5" />
-                      <circle cx="32" cy="39" r="5" />
-                      <circle cx="46" cy="21" r="5" />
-                    </svg>
-                  </div>
-                  <span class="foundry-function-label">Workflow definition</span>
-                </div>
-
-                <div class="foundry-function-item">
-                  <div class="foundry-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor"
-                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M8 54h20" />
-                      <path d="M14 54V39a6 6 0 0 1 6-6h5" />
-                      <circle cx="27" cy="33" r="5" />
-                      <path d="M31 29l10-10" />
-                      <circle cx="44" cy="16" r="5" />
-                      <path d="M47 20l6 8" />
-                      <path d="M53 28l-5 5" />
-                      <path d="M53 28h6" />
-                      <path d="M17 39h11" />
-                      <path d="M39 45c8-8 8-18 0-26" />
-                      <path d="M49 45c-8-8-8-18 0-26" />
-                      <path d="M40 26h8" />
-                      <path d="M40 34h8" />
-                      <path d="M40 42h8" />
-                    </svg>
-                  </div>
-                  <span class="foundry-function-label">Automated execution</span>
-                </div>
-
-                <div class="foundry-function-item">
-                  <div class="foundry-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor"
-                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M22 6c20 12 20 40 0 52" />
-                      <path d="M42 6c-20 12-20 40 0 52" />
-                      <path d="M24 14h16" />
-                      <path d="M20 24h24" />
-                      <path d="M20 40h24" />
-                      <path d="M24 50h16" />
-                    </svg>
-                  </div>
-                  <span class="foundry-function-label">Assembly &amp; engineering</span>
-                </div>
-
-                <div class="foundry-function-item">
-                  <div class="foundry-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor"
-                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="10" y="14" width="44" height="36" rx="4" />
-                      <circle cx="20" cy="24" r="3" />
-                      <circle cx="32" cy="24" r="3" />
-                      <circle cx="44" cy="24" r="3" />
-                      <circle cx="20" cy="34" r="3" />
-                      <circle cx="32" cy="34" r="3" />
-                      <circle cx="44" cy="34" r="3" />
-                      <circle cx="20" cy="44" r="3" />
-                      <circle cx="32" cy="44" r="3" />
-                      <circle cx="44" cy="44" r="3" />
-                    </svg>
-                  </div>
-                  <span class="foundry-function-label">Screening &amp; analysis</span>
-                </div>
-              </div>
-              <div class="shared-engine-divider" aria-hidden="true"></div>
-            </div>
-
-            <div class="dark-streams-layout">
-              <!-- Left Stream -->
-              <div class="dark-stream-panel">
-                <div class="dark-stream-accent-left" aria-hidden="true"></div>
-                <h3 class="dark-stream-title">Microbial Engineering to Biomanufacturing</h3>
-                <p class="dark-stream-intro">Support microbial engineering workflows that extend toward bioprocess
-                  development and scale-up.</p>
-                <div class="dark-stream-grid">
-                  <div class="dark-stream-item">Strain engineering</div>
-                  <div class="dark-stream-item">Screening and optimization</div>
-                  <div class="dark-stream-item">Process development</div>
-                  <div class="dark-stream-item">Scale-up and production</div>
-                </div>
-              </div>
-
-              <!-- Right Stream -->
-              <div class="dark-stream-panel">
-                <div class="dark-stream-accent-right" aria-hidden="true"></div>
-                <h3 class="dark-stream-title">Mammalian Cell Engineering</h3>
-                <p class="dark-stream-intro">Support mammalian cell engineering workflows for complex models, assays,
-                  and candidate evaluation.</p>
-                <div class="dark-stream-grid">
-                  <div class="dark-stream-item">Cell engineering</div>
-                  <div class="dark-stream-item">Disease and biological models</div>
-                  <div class="dark-stream-item">Screening and functional assays</div>
-                  <div class="dark-stream-item">Cell-line development and characterization</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="dark-explore-footer">
-              <a href="capabilities.html" class="dark-explore-link">Explore Capabilities <span
-                  class="explore-link-arrow">&rarr;</span></a>
-            </div>
-          </div>
-        </section>
-      </div>
-
+      
       <!-- Light research-stream comparison retained for rollback; currently hidden after selection of the dark editorial version. -->
       <div id="streams-comparison-label" class="temporary-comparison-label"
         style="display: none; text-align: center; background-color: #f1f5f9; padding: 0.75rem; font-size: 0.85rem; font-weight: 600; color: #475569; margin: 0;">
@@ -1698,7 +1585,7 @@
 
       <style>
         .redesign-apps-section {
-          background-color: #ffffff;
+          background-color: #f6f8fa;
           padding: 6rem 1.5rem;
         }
 
@@ -1708,8 +1595,10 @@
         }
 
         .redesign-apps-header {
-          text-align: center;
-          max-width: 800px;
+          display: grid;
+          grid-template-columns: 1fr;
+          text-align: justify;
+          max-width: 1200px;
           margin: 0 auto 4rem auto;
         }
 
@@ -1757,20 +1646,74 @@
 
         .redesign-app-panel {
           position: relative;
-          padding: 3rem;
+          padding: 1.75rem 1.5rem;
           border-radius: 16px;
           overflow: hidden;
-          color: #ffffff;
+          color: #0f233a;
           display: flex;
           flex-direction: column;
+          background: white;
+          border: 1px solid #e2e8f0;
+          box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+          transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
 
-        .panel-microbial {
-          background: linear-gradient(135deg, #0f766e 0%, #064e3b 100%);
+        .redesign-app-panel:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 24px -4px rgba(15, 23, 42, 0.06);
+          border-color: #cbd5e1;
         }
 
-        .panel-mammalian {
-          background: linear-gradient(135deg, #4338ca 0%, #312e81 100%);
+        .redesign-app-icon {
+          width: 44px;
+          height: 44px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1.25rem;
+          transition: all 0.25s ease;
+        }
+
+        .redesign-app-icon svg {
+          width: 24px;
+          height: 24px;
+          stroke: currentColor;
+          fill: none;
+        }
+
+        /* Distinct color accents for each panel */
+        .icon-infrastructure,
+        .redesign-app-panel:nth-child(1) .redesign-app-icon {
+          color: #147c9f;
+          background-color: rgba(20, 124, 159, 0.1);
+        }
+
+        .icon-workflows,
+        .redesign-app-panel:nth-child(2) .redesign-app-icon {
+          color: #94348b;
+          background-color: rgba(148, 52, 139, 0.1);
+        }
+
+        .icon-expertise,
+        .redesign-app-panel:nth-child(3) .redesign-app-icon {
+          color: #367b4c;
+          background-color: rgba(54, 123, 76, 0.1);
+        }
+
+        .redesign-app-panel:nth-child(1):hover .redesign-app-icon {
+          background-color: #147c9f;
+          color: #ffffff;
+        }
+
+        .redesign-app-panel:nth-child(2):hover .redesign-app-icon {
+          background-color: #94348b;
+          color: #ffffff;
+        }
+
+        .redesign-app-panel:nth-child(3):hover .redesign-app-icon {
+          background-color: #367b4c;
+          color: #ffffff;
         }
 
         .redesign-app-watermark {
@@ -1788,7 +1731,7 @@
         }
 
         .redesign-app-title {
-          font-size: 1.75rem;
+          font-size: 1.2rem;
           font-weight: 700;
           margin-bottom: 0.75rem;
           position: relative;
@@ -1796,9 +1739,8 @@
         }
 
         .redesign-app-supporting {
-          font-size: 1.1rem;
+          font-size: 0.9rem;
           line-height: 1.5;
-          margin-bottom: 2rem;
           opacity: 0.9;
           position: relative;
           z-index: 1;
@@ -1831,75 +1773,92 @@
         }
 
         .redesign-apps-footer {
+          display: flex;
+          justify-content: flex-end;
+          flex-wrap: wrap;
           margin-top: 4rem;
-          text-align: center;
+          gap: 25px;
         }
 
         .redesign-apps-link {
-          font-size: 1.125rem;
+          font-size: 0.9rem;
           font-weight: 600;
-          color: #0f172a;
+          color: #a32745;
           text-decoration: none;
           display: inline-flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: 10px;
           transition: color 0.2s;
         }
 
         .redesign-apps-link:hover,
         .redesign-apps-link:focus {
+          font-size: 0.95rem;
           color: #900707;
-          outline: 2px solid #900707;
           outline-offset: 4px;
         }
       </style>
 
-      <!-- Previous standalone outputs and applications sections retained for rollback after consolidation. -->
-      <section class="redesign-apps-section hidden-for-consolidation" aria-labelledby="apps-title">
+      <!-- What we Offer -->
+      <section class="redesign-apps-section" aria-labelledby="apps-title">
         <div class="redesign-apps-inner">
           <header class="redesign-apps-header">
-            <span class="redesign-apps-eyebrow">WHERE THE PLATFORM IS APPLIED</span>
-            <h2 id="apps-title" class="redesign-apps-title">From biological discovery to scalable production.</h2>
-            <p class="redesign-apps-desc">
-              Researchers use the platform across microbial engineering, biomanufacturing, mammalian cell biology,
-              therapeutic discovery, and emerging areas of biological design.
+            <span class="redesign-apps-eyebrow">WHAT WE OFFER</span>
+            <h2 id="apps-title" class="redesign-apps-title">Instrumentation.<br>Workflows.<br>Expertise.</h2>
+            <p>
+              Access specialized infrastructure and technical expertise for synthetic biology, mammalian cell engineering and 
+              screening, and microbial bioprocess development and scale-up.
             </p>
           </header>
 
           <div class="redesign-apps-layout">
-            <div class="redesign-app-panel panel-microbial">
-
-              <h3 class="redesign-app-title">Microbial &amp; Biomanufacturing Applications</h3>
-              <p class="redesign-app-supporting">Engineer microbial systems, evaluate production performance, and move
-                promising processes toward scale.</p>
-              <ul class="redesign-app-list">
-                <li>Sustainable chemicals and materials</li>
-                <li>Agriculture and environmental biotechnology</li>
-                <li>Food, nutrition, and fermentation</li>
-                <li>Industrial biotechnology</li>
-                <li>Enzymes, proteins, and biomolecules</li>
-                <li>Microbial process development and scale-up</li>
-              </ul>
+            <div class="redesign-app-panel">
+              <div class="redesign-app-icon icon-infrastructure" aria-hidden="true">
+                <!-- Specialized infrastructure / Laboratory Instrumentation -->
+                <svg viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 18h8"></path>
+                  <path d="M3 22h18"></path>
+                  <path d="M14 22a7 7 0 1 0 0-14h-1"></path>
+                  <path d="M9 14h2"></path>
+                  <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"></path>
+                  <path d="M12 6V3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"></path>
+                </svg>
+              </div>
+              <h3 class="redesign-app-title">Specialized infrastructure</h3>
+              <p class="redesign-app-supporting">Automation, cell culture and screening platforms, bioreactors, and analytical instruments.</p>
             </div>
 
-            <div class="redesign-app-panel panel-mammalian">
+            <div class="redesign-app-panel">
+              <div class="redesign-app-icon icon-workflows" aria-hidden="true">
+                <!-- Adaptable workflows / Parallel Pipeline -->
+                <svg viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="6" height="6" rx="1.5"></rect>
+                  <rect x="15" y="3" width="6" height="6" rx="1.5"></rect>
+                  <rect x="9" y="15" width="6" height="6" rx="1.5"></rect>
+                  <path d="M6 9v3a3 3 0 0 0 3 3h3"></path>
+                  <path d="M18 9v3a3 3 0 0 1-3 3h-3"></path>
+                </svg>
+              </div>
+              <h3 class="redesign-app-title">Adaptable workflows</h3>
+              <p class="redesign-app-supporting">Methods adapted and automated for parallel experiments, screening and analysis.</p>
+            </div>
 
-              <h3 class="redesign-app-title">Mammalian &amp; Discovery Applications</h3>
-              <p class="redesign-app-supporting">Build and study complex mammalian systems for discovery, screening,
-                modelling, and therapeutic research.</p>
-              <ul class="redesign-app-list">
-                <li>Drug discovery and screening</li>
-                <li>Disease modelling and basic research</li>
-                <li>Cell and gene therapy development</li>
-                <li>Functional genomics</li>
-                <li>Cell-line and assay development</li>
-                <li>AI-enabled biological design</li>
-              </ul>
+            <div class="redesign-app-panel">  
+              <div class="redesign-app-icon icon-expertise" aria-hidden="true">
+                <!-- Technical expertise / Specialist Guidance -->
+                <svg viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <polyline points="16 11 18 13 22 9"></polyline>
+                </svg>
+              </div>
+              <h3 class="redesign-app-title">Technical expertise</h3>
+              <p class="redesign-app-supporting">Hands-on experience in automation, workflow implementation, and microbial process development.</p>
             </div>
           </div>
 
           <div class="redesign-apps-footer">
-            <a href="capabilities.html" class="redesign-apps-link">Explore platform capabilities &rarr;</a>
+            <a href="capabilities.html" class="redesign-apps-link">Explore capabilities ↗</a> <a href="about.html/#people" class="redesign-apps-link">Meet our team ↗</a>
           </div>
         </div>
       </section>
@@ -2416,271 +2375,6 @@
         }
       </style>
 
-      <!-- <section class="redesign-testimonials-section" aria-label="Testimonials">
-        <div class="redesign-testimonials-inner">
-          <header class="redesign-testimonials-header">
-            <span class="redesign-testimonials-eyebrow">FROM OUR RESEARCH COMMUNITY</span>
-            <h2 class="redesign-testimonials-title">What researchers say about working with the platform.</h2>
-          </header>
-
-          <div class="redesign-testimonials-layout">
-            <div class="redesign-testimonial-card featured-testimonial">
-              <blockquote class="redesign-testimonial-quote">
-                "The bioprocessing team has been a valuable partner for our development work. Their expertise and
-                experience facilitated onboarding our fungal organism, adapting our protocol, and transferring our
-                process from shake flasks to 3- to 20-liter bioreactor scale. Along the way, they were accessible,
-                flexible, and collaborative, and welcomed our on-site presence during the work. We look forward to
-                continuing this work with them as we move toward pilot scale."
-              </blockquote>
-              <div class="redesign-testimonial-author">
-                <img src="assets/images/clients/Mahsa Alimi.webp" alt="Mahsa Alimi" class="redesign-author-photo">
-                <div class="redesign-author-details">
-                  <span class="redesign-author-name">Mahsa Alimi</span>
-                  <span class="redesign-author-title">Co-Founder &amp; CSO, Biosam</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="redesign-testimonial-card">
-              <blockquote class="redesign-testimonial-quote-small">
-                "Direct access to the platform helped us use the Echo acoustic droplet ejection system for precise
-                reagent printing as part of our prototype development. The team supported method onboarding, trained us
-                on the workflow, and gave us access to specialized instrumentation that would have been difficult to
-                build internally. It has been a practical way to move our R&D forward while staying lean."
-              </blockquote>
-              <div class="redesign-testimonial-author">
-                <img src="assets/images/clients/Vahid Hamidi.webp" alt="Vahid Hamidi" class="redesign-author-photo">
-                <div class="redesign-author-details">
-                  <span class="redesign-author-name">Vahid Hamidi</span>
-                  <span class="redesign-author-title">Co-Founder &amp; CSO, Labionyx</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-      <!-- <style>
-        .redesign-engage-section {
-          background-color: #ffffff;
-          padding: 6rem 1.5rem;
-          position: relative;
-        }
-
-        .redesign-engage-inner {
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-
-        .redesign-engage-header {
-          text-align: center;
-          margin: 0 auto 4rem auto;
-          max-width: 720px;
-        }
-
-        .redesign-engage-eyebrow {
-          font-size: 0.85rem;
-          font-weight: 700;
-          color: #900707;
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          margin-bottom: 0.75rem;
-          display: block;
-        }
-
-        .redesign-engage-title {
-          font-size: clamp(2rem, 4vw, 2.75rem);
-          font-weight: 800;
-          line-height: 1.1;
-          color: #0f172a;
-          margin-bottom: 1.25rem;
-          letter-spacing: -0.02em;
-        }
-
-        .redesign-engage-desc {
-          font-size: 1.125rem;
-          color: #475569;
-          line-height: 1.6;
-          margin: 0;
-        }
-
-        .redesign-engage-grid {
-          display: grid;
-          gap: 2rem;
-          grid-template-columns: 1fr;
-        }
-
-        @media (min-width: 640px) {
-          .redesign-engage-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem 2rem;
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .redesign-engage-grid {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-          }
-
-          .redesign-engage-item {
-            padding-right: 2rem;
-            border-right: 1px solid #e2e8f0;
-          }
-
-          .redesign-engage-item:last-child {
-            padding-right: 0;
-            border-right: none;
-          }
-        }
-
-        /* Mobile horizontal separators */
-        @media (max-width: 1023px) {
-          .redesign-engage-item {
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #e2e8f0;
-          }
-
-          .redesign-engage-item:last-child {
-            padding-bottom: 0;
-            border-bottom: none;
-          }
-        }
-
-        .redesign-engage-item {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .redesign-engage-item-title {
-          font-size: 1.25rem;
-          font-weight: 700;
-          color: #0f172a;
-          margin-bottom: 0.75rem;
-        }
-
-        .redesign-engage-item-desc {
-          font-size: 1.05rem;
-          color: #475569;
-          line-height: 1.5;
-          margin: 0;
-        }
-
-        .redesign-engage-icon {
-          margin-bottom: 0.85rem;
-          color: #1e3a8a;
-        }
-
-        .redesign-engage-icon svg {
-          width: 32px;
-          height: 32px;
-          stroke: currentColor;
-          fill: none;
-        }
-
-        @media (max-width: 639px) {
-          .redesign-engage-icon svg {
-            width: 28px;
-            height: 28px;
-          }
-        }
-
-        .redesign-engage-footer {
-          margin-top: 5rem;
-          text-align: center;
-        }
-
-        .redesign-engage-link {
-          font-size: 1.125rem;
-          font-weight: 600;
-          color: #0f172a;
-          text-decoration: none;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          transition: color 0.2s;
-        }
-
-        .redesign-engage-link:hover,
-        .redesign-engage-link:focus {
-          color: #900707;
-          outline: 2px solid #900707;
-          outline-offset: 4px;
-        }
-      </style>
-
-      <section class="redesign-engage-section" aria-labelledby="engage-title">
-        <div class="redesign-engage-inner">
-          <header class="redesign-engage-header">
-            <span class="redesign-engage-eyebrow">WAYS TO WORK WITH US</span>
-            <h2 id="engage-title" class="redesign-engage-title">Different projects need different ways to engage.</h2>
-            <p class="redesign-engage-desc">
-              Access the platform through research services, collaborations, direct or hosted access, and longer-term
-              partnerships.
-            </p>
-          </header>
-
-          <div class="redesign-engage-grid">
-            <div class="redesign-engage-item">
-              <div class="redesign-engage-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
-              <h3 class="redesign-engage-item-title">Research Services</h3>
-              <p class="redesign-engage-item-desc">End-to-end execution of defined experimental workflows by the
-                platform team.</p>
-            </div>
-            <div class="redesign-engage-item">
-              <div class="redesign-engage-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                  <path d="m9 14 2 2 4-4" />
-                </svg>
-              </div>
-              <h3 class="redesign-engage-item-title">Research Collaborations</h3>
-              <p class="redesign-engage-item-desc">Joint research programs that combine platform capabilities with
-                partner expertise.</p>
-            </div>
-            <div class="redesign-engage-item">
-              <div class="redesign-engage-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
-              </div>
-              <h3 class="redesign-engage-item-title">Direct &amp; Hosted Access</h3>
-              <p class="redesign-engage-item-desc">Use specialized infrastructure directly, with onboarding, training,
-                and technical support.</p>
-            </div>
-            <div class="redesign-engage-item">
-              <div class="redesign-engage-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <circle cx="6" cy="19" r="3" />
-                  <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
-                  <circle cx="18" cy="5" r="3" />
-                </svg>
-              </div>
-              <h3 class="redesign-engage-item-title">Partnership Pathways</h3>
-              <p class="redesign-engage-item-desc">Strategic or longer-term engagements that connect research,
-                infrastructure, and translation.</p>
-            </div>
-          </div>
-
-          <div class="redesign-engage-footer">
-            <a href="WorkWithUs.html" class="redesign-engage-link">Explore ways to work with us &rarr;</a>
-          </div>
-        </div>
-      </section> -->
-
       <style>
         .redesign-cta-section {
           background-color: #f2f4f5;
@@ -2795,6 +2489,7 @@
           outline-offset: 4px;
         }
       </style>
+
       <section class="dark-streams-section" aria-labelledby="dark-streams-title">
         <div class="dark-streams-inner">
           <div class="partners-grid" id="funders-grid">
