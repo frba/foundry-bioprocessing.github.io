@@ -26,8 +26,8 @@
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="capabilities.html">Capabilities</a>
-        <a href="WorkWithUs.html">Work With Us</a>
         <a href="publications.html">Research & Impact</a>
+        <a href="WorkWithUs.html">Work With Us</a>
         <a href="about.html">About</a>
       </div>
       <div class="nav-utility">
@@ -48,8 +48,8 @@
       <div class="mobile-nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="capabilities.html">Capabilities</a>
-        <a href="WorkWithUs.html">Work With Us</a>
         <a href="publications.html">Research & Impact</a>
+        <a href="WorkWithUs.html">Work With Us</a>
         <a href="about.html">About</a>
       </div>
       <div class="mobile-nav-utility">
@@ -66,9 +66,9 @@
     data-show-light-research-streams="false">
 
     <!-- Global Decorative Background (Watermark) -->
-    <div id="global-bg-layer" aria-hidden="true">
+    <!-- <div id="global-bg-layer" aria-hidden="true">
       <div class="bg-element bg-element-1"></div>
-    </div>
+    </div> -->
 
     <style>
       /* Global Background System (Watermark) */
@@ -154,10 +154,10 @@
         <div class="dark-hero-inner">
           <div class="dark-hero-content">
             <span class="dark-hero-eyebrow">BUILD MORE. TEST MORE. LEARN MORE.</span>
-            <h1 class="dark-hero-title">Engineer Biology with a Biofoundry.</h1>
+            <h1 class="dark-hero-title">Engineer Biology <span style="color: #92d7e8;">with a Biofoundry.</span> </h1>
             <p class="dark-hero-body">
               Automation-enabled infrastructure for building, testing, characterizing, and scaling biological
-              systems—from engineered microorganisms to mammalian cell models and microbial bioprocesses.
+              systems, from genetic and strain variants to mammalian cell engineering, screening and microbial bioprocesses.
             </p>
             <p class="dark-hero-audience">
               For academic researchers, startups, industry teams, and translational partners.
@@ -181,11 +181,6 @@
           </div>
         </div>
       </section>
-
-      <div class="temporary-comparison-label"
-        style="display: none; text-align: center; background: #e2e8f0; padding: 0.5rem; font-size: 0.85rem; color: #475569; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">
-        Current Light Hero Below — Temporary Comparison
-      </div>
 
       <style>
         #homepage-testing-wrapper[data-show-dark-hero-test="false"] #homepage-hero-dark-test,
@@ -483,11 +478,27 @@
           left: -10%;
         }
 
+        .redesign-exec-title-container {
+          max-width: 1200px;
+          margin: 0 auto 2.25rem auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        .redesign-exec-title-container p {
+          margin: 0;
+          font-size: 13px;
+          color: #718495;
+        }
+
         /* Execution Band */
         .redesign-exec-band {
-          background-color: #f8fafc;
-          border-bottom: 1px solid #e2e8f0;
-          padding: 2.5rem 1.5rem;
+          background-color: #f5f8fa;
+          border-bottom: 1px solid #dce4ec;
+          padding: 3rem 1.5rem;
         }
 
         .redesign-exec-inner {
@@ -501,34 +512,48 @@
         .redesign-exec-item {
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
+          gap: 0.75rem;
           position: relative;
         }
 
         .redesign-exec-title {
-          font-family: var(--font-mono, 'JetBrains Mono', monospace);
-          font-size: 1.125rem;
+          font-family: var(--font-sans, 'Inter', -apple-system, sans-serif);
+          font-size: 1.25rem;
           font-weight: 700;
-          color: #0f172a;
+          color: #0f233a;
           margin: 0;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
+          letter-spacing: -0.01em;
           display: flex;
           align-items: center;
-          justify-content: space-between;
+        }
+
+        .redesign-exec-scale-title {
+          color: #2e7d32;
         }
 
         .redesign-exec-desc {
-          font-size: 1rem;
-          color: #475569;
-          line-height: 1.5;
+          font-size: 0.95rem;
+          color: #55697d;
+          line-height: 1.55;
           margin: 0;
         }
 
-        @media (min-width: 640px) {
+        @media (max-width: 639px) {
+          .redesign-exec-item {
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #dce4ec;
+          }
+
+          .redesign-exec-item:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+          }
+        }
+
+        @media (min-width: 640px) and (max-width: 1023px) {
           .redesign-exec-inner {
             grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem 2rem;
+            gap: 2.25rem 2.5rem;
           }
 
           .redesign-exec-item {
@@ -537,40 +562,39 @@
           }
         }
 
-        @media (min-width: 1100px) {
+        @media (min-width: 1024px) {
           .redesign-exec-band {
-            padding: 3rem 2rem;
+            padding: 3.25rem 2rem;
           }
 
           .redesign-exec-inner {
             grid-template-columns: repeat(5, 1fr);
-            gap: 1rem 2rem;
+            gap: 0;
           }
 
           .redesign-exec-item {
-            display: contents;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 0.25rem 1.75rem;
+            border-right: 1px solid #dce4ec;
+            border-bottom: none;
           }
 
-          .redesign-exec-title {
-            grid-row: 1;
-            align-items: center;
+          .redesign-exec-item:first-child {
+            padding-left: 0;
           }
 
-          .redesign-exec-desc {
-            grid-row: 2;
+          .redesign-exec-item:last-child {
+            padding-right: 0;
+            border-right: none;
           }
         }
 
         .exec-arrow {
-          display: inline-block;
-          margin-left: 0.5rem;
+          font-size: 17px;
           color: #94a3b8;
-          font-weight: 400;
-        }
-
-        .scale-arrow {
-          letter-spacing: -2px;
-          margin-left: 1rem;
+          padding-left: 6px;
         }
 
         /* Outputs Section */
@@ -1042,48 +1066,24 @@
             left: 100%;
           }
         }
+
+        .tiny-label {
+          color: #7a3b53;
+          font-size: 10px;
+          font-weight: 880;
+          letter-spacing: 0.17em;
+          text-transform: uppercase;
+        }
       </style>
 
-      <!-- Light homepage hero retained for rollback; currently hidden after selection of the dark hero direction. -->
-      <section class="redesign-hp-hero" aria-label="Homepage Hero" style="display: none;">
-        <div class="redesign-hp-hero-inner">
-          <div class="redesign-hp-content">
-            <span class="redesign-hp-eyebrow">BUILD MORE. TEST MORE. LEARN MORE.</span>
-            <h1 class="redesign-hp-title">Engineer Biology. Foundry Style.</h1>
-            <h3 class="redesign-hp-subtitle">Expand the search. Improve the outcome.</h3>
-            <p class="redesign-hp-body">
-              Automation-enabled infrastructure for building, testing, characterizing, and scaling biological
-              systems—from engineered microorganisms to mammalian cell models and microbial bioprocesses.
-            </p>
-            <p class="redesign-hp-audience">
-              For academic researchers, startups, industry teams, and translational partners.
-            </p>
-            <div class="redesign-hp-cta">
-              <a href="WorkWithUs.html" class="redesign-btn">
-                Work With Us
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="redesign-hp-media">
-            <video autoplay muted loop playsinline>
-              <source src="assets/videos/vantage-01.webm" type="video/webm">
-            </video>
-          </div>
-
-        </div>
-      </section>
-
-
       <section class="redesign-exec-band" aria-label="Platform Execution Flow">
+        <div class="redesign-exec-title-container">
+          <span class="tiny-label">An iterative approach to biological engineering</span>
+          <p>Scale applies to relevant microbial projects</p>
+        </div>
         <div class="redesign-exec-inner">
           <div class="redesign-exec-item">
-            <h2 class="redesign-exec-title">Design <span class="exec-arrow">&rarr;</span></h2>
+            <h2 class="redesign-exec-title">Design <span class="exec-arrow">→</span></h2>
             <p class="redesign-exec-desc">Define the biological question, identify relevant factors, and establish
               starting designs and experimental strategy.</p>
           </div>
@@ -1098,12 +1098,12 @@
               conditions.</p>
           </div>
           <div class="redesign-exec-item">
-            <h2 class="redesign-exec-title">Learn &amp; Iterate <span class="exec-arrow scale-arrow">⇢</span></h2>
+            <h2 class="redesign-exec-title">Learn <span class="exec-arrow">↻</span></h2>
             <p class="redesign-exec-desc">Review results, select promising directions, and steer the next
               build&ndash;test cycle.</p>
           </div>
           <div class="redesign-exec-item">
-            <h2 class="redesign-exec-title">Scale</h2>
+            <h2 class="redesign-exec-title redesign-exec-scale-title">Scale</h2>
             <p class="redesign-exec-desc">Advance relevant microbial systems toward process development and production.
             </p>
           </div>
