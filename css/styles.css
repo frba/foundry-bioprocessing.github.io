@@ -2594,26 +2594,25 @@ section[id] {
 }
 
 .testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
   max-width: 1260px;
   margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
-  .testimonial-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 640px) {
   .testimonial-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 .testimonial-card {
+  flex: 1 1 340px;
+  max-width: 440px;
+  width: 100%;
   position: relative;
   background: #0B2540;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -2751,10 +2750,12 @@ section[id] {
 
 /* ===== STARTUP RESIDENCY PROGRAM ===== */
 #startup-residency {
-  background: #071A2F;
-  color: #fff;
+  background-color: #f1f5f9;
+  color: #0f172a;
   padding-top: 72px;
   padding-bottom: 72px;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
   scroll-margin-top: 120px;
 }
 
@@ -2766,55 +2767,41 @@ section[id] {
 }
 
 #startup-residency .h2 {
-  color: #fff;
-  text-align: center;
+  color: #0f172a;
   margin-bottom: 1rem;
 }
 
 .startup-residency-header {
   margin-bottom: 2.5rem;
-  text-align: center;
 }
 
 #startup-residency .subtitle {
-  color: #a0b2c6;
-  text-align: center;
-  margin: 0 auto;
-  max-width: 760px;
-}
-
-.startup-residency-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  max-width: 760px;
-  margin: 0 auto;
+  color: #475569;
+  line-height: 1.6;
 }
 
 .startup-logo-card {
   width: 100%;
-  max-width: 210px;
-  min-height: 90px;
+  max-width: 260px;
+  min-height: 86px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   background: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
   padding: 1.25rem 1.75rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   text-decoration: none;
 }
 
 .startup-logo-card:hover,
 .startup-logo-card:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  border-color: #38bdf8;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
   outline: none;
 }
 

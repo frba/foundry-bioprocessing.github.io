@@ -388,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: "Hosted Access",
       photo: "assets/images/clients/Michael Dennis.webp",
       logo: "assets/images/clients/pHathom.svg",
-      active: true,
+      active: false,
       placeholder: true
     },
     {
@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: "Mahsa Alimi",
       title: "Co-Founder & CSO",
       organization: "Biosam",
-      tag: "Bioprocessing Services",
+      tag: "Research Services - Bioprocessing",
       photo: "assets/images/clients/Mahsa Alimi.webp",
       logo: "assets/images/clients/BioSam.webp",
       active: true,
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: "Vahid Hamidi",
       title: "Co-Founder & CSO",
       organization: "Labionyx",
-      tag: "Direct Access",
+      tag: "Training & Direct Access",
       photo: "assets/images/clients/Vahid Hamidi.webp",
       logo: "assets/images/clients/Labionyx.webp",
       active: true,

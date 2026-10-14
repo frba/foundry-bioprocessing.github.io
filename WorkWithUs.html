@@ -362,61 +362,497 @@
     <div class="redesign-hero-inner">
       <div class="redesign-hero-content">
         <h1 class="redesign-hero-title">Work With Us</h1>
-        <p class="redesign-hero-body">Tell us what you're trying to discover, build, test, automate, or scale. Whether
-          you're exploring a new idea, developing a workflow, or looking for access to specialized capabilities, we can
-          help identify the right next steps.</p>
+        <p class="redesign-hero-body">Tell us what you're trying to discover, build, test, automate, or scale.
+          We can help identify the capabilities and working arrangement that make sense for your project.​</p>
 
         <div class="redesign-jump-links">
-          <a href="#possible-starting-points" class="redesign-jump-link">Starting Points &darr;</a>
-          <a href="#ways-to-engage" class="redesign-jump-link">Ways to Work With Us &darr;</a>
-          <a href="#contact" class="redesign-jump-link">Get in Touch &darr;</a>
+          <a href="#ways-to-engage" class="redesign-jump-link">Ways to Work Together &darr;</a>
+          <a href="#startup-residency" class="redesign-jump-link">Foundry Residency &darr;</a>
+          <a href="#contact" class="redesign-jump-link">Submit a Request &darr;</a>
         </div>
       </div>
     </div>
 
     <div class="redesign-hero-image-col" aria-hidden="true">
-      <img src="assets/images/team_workwithus.png" alt="Collaborative Research and Project Discussion"
+      <img src="assets/images/Women Scientists Collaborating in Modern Laboratory.png" alt="Collaborative Research and Project Discussion"
         class="redesign-hero-image">
     </div>
   </section>
 
   <main>
     <!-- Possible Starting Points section -->
-    <section id="possible-starting-points" class="section"
-      style="padding: 4rem 1.5rem; background: var(--bg-primary);">
-      <div style="max-width: 900px; margin: 0 auto;">
-        <h2 class="h2" style="font-size: 2rem; margin-bottom: 1rem;">Possible Starting Points</h2>
+    <style>
+      .redesign-starting-section {
+        background-color: #f8fafc;
+        padding: 4.5rem 1.5rem;
+        border-top: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+      }
 
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <!-- Row 1 -->
-          <div style="padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.05);">
-            <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">“We need
-              to build or modify a biological system.”</h4>
-            <p style="color: var(--text-secondary); margin: 0; line-height: 1.5;">Construct design, DNA assembly,
-              microbial or mammalian engineering, variant generation, and cell-based workflows.</p>
+      .redesign-starting-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .redesign-starting-header {
+        margin-bottom: 2.25rem;
+      }
+
+      .redesign-starting-eyebrow {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #900707;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 0.6rem;
+        display: block;
+      }
+
+      .redesign-starting-title {
+        font-size: clamp(1.85rem, 2.75vw, 2.6rem);
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.025em;
+        line-height: 1.15;
+        margin: 0;
+      }
+
+      .redesign-shared-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      @media (min-width: 768px) {
+        .redesign-shared-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+      }
+
+      .redesign-shared-card {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 1.6rem 1.85rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      }
+
+      .redesign-shared-card:hover {
+        border-color: #cbd5e1;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+      }
+
+      .redesign-shared-card-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1.35;
+        margin: 0 0 0.6rem 0;
+      }
+
+      .redesign-shared-card-desc {
+        font-size: 0.92rem;
+        color: #64748b;
+        line-height: 1.55;
+        margin: 0;
+      }
+    </style>
+
+    <section id="possible-starting-points" class="redesign-starting-section" aria-labelledby="starting-points-title">
+      <div class="redesign-starting-inner">
+        <div class="redesign-starting-header">
+          <!-- <span class="redesign-starting-eyebrow">WHERE TO START</span> -->
+          <h2 id="starting-points-title" class="redesign-starting-title">Possible Starting Points</h2>
+        </div>
+
+        <div class="redesign-shared-grid">
+          <div class="redesign-shared-card">
+            <h3 class="redesign-shared-card-title">“We need to build or modify a biological system.”</h3>
+            <p class="redesign-shared-card-desc">Construct design, DNA assembly, microbial or mammalian engineering, variant generation, and cell-based workflows.</p>
           </div>
-          <!-- Row 2 -->
-          <div style="padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.05);">
-            <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">“We need
-              to test, screen, or characterize something.”</h4>
-            <p style="color: var(--text-secondary); margin: 0; line-height: 1.5;">Assays, phenotyping, analytical
-              workflows, sequencing preparation, HPLC, mass spectrometry, and microscopy-supported studies.</p>
+
+          <div class="redesign-shared-card">
+            <h3 class="redesign-shared-card-title">“We need to test, screen, or characterize something.”</h3>
+            <p class="redesign-shared-card-desc">Assays, phenotyping, analytical workflows, sequencing preparation, HPLC, mass spectrometry, and microscopy-supported studies.</p>
           </div>
-          <!-- Row 3 -->
-          <div style="padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.05);">
-            <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">“We need
-              to automate or scale a workflow.”</h4>
-            <p style="color: var(--text-secondary); margin: 0; line-height: 1.5;">Liquid handling, assay
-              miniaturization, workflow optimization, high-throughput implementation, and automation-enabled process
-              development.</p>
+
+          <div class="redesign-shared-card">
+            <h3 class="redesign-shared-card-title">“We need to automate or scale a workflow.”</h3>
+            <p class="redesign-shared-card-desc">Liquid handling, assay miniaturization, workflow optimization, high-throughput implementation, and automation-enabled process development.</p>
           </div>
-          <!-- Row 4 -->
+
+          <div class="redesign-shared-card">
+            <h3 class="redesign-shared-card-title">“We need access, training, or technical support.”</h3>
+            <p class="redesign-shared-card-desc">Research services, collaborative projects, platform access, hosted arrangements, training, and staff-assisted technical work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ways to Engage Section -->
+    <style>
+      .redesign-engage-section {
+        background-color: #f8fafc;
+        padding: 5rem 1.5rem;
+        border-top: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .redesign-engage-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .redesign-engage-header {
+        margin-bottom: 2.25rem;
+      }
+
+      .redesign-engage-eyebrow {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #900707;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .redesign-engage-title {
+        font-size: clamp(2rem, 3.2vw, 2.75rem);
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.025em;
+        line-height: 1.15;
+        margin: 0 0 0.85rem 0;
+      }
+
+      .redesign-engage-desc {
+        font-size: 1.05rem;
+        color: #64748b;
+        line-height: 1.5;
+        margin: 0;
+        max-width: 900px;
+      }
+
+      .redesign-engage-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.35rem;
+      }
+
+      @media (min-width: 640px) {
+        .redesign-engage-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .redesign-engage-grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.25rem;
+        }
+      }
+
+      .redesign-engage-card {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+      }
+
+      .redesign-engage-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px -10px rgba(15, 23, 42, 0.08);
+        border-color: #cbd5e1;
+      }
+
+      .redesign-engage-media {
+        width: 100%;
+        aspect-ratio: 16 / 10.5;
+        overflow: hidden;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        background-color: #f1f5f9;
+      }
+
+      .redesign-engage-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        transition: transform 0.4s ease;
+      }
+
+      .redesign-engage-card:hover .redesign-engage-media img {
+        transform: scale(1.03);
+      }
+
+      .redesign-engage-content {
+        padding: 1.4rem 1.35rem 1.75rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .redesign-engage-card-title {
+        font-size: 1.18rem;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1.3;
+        margin: 0 0 0.65rem 0;
+      }
+
+      .redesign-engage-card-desc {
+        font-size: 0.925rem;
+        color: #64748b;
+        line-height: 1.55;
+        margin: 0;
+      }
+
+      .redesign-engage-footnote {
+        font-size: 0.85rem;
+        color: #64748b;
+        line-height: 1.5;
+        margin-top: 2rem;
+        margin-bottom: 0;
+      }
+    </style>
+
+    <section id="ways-to-engage" class="redesign-engage-section" aria-labelledby="ways-to-work-title">
+      <div class="redesign-engage-inner">
+        <div class="redesign-engage-header">
+          <span class="redesign-engage-eyebrow">WAYS TO ENGAGE</span>
+          <h2 id="ways-to-work-title" class="redesign-engage-title">Ways to work with us</h2>
+          <p class="redesign-engage-desc">Different projects call for different arrangements. The models below may overlap and can be scoped around the work.</p>
+        </div>
+
+        <div class="redesign-engage-grid">
+          <div class="redesign-engage-card">
+            <div class="redesign-engage-media">
+              <img src="assets/images/biomek-02_p.webp" alt="Biomek automated liquid handler in laboratory" loading="lazy">
+            </div>
+            <div class="redesign-engage-content">
+              <h3 class="redesign-engage-card-title">Research Services</h3>
+              <p class="redesign-engage-card-desc">Defined experimental work, including protocol onboarding, automation, and execution with agreed deliverables.</p>
+            </div>
+          </div>
+
+          <div class="redesign-engage-card">
+            <div class="redesign-engage-media">
+              <img src="assets/images/collaborative-projects.png" alt="Researchers collaborating on project" loading="lazy">
+            </div>
+            <div class="redesign-engage-content">
+              <h3 class="redesign-engage-card-title">Collaborative Projects</h3>
+              <p class="redesign-engage-card-desc">Joint research and method development, including project co-design and potential funding partnerships.</p>
+            </div>
+          </div>
+
+          <div class="redesign-engage-card">
+            <div class="redesign-engage-media">
+              <img src="assets/images/mantis.webp" alt="Mantis liquid dispenser instrument" loading="lazy">
+            </div>
+            <div class="redesign-engage-content">
+              <h3 class="redesign-engage-card-title">Training &amp; Direct Access</h3>
+              <p class="redesign-engage-card-desc">Training and access to suitable instrumentation and workflows for qualified users.</p>
+            </div>
+          </div>
+
+          <div class="redesign-engage-card">
+            <div class="redesign-engage-media">
+              <img src="assets/images/Foundry_space-01.webp" alt="Concordia Genome Foundry laboratory space" loading="lazy">
+            </div>
+            <div class="redesign-engage-content">
+              <h3 class="redesign-engage-card-title">Hosting &amp; Residency</h3>
+              <p class="redesign-engage-card-desc">Dedicated laboratory or office space for startups and teams seeking an ongoing presence.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="redesign-engage-footnote">Commercial projects are subject to appropriate agreements and material rights, licensing, and freedom-to-operate considerations.</p>
+      </div>
+    </section>
+
+    <!-- Section: Startup residency -->
+    <style>
+      .startup-residency-section {
+        background-color: #f1f5f9;
+        padding: 5rem 1.5rem;
+        border-top: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+        scroll-margin-top: 100px;
+      }
+
+      .startup-residency-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      @media (min-width: 900px) {
+        .startup-residency-inner {
+          grid-template-columns: 1.25fr 0.75fr;
+          gap: 4rem;
+        }
+      }
+
+      .startup-residency-content {
+        text-align: left;
+      }
+
+      .startup-residency-eyebrow {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #900707;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .startup-residency-title {
+        font-size: clamp(2rem, 3.2vw, 2.6rem);
+        font-weight: 800;
+        color: #0f172a !important;
+        letter-spacing: -0.025em;
+        line-height: 1.15;
+        margin: 0 0 1rem 0;
+        text-align: left !important;
+      }
+
+      .startup-residency-desc {
+        font-size: 1.05rem;
+        color: #475569 !important;
+        line-height: 1.6;
+        margin: 0 0 1.75rem 0;
+        max-width: 620px;
+        text-align: left !important;
+      }
+
+      .startup-residency-btn {
+        background-color: #900707;
+        color: #ffffff !important;
+        font-weight: 700;
+        font-size: 0.95rem;
+        padding: 0.85rem 1.65rem;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+        border: none;
+        box-shadow: 0 2px 4px rgba(144, 7, 7, 0.15);
+      }
+
+      .startup-residency-btn:hover,
+      .startup-residency-btn:focus-visible {
+        background-color: #760606;
+        color: #ffffff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(144, 7, 7, 0.25);
+      }
+
+      .startup-residency-btn .arrow {
+        transition: transform 0.2s ease;
+      }
+
+      .startup-residency-btn:hover .arrow {
+        transform: translateX(3px);
+      }
+
+      .startup-residency-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        align-items: center;
+        /* justify-content: flex-end; */
+        max-width: 100%;
+        margin: 0;
+      }
+
+      @media (min-width: 900px) {
+        .startup-residency-grid {
+          flex-direction: column;
+          /* align-items: flex-end; */
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 899px) {
+        .startup-residency-grid {
+          justify-content: flex-start;
+        }
+      }
+
+      #startup-residency .startup-logo-card {
+        width: 100%;
+        max-width: 260px;
+        min-height: 86px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 1.2rem 1.75rem;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+        text-decoration: none;
+      }
+
+      #startup-residency .startup-logo-card:hover,
+      #startup-residency .startup-logo-card:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+        border-color: #cbd5e1;
+        outline: none;
+      }
+
+      #startup-residency .startup-logo-card .startup-logo-img {
+        max-width: 160px;
+        max-height: 48px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.2s ease;
+      }
+
+      #startup-residency .startup-logo-card:hover .startup-logo-img {
+        transform: scale(1.04);
+      }
+    </style>
+
+    <section class="startup-residency-section" id="startup-residency" aria-labelledby="startup-residency-title">
+      <div class="startup-residency-inner">
+        <div class="startup-residency-content">
+          <span class="startup-residency-eyebrow">WORKING ALONGSIDE THE FOUNDRY</span>
+          <h2 id="startup-residency-title" class="startup-residency-title">Foundry Start-Up Residency</h2>
+          <p class="startup-residency-desc">A home for biotech startups needing laboratory or 
+            office space near specialized research infrastructure. Hosted arrangements and any instrument 
+            access or technical support are scoped individually.</p>
           <div>
-            <h4 style="font-size: 1.1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">“We need
-              access, training, or technical support.”</h4>
-            <p style="color: var(--text-secondary); margin: 0; line-height: 1.5;">Research services, collaborative
-              projects, platform access, hosted arrangements, training, and staff-assisted technical work.</p>
+            <a class="startup-residency-btn" href="#contact" data-inquiry="Foundry Residency">Inquire about residency <span class="arrow" aria-hidden="true">&rarr;</span></a>
           </div>
+        </div>
+
+        <div class="startup-residency-grid" id="startup-residency-grid">
+          <!-- Startup residency dynamically loaded via js/main.js -->
         </div>
       </div>
     </section>
@@ -425,9 +861,9 @@
     <section class="section" id="partner-voices" style="background: #071A2F;">
       <div class="container-wide">
         <div class="partner-voices-header">
-          <h2 class="h2 section-heading-large" style="color: #F8FAFC;">What our users are building with us</h2>
-          <p class="subtitle" style="color: #CBD5E1;">Researchers and companies work with us in different ways — from
-            hosted access and direct instrument use to services and collaborative projects.</p>
+          <h2 class="h2 section-heading-large" style="color: #F8FAFC;">In their words</h2>
+          <!-- <p class="subtitle" style="color: #CBD5E1;">Researchers and companies work with us in different ways — from -->
+            <!-- hosted access and direct instrument use to services and collaborative projects.</p> -->
         </div>
 
         <div class="testimonial-grid" id="testimonial-grid">
@@ -436,498 +872,198 @@
       </div>
     </section>
 
-    <!-- Ways to Engage Section -->
-    <section id="ways-to-engage" class="section ways-to-engage" aria-labelledby="engage-title">
-      <style>
-        .ways-to-engage {
-          background-color: #f8fafc;
-          padding: 6rem 1.5rem;
-          border-top: 1px solid #e2e8f0;
-          border-bottom: 1px solid #e2e8f0;
-        }
-        .engage-inner {
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-        .engage-eyebrow {
-          font-size: 0.85rem;
-          font-weight: 700;
-          color: #64748b;
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          margin-bottom: 1rem;
-          display: block;
-        }
-        .engage-title {
-          font-size: clamp(2rem, 3vw, 2.5rem);
-          font-weight: 800;
-          color: #0f172a;
-          margin-bottom: 1rem;
-          line-height: 1.2;
-        }
-        .engage-intro {
-          font-size: 1.125rem;
-          color: #475569;
-          line-height: 1.6;
-          max-width: 800px;
-          margin-bottom: 0.5rem;
-        }
-        .engage-clarification {
-          font-size: 1.05rem;
-          color: #64748b;
-          margin-bottom: 4rem;
-        }
-        .engage-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-          margin-bottom: 4rem;
-        }
-        @media (min-width: 768px) {
-          .engage-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-        @media (min-width: 1100px) {
-          .engage-grid {
-            grid-template-columns: repeat(4, 1fr);
-          }
-        }
-        .engage-card {
-          background: #ffffff;
-          border: 1px solid #e2e8f0;
-          border-radius: 8px;
-          padding: 2rem;
-          position: relative;
-          display: flex;
-          flex-direction: column;
-        }
-        .engage-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 3px;
-          border-top-left-radius: 8px;
-          border-top-right-radius: 8px;
-        }
-        .engage-card-1::before { background-color: #9f1239; } /* burgundy */
-        .engage-card-2::before { background-color: #1e40af; } /* blue */
-        .engage-card-3::before { background-color: #0f766e; } /* teal */
-        .engage-card-4::before { background-color: #b45309; } /* amber */
-        
-        .engage-icon {
-          color: #475569;
-          margin-bottom: 1.5rem;
-        }
-        .engage-card-title {
-          font-size: 1.25rem;
-          font-weight: 700;
-          color: #0f172a;
-          margin-bottom: 1rem;
-        }
-        .engage-desc {
-          font-size: 1rem;
-          color: #475569;
-          line-height: 1.6;
-          margin-bottom: 1.5rem;
-          flex-grow: 1;
-        }
-        .engage-expectations {
-          font-size: 0.9rem;
-          color: #64748b;
-          line-height: 1.5;
-          padding-top: 1rem;
-          border-top: 1px solid #e2e8f0;
-        }
-        
-        .engage-notes {
-          text-align: center;
-          font-size: 0.95rem;
-          color: #64748b;
-          margin-bottom: 4rem;
-        }
-        
-        @media (max-width: 639px) {
-          .engage-notes {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: center;
-          }
-          .engage-bullet {
-            display: none;
-          }
-        }
-        
-        .engage-disclosure {
-          display: inline-block;
-          text-align: left;
-        }
-        .engage-disclosure summary {
-          cursor: pointer;
-          color: #0f172a;
-          font-weight: 600;
-          text-decoration: underline;
-          text-decoration-color: #cbd5e1;
-          text-underline-offset: 4px;
-          margin: 0 0.5rem;
-          padding: 0.2rem 0;
-          transition: all 0.2s ease;
-        }
-        .engage-disclosure summary:hover {
-          color: #3b82f6;
-          text-decoration-color: #3b82f6;
-        }
-        
-        /* The popover content */
-        .engage-disclosure-content {
-          margin-top: 1rem;
-          padding: 1.25rem;
-          background: #ffffff;
-          border: 1px solid #e2e8f0;
-          border-radius: 6px;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          font-size: 0.9rem;
-          color: #475569;
-          line-height: 1.5;
-          max-width: 500px;
-          text-align: left;
-          position: absolute;
-          z-index: 10;
-        }
-        
-        @media (max-width: 639px) {
-          .engage-disclosure-content {
-            position: static;
-            box-shadow: none;
-            background: #f1f5f9;
-            margin-top: 0.5rem;
-            width: 100%;
-          }
-          .engage-disclosure {
-            display: block;
-            width: 100%;
-          }
-        }
-        
-        .engage-transition {
-          text-align: center;
-          padding-top: 2rem;
-          border-top: 1px solid #cbd5e1;
-          max-width: 800px;
-          margin: 0 auto;
-        }
-        .engage-transition p {
-          font-size: 1.1rem;
-          color: #475569;
-          margin-bottom: 1.5rem;
-        }
-        .engage-inquiry-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          font-size: 1.1rem;
-          font-weight: 600;
-          color: #1e3a8a;
-          text-decoration: none;
-          padding-bottom: 2px;
-          border-bottom: 1px solid transparent;
-          transition: all 0.2s ease;
-        }
-        .engage-inquiry-link-arrow {
-          display: inline-block;
-          transition: transform 0.2s ease;
-        }
-        .engage-inquiry-link:hover, .engage-inquiry-link:focus {
-          color: #172554;
-          border-bottom-color: #172554;
-          outline: none;
-        }
-        .engage-inquiry-link:hover .engage-inquiry-link-arrow, .engage-inquiry-link:focus .engage-inquiry-link-arrow {
-          transform: translateX(3px);
-        }
-        .engage-inquiry-link:focus-visible {
-          outline: 2px solid #93c5fd;
-          outline-offset: 4px;
-        }
-      </style>
+    <!-- Section Pricing & project terms -->
+    <style>
+      .pricing-terms-section {
+        background-color: #f8fafc;
+        padding: 5rem 1.5rem;
+        border-top: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+        scroll-margin-top: 100px;
+      }
 
-      <div class="engage-inner">
-        <span class="engage-eyebrow">WAYS TO ENGAGE</span>
-        <h2 id="engage-title" class="engage-title">Different projects need different ways to work together.</h2>
-        <p class="engage-intro">The right engagement model depends on the project goals, required capabilities, team involvement, timeline, and level of platform access.</p>
-        <p class="engage-clarification">These models are flexible and may be combined or adapted around the project.</p>
-        
-        <!-- comment
-        <div class="engage-grid">
-          Card 1 
-          <div class="engage-card engage-card-1">
-            <div class="engage-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
-            </div>
-            <h3 class="engage-card-title">Research Services</h3>
-            <p class="engage-desc">Client-scoped research support with defined project goals, execution plans, and deliverables. Deliverables may include data, reports, protocols, engineered materials, biological samples, or other project-specific outputs.</p>
-            <div class="engage-expectations">Scope, timelines, deliverables, responsibilities, and costs are agreed before work begins.</div>
-          </div>
-          
-          Card 2 
-          <div class="engage-card engage-card-2">
-            <div class="engage-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                <path d="m9 14 2 2 4-4" />
-              </svg>
-            </div>
-            <h3 class="engage-card-title">Research Collaborations</h3>
-            <p class="engage-desc">Collaborative projects built around shared scientific goals, shared research outputs, and jointly developed workplans. These may involve co-developed methods, shared data generation, publications, translational development, or intellectual property considerations.</p>
-            <div class="engage-expectations">Collaborations depend on scientific alignment, available capacity, funding, and clearly defined roles.</div>
-          </div>
+      .pricing-terms-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-          Card 3 
-          <div class="engage-card engage-card-3">
-            <div class="engage-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                <polyline points="9 22 9 12 15 12 15 22" />
-              </svg>
-            </div>
-            <h3 class="engage-card-title">Direct &amp; Hosted Access</h3>
-            <p class="engage-desc">Access the platform through training, supported instrument use, or hosted project arrangements. Users may be trained to operate selected equipment themselves, or work with platform staff for assisted equipment usage and defined technical tasks.</p>
-            <div class="engage-expectations">Access depends on project suitability, training, scheduling, biosafety requirements, platform policies, and available capacity.</div>
-          </div>
+      .pricing-terms-header {
+        margin-bottom: 2.25rem;
+        text-align: left;
+      }
 
-          Card 4 
-          <div class="engage-card engage-card-4">
-            <div class="engage-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="6" cy="19" r="3" />
-                <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
-                <circle cx="18" cy="5" r="3" />
-              </svg>
-            </div>
-            <h3 class="engage-card-title">Partnership Pathways</h3>
-            <p class="engage-desc">Explore longer-term opportunities involving platform-enabled research, translational development, infrastructure access, ecosystem partnerships, public funding, or strategic collaboration.</p>
-            <div class="engage-expectations">Partnership structures are developed case by case and may extend beyond a conventional service project.</div>
-          </div>
+      .pricing-terms-eyebrow {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #900707;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .pricing-terms-title {
+        font-size: clamp(2rem, 3.2vw, 2.75rem);
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.025em;
+        line-height: 1.15;
+        margin: 0 0 0.75rem 0;
+      }
+
+      .pricing-terms-desc {
+        font-size: 1.05rem;
+        color: #475569;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      .pricing-terms-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .pricing-terms-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.75rem;
+        }
+      }
+
+      .pricing-terms-card {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 2.25rem 2rem 2.25rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+      }
+
+      .pricing-terms-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px -10px rgba(15, 23, 42, 0.08);
+        border-color: #cbd5e1;
+      }
+
+      .pricing-terms-card-header {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        margin-bottom: 1.1rem;
+      }
+
+      .pricing-terms-indicator {
+        width: 4px;
+        height: 22px;
+        border-radius: 4px;
+        flex-shrink: 0;
+      }
+
+      .pricing-terms-indicator-teal {
+        background-color: #176981;
+      }
+
+      .pricing-terms-indicator-burgundy {
+        background-color: #a6274f;
+      }
+
+      .pricing-terms-card-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1.3;
+        margin: 0;
+      }
+
+      .pricing-terms-card-desc {
+        font-size: 0.95rem;
+        color: #475569;
+        line-height: 1.6;
+        margin: 0 0 2.25rem 0;
+        flex-grow: 1;
+      }
+
+      .pricing-terms-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.15s ease, transform 0.2s ease;
+        align-self: flex-start;
+      }
+
+      .pricing-terms-link-teal {
+        color: #176981;
+      }
+
+      .pricing-terms-link-teal:hover {
+        color: #0e4b5d;
+        text-decoration: underline;
+      }
+
+      .pricing-terms-link-blue {
+        color: #156082;
+      }
+
+      .pricing-terms-link-blue:hover {
+        color: #0d435c;
+        text-decoration: underline;
+      }
+    </style>
+
+    <section class="pricing-terms-section" id="pricing-project-terms" aria-labelledby="pricing-terms-title">
+      <div class="pricing-terms-inner">
+        <div class="pricing-terms-header">
+          <span class="pricing-terms-eyebrow">PRACTICAL INFORMATION</span>
+          <h2 id="pricing-terms-title" class="pricing-terms-title">Pricing &amp; project terms</h2>
+          <p class="pricing-terms-desc">A few practical details before getting started.</p>
         </div>
-        -->
 
-        <!-- Four Cards -->
-        <div class="wwu-grid">
-
-          <!-- Card 1: Research Services -->
-          <div class="wwu-card wwu-card-1">
-            <div class="wwu-card-inner" style="display: flex; flex-direction: column; height: 100%;">
-              <div class="wwu-card-top">
-                <div class="wwu-card-icon wwu-icon-1">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                  </svg>
-                </div>
-                <div class="wwu-card-title-block">
-                  <h3 class="wwu-card-title wwu-title-1">Research Services</h3>
-                </div>
-              </div>
-              <div class="wwu-card-divider"></div>
-              <p class="wwu-card-body">
-                <ul>
-                  <li>Protocol onboarding, automation & execution</li>
-                  <li>Defined milestones and deliverables</li>
-                </ul>
-              </p>
+        <div class="pricing-terms-grid">
+          <!-- Card 1: Equipment & access rates -->
+          <div class="pricing-terms-card">
+            <div class="pricing-terms-card-header">
+              <span class="pricing-terms-indicator pricing-terms-indicator-teal" aria-hidden="true"></span>
+              <h3 class="pricing-terms-card-title">Equipment &amp; access rates</h3>
             </div>
-            <div class="wwu-card-img wwu-img-1">
-              <div class="wwu-img-fade"></div>
+            <p class="pricing-terms-card-desc">Most direct instrument-access rates are listed in our reservation system. Rates vary by client type.</p>
+            <div>
+              <a href="https://foundry.concordia.ca/bookr/" target="_blank" rel="noopener noreferrer" class="pricing-terms-link pricing-terms-link-teal">
+                View instrument rates &#x2197;
+              </a>
             </div>
           </div>
 
-          <!-- Card 2: Research Collaborations -->
-          <div class="wwu-card wwu-card-2">
-            <div class="wwu-card-inner" style="display: flex; flex-direction: column; height: 100%;">
-              <div class="wwu-card-top">
-                <div class="wwu-card-icon wwu-icon-2">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
-                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                    <path d="m9 14 2 2 4-4" />
-                  </svg>
-                </div>
-                <div class="wwu-card-title-block">
-                  <h3 class="wwu-card-title wwu-title-2">Research Collaborations</h3>
-                </div>
-              </div>
-              <div class="wwu-card-divider"></div>
-              <p class="wwu-card-body">
-                <ul>
-                  <li>Co-developed research projects.</li>
-                  <li>Joint funding applications, incl. Mitacs.</li>
-                  <li>Concordia PI expertise, staffing & supervision..</li>
-                </ul>
-              </p>
+          <!-- Card 2: Services & project pricing -->
+          <div class="pricing-terms-card">
+            <div class="pricing-terms-card-header">
+              <span class="pricing-terms-indicator pricing-terms-indicator-burgundy" aria-hidden="true"></span>
+              <h3 class="pricing-terms-card-title">Services &amp; project pricing</h3>
             </div>
-            <div class="wwu-card-img wwu-img-2">
-              <div class="wwu-img-fade"></div>
+            <p class="pricing-terms-card-desc">Project-based services are scoped and quoted individually, based on requirements, milestones, and deliverables.</p>
+            <div>
+              <a href="#contact" class="pricing-terms-link pricing-terms-link-blue">
+                Request a quote &#x2193;
+              </a>
             </div>
           </div>
-
-          <!-- Card 3: Platform Access & Technical Support -->
-          <div class="wwu-card wwu-card-3">
-            <div class="wwu-card-inner" style="display: flex; flex-direction: column; height: 100%;">
-              <div class="wwu-card-top">
-                <div class="wwu-card-icon wwu-icon-3">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                    <polyline points="9 22 9 12 15 12 15 22" />
-                  </svg>
-                </div>
-                <div class="wwu-card-title-block">
-                  <h3 class="wwu-card-title wwu-title-3">Direct &amp; Hosted Access</h3>
-                </div>
-              </div>
-              <div class="wwu-card-divider"></div>
-              <p class="wwu-card-body">
-                <ul>
-                  <li>Reserve instruments</li>
-                  <li>Run your own experiments</li>
-                  <li>Training, workflows & technical support</li>
-                </ul>
-              </p>
-            </div>
-            <div class="wwu-card-img wwu-img-3">
-              <div class="wwu-img-fade"></div>
-            </div>
-          </div>
-
-          <!-- Card 4: Partnership Pathways -->
-          <div class="wwu-card wwu-card-4">
-            <div class="wwu-card-inner" style="display: flex; flex-direction: column; height: 100%;">
-              <div class="wwu-card-top">
-                <div class="wwu-card-icon wwu-icon-4">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="6" cy="19" r="3" />
-                    <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
-                    <circle cx="18" cy="5" r="3" />
-                  </svg>
-                </div>
-                <div class="wwu-card-title-block">
-                  <h3 class="wwu-card-title wwu-title-4">Partnership Pathways</h3>
-                </div>
-              </div>
-              <div class="wwu-card-divider"></div>
-              <p class="wwu-card-body" style="flex-grow: 1;">
-                <ul>
-                  <li>Dedicated bench &/or office space​.</li>
-                  <li>Ideal for startup & project teams with ongoing platform needs.</li>
-                  <li>Access to expertise within Concordia’s research ecosystem​.</li>
-                </ul>
-              </p>
-            </div>
-            <div class="wwu-card-img wwu-img-4">
-              <div class="wwu-img-fade"></div>
-            </div>
-          </div>
-
-        </div><!-- end wwu-grid -->
-        
-        <div class="engage-notes">
-          Important considerations: 
-          <details class="engage-disclosure">
-            <summary>Commercial intent</summary>
-            <div class="engage-disclosure-content">
-              For projects with commercial intent, clients and partners are responsible for confirming material rights, licensing requirements, and freedom-to-operate considerations for their intended use.
-            </div>
-          </details>
-          <span class="engage-bullet">&middot;</span>
-          <details class="engage-disclosure">
-            <summary>Public funding</summary>
-            <div class="engage-disclosure-content">
-              Funding and support models vary by project. Depending on eligibility, project structure, partner type, and available programs, different engagement pathways may be supported through public funding, institutional programs, partner contributions, or other funding mechanisms.
-            </div>
-          </details>
-        </div>
-        
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            const disclosures = document.querySelectorAll('.engage-disclosure');
-            
-            // Close other disclosures when one is opened
-            disclosures.forEach((disclosure) => {
-              disclosure.addEventListener('toggle', (event) => {
-                if (disclosure.open) {
-                  disclosures.forEach((otherDisclosure) => {
-                    if (otherDisclosure !== disclosure && otherDisclosure.open) {
-                      otherDisclosure.open = false;
-                    }
-                  });
-                }
-              });
-            });
-
-            // Close on outside click or escape
-            document.addEventListener('click', (event) => {
-              const openDisclosure = document.querySelector('.engage-disclosure[open]');
-              if (openDisclosure && !openDisclosure.contains(event.target)) {
-                openDisclosure.open = false;
-              }
-            });
-            
-            document.addEventListener('keydown', (event) => {
-              if (event.key === 'Escape') {
-                const openDisclosure = document.querySelector('.engage-disclosure[open]');
-                if (openDisclosure) {
-                  openDisclosure.open = false;
-                  openDisclosure.querySelector('summary').focus();
-                }
-              }
-            });
-          });
-        </script>
-
-        <div class="engage-transition">
-          <p>Not sure which model fits? Tell us about the project and we’ll help identify the right approach.</p>
-          <a href="#contact" class="engage-inquiry-link">Send an inquiry <span class="engage-inquiry-link-arrow">&rarr;</span></a>
         </div>
       </div>
     </section>
-
-    <!-- Section: Startup residency -->
-    <section class="section" id="startup-residency" style="background: #071A2F;">
-      <div class="container-wide">
-        <div class="startup-residency-header">
-          <h2 class="h2 section-heading-large" style="color: #F8FAFC;">Startup Residency Program</h2>
-          <p class="subtitle" style="color: #CBD5E1;">The Startup Residency Program is an initiative that provides
-            startup companies with access to the Genome Foundry's facilities, equipment, and expertise.</p>
-        </div>
-
-        <div class="startup-residency-grid" id="startup-residency-grid">
-          <!-- Startup residency dynamically loaded via js/main.js -->
-        </div>
-      </div>
-    </section>
-    
-    <!-- 2. Main contact section -->
     <section id="contact" class="section" style="padding: 4rem 1.5rem; background: #ffffff;">
       <!-- PART 1: Top row with contact info and form -->
       <div class="contact-grid" style="margin-bottom: 4rem;">
 
         <!-- Left column: Work With Us block -->
         <div style="display: flex; flex-direction: column; position: relative;">
-          <h2 class="h2" style="margin-bottom: 1.5rem; font-size: 2.5rem; font-weight: 700;">Contact Us</h2>
+          <h2 class="h2" style="margin-bottom: 1.5rem; font-size: 2.5rem; font-weight: 700;">Send a Request</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Tell us a little about 
+            your project, access need, or residency inquiry. We'll suggest a suitable next conversation.</p>
 
           <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2.5rem; z-index: 1;">
             <div>
@@ -936,21 +1072,6 @@
               <a href="mailto:genomefoundry@concordia.ca"
                 style="color: var(--text-primary); text-decoration: none; font-size: 1.1rem; transition: opacity 0.2s;">
                 genomefoundry@concordia.ca
-              </a>
-            </div>
-
-            <div>
-              <span
-                style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary); display: block; margin-bottom: 0.25rem;">LinkedIn</span>
-              <a href="https://www.linkedin.com/company/concordia-genome-foundry/" target="_blank" rel="noopener"
-                style="color: #004085; text-decoration: none; font-size: 1.1rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; transition: opacity 0.2s;">
-                Concordia Genome Foundry
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
               </a>
             </div>
           </div>
@@ -967,9 +1088,9 @@
 
         <!-- Right column: Inquiry form -->
         <div class="contact-card">
-          <h3 class="h3" style="margin-bottom: 0.5rem; font-size: 1.5rem;">Send an Inquiry</h3>
-          <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Share a few details and
-            we’ll get back to you.</p>
+          <!-- <h3 class="h3" style="margin-bottom: 0.5rem; font-size: 1.5rem;">Send a Request</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Tell us a little about 
+            your project, access need, or residency inquiry. We'll suggest a suitable next conversation.</p> -->
 
           <!-- TODO: Integrate backend form submission for genomefoundry@concordia.ca -->
           <form id="contact-page-form" action="https://formspree.io/f/meewznpe" method="POST">
@@ -1071,22 +1192,6 @@
             </div>
           </div>
         </div>
-
-        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding-top: 0.5rem;">
-          <div style="color: #004085; margin-top: 2px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-          </div>
-          <div style="flex: 1; min-width: 0;">
-            <h4 style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">For
-              external and commercial projects</h4>
-            <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5; margin: 0; max-width: none;">
-              We maintain confidentiality, support appropriate intellectual property arrangements.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1097,7 +1202,7 @@
         <div>
           <h2 class="h2" style="margin-bottom: 1rem; font-size: 2rem;">Our Location</h2>
           <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
-            Our platform operates from facilities at Concordia University’s Loyola Campus.
+            Visits are welcome by appointment;<br> please contact us in advance.
           </p>
 
           <div style="display: flex; gap: 1rem; margin-bottom: 2.5rem;">
@@ -1131,7 +1236,7 @@
         <!-- Right: Building Image -->
         <div>
           <!-- TODO: Replace with local building image if hu-01.webp is not correct -->
-          <img src="assets/images/GE.webp" alt="Concordia University Applied Science Hub"
+          <img src="assets/images/team_workwithus2.png" alt="Concordia University Applied Science Hub"
             style="width: 100%; height: 360px; object-fit: cover; border-radius: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.05);">
         </div>
       </div>
