@@ -446,9 +446,10 @@
         <div class="redesign-hero-inner">
           <div class="redesign-hero-content">
             <h1 class="redesign-hero-title">Capabilities</h1>
-            <p class="redesign-hero-body">An integrated platform for synthetic biology, mammalian cell engineering, and
-              microbial bioprocessing—combining automation, high-throughput experimentation, and advanced analytics to
-              accelerate discovery to impact.</p>
+            <p class="redesign-hero-body">Our platforms support synthetic biology and genetic variant
+              workflows, mammalian cell engineering and screening, and microbial
+              bioprocess development. Researchers can access individual
+              capabilities or combine them across experimental workflows.​</p>
 
             <div class="redesign-jump-links">
               <a href="#redesign-microbial-engineering" class="redesign-jump-link">Microbial Engineering &darr;</a>
@@ -563,74 +564,101 @@
         }
 
         .redesign-shared-header {
-          margin-bottom: 2.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .redesign-shared-eyebrow {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #900707;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin-bottom: 0.6rem;
+          display: block;
         }
 
         .redesign-shared-title {
-          font-size: 1.25rem;
-          font-weight: 700;
+          font-size: clamp(1.85rem, 2.75vw, 2.6rem);
+          font-weight: 800;
           color: #0f172a;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          margin-bottom: 0.75rem;
-        }
-
-        .redesign-shared-subtitle {
-          font-size: 1.125rem;
-          color: #475569;
+          letter-spacing: -0.025em;
+          line-height: 1.15;
+          margin: 0;
         }
 
         .redesign-shared-grid {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 2.5rem;
+          gap: 1.25rem;
         }
 
         @media (min-width: 640px) {
           .redesign-shared-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
           }
         }
 
-        @media (min-width: 1024px) {
+        @media (min-width: 992px) {
           .redesign-shared-grid {
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem 2rem;
+            gap: 1.25rem;
           }
         }
 
-        @media (min-width: 1200px) {
-          .redesign-shared-grid {
-            grid-template-columns: repeat(6, 1fr);
-            gap: 2rem;
-          }
-
-          .redesign-shared-item {
-            position: relative;
-          }
-
-          .redesign-shared-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: -1rem;
-            top: 0.5rem;
-            bottom: 0.5rem;
-            width: 1px;
-            background-color: #cbd5e1;
-          }
+        .redesign-shared-card {
+          background-color: #ffffff;
+          border: 1px solid #e2e8f0;
+          border-radius: 12px;
+          padding: 1.35rem 1.6rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+          transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
-        .redesign-shared-item-title {
-          font-size: 1.125rem;
+        .redesign-shared-card:hover {
+          border-color: #cbd5e1;
+          box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+        }
+
+        .redesign-shared-card-title {
+          font-size: 1.05rem;
           font-weight: 700;
           color: #0f172a;
-          margin-bottom: 0.5rem;
+          line-height: 1.3;
+          margin: 0 0 0.5rem 0;
         }
 
-        .redesign-shared-item-desc {
-          font-size: 1rem;
-          color: #475569;
+        .redesign-shared-card-desc {
+          font-size: 0.875rem;
+          color: #64748b;
           line-height: 1.5;
+          margin: 0;
+        }
+
+        .redesign-shared-footer {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 1.5rem;
+        }
+
+        .redesign-shared-link {
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: #0284c7;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          transition: color 0.2s ease;
+        }
+
+        .redesign-shared-link:hover,
+        .redesign-shared-link:focus {
+          color: #0369a1;
+          text-decoration: underline;
         }
       </style>
 
@@ -667,43 +695,46 @@
       <section class="redesign-shared-cap" aria-labelledby="shared-heading">
         <div class="redesign-section-inner">
           <div class="redesign-shared-header">
-            <h2 id="shared-heading" class="redesign-shared-title">SHARED ENABLING CAPABILITIES</h2>
+            <span class="redesign-shared-eyebrow">SHARED ENABLING CAPABILITIES</span>
+            <h2 id="shared-heading" class="redesign-shared-title">Methods, measurements, and automation</h2>
           </div>
 
           <div class="redesign-shared-grid">
-            <div class="redesign-shared-item">
-              <h3 class="redesign-shared-item-title">Sequencing &amp; Library Preparation</h3>
-              <p class="redesign-shared-item-desc">Barcoded sample preparation, sequencing workflows, and molecular
-                analysis.</p>
+            <div class="redesign-shared-card">
+              <h3 class="redesign-shared-card-title">Sequencing &amp; library preparation</h3>
+              <p class="redesign-shared-card-desc">Barcoded preparation, sequencing workflows, and molecular analysis.</p>
             </div>
 
-            <div class="redesign-shared-item">
-              <h3 class="redesign-shared-item-title">Genotyping &amp; qPCR</h3>
-              <p class="redesign-shared-item-desc">Targeted confirmation, expression analysis, and variant
-                characterization.</p>
+            <div class="redesign-shared-card">
+              <h3 class="redesign-shared-card-title">Genotyping &amp; qPCR</h3>
+              <p class="redesign-shared-card-desc">Targeted validation, gene expression, and variant characterization.</p>
             </div>
 
-            <div class="redesign-shared-item">
-              <h3 class="redesign-shared-item-title">Flow cytometry / FACS</h3>
-              <p class="redesign-shared-item-desc">Population analysis, single-cell measurements, and cell sorting.</p>
+            <div class="redesign-shared-card">
+              <h3 class="redesign-shared-card-title">Flow cytometry / FACS</h3>
+              <p class="redesign-shared-card-desc">Population analysis, single-cell measurements, and sorting.</p>
             </div>
 
-            <div class="redesign-shared-item">
-              <h3 class="redesign-shared-item-title">Imaging &amp; Phenotyping</h3>
-              <p class="redesign-shared-item-desc">High-content imaging, microscopy, plate-based measurements, and
-                phenotypic analysis.</p>
+            <div class="redesign-shared-card">
+              <h3 class="redesign-shared-card-title">Imaging &amp; phenotyping</h3>
+              <p class="redesign-shared-card-desc">Imaging, microscopy, multiwell measurements, and phenotypic assays.</p>
             </div>
 
-            <div class="redesign-shared-item">
-              <h3 class="redesign-shared-item-title">HPLC &amp; Mass Spectrometry</h3>
-              <p class="redesign-shared-item-desc">Product, metabolite, and analytical characterization.</p>
+            <div class="redesign-shared-card">
+              <h3 class="redesign-shared-card-title">HPLC &amp; mass spectrometry</h3>
+              <p class="redesign-shared-card-desc">Product, metabolite, and analytical characterization.</p>
             </div>
 
-            <div class="redesign-shared-item">
-              <h3 class="redesign-shared-item-title">Automation &amp; Data Workflows</h3>
-              <p class="redesign-shared-item-desc">Liquid handling, robotic execution, workflow integration, and
-                data-supported decisions.</p>
+            <div class="redesign-shared-card">
+              <h3 class="redesign-shared-card-title">Automation &amp; data workflows</h3>
+              <p class="redesign-shared-card-desc">Liquid handling, robotic execution, workflow integration, and LIMS-supported sample tracking</p>
             </div>
+          </div>
+
+          <div class="redesign-shared-footer">
+            <a href="https://foundry.concordia.ca/bookr/" target="_blank" rel="noopener noreferrer" class="redesign-shared-link">
+              Browse our Instruments &rarr;
+            </a>
           </div>
         </div>
       </section>
@@ -740,6 +771,10 @@
             gap: 4rem;
             align-items: start;
           }
+
+          #redesign-mammalian-engineering .redesign-detail-inner {
+            grid-template-columns: 1fr minmax(38%, 42%);
+          }
         }
 
         .redesign-detail-content-column {
@@ -749,7 +784,7 @@
         }
 
         .redesign-detail-title {
-          font-size: 2rem;
+          font-size: 1.5rem;
           font-weight: 800;
           color: #0f172a;
           margin-bottom: 0.75rem;
@@ -758,7 +793,7 @@
         }
 
         .redesign-detail-lead {
-          font-size: 1.25rem;
+          font-size: 1.0rem;
           color: #334155;
           margin-bottom: 1.5rem;
           line-height: 1.5;
@@ -806,14 +841,14 @@
         }
 
         .redesign-detail-group-title {
-          font-size: 1.125rem;
+          font-size: 1.0rem;
           font-weight: 700;
           color: #0f172a;
           margin-bottom: 0.5rem;
         }
 
         .redesign-detail-group-desc {
-          font-size: 0.95rem;
+          font-size: 0.85rem;
           color: #475569;
           line-height: 1.5;
         }
@@ -862,7 +897,7 @@
         }
 
         .redesign-detail-spec-value {
-          font-size: 0.95rem;
+          font-size: 0.80rem;
           color: #475569;
         }
 
@@ -1313,54 +1348,59 @@
 
           <div class="redesign-detail-content-column">
             <div class="redesign-detail-header">
-              <h2 id="microbial-title" class="redesign-detail-title">Synthetic Biology &amp; Microbial Strain
-                Engineering</h2>
-              <p class="redesign-detail-lead">Engineer and screen microbial systems in parallel.</p>
+              <h2 id="microbial-title" class="redesign-detail-title">Synthetic Biology &amp; Genetic Engineering
+                Workflows</h2>
+              <p class="redesign-detail-lead">Automated DNA assembly, library construction, and screening workflows
+                supporting applications from genetic variant testing to microbial strain engineering.​</p>
             </div>
 
             <div class="redesign-detail-content">
               <div class="redesign-detail-groups">
                 <div class="redesign-detail-group">
                   <h3 class="redesign-detail-group-title">Library Construction &amp; Reaction Setup</h3>
-                  <p class="redesign-detail-group-desc">Build plasmids, pathways, CRISPR libraries, and arrayed or
-                    pooled designs using automated, miniaturized reaction setup.</p>
+                  <p class="redesign-detail-group-desc">Assemble plasmids, DNA constructs, and genetic libraries using
+                    automated, miniaturized reaction setup, including arrayed or pooled designs.</p>
                 </div>
                 <div class="redesign-detail-group">
-                  <h3 class="redesign-detail-group-title">Genetic Engineering &amp; Host Modification</h3>
-                  <p class="redesign-detail-group-desc">Introduce targeted modifications, expression systems, and
-                    multi-gene constructs across supported microbial hosts.</p>
+                  <h3 class="redesign-detail-group-title">Transformation &amp; Host workflows</h3>
+                  <p class="redesign-detail-group-desc">Support cloning, transformation, selection, and colony-
+                    handling using established methods. Organism-specific genome modification workflows are assessed 
+                    by project scope.
+                  </p>
                 </div>
                 <div class="redesign-detail-group">
                   <h3 class="redesign-detail-group-title">Functional Screening &amp; Phenotyping</h3>
-                  <p class="redesign-detail-group-desc">Screen microbial variants using colony handling, kinetic
-                    measurements, fluorescence, imaging, and phenotypic analysis.</p>
+                  <p class="redesign-detail-group-desc">Screen genetic and strain variants using colony handling,
+                    kinetic measurements, fluorescence, imaging, and phenotypic analysis.​</p>
                 </div>
                 <div class="redesign-detail-group">
                   <h3 class="redesign-detail-group-title">Molecular &amp; Analytical Characterization</h3>
-                  <p class="redesign-detail-group-desc">Connect promising hits to sequencing preparation, genotyping,
-                    qPCR, HPLC, mass spectrometry, and other analytical readouts.</p>
+                  <p class="redesign-detail-group-desc">Connect selected variants to sequencing preparation, genotyping,
+                    qPCR, HPLC, mass spectrometry, and other analytical readouts.​</p>
                 </div>
               </div>
 
               <div class="redesign-detail-specs">
                 <div class="redesign-detail-spec">
-                  <span class="redesign-detail-spec-label">Hosts:</span>
-                  <span class="redesign-detail-spec-value">E. coli &middot; yeast &middot; other supported microbial
-                    hosts</span>
+                  <span class="redesign-detail-spec-label">Biological systems:</span>
+                  <span class="redesign-detail-spec-value">E. coli (cloning and plasmid propagation) &middot; S. 
+                    cerevisiae (selected workflows) &middot; other organisms by project scope.
+                    </span>
                 </div>
                 <div class="redesign-detail-spec">
                   <span class="redesign-detail-spec-label">Formats:</span>
-                  <span class="redesign-detail-spec-value">96-well &middot; 384-well &middot; 1,536-well plates</span>
+                  <span class="redesign-detail-spec-value">96-well &middot; 384-well</span>
                 </div>
                 <div class="redesign-detail-spec">
                   <span class="redesign-detail-spec-label">Throughput:</span>
-                  <span class="redesign-detail-spec-value">Thousands of reactions and strains in parallel</span>
+                  <span class="redesign-detail-spec-value">Thousands of miniaturized reactions in applicable
+                    workflows; strain-level throughput varies by method.</span>
                 </div>
 
-                <div class="redesign-detail-link-container">
+                <!-- <div class="redesign-detail-link-container">
                   <a href="WorkWithUs.html" class="redesign-detail-workflow-link">Discuss a workflow <span
                       aria-hidden="true">&rarr;</span></a>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -1369,6 +1409,55 @@
 
       <section id="redesign-mammalian-engineering" class="redesign-detail-section" aria-labelledby="mammalian-title">
         <div class="redesign-detail-inner">
+          <div class="redesign-detail-content-column">
+            <div class="redesign-detail-header">
+              <h2 id="mammalian-title" class="redesign-detail-title">Mammalian Cell Engineering & Screening​</h2>
+              <p class="redesign-detail-lead">Automated workflows for mammalian cell culture, genetic modification, reagent delivery, and
+              arrayed cell-based assays.​</p>
+            </div>
+
+            <div class="redesign-detail-content">
+              <div class="redesign-detail-groups">
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Cell Culture &amp; Maintenance Workflows</h3>
+                  <p class="redesign-detail-group-desc">Culture, expansion, and maintenance of
+                    supported mammalian cell types, including iPSCs.​</p>
+                </div>
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Cell Engineering &amp; Reagent Delivery</h3>
+                  <p class="redesign-detail-group-desc">Nucleofection, transfection, and other
+                    supported genetic modification and reagent-delivery workflows.​</p>
+                </div>
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Arrayed Screening &amp; Cell-Based Assays</h3>
+                  <p class="redesign-detail-group-desc">Evaluate individual genetic perturbations, candidates, and
+                    experimental conditions in separately addressable wells using imaging, functional assays, and other analytical readouts.</p>
+                </div>
+                <div class="redesign-detail-group">
+                  <h3 class="redesign-detail-group-title">Cell-Line Development &amp; Characterization</h3>
+                  <p class="redesign-detail-group-desc">Selected workflows for cell-line editing, clonal isolation,
+                    expansion, genotyping, and characterization.​</p>
+                </div>
+              </div>
+
+              <div class="redesign-detail-specs">
+                <div class="redesign-detail-spec">
+                  <span class="redesign-detail-spec-label">Cell Types:</span>
+                  <span class="redesign-detail-spec-value">iPSCs and other supported mammalian cell types.</span>
+                </div>
+                <div class="redesign-detail-spec">
+                  <span class="redesign-detail-spec-label">Formats:</span>
+                  <span class="redesign-detail-spec-value">96-well arrayed cell engineering &middot; 384-well screening, as applicable​</span>
+                </div>
+
+                <!-- <div class="redesign-detail-link-container">
+                  <a href="WorkWithUs.html" class="redesign-detail-workflow-link">Discuss a workflow <span
+                      aria-hidden="true">&rarr;</span></a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+
           <div class="redesign-detail-media-column">
             <div class="redesign-gallery">
               <div class="redesign-gallery-hero">
@@ -1404,60 +1493,6 @@
               </div>
 
               <div class="redesign-gallery-caption">Automated culture and passaging for adherent and suspension lines
-              </div>
-            </div>
-          </div>
-
-          <div class="redesign-detail-content-column">
-            <div class="redesign-detail-header">
-              <h2 id="mammalian-title" class="redesign-detail-title">Mammalian Cell Engineering</h2>
-              <p class="redesign-detail-lead">Develop and screen complex engineered mammalian cell models.</p>
-            </div>
-
-            <div class="redesign-detail-content">
-              <div class="redesign-detail-groups">
-                <div class="redesign-detail-group">
-                  <h3 class="redesign-detail-group-title">Automated Culture &amp; Expansion</h3>
-                  <p class="redesign-detail-group-desc">Maintain, expand, and passage mammalian cell models using
-                    automated multi-well workflows and integrated imaging.</p>
-                </div>
-                <div class="redesign-detail-group">
-                  <h3 class="redesign-detail-group-title">Cell Modification &amp; Delivery</h3>
-                  <p class="redesign-detail-group-desc">Introduce editing tools, expression systems, and other
-                    perturbations using nucleofection, transfection, or viral delivery.</p>
-                </div>
-                <div class="redesign-detail-group">
-                  <h3 class="redesign-detail-group-title">Screening &amp; Functional Analysis</h3>
-                  <p class="redesign-detail-group-desc">Measure cellular responses using imaging, plate-based assays,
-                    Flow cytometry / FACS, sequencing preparation, and phenotyping.</p>
-                </div>
-                <div class="redesign-detail-group">
-                  <h3 class="redesign-detail-group-title">Clonal Isolation &amp; Cell-Line Development</h3>
-                  <p class="redesign-detail-group-desc">Isolate, expand, and validate engineered cells using single-cell
-                    sorting, imaging, genotyping, sequencing, and related confirmation workflows.</p>
-                </div>
-              </div>
-
-              <div class="redesign-detail-specs">
-                <div class="redesign-detail-spec">
-                  <span class="redesign-detail-spec-label">Cell Types:</span>
-                  <span class="redesign-detail-spec-value">iPSCs &middot; stem cells &middot; primary cells &middot;
-                    engineered cell lines</span>
-                </div>
-                <div class="redesign-detail-spec">
-                  <span class="redesign-detail-spec-label">Formats:</span>
-                  <span class="redesign-detail-spec-value">96-well and higher-density multi-well workflows</span>
-                </div>
-                <div class="redesign-detail-spec">
-                  <span class="redesign-detail-spec-label">Throughput:</span>
-                  <span class="redesign-detail-spec-value">96-well nucleofection &middot; parallel screening and
-                    analysis</span>
-                </div>
-
-                <div class="redesign-detail-link-container">
-                  <a href="WorkWithUs.html" class="redesign-detail-workflow-link">Discuss a workflow <span
-                      aria-hidden="true">&rarr;</span></a>
-                </div>
               </div>
             </div>
           </div>
@@ -1537,8 +1572,8 @@
           <div class="redesign-detail-content-column">
             <div class="redesign-detail-header">
               <h2 id="bioprocessing-title" class="redesign-detail-title">Microbial Bioprocessing &amp; Scale-Up</h2>
-              <p class="redesign-detail-lead">Move microbial systems from process-relevant screening toward pilot-scale
-                production.</p>
+              <p class="redesign-detail-lead">Bioprocess development, optimization, and scale-up to support the transition 
+                toward pilot-scale operations​.</p>
             </div>
 
             <div class="redesign-detail-content">
@@ -1560,8 +1595,8 @@
                 </div>
                 <div class="redesign-detail-group">
                   <h3 class="redesign-detail-group-title">Downstream Processing &amp; Recovery</h3>
-                  <p class="redesign-detail-group-desc">Recover, concentrate, separate, or stabilize biomass, proteins,
-                    products, and process intermediates.</p>
+                  <p class="redesign-detail-group-desc">Project-scoped. Recovery, concentration, and stabilization approaches
+                    are assessed and adapted according to product characteristics and project requirements.​</p>
                 </div>
               </div>
 
@@ -1571,19 +1606,22 @@
                   <span class="redesign-detail-spec-value">200 mL to 200 L</span>
                 </div>
                 <div class="redesign-detail-spec">
-                  <span class="redesign-detail-spec-label">Modes:</span>
-                  <span class="redesign-detail-spec-value">Batch &middot; fed-batch &middot; continuous</span>
+                  <span class="redesign-detail-spec-label">Parallel fermentation:</span>
+                  <span class="redesign-detail-spec-value">Eight 1-L bioreactors for simultaneous &middot; fed-batch &middot; continuous</span>
                 </div>
                 <div class="redesign-detail-spec">
-                  <span class="redesign-detail-spec-label">Systems:</span>
-                  <span class="redesign-detail-spec-value">Parallel mini-bioreactors through pilot-scale
-                    fermenters</span>
+                  <span class="redesign-detail-spec-label">Organisms:</span>
+                  <span class="redesign-detail-spec-value">Bacterias &middot; yeasts &middot; filamentous fungi</span>
+                </div>
+                <div class="redesign-detail-spec">
+                  <span class="redesign-detail-spec-label">DSP:</span>
+                  <span class="redesign-detail-spec-value">Disc-stack centrifugation &middot; tangential flow filtration &middot; spray drying &middot; lyophilization</span>
                 </div>
 
-                <div class="redesign-detail-link-container">
+                <!-- <div class="redesign-detail-link-container">
                   <a href="WorkWithUs.html" class="redesign-detail-workflow-link">Discuss a workflow <span
                       aria-hidden="true">&rarr;</span></a>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -1594,17 +1632,11 @@
       <section class="redesign-engagement-section" aria-labelledby="engagement-title">
         <div class="redesign-engagement-inner">
           <div class="redesign-engagement-content">
-            <h2 id="engagement-title" class="redesign-engagement-title">HOW PROJECTS ENGAGE</h2>
             <p class="redesign-engagement-body">
-              Projects engage with the platform at different points. Some begin with a research question, an engineering
-              or screening workflow, a biological model, an existing microbial or mammalian system, a
-              process-development need, or access to specialized equipment and expertise. We help identify and integrate
-              the capabilities needed for the project.
+              Our team works with researchers to implement, adapt, and automate experimental methods. Organism-specific
+              engineering, biological design requirements, and non-routine workflows are assessed during project
+              scoping.
             </p>
-          </div>
-          <div class="redesign-engagement-action">
-            <!-- Temporary CTA retained for stakeholder review; may be removed to reduce duplication. -->
-            <a href="WorkWithUs.html" class="redesign-btn redesign-btn-outline">Work With Us</a>
           </div>
         </div>
       </section>
