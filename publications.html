@@ -19,7 +19,7 @@
       grid-template-columns: 1fr;
       gap: 1.5rem;
       margin-top: 1.5rem;
-      max-width: 1280px;
+      max-width: 1200px;
     }
 
     @media (min-width: 768px) {
@@ -101,6 +101,12 @@
       color: #6b21a8;
       border-color: #e9d5ff;
       background: #f3e8ff;
+    }
+
+    .publication-tag.core-03-pill {
+      color: #059669;
+      border-color: #a7f3d0;
+      background: #ecfdf5;
     }
 
     .topic-pills-row {
@@ -464,17 +470,402 @@
         background: linear-gradient(to right, #0b1120 0%, transparent 100%);
       }
     }
+
+    /* Featured Research Section */
+    /* Page container alignment matching capabilities.html (1200px max-width) */
+    main > .container-wide {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .featured-research-section {
+      scroll-margin-top: 90px;
+      margin-bottom: 4.5rem;
+    }
+
+    .featured-section-header {
+      margin-bottom: 2.25rem;
+      max-width: 1200px;
+    }
+
+    .featured-section-eyebrow {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #0284c7;
+      margin-bottom: 0.4rem;
+    }
+
+    .featured-section-title {
+      font-size: clamp(1.85rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: #0b1528;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+    }
+
+    .featured-section-subtitle {
+      font-size: 1.02rem;
+      color: #64748b;
+      max-width: 760px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .featured-cards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.75rem;
+      max-width: 1200px;
+    }
+
+    .featured-card {
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 20px;
+      padding: clamp(1.5rem, 3.5vw, 2.75rem);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .featured-card:hover {
+      box-shadow: 0 10px 32px -4px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.03);
+      border-color: rgba(15, 23, 42, 0.14);
+    }
+
+    .featured-card-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .featured-card-eyebrow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .eyebrow-tag {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .eyebrow-sep {
+      color: #94a3b8;
+    }
+
+    .eyebrow-lab {
+      font-weight: 700;
+    }
+
+    .featured-card-title {
+      font-size: clamp(1.4rem, 2.2vw, 1.95rem);
+      font-weight: 800;
+      color: #0b1528;
+      line-height: 1.24;
+      margin: 0 0 0.85rem;
+      letter-spacing: -0.02em;
+    }
+
+    .featured-status-wrap {
+      margin-bottom: 0.25rem;
+    }
+
+    .featured-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Card 1 specific colors */
+    .theme-fumaric .featured-card-eyebrow {
+      color: #435831;
+    }
+    .theme-fumaric .featured-status-pill {
+      background: #eff5ea;
+      color: #385028;
+    }
+    .theme-fumaric .status-dot {
+      background: #435831;
+    }
+
+    /* Card 2 specific colors */
+    .theme-gpcr .featured-card-eyebrow {
+      color: #016481;
+    }
+    .theme-gpcr .featured-status-pill {
+      background: #f0f2fe;
+      color: #4338ca;
+    }
+    .theme-gpcr .status-dot {
+      background: #4f46e5;
+    }
+
+    /* Card 3 specific colors */
+    .theme-vesicles .featured-card-eyebrow {
+      color: #0a7e91;
+    }
+    .theme-vesicles .featured-status-pill {
+      background: #f5f0ff;
+      color: #6d28d9;
+    }
+    .theme-vesicles .status-dot {
+      background: #7c3aed;
+    }
+
+    .featured-card-body {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .featured-card-body {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .featured-card-media {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #f8fafc;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      display: flex;
+    }
+
+    .featured-card-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .featured-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .featured-card-desc {
+      font-size: 0.96rem;
+      line-height: 1.62;
+      color: #334155;
+      margin: 0;
+    }
+
+    .featured-key-points {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .featured-point-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.4;
+    }
+
+    .point-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .featured-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .featured-tag {
+      font-size: 0.76rem;
+      font-weight: 500;
+      padding: 0.28rem 0.75rem;
+      border-radius: 999px;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .theme-fumaric .featured-tag {
+      background: #eff3ea;
+      color: #435831;
+    }
+
+    .theme-gpcr .featured-tag {
+      background: #eff4fa;
+      color: #2b4566;
+    }
+
+    .theme-vesicles .featured-tag {
+      background: #e7f6f8;
+      color: #1a5968;
+    }
+
+    .featured-action-row {
+      margin-top: 0.25rem;
+    }
+
+    /* Action Buttons */
+    .featured-btn-group {
+      display: inline-flex;
+      align-items: center;
+      background: #435831;
+      color: #ffffff;
+      padding: 0.55rem 1.15rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      gap: 0.75rem;
+      width: fit-content;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .btn-group-label {
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .btn-group-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .btn-group-sublink {
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.2rem 0.45rem;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.15);
+      transition: background 0.15s ease, transform 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.15rem;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .btn-group-sublink:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .featured-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #ffffff;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      width: fit-content;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .featured-action-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+    }
+
+    .btn-gpcr {
+      background: #016481;
+    }
+    .btn-gpcr:hover {
+      background: #01526a;
+    }
+
+    .btn-vesicles {
+      background: #0a7e91;
+    }
+    .btn-vesicles:hover {
+      background: #086b7c;
+    }
+
+    /* Selected Publications Section Header */
+    #publications-section {
+      scroll-margin-top: 90px;
+    }
+
+    .selected-pub-header {
+      margin-bottom: 1.75rem;
+      max-width: 1200px;
+    }
+
+    .selected-pub-eyebrow {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+      margin-bottom: 0.4rem;
+    }
+
+    .selected-pub-title {
+      font-size: clamp(1.6rem, 2.5vw, 2.05rem);
+      font-weight: 800;
+      color: #0b1528;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+    }
+
+    .selected-pub-subtitle {
+      font-size: 0.98rem;
+      color: #64748b;
+      max-width: 700px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .moderate-bottom-cta {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
 
   <section class="redesign-hero" aria-label="Research &amp; Impact Overview">
     <div class="redesign-hero-inner">
       <div class="redesign-hero-content">
         <h1 class="redesign-hero-title">Research &amp; Impact</h1>
-        <p class="redesign-hero-body">We support the broader research community through platform access, technical
-          expertise, and project-specific workflows, highlighting publications from principal investigators who draw on
-          our infrastructure to accelerate discovery.</p>
+        <p class="redesign-hero-body">Research supported by the Foundry spans genetic and cellular
+          engineering, biological discovery, and microbial biotechnology. The studies featured here highlight
+          work led by researchers drawing on our infrastructure, technical expertise, and project-specific workflows.​</p>
 
         <div class="redesign-jump-links">
+          <a href="#featured-research" class="redesign-jump-link">Featured Research &darr;</a>
           <a href="#publications-section" class="redesign-jump-link">Selected Publications &darr;</a>
         </div>
       </div>
@@ -489,8 +880,215 @@
   <main style="background: #fafafa; padding-bottom: 6rem;">
     <div class="container-wide">
 
+      <!-- Featured Research Section -->
+      <section id="featured-research" class="featured-research-section" style="padding-top: 3.5rem;">
+        <div class="featured-section-header">
+          <div class="featured-section-eyebrow">RESEARCH SPOTLIGHT</div>
+          <h2 class="featured-section-title">Featured Research</h2>
+          <p class="featured-section-subtitle">Collaborations, preprints, and milestone publications highlighting technologies and workflows developed with Foundry platform support.</p>
+        </div>
+
+        <div class="featured-cards-list">
+
+          <!-- Feature 1: From whey permeate to fumaric acid -->
+          <article class="featured-card theme-fumaric">
+            <div class="featured-card-header">
+              <div class="featured-card-eyebrow">
+                <span class="eyebrow-tag">RESEARCH FEATURE</span>
+                <span class="eyebrow-sep" aria-hidden="true">/</span>
+                <span class="eyebrow-lab">VINCENT MARTIN LAB – AGROPUR COLLABORATION</span>
+              </div>
+              <h3 class="featured-card-title">From whey permeate to fumaric acid</h3>
+              <div class="featured-status-wrap">
+                <span class="featured-status-pill">
+                  <span class="status-dot"></span>
+                  Published research
+                </span>
+              </div>
+            </div>
+
+            <div class="featured-card-body">
+              <div class="featured-card-media">
+                <img src="assets/images/featured_fumaric_acid.png"
+                  alt="Bioprocess illustration showing Kluyveromyces marxianus converting dairy whey permeate to fumaric acid"
+                  loading="lazy">
+              </div>
+
+              <div class="featured-card-content">
+                <p class="featured-card-desc">
+                  This published collaboration explores <em>Kluyveromyces marxianus</em> as a platform for converting lactose-rich dairy permeate into fumaric acid. The work combines host evaluation, genetic variant engineering, and fermentation optimization to demonstrate a viable bioprocess route from dairy side streams to a valuable biochemical.
+                </p>
+
+                <ul class="featured-key-points">
+                  <li class="featured-point-item">
+                    <span class="point-dot" style="background-color: #51784b;" aria-hidden="true"></span>
+                    <span><em>K. marxianus</em> as a host for whey valorization</span>
+                  </li>
+                  <li class="featured-point-item">
+                    <span class="point-dot" style="background-color: #979438;" aria-hidden="true"></span>
+                    <span>Fermentation optimization on lactose-rich dairy permeate</span>
+                  </li>
+                  <li class="featured-point-item">
+                    <span class="point-dot" style="background-color: #e6ab3b;" aria-hidden="true"></span>
+                    <span>Published route to fumaric acid production</span>
+                  </li>
+                </ul>
+
+                <div class="featured-tags-row">
+                  <span class="featured-tag">Microbial bioprocessing</span>
+                  <span class="featured-tag"><em>K. marxianus</em></span>
+                  <span class="featured-tag">Whey permeate valorization</span>
+                  <span class="featured-tag">Fermentation</span>
+                  <span class="featured-tag">Fumaric acid</span>
+                </div>
+
+                <div class="featured-action-row">
+                  <div class="featured-btn-group">
+                    <span class="btn-group-label">Read publications</span>
+                    <div class="btn-group-links">
+                      <a href="https://doi.org/10.1021/acssynbio.5c00689" target="_blank" rel="noopener noreferrer" class="btn-group-sublink" aria-label="Read publication 1: Tri-Functional CRISPR Screen">1 ↗</a>
+                      <a href="https://doi.org/10.1021/acssynbio.5c00096" target="_blank" rel="noopener noreferrer" class="btn-group-sublink" aria-label="Read publication 2: Sequencing of a Dairy Isolate">2 ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Feature 2: Heterologous engineering of receptors using OrthoRep (HERO) -->
+          <article class="featured-card theme-gpcr">
+            <div class="featured-card-header">
+              <div class="featured-card-eyebrow">
+                <span class="eyebrow-tag">RESEARCH FEATURE</span>
+                <span class="eyebrow-sep" aria-hidden="true">/</span>
+                <span class="eyebrow-lab">VINCENT MARTIN LAB</span>
+              </div>
+              <h3 class="featured-card-title">Heterologous engineering of receptors using OrthoRep (HERO) for directed evolution of GPCRs in yeast</h3>
+              <div class="featured-status-wrap">
+                <span class="featured-status-pill">
+                  <span class="status-dot"></span>
+                  Preprint
+                </span>
+              </div>
+            </div>
+
+            <div class="featured-card-body">
+              <div class="featured-card-content">
+                <p class="featured-card-desc">
+                  This collaboration used the Foundry’s MAESTRO platform to automate growth-triggered serial passaging for GPCR evolution in yeast. The result is a high-throughput workflow for receptor engineering that combines synthetic biology, automation, and directed evolution.
+                </p>
+
+                <ul class="featured-key-points">
+                  <li class="featured-point-item">
+                    <span class="point-dot" style="background-color: #4053bc;" aria-hidden="true"></span>
+                    <span>OrthoRep-based directed evolution in yeast</span>
+                  </li>
+                  <li class="featured-point-item">
+                    <span class="point-dot" style="background-color: #e08b01;" aria-hidden="true"></span>
+                    <span>Automated growth-triggered serial passaging on MAESTRO</span>
+                  </li>
+                  <li class="featured-point-item">
+                    <span class="point-dot" style="background-color: #f86f71;" aria-hidden="true"></span>
+                    <span>Improved signaling for human GPCR targets</span>
+                  </li>
+                </ul>
+
+                <div class="featured-tags-row">
+                  <span class="featured-tag">Synthetic biology</span>
+                  <span class="featured-tag">Directed evolution</span>
+                  <span class="featured-tag">GPCRs</span>
+                  <span class="featured-tag">Yeast</span>
+                  <span class="featured-tag">Automation</span>
+                </div>
+
+                <div class="featured-action-row">
+                  <a href="https://doi.org/10.64898/2026.09.30.755785" target="_blank" rel="noopener noreferrer" class="featured-action-btn btn-gpcr">
+                    Read preprint ↗
+                  </a>
+                </div>
+              </div>
+
+              <div class="featured-card-media">
+                <img src="assets/images/featured_orthorep_gpcr.png"
+                  alt="3D molecular model and automated liquid handler illustrating OrthoRep HERO directed evolution of GPCRs in yeast"
+                  loading="lazy">
+              </div>
+
+
+            </div>
+          </article>
+
+          <!-- Feature 3: Engineering S. cerevisiae extracellular vesicles using synthetic biology -->
+          <article class="featured-card theme-vesicles">
+            <div class="featured-card-header">
+              <div class="featured-card-eyebrow">
+                <span class="eyebrow-tag">RESEARCH FEATURE</span>
+                <span class="eyebrow-sep" aria-hidden="true">/</span>
+                <span class="eyebrow-lab">CHRIS BRETT LAB</span>
+              </div>
+              <h3 class="featured-card-title">Engineering S. cerevisiae extracellular vesicles using synthetic biology</h3>
+              <div class="featured-status-wrap">
+                <span class="featured-status-pill">
+                  <span class="status-dot"></span>
+                  Preprint
+                </span>
+              </div>
+            </div>
+
+            <div class="featured-card-body">
+              <div class="featured-card-media">
+                <img src="assets/images/featured_extracellular_vesicles.png"
+                  alt="Microscopic 3D rendering of yeast extracellular vesicles engineered with synthetic biology cargo"
+                  loading="lazy">
+              </div>
+
+              <div class="featured-card-content">
+                <p class="featured-card-desc">
+                  This preprint explores yeast extracellular vesicles as an engineering platform, using synthetic biology workflows to identify and evaluate candidate scaffolds for cargo loading. The work supports iterative design-build-test-learn development for future health and biotechnology applications.
+                </p>
+
+                <ul class="featured-key-points">
+                  <li class="featured-point-item">
+                    <span class="point-dot" style="background-color: #2ec9bb;" aria-hidden="true"></span>
+                    <span>Yeast as a chassis for extracellular vesicle engineering</span>
+                  </li>
+                  <li class="featured-point-item">
+                    <span class="point-dot" style="background-color: #ac73ea;" aria-hidden="true"></span>
+                    <span>Candidate scaffold screening for EV cargo loading</span>
+                  </li>
+                  <li class="featured-point-item">
+                    <span class="point-dot" style="background-color: #03a7d4;" aria-hidden="true"></span>
+                    <span>Synthetic biology framework for iterative development</span>
+                  </li>
+                </ul>
+
+                <div class="featured-tags-row">
+                  <span class="featured-tag">Extracellular vesicles</span>
+                  <span class="featured-tag">Yeast</span>
+                  <span class="featured-tag">Synthetic biology</span>
+                  <span class="featured-tag">Screening</span>
+                  <span class="featured-tag">Biotechnology</span>
+                </div>
+
+                <div class="featured-action-row">
+                  <a href="https://www.biorxiv.org/content/10.64898/2026.03.06.710173v1" target="_blank" rel="noopener noreferrer" class="featured-action-btn btn-vesicles">
+                    Read preprint ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
       <!-- Publications Section -->
-      <section id="publications-section" style="padding-top: 3rem;">
+      <section id="publications-section" style="padding-top: 3.5rem; border-top: 1px solid rgba(0, 0, 0, 0.08);">
+        <div class="selected-pub-header">
+          <div class="selected-pub-eyebrow">CATALOGUE</div>
+          <h2 class="selected-pub-title">Selected Publications</h2>
+          <p class="selected-pub-subtitle">Peer-reviewed articles, review papers, and preprints co-authored by Foundry researchers or enabled by our platform instruments.</p>
+        </div>
 
         <!-- Dynamic Grid Container -->
         <div id="publications-container" class="publications-grid">
@@ -526,7 +1124,7 @@
         year: 2026,
         doi: "10.64898/2026.09.30.755785",
         url: "https://doi.org/10.64898/2026.09.30.755785",
-        applicationTag: "Discovery & Functional Genomics",
+        applicationTag: "Discovery & Methods",
         status: "preprint",
         visible: true,
         topics: ["directed evolution", "GPCRs", "yeast biosensors"]
@@ -562,7 +1160,7 @@
         year: 2025,
         doi: "10.1021/acssynbio.5c00689",
         url: "https://doi.org/10.1021/acssynbio.5c00689",
-        applicationTag: "Biomaterials & Biomanufacturing",
+        applicationTag: "Biomanufacturing",
         status: "peer-reviewed",
         visible: true,
         topics: ["yeast", "CRISPR screen", "biomanufacturing"]
@@ -574,7 +1172,7 @@
         year: 2025,
         doi: "10.1021/acssynbio.5c00096",
         url: "https://doi.org/10.1021/acssynbio.5c00096",
-        applicationTag: "Biomaterials & Biomanufacturing",
+        applicationTag: "Biomanufacturing",
         status: "peer-reviewed",
         visible: true,
         topics: ["non-conventional yeast", "genomics", "biomanufacturing"]
@@ -598,7 +1196,7 @@
         year: 2023,
         doi: "10.1038/s41467-023-41064-5",
         url: "https://doi.org/10.1038/s41467-023-41064-5",
-        applicationTag: "Biomaterials & Biomanufacturing",
+        applicationTag: "Biomanufacturing",
         status: "peer-reviewed",
         visible: true,
         topics: ["yeast screening", "muconic acid", "strain engineering"]
@@ -610,7 +1208,7 @@
         year: 2023,
         doi: "10.1093/genetics/iyad117",
         url: "https://doi.org/10.1093/genetics/iyad117",
-        applicationTag: "Discovery & Functional Genomics",
+        applicationTag: "Discovery & Methods",
         status: "peer-reviewed",
         visible: true,
         topics: ["yeast", "protein interactions", "humanization"]
@@ -622,7 +1220,7 @@
         year: 2023,
         doi: "10.1016/j.ymben.2023.03.010",
         url: "https://doi.org/10.1016/j.ymben.2023.03.010",
-        applicationTag: "Biomaterials & Biomanufacturing",
+        applicationTag: "Biomanufacturing",
         status: "peer-reviewed",
         visible: true,
         topics: ["metabolic engineering", "biomanufacturing", "alkaloids"]
@@ -634,7 +1232,7 @@
         year: 2023,
         doi: "10.1093/nar/gkad503",
         url: "https://doi.org/10.1093/nar/gkad503",
-        applicationTag: "Biomaterials & Biomanufacturing",
+        applicationTag: "Biomanufacturing",
         status: "peer-reviewed",
         visible: true,
         topics: ["directed evolution", "synthetic biology", "biosensors"]
@@ -646,7 +1244,7 @@
         year: 2022,
         doi: "10.1021/acssynbio.2c00063",
         url: "https://doi.org/10.1021/acssynbio.2c00063",
-        applicationTag: "Biomaterials & Biomanufacturing",
+        applicationTag: "Biomanufacturing",
         status: "peer-reviewed",
         visible: true,
         topics: ["biosensors", "synthetic biology", "transcription factors"]
@@ -682,7 +1280,7 @@
         year: 2018,
         doi: "10.1021/acssynbio.8b00470",
         url: "https://doi.org/10.1021/acssynbio.8b00470",
-        applicationTag: "Food & Cellular Agriculture",
+        applicationTag: "Biomanufacturing",
         status: "peer-reviewed",
         visible: false,
         topics: ["yeast", "biomanufacturing", "metabolic engineering"]
@@ -711,7 +1309,11 @@
         let pillClass = '';
         if (pub.applicationTag === 'Therapeutics & Human Biology') {
           pillClass = 'core-02-pill';
-        } else if (pub.applicationTag === 'Biomaterials & Biomanufacturing' || pub.applicationTag === 'Discovery & Functional Genomics') {
+        } 
+        else if (pub.applicationTag === 'Biomanufacturing') {
+          pillClass = 'core-03-pill';
+        }
+        else if (pub.applicationTag === 'Discovery & Methods') {
           pillClass = 'core-01-pill';
         }
 
