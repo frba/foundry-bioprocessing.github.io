@@ -1079,7 +1079,7 @@
       <section class="redesign-exec-band" aria-label="Platform Execution Flow">
         <div class="redesign-exec-title-container">
           <span class="tiny-label">An iterative approach to biological engineering</span>
-          <p>Scale applies to relevant microbial projects</p>
+          <!-- <p>Scale applies to relevant microbial projects</p> -->
         </div>
         <div class="redesign-exec-inner">
           <div class="redesign-exec-item">
@@ -1595,11 +1595,8 @@
         }
 
         .redesign-apps-header {
-          display: grid;
-          grid-template-columns: 1fr;
-          text-align: justify;
           max-width: 1200px;
-          margin: 0 auto 2rem auto;
+          margin: 0 auto 2.5rem auto;
         }
 
         .redesign-apps-eyebrow {
@@ -1608,24 +1605,39 @@
           color: #900707;
           text-transform: uppercase;
           letter-spacing: 0.06em;
-          margin-bottom: 0.75rem;
+          margin-bottom: 0.85rem;
           display: block;
         }
 
+        .redesign-apps-header-row {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 10.25rem;
+        }
+
+        @media (min-width: 768px) {
+          .redesign-apps-header-row {
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: clamp(2.5rem, 6vw, 4.5rem);
+          }
+        }
+
         .redesign-apps-title {
-          font-size: clamp(2rem, 2vw, 2.75rem);
+          font-size: clamp(2rem, 3.2vw, 2.75rem);
           font-weight: 800;
-          line-height: 1.1;
+          line-height: 1.15;
           color: #0f172a;
-          margin-bottom: 1.25rem;
+          margin: 0;
           letter-spacing: -0.02em;
         }
 
         .redesign-apps-desc {
-          font-size: 1.125rem;
+          font-size: clamp(0.75rem, 1vw, 1.18rem);
           color: #475569;
           line-height: 1.6;
           margin: 0;
+          max-width: 640px;
         }
 
         .redesign-apps-layout {
@@ -1675,11 +1687,21 @@
           transition: all 0.25s ease;
         }
 
-        .redesign-app-icon svg {
+        .redesign-app-icon svg,
+        .redesign-app-icon img {
           width: 24px;
           height: 24px;
+          display: block;
+        }
+
+        .redesign-app-icon svg {
           stroke: currentColor;
           fill: none;
+        }
+
+        .redesign-app-icon img {
+          object-fit: contain;
+          transition: filter 0.25s ease;
         }
 
         /* Distinct color accents for each panel */
@@ -1687,6 +1709,10 @@
         .redesign-app-panel:nth-child(1) .redesign-app-icon {
           color: #147c9f;
           background-color: rgba(20, 124, 159, 0.1);
+        }
+
+        .icon-infrastructure img {
+          filter: invert(41%) sepia(85%) saturate(548%) hue-rotate(152deg) brightness(89%) contrast(92%);
         }
 
         .icon-workflows,
@@ -1704,6 +1730,10 @@
         .redesign-app-panel:nth-child(1):hover .redesign-app-icon {
           background-color: #147c9f;
           color: #ffffff;
+        }
+
+        .redesign-app-panel:nth-child(1):hover .redesign-app-icon img {
+          filter: brightness(0) invert(1);
         }
 
         .redesign-app-panel:nth-child(2):hover .redesign-app-icon {
@@ -1895,25 +1925,20 @@
         <div class="redesign-apps-inner">
           <header class="redesign-apps-header">
             <span class="redesign-apps-eyebrow">WHAT WE OFFER</span>
-            <h2 id="apps-title" class="redesign-apps-title">Instrumentation.<br>Workflows.<br>Expertise.</h2>
-            <p>
-              Access specialized infrastructure and technical expertise for synthetic biology, mammalian cell engineering and 
-              screening, and microbial bioprocess development and scale-up.
-            </p>
+            <div class="redesign-apps-header-row">
+              <h2 id="apps-title" class="redesign-apps-title">Instrumentation.<br>Workflows.<br>Expertise.</h2>
+              <p class="redesign-apps-desc">
+                Access specialized infrastructure and technical expertise for synthetic biology, mammalian cell engineering and 
+                screening, and microbial bioprocess development and scale-up.
+              </p>
+            </div>
           </header>
 
           <div class="redesign-apps-layout">
             <div class="redesign-app-panel">
               <div class="redesign-app-icon icon-infrastructure" aria-hidden="true">
-                <!-- Specialized infrastructure / Laboratory Instrumentation -->
-                <svg viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 18h8"></path>
-                  <path d="M3 22h18"></path>
-                  <path d="M14 22a7 7 0 1 0 0-14h-1"></path>
-                  <path d="M9 14h2"></path>
-                  <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"></path>
-                  <path d="M12 6V3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"></path>
-                </svg>
+                <!-- Specialized infrastructure / Robotic Arm -->
+                <img src="assets/icons/robotic-arm.png" alt="Specialized infrastructure robotic arm automation icon">
               </div>
               <h3 class="redesign-app-title">Specialized infrastructure</h3>
               <p class="redesign-app-supporting">Automation, cell culture and screening platforms, bioreactors, and analytical instruments.</p>
@@ -2164,7 +2189,8 @@
           display: inline-flex;
           align-items: center;
           padding: 0.38rem 0.85rem;
-          border-radius: 9999px;
+          /* border-radius: 9999px; */
+          border-radius: 4px;
           font-size: 0.82rem;
           font-weight: 600;
           line-height: 1.35;
@@ -2203,33 +2229,48 @@
           background-color: rgba(54, 123, 76, 0.14);
           border-color: rgba(54, 123, 76, 0.35);
         }
+        .redesign-pill.pill-gray {
+          background-color: rgba(54, 123, 76, 0.08);
+          color: black;
+          border: 1px solid #c0c2c0ff;
+        }
+        .redesign-pill.pill-gray:hover {
+          background-color: rgba(54, 123, 76, 0.14);
+          border-color: rgba(54, 123, 76, 0.35);
+        }
 
         /* Bottom Research Banner */
         .redesign-research-banner {
           display: grid;
           grid-template-columns: 1fr;
-          text-decoration: none;
           background-color: #10293d;
           overflow: hidden;
         }
 
         @media (min-width: 768px) {
           .redesign-research-banner {
-            grid-template-columns: 56% 44%;
-            min-height: 120px;
+            grid-template-columns: 46% 54%;
           }
         }
 
         @media (min-width: 1024px) {
           .redesign-research-banner {
-            min-height: 140px;
+            grid-template-columns: 44% 56%;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          .redesign-research-banner {
+            grid-template-columns: 42% 58%;
           }
         }
 
         .redesign-banner-media {
           position: relative;
           overflow: hidden;
-          min-height: 110px;
+          min-height: 140px;
+          display: block;
+          text-decoration: none;
         }
 
         @media (min-width: 768px) {
@@ -2247,28 +2288,39 @@
           transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        .redesign-banner-media:hover img {
+          transform: scale(1.03);
+        }
+
         .redesign-banner-content {
           background-color: #10293d;
           display: flex;
           align-items: center;
-          padding: clamp(1.0rem, 1.0vw, 1.5rem) clamp(1.0rem, 1.0vw, 2.0rem);
-          transition: background-color 0.25s ease;
+          padding: clamp(1.5rem, 2.5vw, 2.5rem) clamp(1.25rem, 2.5vw, 2.75rem);
         }
 
         .redesign-banner-inner {
           display: flex;
           flex-direction: column;
+          width: 100%;
+        }
+
+        .redesign-banner-title-link {
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          width: fit-content;
         }
 
         .redesign-banner-title {
           color: #ffffff;
-          font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+          font-size: clamp(1.4rem, 2.2vw, 1.9rem);
           font-weight: 800;
-          line-height: 1.15;
+          line-height: 1.2;
           letter-spacing: -0.025em;
           margin: 0;
-          display: flex;
-          flex-direction: column;
+          display: inline-flex;
+          align-items: baseline;
           transition: color 0.2s ease;
         }
 
@@ -2280,22 +2332,78 @@
           transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
         }
 
-        .redesign-research-banner:hover .redesign-banner-media img {
-          transform: scale(1.03);
-        }
-
-        .redesign-research-banner:hover .redesign-banner-content {
-          background-color: #0c2132;
-        }
-
-        .redesign-research-banner:hover .redesign-banner-arrow {
+        .redesign-banner-title-link:hover .redesign-banner-arrow {
           transform: translate(4px, -4px);
           color: #a5e2f2;
         }
 
-        .redesign-research-banner:focus-visible {
-          outline: 3px solid #7dc2d6;
-          outline-offset: -3px;
+        .redesign-banner-featured {
+          margin-top: 1.25rem;
+          padding-top: 1.1rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.12);
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .redesign-banner-featured-label {
+          font-size: 0.8rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: #7dc2d6;
+          line-height: 1;
+        }
+
+        .redesign-banner-featured-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.35rem;
+        }
+
+        .redesign-banner-featured-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+          color: #e2e8f0;
+          text-decoration: none;
+          font-size: clamp(0.8rem, 0.8vw, 0.8rem);
+          font-weight: 500;
+          line-height: 1.4;
+          padding: 0.2rem 0.4rem;
+          margin-left: -0.4rem;
+          border-radius: 4px;
+          width: fit-content;
+          max-width: 100%;
+          transition: color 0.18s ease, background-color 0.18s ease, transform 0.18s ease;
+        }
+
+        .redesign-banner-featured-link:hover {
+          color: #ffffff;
+          background-color: rgba(255, 255, 255, 0.08);
+          transform: translateX(3px);
+        }
+
+        .featured-link-arrow {
+          color: #7dc2d6;
+          font-size: 0.85em;
+          display: inline-block;
+          transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+        }
+
+        .redesign-banner-featured-link:hover .featured-link-arrow {
+          transform: translate(2px, -2px);
+          color: #38bdf8;
+        }
+
+        .redesign-banner-title-link:focus-visible,
+        .redesign-banner-featured-link:focus-visible,
+        .redesign-banner-media:focus-visible {
+          outline: 2px solid #7dc2d6;
+          outline-offset: 2px;
         }
       </style>
 
@@ -2308,9 +2416,7 @@
                 <!-- <span class="redesign-discovery-dash" aria-hidden="true"></span> -->
                 <!-- <span>APPLICATIONS &amp; OUTPUTS</span> -->
               <!-- </span> -->
-              <h3 class="redesign-discovery-title">Across a wide range of applications <br>
-                                                   and sectors, a biofoundry can <br>
-                                                   accelerate your R&D.</h3>
+              <h3 class="redesign-discovery-title">Across disciplines and sectors, a biofoundry can accelerate your R&D.</h3>
               <!-- <p class="redesign-discovery-desc">Whatever your application or sector, a biofoundry can bolster your R&amp;D.</p> -->
             </div>
 
@@ -2404,25 +2510,25 @@
 
               <!-- Systems & Outputs -->
               <div class="redesign-pills-group">
-                <h3 class="redesign-pills-label">YOUR PROJECT MIGHT INVOLVE</h3>
+                <h3 class="redesign-pills-label">YOUR PROJECT MIGHT INVOLVE...</h3>
                 <div class="redesign-app-areas-grid">
                   <div class="redesign-app-area-card">
-                    <span class="redesign-pill pill-blue">Proteins &amp; enzymes</span>
+                    <span class="redesign-pill pill-gray">Proteins &amp; enzymes</span>
                   </div>
                   <div class="redesign-app-area-card">
-                    <span class="redesign-pill pill-purple">Small molecules</span>
+                    <span class="redesign-pill pill-gray">Small molecules</span>
                   </div>
                   <div class="redesign-app-area-card">
-                    <span class="redesign-pill pill-blue">Engineered cells</span>
+                    <span class="redesign-pill pill-gray">Engineered cells</span>
                   </div>
                   <div class="redesign-app-area-card">
-                    <span class="redesign-pill pill-green">Custom assays</span>
+                    <span class="redesign-pill pill-gray">Custom assays</span>
                   </div>
                   <div class="redesign-app-area-card">
-                    <span class="redesign-pill pill-purple">Compound screens</span>
+                    <span class="redesign-pill pill-gray">Compound screens</span>
                   </div>
                   <div class="redesign-app-area-card">
-                    <span class="redesign-pill pill-green">Genetic libraries</span>
+                    <span class="redesign-pill pill-gray">Genetic libraries</span>
                   </div>
                 </div>
               </div>
@@ -2431,19 +2537,44 @@
         </div>
 
         <!-- Bottom Banner: Research We've Supported -->
-        <a href="publications.html" class="redesign-research-banner" aria-label="Research we've supported - view publications">
-          <div class="redesign-banner-media">
+        <div class="redesign-research-banner">
+          <a href="publications.html" class="redesign-banner-media" aria-label="Research we've supported - view all publications">
             <img src="assets/images/dna_about.jpg" alt="Concordia Genome Foundry DNA illumination fixture in laboratory" loading="lazy">
-          </div>
+          </a>
           <div class="redesign-banner-content">
             <div class="redesign-banner-inner">
-              <h3 class="redesign-banner-title">
-                <span>Research we've</span>
-                <span>supported <span class="redesign-banner-arrow" aria-hidden="true">&#x2197;</span></span>
-              </h3>
+              <a href="publications.html" class="redesign-banner-title-link">
+                <h3 class="redesign-banner-title">
+                  <span>Research we've supported</span>
+                  <span class="redesign-banner-arrow" aria-hidden="true">&#x2197;</span>
+                </h3>
+              </a>
+              <div class="redesign-banner-featured">
+                <span class="redesign-banner-featured-label">Featured research</span>
+                <ul class="redesign-banner-featured-list">
+                  <li>
+                    <a href="publications.html#feature-fumaric-acid" class="redesign-banner-featured-link">
+                      <span>Whey permeate to fumaric acid</span>
+                      <span class="featured-link-arrow" aria-hidden="true">&#x2197;</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="publications.html#feature-orthorep-gpcr" class="redesign-banner-featured-link">
+                      <span>Directed evolution of GPCRs</span>
+                      <span class="featured-link-arrow" aria-hidden="true">&#x2197;</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="publications.html#feature-extracellular-vesicles" class="redesign-banner-featured-link">
+                      <span>Engineering yeast extracellular vesicles</span>
+                      <span class="featured-link-arrow" aria-hidden="true">&#x2197;</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </a>
+        </div>
       </section>
 
       <style>
@@ -2568,8 +2699,65 @@
       <style>
         .redesign-cta-section {
           background-color: #f8fafc;
-          padding: clamp(3.5rem, 6vw, 5.5rem) 1.5rem;
+          padding: clamp(3.5rem, 6vw, 5.5rem) 1.5rem clamp(2rem, 3.5vw, 3rem);
           position: relative;
+        }
+
+        /* Startup Residency Callout Section */
+        .redesign-residency-callout-section {
+          background-color: #f8fafc;
+          padding: 0 1.5rem clamp(3.5rem, 6vw, 5.5rem);
+          text-align: center;
+          position: relative;
+        }
+
+        .redesign-residency-callout-inner {
+          max-width: 720px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+
+        .redesign-residency-callout-text {
+          font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+          color: #64748b;
+          line-height: 1.55;
+          margin: 0 0 0.45rem 0;
+        }
+
+        .redesign-residency-callout-link {
+          font-size: clamp(0.92rem, 1.05vw, 1.02rem);
+          font-weight: 600;
+          color: #900707;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          transition: color 0.2s ease;
+        }
+
+        .redesign-residency-callout-link:hover,
+        .redesign-residency-callout-link:focus-visible {
+          color: #6b0505;
+          text-decoration: underline;
+        }
+
+        .redesign-residency-callout-link .arrow {
+          display: inline-block;
+          transition: transform 0.2s ease;
+        }
+
+        .redesign-residency-callout-link:hover .arrow {
+          transform: translateX(4px);
+        }
+
+        .redesign-residency-callout-link:focus-visible {
+          outline: 2px solid #900707;
+          outline-offset: 3px;
+          border-radius: 2px;
         }
 
         .redesign-cta-card {
@@ -2704,6 +2892,19 @@
           <div class="redesign-cta-media">
             <img src="assets/images/Women Scientists Collaborating in Modern Laboratory.png" alt="Concordia Genome Foundry scientists collaborating in modern automated laboratory" loading="lazy">
           </div>
+        </div>
+      </section>
+      
+      <!-- Startup Residency Callout -->
+      <section class="redesign-residency-callout-section" aria-label="Startup Residency Program">
+        <div class="redesign-residency-callout-inner">
+          <p class="redesign-residency-callout-text">
+            Building a biotech startup? Explore lab space and biofoundry access through our Residency Program.
+          </p>
+          <a href="WorkWithUs.html#startup-residency" class="redesign-residency-callout-link">
+            <span>Explore our Foundry Startup Residency Program</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
         </div>
       </section>
     </div>

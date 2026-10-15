@@ -210,6 +210,21 @@
         background: linear-gradient(to right, #0b1120 0%, transparent 100%);
       }
     }
+
+    /* Page container alignment matching redesign-hero-title (1200px max-width) */
+    main .container-medium,
+    main .container-wide {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+      main .container-medium,
+      main .container-wide {
+        padding: 0 2rem;
+      }
+    }
   </style>
 
   <section class="redesign-hero" aria-label="Partners &amp; Supporters Overview">

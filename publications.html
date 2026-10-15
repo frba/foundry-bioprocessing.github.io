@@ -479,6 +479,12 @@
       padding: 0 1.5rem;
     }
 
+    @media (min-width: 900px) {
+      main > .container-wide {
+        padding: 0 2rem;
+      }
+    }
+
     .featured-research-section {
       scroll-margin-top: 90px;
       margin-bottom: 4.5rem;
@@ -528,6 +534,7 @@
       padding: clamp(1.5rem, 3.5vw, 2.75rem);
       box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
       transition: box-shadow 0.25s ease, border-color 0.25s ease;
+      scroll-margin-top: 110px;
     }
 
     .featured-card:hover {
@@ -891,7 +898,7 @@
         <div class="featured-cards-list">
 
           <!-- Feature 1: From whey permeate to fumaric acid -->
-          <article class="featured-card theme-fumaric">
+          <article class="featured-card theme-fumaric" id="feature-fumaric-acid">
             <div class="featured-card-header">
               <div class="featured-card-eyebrow">
                 <span class="eyebrow-tag">RESEARCH FEATURE</span>
@@ -956,7 +963,7 @@
           </article>
 
           <!-- Feature 2: Heterologous engineering of receptors using OrthoRep (HERO) -->
-          <article class="featured-card theme-gpcr">
+          <article class="featured-card theme-gpcr" id="feature-orthorep-gpcr">
             <div class="featured-card-header">
               <div class="featured-card-eyebrow">
                 <span class="eyebrow-tag">RESEARCH FEATURE</span>
@@ -1019,7 +1026,7 @@
           </article>
 
           <!-- Feature 3: Engineering S. cerevisiae extracellular vesicles using synthetic biology -->
-          <article class="featured-card theme-vesicles">
+          <article class="featured-card theme-vesicles" id="feature-extracellular-vesicles">
             <div class="featured-card-header">
               <div class="featured-card-eyebrow">
                 <span class="eyebrow-tag">RESEARCH FEATURE</span>

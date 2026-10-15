@@ -19,8 +19,15 @@
       display: grid;
       grid-template-columns: 1fr 1.2fr;
       gap: 64px;
-      max-width: 1150px;
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .contact-grid {
+        padding: 0 2rem;
+      }
     }
 
     @media (max-width: 900px) {
@@ -38,9 +45,16 @@
       display: grid;
       grid-template-columns: 1fr 1.5fr;
       gap: 64px;
-      max-width: 1150px;
+      max-width: 1200px;
       margin: 0 auto;
       align-items: center;
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .visit-grid {
+        padding: 0 2rem;
+      }
     }
 
     @media (max-width: 900px) {
@@ -384,7 +398,7 @@
     <style>
       .redesign-starting-section {
         background-color: #f8fafc;
-        padding: 4.5rem 1.5rem;
+        padding: 3.5rem 0;
         border-top: 1px solid #e2e8f0;
         border-bottom: 1px solid #e2e8f0;
       }
@@ -392,6 +406,13 @@
       .redesign-starting-inner {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      @media (min-width: 900px) {
+        .redesign-starting-inner {
+          padding: 0 2rem;
+        }
       }
 
       .redesign-starting-header {
@@ -498,7 +519,7 @@
     <style>
       .redesign-engage-section {
         background-color: #f8fafc;
-        padding: 5rem 1.5rem;
+        padding: 5rem 0;
         border-top: 1px solid #e2e8f0;
         border-bottom: 1px solid #e2e8f0;
       }
@@ -506,6 +527,13 @@
       .redesign-engage-inner {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      @media (min-width: 900px) {
+        .redesign-engage-inner {
+          padding: 0 2rem;
+        }
       }
 
       .redesign-engage-header {
@@ -687,7 +715,7 @@
     <style>
       .startup-residency-section {
         background-color: #f1f5f9;
-        padding: 5rem 1.5rem;
+        padding: 5rem 0;
         border-top: 1px solid #e2e8f0;
         border-bottom: 1px solid #e2e8f0;
         scroll-margin-top: 100px;
@@ -700,12 +728,14 @@
         grid-template-columns: 1fr;
         gap: 2.5rem;
         align-items: center;
+        padding: 0 1.5rem;
       }
 
       @media (min-width: 900px) {
         .startup-residency-inner {
           grid-template-columns: 1.25fr 0.75fr;
           gap: 4rem;
+          padding: 0 2rem;
         }
       }
 
@@ -874,9 +904,26 @@
 
     <!-- Section Pricing & project terms -->
     <style>
+      #partner-voices {
+        padding: 5rem 0;
+      }
+
+      #partner-voices .container-wide {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      @media (min-width: 900px) {
+        #partner-voices .container-wide {
+          padding: 0 2rem;
+        }
+      }
+
+      /* Section Pricing & project terms */
       .pricing-terms-section {
         background-color: #f8fafc;
-        padding: 5rem 1.5rem;
+        padding: 5rem 0;
         border-top: 1px solid #e2e8f0;
         border-bottom: 1px solid #e2e8f0;
         scroll-margin-top: 100px;
@@ -885,6 +932,13 @@
       .pricing-terms-inner {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      @media (min-width: 900px) {
+        .pricing-terms-inner {
+          padding: 0 2rem;
+        }
       }
 
       .pricing-terms-header {
@@ -1055,7 +1109,7 @@
         </div>
       </div>
     </section>
-    <section id="contact" class="section" style="padding: 4rem 1.5rem; background: #ffffff;">
+    <section id="contact" class="section" style="padding: 4rem 0; background: #ffffff;">
       <!-- PART 1: Top row with contact info and form -->
       <div class="contact-grid" style="margin-bottom: 4rem;">
 
@@ -1196,7 +1250,7 @@
     </section>
 
     <!-- 5. Visit Us / Location section -->
-    <section class="section" style="padding: 4rem 1.5rem; background: #ffffff; border-top: 1px solid rgba(0,0,0,0.05);">
+    <section class="section" style="padding: 4rem 0; background: #ffffff; border-top: 1px solid rgba(0,0,0,0.05);">
       <div class="visit-grid">
         <!-- Left: Address & Map Button -->
         <div>
