@@ -767,7 +767,10 @@
           padding: 0 1.5rem;
         }
 
-        .redesign-detail-header,
+        .redesign-detail-header {
+          width: 100%;
+        }
+
         .redesign-detail-content {
           width: 100%;
         }
@@ -776,9 +779,13 @@
           .redesign-detail-inner {
             display: grid;
             grid-template-columns: minmax(38%, 42%) 1fr;
-            gap: 4rem;
+            gap: 2.25rem 4rem;
             align-items: start;
             padding: 0 2rem;
+          }
+
+          .redesign-detail-header {
+            grid-column: 1 / -1;
           }
 
           #redesign-mammalian-engineering .redesign-detail-inner {
@@ -786,14 +793,22 @@
           }
         }
 
+        @media (max-width: 899px) {
+          #redesign-mammalian-engineering .redesign-detail-media-column {
+            order: 2;
+          }
+          #redesign-mammalian-engineering .redesign-detail-content-column {
+            order: 3;
+          }
+        }
+
         .redesign-detail-content-column {
           display: flex;
           flex-direction: column;
-          gap: 2rem;
         }
 
         .redesign-detail-title {
-          font-size: 1.5rem;
+          font-size: clamp(1.6rem, 2.25vw, 2.1rem);
           font-weight: 800;
           color: #0f172a;
           margin-bottom: 0.75rem;
@@ -802,64 +817,66 @@
         }
 
         .redesign-detail-lead {
-          font-size: 1.0rem;
+          font-size: 1.05rem;
           color: #334155;
-          margin-bottom: 1.5rem;
-          line-height: 1.5;
+          max-width: 860px;
+          line-height: 1.55;
+          margin: 0;
         }
 
         .redesign-detail-groups {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 1.5rem;
-          margin-bottom: 1.5rem;
+          gap: 1.15rem;
+          margin-bottom: 1.75rem;
         }
 
         @media (min-width: 640px) {
           .redesign-detail-groups {
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem 1.5rem;
+            gap: 1.15rem;
           }
         }
 
-        @media (min-width: 1100px) {
-          .redesign-detail-groups {
-            grid-template-columns: repeat(2, 1fr);
-          }
+        .redesign-detail-group {
+          background-color: #ffffff;
+          border: 1px solid #e2e8f0;
+          border-radius: 12px;
+          padding: 1.25rem 1.35rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+          transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
-        @media (min-width: 1350px) {
-          .redesign-detail-groups {
-            grid-template-columns: repeat(4, 1fr);
-          }
+        .redesign-detail-section:nth-of-type(odd) .redesign-detail-group {
+          background-color: #f8fafc;
+        }
 
-          .redesign-detail-group {
-            position: relative;
-            padding-right: 1.5rem;
-          }
+        .redesign-detail-section:nth-of-type(even) .redesign-detail-group {
+          background-color: #ffffff;
+        }
 
-          .redesign-detail-group:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background-color: #e2e8f0;
-          }
+        .redesign-detail-group:hover {
+          border-color: #cbd5e1;
+          box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+          transform: translateY(-1px);
         }
 
         .redesign-detail-group-title {
           font-size: 1.0rem;
           font-weight: 700;
           color: #0f172a;
-          margin-bottom: 0.5rem;
+          line-height: 1.35;
+          margin: 0 0 0.45rem 0;
         }
 
         .redesign-detail-group-desc {
-          font-size: 0.85rem;
-          color: #475569;
+          font-size: 0.875rem;
+          color: #64748b;
           line-height: 1.5;
+          margin: 0;
         }
 
         .redesign-detail-specs {
@@ -1303,6 +1320,13 @@
 
       <section id="redesign-microbial-engineering" class="redesign-detail-section" aria-labelledby="microbial-title">
         <div class="redesign-detail-inner">
+          <div class="redesign-detail-header">
+            <h2 id="microbial-title" class="redesign-detail-title">Synthetic Biology &amp; Genetic Engineering
+              Workflows</h2>
+            <p class="redesign-detail-lead">Automated DNA assembly, library construction, and screening workflows
+              supporting applications from genetic variant testing to microbial strain engineering.​</p>
+          </div>
+
           <div class="redesign-detail-media-column">
             <div class="redesign-gallery">
               <div class="redesign-gallery-hero">
@@ -1358,13 +1382,6 @@
           </div>
 
           <div class="redesign-detail-content-column">
-            <div class="redesign-detail-header">
-              <h2 id="microbial-title" class="redesign-detail-title">Synthetic Biology &amp; Genetic Engineering
-                Workflows</h2>
-              <p class="redesign-detail-lead">Automated DNA assembly, library construction, and screening workflows
-                supporting applications from genetic variant testing to microbial strain engineering.​</p>
-            </div>
-
             <div class="redesign-detail-content">
               <div class="redesign-detail-groups">
                 <div class="redesign-detail-group">
@@ -1420,13 +1437,13 @@
 
       <section id="redesign-mammalian-engineering" class="redesign-detail-section" aria-labelledby="mammalian-title">
         <div class="redesign-detail-inner">
-          <div class="redesign-detail-content-column">
-            <div class="redesign-detail-header">
-              <h2 id="mammalian-title" class="redesign-detail-title">Mammalian Cell Engineering & Screening​</h2>
-              <p class="redesign-detail-lead">Automated workflows for mammalian cell culture, genetic modification, reagent delivery, and
-              arrayed cell-based assays.​</p>
-            </div>
+          <div class="redesign-detail-header">
+            <h2 id="mammalian-title" class="redesign-detail-title">Mammalian Cell Engineering & Screening​</h2>
+            <p class="redesign-detail-lead">Automated workflows for mammalian cell culture, genetic modification, reagent delivery, and
+            arrayed cell-based assays.​</p>
+          </div>
 
+          <div class="redesign-detail-content-column">
             <div class="redesign-detail-content">
               <div class="redesign-detail-groups">
                 <div class="redesign-detail-group">
@@ -1512,6 +1529,12 @@
 
       <section id="redesign-bioprocessing" class="redesign-detail-section" aria-labelledby="bioprocessing-title">
         <div class="redesign-detail-inner">
+          <div class="redesign-detail-header">
+            <h2 id="bioprocessing-title" class="redesign-detail-title">Microbial Bioprocessing &amp; Scale-Up</h2>
+            <p class="redesign-detail-lead">Bioprocess development, optimization, and scale-up to support the transition 
+              toward pilot-scale operations​.</p>
+          </div>
+
           <div class="redesign-detail-media-column">
             <div class="redesign-gallery">
               <div class="redesign-gallery-hero">
@@ -1581,12 +1604,6 @@
           </div>
 
           <div class="redesign-detail-content-column">
-            <div class="redesign-detail-header">
-              <h2 id="bioprocessing-title" class="redesign-detail-title">Microbial Bioprocessing &amp; Scale-Up</h2>
-              <p class="redesign-detail-lead">Bioprocess development, optimization, and scale-up to support the transition 
-                toward pilot-scale operations​.</p>
-            </div>
-
             <div class="redesign-detail-content">
               <div class="redesign-detail-groups">
                 <div class="redesign-detail-group">
