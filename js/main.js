@@ -489,12 +489,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const startups = [
     {
       name: "Neiges Biotechnologies",
-      file: "NEIGES_logo_nobackground_padding_blackletter.png",
+      file: "NEIGES_logo_nobackground_padding_blackletter.webp",
       url: "https://www.linkedin.com/company/neiges-biotechnologies/home/"
     },
     {
       name: "pHathom",
-      file: "pHathom_Logo_Dark_Horizontal.png",
+      file: "pHathom_Logo_Dark_Horizontal.webp",
       url: "https://www.linkedin.com/company/phathomtech/home/"
     }
   ];

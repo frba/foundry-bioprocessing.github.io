@@ -1938,7 +1938,7 @@
             <div class="redesign-app-panel">
               <div class="redesign-app-icon icon-infrastructure" aria-hidden="true">
                 <!-- Specialized infrastructure / Robotic Arm -->
-                <img src="assets/icons/robotic-arm.png" alt="Specialized infrastructure robotic arm automation icon">
+                <img src="assets/icons/robotic-arm.webp" alt="Specialized infrastructure robotic arm automation icon">
               </div>
               <h3 class="redesign-app-title">Specialized infrastructure</h3>
               <p class="redesign-app-supporting">Automation, cell culture and screening platforms, bioreactors, and analytical instruments.</p>
@@ -1980,7 +1980,7 @@
           <!-- Bioprocessing Scale Banner -->
           <div class="redesign-scale-banner">
             <div class="redesign-scale-media">
-              <img src="assets/images/bioreactor_green.png" alt="Bioprocessing bioreactor platform at Concordia Genome Foundry" loading="lazy">
+              <img src="assets/images/bioreactor_green.webp" alt="Bioprocessing bioreactor platform at Concordia Genome Foundry" loading="lazy">
             </div>
             <div class="redesign-scale-content">
               <h3 class="redesign-scale-title">From screening to scale.</h3>
@@ -2539,7 +2539,7 @@
         <!-- Bottom Banner: Research We've Supported -->
         <div class="redesign-research-banner">
           <a href="publications.html" class="redesign-banner-media" aria-label="Research we've supported - view all publications">
-            <img src="assets/images/dna_about.jpg" alt="Concordia Genome Foundry DNA illumination fixture in laboratory" loading="lazy">
+            <img src="assets/images/dna_about.webp" alt="Concordia Genome Foundry DNA illumination fixture in laboratory" loading="lazy">
           </a>
           <div class="redesign-banner-content">
             <div class="redesign-banner-inner">
@@ -2699,62 +2699,70 @@
       <style>
         .redesign-cta-section {
           background-color: #f8fafc;
-          padding: clamp(3.5rem, 6vw, 5.5rem) 1.5rem clamp(2rem, 3.5vw, 3rem);
+          padding: clamp(3.5rem, 6vw, 5.5rem) 1.5rem;
           position: relative;
         }
 
-        /* Startup Residency Callout Section */
-        .redesign-residency-callout-section {
-          background-color: #f8fafc;
-          padding: 0 1.5rem clamp(3.5rem, 6vw, 5.5rem);
-          text-align: center;
-          position: relative;
-        }
-
-        .redesign-residency-callout-inner {
-          max-width: 720px;
-          margin: 0 auto;
+        .redesign-cta-banner {
+          grid-column: 1 / -1;
+          background-color: #fbf1f1;
+          border-top: 1px solid #fae0e2;
+          padding: 1rem clamp(1.25rem, 2.5vw, 2.5rem);
           display: flex;
           flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
+          gap: 0.75rem;
+          justify-content: space-between;
+          align-items: flex-start;
         }
 
-        .redesign-residency-callout-text {
-          font-size: clamp(0.85rem, 0.95vw, 0.95rem);
-          color: #64748b;
-          line-height: 1.55;
-          margin: 0 0 0.45rem 0;
+        @media (min-width: 768px) {
+          .redesign-cta-banner {
+            flex-direction: row;
+            align-items: center;
+            gap: 1.5rem;
+          }
         }
 
-        .redesign-residency-callout-link {
-          font-size: clamp(0.92rem, 1.05vw, 1.02rem);
-          font-weight: 600;
+        .redesign-cta-banner-text {
+          font-size: 0.92rem;
+          color: #334155;
+          line-height: 1.5;
+        }
+
+        .redesign-cta-banner-text strong {
+          color: #0f172a;
+          font-weight: 700;
+        }
+
+        .redesign-cta-banner-link {
+          font-size: 0.92rem;
+          font-weight: 700;
           color: #900707;
           text-decoration: none;
           display: inline-flex;
           align-items: center;
           gap: 0.35rem;
+          white-space: nowrap;
+          flex-shrink: 0;
           transition: color 0.2s ease;
         }
 
-        .redesign-residency-callout-link:hover,
-        .redesign-residency-callout-link:focus-visible {
+        .redesign-cta-banner-link:hover,
+        .redesign-cta-banner-link:focus-visible {
           color: #6b0505;
           text-decoration: underline;
         }
 
-        .redesign-residency-callout-link .arrow {
+        .redesign-cta-banner-link .arrow {
           display: inline-block;
           transition: transform 0.2s ease;
         }
 
-        .redesign-residency-callout-link:hover .arrow {
+        .redesign-cta-banner-link:hover .arrow {
           transform: translateX(4px);
         }
 
-        .redesign-residency-callout-link:focus-visible {
+        .redesign-cta-banner-link:focus-visible {
           outline: 2px solid #900707;
           outline-offset: 3px;
           border-radius: 2px;
@@ -2890,21 +2898,17 @@
             </a>
           </div>
           <div class="redesign-cta-media">
-            <img src="assets/images/Women Scientists Collaborating in Modern Laboratory.png" alt="Concordia Genome Foundry scientists collaborating in modern automated laboratory" loading="lazy">
+            <img src="assets/images/Women Scientists Collaborating in Modern Laboratory.webp" alt="Concordia Genome Foundry scientists collaborating in modern automated laboratory" loading="lazy">
           </div>
-        </div>
-      </section>
-      
-      <!-- Startup Residency Callout -->
-      <section class="redesign-residency-callout-section" aria-label="Startup Residency Program">
-        <div class="redesign-residency-callout-inner">
-          <p class="redesign-residency-callout-text">
-            Building a biotech startup? Explore lab space and biofoundry access through our Residency Program.
-          </p>
-          <a href="WorkWithUs.html#startup-residency" class="redesign-residency-callout-link">
-            <span>Explore our Foundry Startup Residency Program</span>
-            <span class="arrow" aria-hidden="true">&rarr;</span>
-          </a>
+          <div class="redesign-cta-banner">
+            <div class="redesign-cta-banner-text">
+              <strong>Building a biotech startup?</strong> Explore lab space and biofoundry access through our Startup Residency Program.
+            </div>
+            <a href="WorkWithUs.html#startup-residency" class="redesign-cta-banner-link">
+              <span>Explore Startup Residency</span>
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
         </div>
       </section>
     </div>
