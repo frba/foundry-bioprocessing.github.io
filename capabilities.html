@@ -248,7 +248,16 @@
       </a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="capabilities.html" class="active">Capabilities</a>
+        <div class="nav-dropdown">
+          <a href="capabilities.html" class="nav-dropdown-toggle active">
+            Capabilities
+            <svg class="dropdown-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="capabilities.html" class="nav-dropdown-item active">Overview</a>
+            <a href="instrumentation.html" class="nav-dropdown-item">Instrumentation</a>
+          </div>
+        </div>
         <a href="publications.html">Research & Impact</a>
         <a href="WorkWithUs.html">Work With Us</a>
         <a href="about.html">About</a>
@@ -271,6 +280,7 @@
       <div class="mobile-nav-links">
         <a href="index.html">Home</a>
         <a href="capabilities.html" class="active">Capabilities</a>
+        <a href="instrumentation.html" class="mobile-nav-sublink">&mdash; Instrumentation</a>
         <a href="publications.html">Research & Impact</a>
         <a href="WorkWithUs.html">Work With Us</a>
         <a href="about.html">About</a>
@@ -706,7 +716,7 @@
           </div>
 
           <div class="redesign-shared-footer">
-            <a href="https://foundry.concordia.ca/bookr/" target="_blank" rel="noopener noreferrer" class="redesign-shared-link">
+            <a href="instrumentation.html" class="redesign-shared-link">
               Browse our Instruments &rarr;
             </a>
           </div>
@@ -1827,6 +1837,8 @@
               <a href="about.html" style="color: inherit; text-decoration: none; transition: opacity 0.2s;">About</a>
               <a href="capabilities.html"
                 style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Capabilities</a>
+              <a href="instrumentation.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrumentation</a>
               <a href="publications.html"
                 style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Research &amp; Impact</a>
               <!-- <a href="news.html" -->

@@ -1,0 +1,2472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instrumentation Directory | Concordia Genome Foundry</title>
+  <meta name="description"
+    content="Explore our comprehensive instrumentation directory featuring automated liquid handling, microbial and mammalian bioprocessing, screening, and analytical characterization platforms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <style>
+    /* PAGE ROOT & TOKENS */
+    :root {
+      --dir-navy: #0b1120;
+      --dir-navy-light: #152238;
+      --dir-accent-cyan: #0284c7;
+      --dir-accent-cyan-light: #e0f2fe;
+      --dir-burgundy: #912338;
+      --dir-card-bg: #ffffff;
+      --dir-border: #e2e8f0;
+      --dir-text-muted: #64748b;
+      --dir-text-dark: #0f172a;
+    }
+
+    /* REDESIGN HERO (Matching Capabilities) */
+    .redesign-hero {
+      background-color: #0b1120;
+      color: #f8fafc;
+      position: relative;
+      overflow: hidden;
+      padding: calc(94px + 3rem) 1.5rem 0 1.5rem;
+      min-height: auto;
+    }
+
+    .redesign-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+      z-index: 2;
+    }
+
+    .redesign-hero-content {
+      max-width: 600px;
+      padding-bottom: 3rem;
+    }
+
+    .redesign-eyebrow {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #bae6fd;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .redesign-hero-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .redesign-hero-body {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+
+    .redesign-jump-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 1000px) {
+      .redesign-jump-links {
+        flex-wrap: nowrap;
+      }
+
+      .redesign-jump-link {
+        white-space: nowrap;
+      }
+    }
+
+    .redesign-jump-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #38bdf8;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-bottom-color 0.2s;
+    }
+
+    .redesign-jump-link:hover,
+    .redesign-jump-link:focus-visible {
+      color: #bae6fd;
+      border-bottom-color: #bae6fd;
+      outline: none;
+    }
+
+    .redesign-hero-image-col {
+      position: relative;
+      width: calc(100% + 3rem);
+      margin-left: -1.5rem;
+      height: 250px;
+      border-radius: 0;
+    }
+
+    .redesign-hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Desktop layout */
+    @media (min-width: 900px) {
+      .redesign-hero {
+        padding: 94px 0 0 0;
+        height: clamp(400px, 50vh, 470px);
+        display: flex;
+        align-items: center;
+      }
+
+      .redesign-hero-inner {
+        grid-template-columns: 55% 45%;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        gap: 2rem;
+        padding: 0 2rem;
+      }
+
+      .redesign-hero-content {
+        padding-bottom: 0;
+        max-width: none;
+      }
+
+      .redesign-hero-image-col {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 55%;
+        height: 100%;
+        margin-left: 0;
+      }
+
+      /* Fade gradient on left edge of the image to blend into background */
+      .redesign-hero-image-col::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35%;
+        height: 100%;
+        background: linear-gradient(to right, #0b1120 0%, transparent 100%);
+      }
+    }
+
+    /* DIRECTORY SECTION */
+    .dir-main {
+      background-color: #f8fafc;
+      padding: 3rem 0 5rem 0;
+      min-height: 800px;
+    }
+
+    .dir-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* CONTROLS TOOLBAR */
+    .dir-toolbar {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+      margin-bottom: 2.5rem;
+    }
+
+    .dir-search-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .dir-search-wrap {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .dir-search-icon {
+      position: absolute;
+      left: 1rem;
+      width: 20px;
+      height: 20px;
+      color: #94a3b8;
+      pointer-events: none;
+    }
+
+    .dir-search-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 2.75rem 0 3rem;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      color: #0f172a;
+      transition: all 0.2s;
+    }
+
+    .dir-search-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .dir-search-clear {
+      position: absolute;
+      right: 0.75rem;
+      width: 28px;
+      height: 28px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: #e2e8f0;
+      border: none;
+      border-radius: 50%;
+      color: #475569;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.15s;
+    }
+
+    .dir-search-clear:hover {
+      background: #cbd5e1;
+      color: #0f172a;
+    }
+
+    /* CATEGORY FILTER PILLS */
+    .dir-pills-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .dir-pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .dir-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 0.85rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.825rem;
+      font-weight: 500;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+
+    .dir-pill-btn:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      color: #0f172a;
+    }
+
+    .dir-pill-btn.active {
+      background: #0f172a;
+      border-color: #0f172a;
+      color: #ffffff;
+    }
+
+    .dir-pill-count {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(100, 116, 139, 0.15);
+      color: inherit;
+    }
+
+    .dir-pill-btn.active .dir-pill-count {
+      background: rgba(255, 255, 255, 0.22);
+      color: #ffffff;
+    }
+
+    /* RESULTS STATUS BAR */
+    .dir-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+
+    .dir-status-count strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    .dir-reset-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: none;
+      border: none;
+      color: #0284c7;
+      font-size: 0.825rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+
+    .dir-reset-btn:hover {
+      background: #e0f2fe;
+    }
+
+    /* CATEGORY GROUPS */
+    .dir-group {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 90px;
+    }
+
+    .dir-group-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .dir-group-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.25rem;
+    }
+
+    .dir-group-desc {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    .dir-group-qty {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* INSTRUMENTS GRID */
+    .dir-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      .dir-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .dir-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CARD STYLING */
+    .dir-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .dir-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.08);
+      border-color: #cbd5e1;
+    }
+
+    .dir-card-visual {
+      height: 190px;
+      background: #f8fafc;
+      border-bottom: 1px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 1rem;
+    }
+
+    .dir-card-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.25s ease;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.04));
+    }
+
+    .dir-card:hover .dir-card-visual img {
+      transform: scale(1.04);
+    }
+
+    .dir-card-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .dir-card-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .dir-facility-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .dir-facility-badge.synbio {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .dir-facility-badge.mammalian {
+      background: #f3e8ff;
+      color: #7e22ce;
+    }
+
+    .dir-facility-badge.bioprocessing {
+      background: #ecfdf5;
+      color: #047857;
+    }
+
+    .dir-facility-badge.engineering {
+      background: #fef3c7;
+      color: #b45309;
+    }
+
+    .dir-card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #0f172a;
+      margin: 0 0 0.5rem 0;
+      letter-spacing: -0.01em;
+    }
+
+    .dir-card-desc {
+      font-size: 0.85rem;
+      line-height: 1.55;
+      color: #64748b;
+      margin: 0 0 1.25rem 0;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .dir-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 0.75rem;
+      margin-top: auto;
+    }
+
+    .dir-card-link {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #0284c7;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color 0.15s;
+    }
+
+    .dir-card-link:hover {
+      color: #0369a1;
+      text-decoration: underline;
+    }
+
+    /* NO RESULTS */
+    .dir-no-results {
+      display: none;
+      text-align: center;
+      padding: 4.5rem 2rem;
+      background: #ffffff;
+      border: 1px dashed #cbd5e1;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+    }
+
+    .dir-no-results svg {
+      width: 48px;
+      height: 48px;
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .dir-no-results h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .dir-no-results p {
+      font-size: 0.95rem;
+      color: #64748b;
+      max-width: 450px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    /* NOTES STRIP */
+    .dir-notes-strip {
+      border-top: 1px solid #e2e8f0;
+      margin-top: 2rem;
+      padding-top: 1.75rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .dir-notes-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dir-note-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .dir-note-tag {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      background: #e2e8f0;
+      color: #334155;
+      flex-shrink: 0;
+    }
+
+    /* BOTTOM CTA SECTION */
+    .dir-cta-section {
+      background: linear-gradient(135deg, #0b1120 0%, #152745 100%);
+      color: #ffffff;
+      padding: 4.5rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .dir-cta-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .dir-cta-content {
+      max-width: 700px;
+    }
+
+    .dir-cta-title {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #ffffff;
+    }
+
+    .dir-cta-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    .dir-cta-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .dir-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #0284c7;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.65rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .dir-btn-primary:hover {
+      background: #0369a1;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .dir-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.65rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .dir-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SITE NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/icons/genome_foundry_logo.svg" alt="Genome Foundry Logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="capabilities.html" class="nav-dropdown-toggle active">
+            Capabilities
+            <svg class="dropdown-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="capabilities.html" class="nav-dropdown-item">Overview</a>
+            <a href="instrumentation.html" class="nav-dropdown-item active">Instrumentation</a>
+          </div>
+        </div>
+        <a href="publications.html">Research &amp; Impact</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="mobile-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-nav" class="mobile-nav">
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="instrumentation.html" class="mobile-nav-sublink active">&mdash; Instrumentation</a>
+        <a href="publications.html">Research &amp; Impact</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="mobile-nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="redesign-hero" aria-label="Instrumentation Directory Hero">
+    <div class="redesign-hero-inner">
+      <div class="redesign-hero-content">
+        <h1 class="redesign-hero-title">Instrumentation &amp; Platforms</h1>
+        <p class="redesign-hero-body">Explore our specialized robotic workstations, automated liquid handlers, analytical screening systems, and bioprocessing bioreactors.</p>
+
+        <div class="redesign-jump-links">
+          <a href="#directoryCatalogue" class="redesign-jump-link">Browse Instruments &darr;</a>
+          <a href="capabilities.html" class="redesign-jump-link">Capabilities &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="redesign-hero-image-col" aria-hidden="true">
+      <img src="assets/images/biomek-01.webp" alt="Biomek automated liquid handling platform"
+        class="redesign-hero-image">
+    </div>
+  </section>
+
+  <!-- DIRECTORY MAIN SECTION -->
+  <main class="dir-main" id="directoryCatalogue">
+    <div class="dir-container">
+
+      <!-- SEARCH & FILTER TOOLBAR -->
+      <div class="dir-toolbar">
+        <div class="dir-search-row">
+          <div class="dir-search-wrap">
+            <svg class="dir-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="instrumentSearch" class="dir-search-input"
+              placeholder="Search equipment, models, techniques, or workflows (e.g. Echo, Biomek, HPLC, PCR, cytometer)..."
+              autocomplete="off" aria-label="Search instrumentation directory">
+            <button type="button" id="searchClearBtn" class="dir-search-clear" aria-label="Clear search">&times;</button>
+          </div>
+        </div>
+
+        <span class="dir-pills-label">Filter by category:</span>
+        <div class="dir-pills-container" id="categoryPills">
+          <button type="button" class="dir-pill-btn active" data-category="All">
+            All Categories <span class="dir-pill-count">61</span>
+          </button>
+          <button type="button" class="dir-pill-btn" data-category="Automation &amp; liquid handling">
+            Automation &amp; liquid handling <span class="dir-pill-count">10</span>
+          </button>
+          <button type="button" class="dir-pill-btn" data-category="Automation &amp; sample preparation">
+            Automation &amp; sample preparation <span class="dir-pill-count">10</span>
+          </button>
+          <button type="button" class="dir-pill-btn" data-category="Nucleic acid construction &amp; analysis">
+            Nucleic acid construction &amp; analysis <span class="dir-pill-count">7</span>
+          </button>
+          <button type="button" class="dir-pill-btn" data-category="Screening, cytometry &amp; imaging">
+            Screening, cytometry &amp; imaging <span class="dir-pill-count">10</span>
+          </button>
+          <button type="button" class="dir-pill-btn" data-category="Mammalian cell engineering &amp; culture">
+            Mammalian cell engineering &amp; culture <span class="dir-pill-count">5</span>
+          </button>
+          <button type="button" class="dir-pill-btn" data-category="Analytical characterization">
+            Analytical characterization <span class="dir-pill-count">5</span>
+          </button>
+          <button type="button" class="dir-pill-btn" data-category="Fermentation &amp; bioprocessing">
+            Fermentation &amp; bioprocessing <span class="dir-pill-count">9</span>
+          </button>
+          <button type="button" class="dir-pill-btn" data-category="Downstream processing">
+            Downstream processing <span class="dir-pill-count">4</span>
+          </button>
+          <button type="button" class="dir-pill-btn" data-category="Microfabrication &amp; prototyping">
+            Microfabrication &amp; prototyping <span class="dir-pill-count">1</span>
+          </button>
+        </div>
+
+        <div class="dir-status-bar">
+          <div class="dir-status-count" id="statusCount">
+            Showing <strong>61</strong> of 61 instruments &amp; platforms
+          </div>
+          <button type="button" class="dir-reset-btn" id="resetFiltersBtn" style="display: none;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Reset filters
+          </button>
+        </div>
+      </div>
+
+      <!-- NO RESULTS PLACEHOLDER -->
+      <div class="dir-no-results" id="noResultsNotice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          <line x1="8" y1="11" x2="14" y2="11"></line>
+        </svg>
+        <h3>No matching instruments found</h3>
+        <p>We couldn't find any instruments matching your search or filters. Try adjusting your search term or selecting another category.</p>
+        <button type="button" class="dir-btn-primary" id="clearSearchBtn">Clear search &amp; show all</button>
+      </div>
+
+      <!-- CATEGORY GROUPS -->
+      <div id="instrumentGroups">
+        <section class="dir-group" data-group-category="Automation &amp; liquid handling">
+          <div class="dir-group-header">
+            <div>
+              <h2 class="dir-group-title">Automation &amp; liquid handling</h2>
+              <p class="dir-group-desc">Programmable workstations and precise liquid transfers across plate-based workflows.</p>
+            </div>
+            <span class="dir-group-qty">10 entries</span>
+          </div>
+
+          <div class="dir-grid">
+            <article class="dir-card" data-id="1" data-category="Automation &amp; liquid handling" data-search="inspire integrated automation platform integrated robotic workflow platform for dna assembly, pcr, rt-pcr, in vitro transcription, and nucleic-acid analysis. automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/inSPIRE.png" alt="inSPIRE integrated automation platform" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">inSPIRE integrated automation platform</h3>
+                <p class="dir-card-desc">Integrated robotic workflow platform for DNA assembly, PCR, RT-PCR, in vitro transcription, and nucleic-acid analysis.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=289" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20inSPIRE integrated automation platform" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="2" data-category="Automation &amp; liquid handling" data-search="microbial phenotyping platform integrated robotic workflow for microbial normalization, culture, passaging, growth monitoring, and plate-based measurements. automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/MAESTRO.png" alt="Microbial Phenotyping Platform" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Microbial Phenotyping Platform</h3>
+                <p class="dir-card-desc">Integrated robotic workflow for microbial normalization, culture, passaging, growth monitoring, and plate-based measurements.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=292" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Microbial Phenotyping Platform" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="3" data-category="Automation &amp; liquid handling" data-search="biomek i7 liquid handling platform programmable liquid handling for microbial transformation, sample normalization, re-arraying, pcr, and library preparation. automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Biomek i7.png" alt="Biomek i7 liquid handling platform" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Biomek i7 liquid handling platform</h3>
+                <p class="dir-card-desc">Programmable liquid handling for microbial transformation, sample normalization, re-arraying, PCR, and library preparation.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=245" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Biomek i7 liquid handling platform" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="4" data-category="Automation &amp; liquid handling" data-search="echo 550 acoustic liquid handler acoustic, tipless transfer of small liquid volumes for plate-based experimental workflows. automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Echo 550.png" alt="Echo 550 acoustic liquid handler" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Echo 550 acoustic liquid handler</h3>
+                <p class="dir-card-desc">Acoustic, tipless transfer of small liquid volumes for plate-based experimental workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=236" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Echo 550 acoustic liquid handler" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="5" data-category="Automation &amp; liquid handling" data-search="lynx lm900 automated liquid handling for plate-based microbial and assay workflows. automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Lynx.png" alt="Lynx LM900" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Lynx LM900</h3>
+                <p class="dir-card-desc">Automated liquid handling for plate-based microbial and assay workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=249" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Lynx LM900" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="6" data-category="Automation &amp; liquid handling" data-search="microlab vantage workstation integrated mammalian-cell automation for seeding, feeding, passaging, nucleofection, and phenotyping. automation &amp; liquid handling mammalian studio foundry mammalian systems studio">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Vantage Workstation.png" alt="Microlab VANTAGE workstation" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge mammalian">Mammalian Studio</span>
+                </div>
+                <h3 class="dir-card-title">Microlab VANTAGE workstation</h3>
+                <p class="dir-card-desc">Integrated mammalian-cell automation for seeding, feeding, passaging, nucleofection, and phenotyping.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=253" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Microlab VANTAGE workstation" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="7" data-category="Automation &amp; liquid handling" data-search="opentrons ot-2 liquid handling robot flexible programmable pipetting robot for custom, small-batch and multiwell workflows. automation &amp; liquid handling biology department biology department">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Opentrons OT-2.png" alt="Opentrons OT-2 liquid handling robot" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge ">Biology Department</span>
+                </div>
+                <h3 class="dir-card-title">Opentrons OT-2 liquid handling robot</h3>
+                <p class="dir-card-desc">Flexible programmable pipetting robot for custom, small-batch and multiwell workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=252" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Opentrons OT-2 liquid handling robot" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="8" data-category="Automation &amp; liquid handling" data-search="miro canvas automated liquid handling system for next-generation sequencing library preparation. automation &amp; liquid handling engineering electrical &amp; computer engineering">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Miro Canvas.png" alt="Miro Canvas" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge engineering">Engineering</span>
+                </div>
+                <h3 class="dir-card-title">Miro Canvas</h3>
+                <p class="dir-card-desc">Automated liquid handling system for next-generation sequencing library preparation.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=399" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Miro Canvas" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="9" data-category="Automation &amp; liquid handling" data-search="mantis 6-reagent dispenser low-volume reagent dispensing into microplates for screening and assay setup. automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Mantis.png" alt="Mantis 6-reagent dispenser" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Mantis 6-reagent dispenser</h3>
+                <p class="dir-card-desc">Low-volume reagent dispensing into microplates for screening and assay setup.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=248" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Mantis 6-reagent dispenser" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="10" data-category="Automation &amp; liquid handling" data-search="multiflo fx bulk reagent dispenser automated bulk dispensing for microplate-based assays and sample preparation. automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/BioTek MultiFlo FX.png" alt="MultiFlo FX bulk reagent dispenser" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">MultiFlo FX bulk reagent dispenser</h3>
+                <p class="dir-card-desc">Automated bulk dispensing for microplate-based assays and sample preparation.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=274" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20MultiFlo FX bulk reagent dispenser" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="dir-group" data-group-category="Automation &amp; sample preparation">
+          <div class="dir-group-header">
+            <div>
+              <h2 class="dir-group-title">Automation &amp; sample preparation</h2>
+              <p class="dir-group-desc">Sample preparation, plate handling, and integrated workflow accessories.</p>
+            </div>
+            <span class="dir-group-qty">10 entries</span>
+          </div>
+
+          <div class="dir-grid">
+            <article class="dir-card" data-id="11" data-category="Automation &amp; sample preparation" data-search="kingfisher flex magnetic-bead processor automated magnetic-bead workflows for nucleic-acid and sample purification. automation &amp; sample preparation synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/KingFisher.png" alt="KingFisher Flex magnetic-bead processor" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">KingFisher Flex magnetic-bead processor</h3>
+                <p class="dir-card-desc">Automated magnetic-bead workflows for nucleic-acid and sample purification.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=270" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20KingFisher Flex magnetic-bead processor" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="12" data-category="Automation &amp; sample preparation" data-search="miqron magnetic-bead separation device instrument-assisted magnetic-bead separation for automated sample preparation. automation &amp; sample preparation synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/miQron.png" alt="MiQron magnetic-bead separation device" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">MiQron magnetic-bead separation device</h3>
+                <p class="dir-card-desc">Instrument-assisted magnetic-bead separation for automated sample preparation.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=271" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20MiQron magnetic-bead separation device" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="13" data-category="Automation &amp; sample preparation" data-search="alps 3000 automated plate sealer automated sealing of microplates for liquid handling and downstream processing. automation &amp; sample preparation synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/ALPS 3000.png" alt="ALPS 3000 automated plate sealer" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">ALPS 3000 automated plate sealer</h3>
+                <p class="dir-card-desc">Automated sealing of microplates for liquid handling and downstream processing.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=261" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20ALPS 3000 automated plate sealer" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="14" data-category="Automation &amp; sample preparation" data-search="automated roll heat sealer plate heat sealing for microplate-based processing and culture workflows. automation &amp; sample preparation synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/4titude.png" alt="Automated roll heat sealer" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Automated roll heat sealer</h3>
+                <p class="dir-card-desc">Plate heat sealing for microplate-based processing and culture workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=259" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Automated roll heat sealer" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="15" data-category="Automation &amp; sample preparation" data-search="hig 3 automated plate centrifuge automated plate centrifugation within integrated robotic workflows. automation &amp; sample preparation synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/HiG.png" alt="HiG 3 automated plate centrifuge" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">HiG 3 automated plate centrifuge</h3>
+                <p class="dir-card-desc">Automated plate centrifugation within integrated robotic workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=260" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20HiG 3 automated plate centrifuge" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="16" data-category="Automation &amp; sample preparation" data-search="405ts plate washer automated microplate washing for assay and sample preparation workflows. automation &amp; sample preparation synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Plate Washer Agilent BioTek 405TS.png" alt="405TS plate washer" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">405TS plate washer</h3>
+                <p class="dir-card-desc">Automated microplate washing for assay and sample preparation workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=283" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20405TS plate washer" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="18" data-category="Automation &amp; sample preparation" data-search="legend xfr centrifuge centrifugation of laboratory samples and vessels for preparative workflows. automation &amp; sample preparation synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Sorvall Legend.png" alt="Legend XFR centrifuge" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Legend XFR centrifuge</h3>
+                <p class="dir-card-desc">Centrifugation of laboratory samples and vessels for preparative workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=258" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Legend XFR centrifuge" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="19" data-category="Automation &amp; sample preparation" data-search="universal plate pourer automated agar plate pouring to support microbial culture and colony screening. automation &amp; sample preparation synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Universal plate pourer.png" alt="Universal Plate Pourer" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Universal Plate Pourer</h3>
+                <p class="dir-card-desc">Automated agar plate pouring to support microbial culture and colony screening.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=251" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Universal Plate Pourer" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="20" data-category="Automation &amp; sample preparation" data-search="labelite id capper/decapper automated tube capping and decapping for integrated mammalian-cell workflows. automation &amp; sample preparation mammalian studio foundry mammalian systems studio">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Capper-Decapper.png" alt="LabElite ID capper/decapper" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge mammalian">Mammalian Studio</span>
+                </div>
+                <h3 class="dir-card-title">LabElite ID capper/decapper</h3>
+                <p class="dir-card-desc">Automated tube capping and decapping for integrated mammalian-cell workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=286" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20LabElite ID capper/decapper" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="21" data-category="Automation &amp; sample preparation" data-search="xpeel automated plate-seal remover automated removal of plate seals during multi-step robotic workflows. automation &amp; sample preparation synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/XPeel.png" alt="XPeel automated plate-seal remover" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">XPeel automated plate-seal remover</h3>
+                <p class="dir-card-desc">Automated removal of plate seals during multi-step robotic workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=255" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20XPeel automated plate-seal remover" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="dir-group" data-group-category="Nucleic acid construction &amp; analysis">
+          <div class="dir-group-header">
+            <div>
+              <h2 class="dir-group-title">Nucleic acid construction &amp; analysis</h2>
+              <p class="dir-group-desc">DNA and RNA workflows, amplification, quality control, and single-cell preparation.</p>
+            </div>
+            <span class="dir-group-qty">7 entries</span>
+          </div>
+
+          <div class="dir-grid">
+            <article class="dir-card" data-id="23" data-category="Nucleic acid construction &amp; analysis" data-search="chromium controller microfluidic sample partitioning for single-cell sequencing workflows. nucleic acid construction &amp; analysis synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Chromium.png" alt="Chromium Controller" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Chromium Controller</h3>
+                <p class="dir-card-desc">Microfluidic sample partitioning for single-cell sequencing workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=275" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Chromium Controller" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="24" data-category="Nucleic acid construction &amp; analysis" data-search="fragment analyzer infinity automated electrophoretic sizing and quality assessment of nucleic acids. nucleic acid construction &amp; analysis synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Fragment Analyzer.png" alt="Fragment Analyzer Infinity" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Fragment Analyzer Infinity</h3>
+                <p class="dir-card-desc">Automated electrophoretic sizing and quality assessment of nucleic acids.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=247" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Fragment Analyzer Infinity" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="25" data-category="Nucleic acid construction &amp; analysis" data-search="tapestation 4150 automated nucleic-acid fragment sizing and sample quality assessment. nucleic acid construction &amp; analysis synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/TapeStation.png" alt="TapeStation 4150" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">TapeStation 4150</h3>
+                <p class="dir-card-desc">Automated nucleic-acid fragment sizing and sample quality assessment.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=241" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20TapeStation 4150" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="26" data-category="Nucleic acid construction &amp; analysis" data-search="on-deck thermal cyclers (odtc, 96- and 384-well) automated thermal cycling for pcr and related reactions within robotic workflows. nucleic acid construction &amp; analysis synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/ODTC.png" alt="On-deck thermal cyclers (ODTC, 96- and 384-well)" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">On-deck thermal cyclers (ODTC, 96- and 384-well)</h3>
+                <p class="dir-card-desc">Automated thermal cycling for PCR and related reactions within robotic workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=273" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20On-deck thermal cyclers (ODTC, 96- and 384-well)" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="28" data-category="Nucleic acid construction &amp; analysis" data-search="viia 7 real-time pcr system real-time pcr for nucleic-acid quantification and assay measurements. nucleic acid construction &amp; analysis synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/ViiA7.png" alt="ViiA 7 real-time PCR system" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">ViiA 7 real-time PCR system</h3>
+                <p class="dir-card-desc">Real-time PCR for nucleic-acid quantification and assay measurements.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=254" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20ViiA 7 real-time PCR system" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="29" data-category="Nucleic acid construction &amp; analysis" data-search="quantstudio 3d digital pcr system digital pcr system combining proflex flat-block thermal cycling with quantstudio 3d chip readout for nucleic-acid quantification. nucleic acid construction &amp; analysis synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/QuantStudio.png" alt="QuantStudio 3D digital PCR system" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">QuantStudio 3D digital PCR system</h3>
+                <p class="dir-card-desc">Digital PCR system combining ProFlex flat-block thermal cycling with QuantStudio 3D chip readout for nucleic-acid quantification.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=237" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20QuantStudio 3D digital PCR system" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="30" data-category="Nucleic acid construction &amp; analysis" data-search="qubit 4 fluorometer fluorescence-based quantification of dna, rna, and proteins. nucleic acid construction &amp; analysis synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Qubit 4.png" alt="Qubit 4 fluorometer" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Qubit 4 fluorometer</h3>
+                <p class="dir-card-desc">Fluorescence-based quantification of DNA, RNA, and proteins.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=242" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Qubit 4 fluorometer" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="dir-group" data-group-category="Screening, cytometry &amp; imaging">
+          <div class="dir-group-header">
+            <div>
+              <h2 class="dir-group-title">Screening, cytometry &amp; imaging</h2>
+              <p class="dir-group-desc">Population and single-cell measurements, imaging, and plate-based phenotyping.</p>
+            </div>
+            <span class="dir-group-qty">10 entries</span>
+          </div>
+
+          <div class="dir-grid">
+            <article class="dir-card" data-id="31" data-category="Screening, cytometry &amp; imaging" data-search="accuri c6 flow cytometer dual-laser flow cytometry for cell population, fluorescence, and assay measurements. screening, cytometry &amp; imaging synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Accuri.png" alt="Accuri C6 flow cytometer" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Accuri C6 flow cytometer</h3>
+                <p class="dir-card-desc">Dual-laser flow cytometry for cell population, fluorescence, and assay measurements.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=234" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Accuri C6 flow cytometer" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="32" data-category="Screening, cytometry &amp; imaging" data-search="aurora spectral flow cytometer spectral flow cytometry for multiparameter cell analysis. screening, cytometry &amp; imaging synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Aurora analyzer.png" alt="Aurora spectral flow cytometer" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Aurora spectral flow cytometer</h3>
+                <p class="dir-card-desc">Spectral flow cytometry for multiparameter cell analysis.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=243" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Aurora spectral flow cytometer" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="33" data-category="Screening, cytometry &amp; imaging" data-search="aurora cs spectral cell sorter spectral flow cytometry with cell sorting. screening, cytometry &amp; imaging synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Aurora FACS.png" alt="Aurora CS spectral cell sorter" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Aurora CS spectral cell sorter</h3>
+                <p class="dir-card-desc">Spectral flow cytometry with cell sorting.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=244" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Aurora CS spectral cell sorter" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="34" data-category="Screening, cytometry &amp; imaging" data-search="ensight multimode plate reader multiwell-plate optical readouts for screening and quantitative assays. screening, cytometry &amp; imaging synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Ensight.png" alt="EnSight multimode plate reader" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">EnSight multimode plate reader</h3>
+                <p class="dir-card-desc">Multiwell-plate optical readouts for screening and quantitative assays.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=246" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20EnSight multimode plate reader" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="35" data-category="Screening, cytometry &amp; imaging" data-search="growth profiler 10-plate reader automated time-course growth monitoring of microbial cultures in microplates. screening, cytometry &amp; imaging synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Growth Profiler.png" alt="Growth Profiler 10-plate reader" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Growth Profiler 10-plate reader</h3>
+                <p class="dir-card-desc">Automated time-course growth monitoring of microbial cultures in microplates.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=256" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Growth Profiler 10-plate reader" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="36" data-category="Screening, cytometry &amp; imaging" data-search="imagexpress micro xl high-content automated microscopy for imaging and phenotypic screening. screening, cytometry &amp; imaging synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/ImageXpress.png" alt="ImageXpress Micro XL" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">ImageXpress Micro XL</h3>
+                <p class="dir-card-desc">High-content automated microscopy for imaging and phenotypic screening.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=239" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20ImageXpress Micro XL" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="37" data-category="Screening, cytometry &amp; imaging" data-search="qpix 460 automated colony picker automated colony picking to support microbial variant screening and arraying. screening, cytometry &amp; imaging synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/QPix.png" alt="QPix 460 automated colony picker" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">QPix 460 automated colony picker</h3>
+                <p class="dir-card-desc">Automated colony picking to support microbial variant screening and arraying.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=240" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20QPix 460 automated colony picker" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="38" data-category="Screening, cytometry &amp; imaging" data-search="sunrise plate readers microplate absorbance measurements for routine growth and assay readouts. screening, cytometry &amp; imaging synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Tecan Sunrise Microplate Reader.png" alt="Sunrise plate readers" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">Sunrise plate readers</h3>
+                <p class="dir-card-desc">Microplate absorbance measurements for routine growth and assay readouts.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=262" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Sunrise plate readers" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="39" data-category="Screening, cytometry &amp; imaging" data-search="cytation 5 automated cell imaging and multimode plate measurement for mammalian assays. screening, cytometry &amp; imaging mammalian studio foundry mammalian systems studio">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Cytation 5.png" alt="Cytation 5" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge mammalian">Mammalian Studio</span>
+                </div>
+                <h3 class="dir-card-title">Cytation 5</h3>
+                <p class="dir-card-desc">Automated cell imaging and multimode plate measurement for mammalian assays.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=276" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Cytation 5" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="40" data-category="Screening, cytometry &amp; imaging" data-search="laxco lmi3000 inverted microscope inverted microscopy for routine observation of adherent mammalian cell cultures. screening, cytometry &amp; imaging mammalian studio foundry mammalian systems studio">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/LMI3000.png" alt="Laxco LMI3000 inverted microscope" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge mammalian">Mammalian Studio</span>
+                </div>
+                <h3 class="dir-card-title">Laxco LMI3000 inverted microscope</h3>
+                <p class="dir-card-desc">Inverted microscopy for routine observation of adherent mammalian cell cultures.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=367" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Laxco LMI3000 inverted microscope" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="dir-group" data-group-category="Mammalian cell engineering &amp; culture">
+          <div class="dir-group-header">
+            <div>
+              <h2 class="dir-group-title">Mammalian cell engineering &amp; culture</h2>
+              <p class="dir-group-desc">Cell engineering, controlled culture, and supporting infrastructure.</p>
+            </div>
+            <span class="dir-group-qty">5 entries</span>
+          </div>
+
+          <div class="dir-grid">
+            <article class="dir-card" data-id="41" data-category="Mammalian cell engineering &amp; culture" data-search="4d-nucleofector / 96-well module plate-format electroporation for delivery of nucleic acids and other cargo into mammalian cells. mammalian cell engineering &amp; culture mammalian studio foundry mammalian systems studio">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Lonza 4D.png" alt="4D-Nucleofector / 96-well module" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge mammalian">Mammalian Studio</span>
+                </div>
+                <h3 class="dir-card-title">4D-Nucleofector / 96-well module</h3>
+                <p class="dir-card-desc">Plate-format electroporation for delivery of nucleic acids and other cargo into mammalian cells.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=235" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%204D-Nucleofector / 96-well module" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="42" data-category="Mammalian cell engineering &amp; culture" data-search="stx-220 tri-gas incubator automated, controlled-atmosphere incubation for mammalian cell culture. mammalian cell engineering &amp; culture mammalian studio foundry mammalian systems studio">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Liconic Automated CO2 Static Incubator.png" alt="STX-220 tri-gas incubator" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge mammalian">Mammalian Studio</span>
+                </div>
+                <h3 class="dir-card-title">STX-220 tri-gas incubator</h3>
+                <p class="dir-card-desc">Automated, controlled-atmosphere incubation for mammalian cell culture.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=284" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20STX-220 tri-gas incubator" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="43" data-category="Mammalian cell engineering &amp; culture" data-search="heracell 150i co₂ incubator controlled co₂ incubation for routine mammalian cell culture. mammalian cell engineering &amp; culture mammalian studio foundry mammalian systems studio">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Heracell.png" alt="Heracell 150i CO₂ incubator" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge mammalian">Mammalian Studio</span>
+                </div>
+                <h3 class="dir-card-title">Heracell 150i CO₂ incubator</h3>
+                <p class="dir-card-desc">Controlled CO₂ incubation for routine mammalian cell culture.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=365" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Heracell 150i CO₂ incubator" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="44" data-category="Mammalian cell engineering &amp; culture" data-search="heracell 240i with orbital shaker temperature- and co₂-controlled shaking incubation for specialized cell-culture workflows. mammalian cell engineering &amp; culture mammalian studio foundry mammalian systems studio">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Shaking CO2 incubator.png" alt="Heracell 240i with orbital shaker" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge mammalian">Mammalian Studio</span>
+                </div>
+                <h3 class="dir-card-title">Heracell 240i with orbital shaker</h3>
+                <p class="dir-card-desc">Temperature- and CO₂-controlled shaking incubation for specialized cell-culture workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=366" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Heracell 240i with orbital shaker" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="45" data-category="Mammalian cell engineering &amp; culture" data-search="1300 series a2 biosafety cabinet class ii biosafety cabinet supporting aseptic mammalian cell handling. mammalian cell engineering &amp; culture mammalian studio foundry mammalian systems studio">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/BSC.png" alt="1300 Series A2 biosafety cabinet" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge mammalian">Mammalian Studio</span>
+                </div>
+                <h3 class="dir-card-title">1300 Series A2 biosafety cabinet</h3>
+                <p class="dir-card-desc">Class II biosafety cabinet supporting aseptic mammalian cell handling.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=287" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%201300 Series A2 biosafety cabinet" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="dir-group" data-group-category="Analytical characterization">
+          <div class="dir-group-header">
+            <div>
+              <h2 class="dir-group-title">Analytical characterization</h2>
+              <p class="dir-group-desc">Chromatography, spectroscopy, and analytical measurements.</p>
+            </div>
+            <span class="dir-group-qty">5 entries</span>
+          </div>
+
+          <div class="dir-grid">
+            <article class="dir-card" data-id="46" data-category="Analytical characterization" data-search="6560 ion-mobility qtof + 1290 hplc liquid chromatography, ion mobility, and high-resolution mass spectrometry for molecular characterization. analytical characterization synbio suite foundry build &amp; test synbio suite">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/QToF.png" alt="6560 ion-mobility QTOF + 1290 HPLC" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge synbio">SynBio Suite</span>
+                </div>
+                <h3 class="dir-card-title">6560 ion-mobility QTOF + 1290 HPLC</h3>
+                <p class="dir-card-desc">Liquid chromatography, ion mobility, and high-resolution mass spectrometry for molecular characterization.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=250" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%206560 ion-mobility QTOF + 1290 HPLC" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="47" data-category="Analytical characterization" data-search="agilent 1260 infinity ii hplc (uv/ri) liquid chromatography with uv and refractive-index detection for process-sample analysis. analytical characterization bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/HPLC.png" alt="Agilent 1260 Infinity II HPLC (UV/RI)" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Agilent 1260 Infinity II HPLC (UV/RI)</h3>
+                <p class="dir-card-desc">Liquid chromatography with UV and refractive-index detection for process-sample analysis.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=342" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Agilent 1260 Infinity II HPLC (UV/RI)" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="48" data-category="Analytical characterization" data-search="cary 60 uv-vis spectrophotometer uv-visible absorbance analysis of biological and process samples. analytical characterization bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Cary UV.png" alt="Cary 60 UV-Vis spectrophotometer" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Cary 60 UV-Vis spectrophotometer</h3>
+                <p class="dir-card-desc">UV-visible absorbance analysis of biological and process samples.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=344" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Cary 60 UV-Vis spectrophotometer" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="49" data-category="Analytical characterization" data-search="ysi 2950 biochemistry analyzer biochemical analyte measurements for fermentation monitoring and process development. analytical characterization bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/YSI analyzer.png" alt="YSI 2950 biochemistry analyzer" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">YSI 2950 biochemistry analyzer</h3>
+                <p class="dir-card-desc">Biochemical analyte measurements for fermentation monitoring and process development.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=336" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20YSI 2950 biochemistry analyzer" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="50" data-category="Analytical characterization" data-search="dm500 microscope with icc50w routine laboratory light microscopy and image capture for process samples. analytical characterization bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/DM500.png" alt="DM500 microscope with ICC50W" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">DM500 microscope with ICC50W</h3>
+                <p class="dir-card-desc">Routine laboratory light microscopy and image capture for process samples.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=345" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20DM500 microscope with ICC50W" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="dir-group" data-group-category="Fermentation &amp; bioprocessing">
+          <div class="dir-group-header">
+            <div>
+              <h2 class="dir-group-title">Fermentation &amp; bioprocessing</h2>
+              <p class="dir-group-desc">Controlled cultivation, process optimization, and scale-up experiments.</p>
+            </div>
+            <span class="dir-group-qty">9 entries</span>
+          </div>
+
+          <div class="dir-grid">
+            <article class="dir-card" data-id="51" data-category="Fermentation &amp; bioprocessing" data-search="parallel minibio 1000 bioreactors (8 × 1 l) eight benchtop bioreactors for parallel microbial process development and optimization. fermentation &amp; bioprocessing bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/MiniBio.png" alt="Parallel MiniBio 1000 bioreactors (8 × 1 L)" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Parallel MiniBio 1000 bioreactors (8 × 1 L)</h3>
+                <p class="dir-card-desc">Eight benchtop bioreactors for parallel microbial process development and optimization.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=377" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Parallel MiniBio 1000 bioreactors (8 × 1 L)" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="52" data-category="Fermentation &amp; bioprocessing" data-search="biostat b 2 l bioreactor controlled bench-scale bioreactor for microbial cultivation and process studies. fermentation &amp; bioprocessing bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Biostat B.png" alt="Biostat B 2 L bioreactor" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Biostat B 2 L bioreactor</h3>
+                <p class="dir-card-desc">Controlled bench-scale bioreactor for microbial cultivation and process studies.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=397" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Biostat B 2 L bioreactor" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="53" data-category="Fermentation &amp; bioprocessing" data-search="stirred-tank bioreactors (3–5 l) controlled stirred-tank fermentation at 3- and 5-l vessel sizes. fermentation &amp; bioprocessing bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/ezController.png" alt="Stirred-tank bioreactors (3–5 L)" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Stirred-tank bioreactors (3–5 L)</h3>
+                <p class="dir-card-desc">Controlled stirred-tank fermentation at 3- and 5-L vessel sizes.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=314" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Stirred-tank bioreactors (3–5 L)" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="54" data-category="Fermentation &amp; bioprocessing" data-search="stirred-tank bioreactors (15–20 l) controlled stirred-tank fermentation at 15- and 20-l vessel sizes. fermentation &amp; bioprocessing bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/ezController.png" alt="Stirred-tank bioreactors (15–20 L)" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Stirred-tank bioreactors (15–20 L)</h3>
+                <p class="dir-card-desc">Controlled stirred-tank fermentation at 15- and 20-L vessel sizes.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=319" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Stirred-tank bioreactors (15–20 L)" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="64" data-category="Fermentation &amp; bioprocessing" data-search="bioengineering 16 l sip bioreactor steam-in-place (sip) bioengineering bioreactor for controlled fermentation and microbial process-development studies. fermentation &amp; bioprocessing bioprocessing bioprocessing — bookr verified">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Stainless Steel Bioreactor Lab Skid 16L.png" alt="Bioengineering 16 L SIP bioreactor" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Bioengineering 16 L SIP bioreactor</h3>
+                <p class="dir-card-desc">Steam-in-place (SIP) Bioengineering bioreactor for controlled fermentation and microbial process-development studies.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/Default.asp?asset=330" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Bioengineering 16 L SIP bioreactor" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="65" data-category="Fermentation &amp; bioprocessing" data-search="bioengineering 150 l sip bioreactor steam-in-place bioreactor supporting larger-scale microbial fermentation and process development. fermentation &amp; bioprocessing bioprocessing bioprocessing — bookr verified">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Stainless Steel Bioreactor Lab Skid 150L 16L.png" alt="Bioengineering 150 L SIP bioreactor" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Bioengineering 150 L SIP bioreactor</h3>
+                <p class="dir-card-desc">Steam-in-place bioreactor supporting larger-scale microbial fermentation and process development.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/Default.asp?asset=331" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Bioengineering 150 L SIP bioreactor" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="66" data-category="Fermentation &amp; bioprocessing" data-search="getinge / applikon 270 l sip bioreactor steam-in-place bioreactor for fermentation scale-up and process-development studies. fermentation &amp; bioprocessing bioprocessing bioprocessing — bookr verified">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Stainless Steel Bioreactor Lab Skid 270 L.png" alt="Getinge / Applikon 270 L SIP bioreactor" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Getinge / Applikon 270 L SIP bioreactor</h3>
+                <p class="dir-card-desc">Steam-in-place bioreactor for fermentation scale-up and process-development studies.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/Default.asp?asset=338" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Getinge / Applikon 270 L SIP bioreactor" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="55" data-category="Fermentation &amp; bioprocessing" data-search="ht multitron shaker incubators multi-level orbital shaking incubation for parallel microbial cultivation. fermentation &amp; bioprocessing bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Infors Multitron.png" alt="HT Multitron shaker incubators" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">HT Multitron shaker incubators</h3>
+                <p class="dir-card-desc">Multi-level orbital shaking incubation for parallel microbial cultivation.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=332" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20HT Multitron shaker incubators" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="56" data-category="Fermentation &amp; bioprocessing" data-search="mediaclave 30 preparation and sterilization of culture media for bioprocess workflows. fermentation &amp; bioprocessing bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Mediaclave.png" alt="Mediaclave 30" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Mediaclave 30</h3>
+                <p class="dir-card-desc">Preparation and sterilization of culture media for bioprocess workflows.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=337" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Mediaclave 30" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="dir-group" data-group-category="Downstream processing">
+          <div class="dir-group-header">
+            <div>
+              <h2 class="dir-group-title">Downstream processing</h2>
+              <p class="dir-group-desc">Separation, concentration, drying, and recovery operations.</p>
+            </div>
+            <span class="dir-group-qty">4 entries</span>
+          </div>
+
+          <div class="dir-grid">
+            <article class="dir-card" data-id="59" data-category="Downstream processing" data-search="centramate 500-s tangential-flow filtration tangential-flow filtration for product or biomass concentration and buffer exchange. downstream processing bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/TFF.png" alt="Centramate 500-S tangential-flow filtration" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Centramate 500-S tangential-flow filtration</h3>
+                <p class="dir-card-desc">Tangential-flow filtration for product or biomass concentration and buffer exchange.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=329" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Centramate 500-S tangential-flow filtration" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="60" data-category="Downstream processing" data-search="mini spray dryer b-290 laboratory spray drying for downstream product and formulation development. downstream processing bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Mini Spray Dryer.png" alt="Mini Spray Dryer B-290" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Mini Spray Dryer B-290</h3>
+                <p class="dir-card-desc">Laboratory spray drying for downstream product and formulation development.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=327" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Mini Spray Dryer B-290" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="61" data-category="Downstream processing" data-search="lyovapor l-250 freeze dryer freeze drying for preservation, stabilization, or formulation of biological materials. downstream processing bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/Lyophilizer.png" alt="Lyovapor L-250 freeze dryer" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">Lyovapor L-250 freeze dryer</h3>
+                <p class="dir-card-desc">Freeze drying for preservation, stabilization, or formulation of biological materials.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=328" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20Lyovapor L-250 freeze dryer" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="dir-card" data-id="62" data-category="Downstream processing" data-search="bios16 centrifuge centrifugal separation for biomass and other bioprocess samples. downstream processing bioprocessing bioprocessing">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/BIOS16.png" alt="BIOS16 centrifuge" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge bioprocessing">Bioprocessing</span>
+                </div>
+                <h3 class="dir-card-title">BIOS16 centrifuge</h3>
+                <p class="dir-card-desc">Centrifugal separation for biomass and other bioprocess samples.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=340" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20BIOS16 centrifuge" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="dir-group" data-group-category="Microfabrication &amp; prototyping">
+          <div class="dir-group-header">
+            <div>
+              <h2 class="dir-group-title">Microfabrication &amp; prototyping</h2>
+              <p class="dir-group-desc">Specialized precision fabrication equipment listed through Engineering.</p>
+            </div>
+            <span class="dir-group-qty">1 entry</span>
+          </div>
+
+          <div class="dir-grid">
+            <article class="dir-card" data-id="63" data-category="Microfabrication &amp; prototyping" data-search="microwriter ml3 baby plus direct-write optical lithography for rapid fabrication of micro-scale patterned devices. microfabrication &amp; prototyping engineering electrical &amp; computer engineering">
+              <div class="dir-card-visual">
+                <img src="assets/images/instruments/MicroWriter ML 3.png" alt="MicroWriter ML3 Baby Plus" loading="lazy" decoding="async">
+              </div>
+              <div class="dir-card-body">
+                <div class="dir-card-topline">
+                  <span class="dir-facility-badge engineering">Engineering</span>
+                </div>
+                <h3 class="dir-card-title">MicroWriter ML3 Baby Plus</h3>
+                <p class="dir-card-desc">Direct-write optical lithography for rapid fabrication of micro-scale patterned devices.</p>
+                <div class="dir-card-footer">
+              <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=398" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
+                View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+                  <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Inquiry:%20MicroWriter ML3 Baby Plus" class="dir-card-link" style="color: #64748b; font-size: 0.775rem;">
+                    Inquire &rarr;
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- SCOPE & ACCESS NOTES -->
+      <div class="dir-notes-strip">
+        <div class="dir-note-item">
+          <span class="dir-note-tag">SCOPE</span>
+          <div>Distinct systems and platforms are catalogued. Duplicate units, small consumables, and ancillary accessories are omitted for clarity.</div>
+        </div>
+        <div class="dir-note-item">
+          <span class="dir-note-tag">ACCESS</span>
+          <div>Access, training, and service models vary by platform. Both independent operation (for trained researchers) and assisted service runs are available.</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CTA BOTTOM SECTION -->
+  <section class="dir-cta-section" aria-label="Project Consultation">
+    <div class="dir-cta-inner">
+      <div class="dir-cta-content">
+        <h2 class="dir-cta-title">Need help selecting the right instrumentation?</h2>
+        <p class="dir-cta-text">
+          Tell us about your experimental workflow, target assays, or scale-up requirements. Our scientific and engineering staff can help configure equipment, design automation protocols, and plan pilot runs.
+        </p>
+      </div>
+      <div class="dir-cta-actions">
+        <a href="WorkWithUs.html" class="dir-btn-primary">
+          Work With Us
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="mailto:genomefoundry@concordia.ca?subject=Instrumentation%20Consultation" class="dir-btn-secondary">
+          Contact Foundry
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="footer" style="background-color: #0b1120; color: #f0f2f5; padding: 4.5rem 0 2rem 0; border-top: 1px solid rgba(255,255,255,0.08);">
+    <div class="container-wide footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; position: relative;">
+      <!-- Main Content Grid -->
+      <div class="footer-grid"
+        style="display: grid; grid-template-columns: 2fr 3fr; gap: 4rem; margin-bottom: 3.5rem;">
+
+        <!-- Left Side: Brand & Description -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Genome Foundry Home">
+            <img src="assets/icons/genome_foundry_logo.svg" alt="Concordia Genome Foundry"
+              style="max-width: 150px; width: 100%; height: auto; margin-bottom: 1rem; display: block; filter: brightness(0) invert(1);">
+          </a>
+          <p style="font-size: 14px; line-height: 1.5; color: #a1a1aa; margin-bottom: 0.75rem; max-width: 480px;">
+            Integrated research infrastructure for high-throughput bioengineering, microbial and mammalian
+            workflow development, and microbial bioprocessing.
+          </p>
+          <p
+            style="font-size: 13px; font-weight: 600; color: #d4d4d8; letter-spacing: 0.05em; text-transform: uppercase; margin: 0;">
+            A CONCORDIA UNIVERSITY RESEARCH PLATFORM.
+          </p>
+        </div>
+
+        <!-- Right Side: Links -->
+        <div class="footer-contact" style="display: flex; flex-wrap: wrap; gap: 3rem; padding-top: 0.25rem;">
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">EXPLORE</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="about.html" style="color: inherit; text-decoration: none; transition: opacity 0.2s;">About</a>
+              <a href="capabilities.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Capabilities</a>
+              <a href="instrumentation.html"
+                style="color: #38bdf8; text-decoration: none; transition: opacity 0.2s;">Instrumentation</a>
+              <a href="publications.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Research &amp; Impact</a>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">CONNECT</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="mailto:genomefoundry@concordia.ca" class="footer-link-item"
+                style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg> genomefoundry@concordia.ca
+              </a>
+              <a href="https://www.linkedin.com/company/concordia-genome-foundry/" target="_blank" rel="noopener"
+                class="footer-link-item"
+                style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+                LinkedIn
+              </a>
+              <a href="WorkWithUs.html" class="footer-link-item"
+                style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+                Work With Us
+              </a>
+              <a href="partners.html" class="footer-link-item"
+                style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Our Partners &amp; Supporters
+              </a>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">User
+              Tools</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="https://foundry.concordia.ca/bookr/" target="_blank" rel="noopener noreferrer"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrument
+                Booking</a>
+              <a href="https://foundry-lims.concordia.ca/" target="_blank" rel="noopener noreferrer"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;"
+                title="Concordia network or authorized access may be required."
+                aria-label="LIMS, Concordia access may be required">LIMS (Concordia access)</a>
+            </div>
+            <span
+              style="font-size: 0.75rem; color: #6b7280; display: block; margin-top: 0.75rem; max-width: 150px; line-height: 1.4;">For
+              trained users with active accounts.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom-row"
+        style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 13px; color: #a1a1aa;">
+        <p style="margin: 0;">&copy; 2026 Concordia Genome Foundry. All rights reserved.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="https://www.concordia.ca/privacy.html" target="_blank" rel="noopener noreferrer"
+            style="color: #a1a1aa; text-decoration: none; transition: color 0.2s;">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // CLIENT-SIDE SEARCH & FILTER CONTROLLER
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('instrumentSearch');
+      const searchClear = document.getElementById('searchClearBtn');
+      const categoryPills = document.querySelectorAll('.dir-pill-btn');
+      const statusCount = document.getElementById('statusCount');
+      const resetBtn = document.getElementById('resetFiltersBtn');
+      const clearSearchBtn = document.getElementById('clearSearchBtn');
+      const noResults = document.getElementById('noResultsNotice');
+      const groups = document.querySelectorAll('.dir-group');
+      const allCards = document.querySelectorAll('.dir-card');
+
+      const totalCount = allCards.length;
+      let activeCategory = 'All';
+
+      function applyFilters() {
+        const query = searchInput.value.trim().toLowerCase();
+        searchClear.style.display = query ? 'flex' : 'none';
+
+        let visibleCount = 0;
+        let visibleGroups = 0;
+
+        groups.forEach(group => {
+          const groupCat = group.getAttribute('data-group-category');
+          const isCategoryMatch = (activeCategory === 'All' || groupCat === activeCategory);
+          const cardsInGroup = group.querySelectorAll('.dir-card');
+          let groupVisibleCards = 0;
+
+          if (!isCategoryMatch) {
+            group.style.display = 'none';
+          } else {
+            cardsInGroup.forEach(card => {
+              const searchText = card.getAttribute('data-search') || '';
+              const matchesQuery = !query || searchText.includes(query);
+
+              if (matchesQuery) {
+                card.style.display = 'flex';
+                groupVisibleCards++;
+                visibleCount++;
+              } else {
+                card.style.display = 'none';
+              }
+            });
+
+            if (groupVisibleCards > 0) {
+              group.style.display = 'block';
+              visibleGroups++;
+              const qtyBadge = group.querySelector('.dir-group-qty');
+              if (qtyBadge) {
+                qtyBadge.textContent = `${groupVisibleCards} ${groupVisibleCards === 1 ? 'entry' : 'entries'}`;
+              }
+            } else {
+              group.style.display = 'none';
+            }
+          }
+        });
+
+        // Update status text
+        if (activeCategory === 'All' && !query) {
+          statusCount.innerHTML = `Showing <strong>${totalCount}</strong> of ${totalCount} instruments &amp; platforms`;
+          resetBtn.style.display = 'none';
+        } else if (query) {
+          statusCount.innerHTML = `Found <strong>${visibleCount}</strong> of ${totalCount} matching &ldquo;${escapeHtml(query)}&rdquo;`;
+          resetBtn.style.display = 'inline-flex';
+        } else {
+          statusCount.innerHTML = `Showing <strong>${visibleCount}</strong> of ${totalCount} in <em>${escapeHtml(activeCategory)}</em>`;
+          resetBtn.style.display = 'inline-flex';
+        }
+
+        // Show/hide empty state
+        if (visibleCount === 0) {
+          noResults.style.display = 'block';
+        } else {
+          noResults.style.display = 'none';
+        }
+      }
+
+      function escapeHtml(str) {
+        return str.replace(/[&<>'"]/g, tag => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          "'": '&#39;',
+          '"': '&quot;'
+        }[tag] || tag));
+      }
+
+      // Event: Search Input
+      searchInput.addEventListener('input', applyFilters);
+
+      // Event: Search Clear
+      searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        searchInput.focus();
+        applyFilters();
+      });
+
+      // Event: Category Pills
+      categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          categoryPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          activeCategory = pill.getAttribute('data-category');
+          applyFilters();
+        });
+      });
+
+      // Event: Reset Button & Clear Search Button
+      function resetAll() {
+        searchInput.value = '';
+        activeCategory = 'All';
+        categoryPills.forEach(p => {
+          if (p.getAttribute('data-category') === 'All') p.classList.add('active');
+          else p.classList.remove('active');
+        });
+        applyFilters();
+      }
+
+      resetBtn.addEventListener('click', resetAll);
+      clearSearchBtn.addEventListener('click', resetAll);
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

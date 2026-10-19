@@ -58,9 +58,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isSamePage = currentFile === linkFile;
 
-    if (isHome || isSamePage) {
+    const isDropdownToggle = link.classList.contains('nav-dropdown-toggle');
+    const isDropdownSection =
+      isDropdownToggle &&
+      (currentFile === 'instrumentation.html' || currentFile === 'capabilities.html');
+
+    if (isHome || isSamePage || isDropdownSection) {
       link.classList.add('active');
     }
+  });
+
+  // Desktop navigation dropdown hover/focus handling with grace period
+  const navDropdowns = document.querySelectorAll('.nav-dropdown');
+  navDropdowns.forEach(dropdown => {
+    let timeout;
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(timeout);
+      dropdown.classList.add('is-open');
+    });
+    dropdown.addEventListener('mouseleave', () => {
+      timeout = setTimeout(() => {
+        dropdown.classList.remove('is-open');
+      }, 180);
+    });
   });
 
   // Navbar background change on scroll
