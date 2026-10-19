@@ -724,17 +724,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Interactive Microplate Grid Animation (Cursor Follow)
+  // Interactive Microplate Grid Animation (Spotlight Hover & Cursor Follow)
   const microplateSvg = document.querySelector('.microplate-animated');
   if (microplateSvg) {
     const wells = microplateSvg.querySelectorAll('.plate-well');
     const wellData = [];
 
     wells.forEach(well => {
+      let hoverColor = '#00d2ff';
+      const classList = well.classList;
+      if (classList.contains('well-cyan')) {
+        hoverColor = '#00d2ff';
+      } else if (classList.contains('well-magenta')) {
+        hoverColor = '#ff2a85';
+      } else if (classList.contains('tier-0')) {
+        hoverColor = '#38bdf8';
+      } else if (classList.contains('tier-1')) {
+        hoverColor = '#f472b6';
+      } else if (classList.contains('tier-2')) {
+        hoverColor = '#34d399';
+      } else if (classList.contains('tier-3')) {
+        hoverColor = '#fbbf24';
+      } else if (classList.contains('tier-4')) {
+        hoverColor = '#c084fc';
+      }
+
       wellData.push({
         el: well,
         cx: parseFloat(well.getAttribute('data-cx')),
-        cy: parseFloat(well.getAttribute('data-cy'))
+        cy: parseFloat(well.getAttribute('data-cy')),
+        hoverColor: hoverColor
       });
     });
 
@@ -744,7 +763,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderMouseWave() {
       if (!mousePos) return;
       const { x, y } = mousePos;
-      const maxRadius = 72;
+      const maxRadius = 55;
 
       wellData.forEach(item => {
         const dx = item.cx - x;
@@ -753,15 +772,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (dist < maxRadius) {
           const factor = 1 - (dist / maxRadius);
-          const scale = 1 + factor * 0.55;
-          const moveX = (dx / (dist || 1)) * factor * 3.0;
-          const moveY = (dy / (dist || 1)) * factor * 3.0;
+          const scale = 1 + factor * 0.45;
+          const moveX = (dx / (dist || 1)) * factor * 2.5;
+          const moveY = (dy / (dist || 1)) * factor * 2.5;
 
           item.el.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
-        } else {
-          if (item.el.style.transform) {
-            item.el.style.transform = '';
+          item.el.style.fill = item.hoverColor;
+          if (dist < 20) {
+            item.el.style.filter = `drop-shadow(0 0 5px ${item.hoverColor})`;
+          } else {
+            item.el.style.filter = '';
           }
+        } else {
+          if (item.el.style.transform) item.el.style.transform = '';
+          if (item.el.style.fill) item.el.style.fill = '';
+          if (item.el.style.filter) item.el.style.filter = '';
         }
       });
     }
@@ -787,15 +812,9 @@ document.addEventListener('DOMContentLoaded', () => {
         rafId = null;
       }
       wellData.forEach(item => {
-        if (item.el.style.transform) {
-          item.el.style.transform = '';
-        }
-        if (item.el.style.fill) {
-          item.el.style.fill = '';
-        }
-        if (item.el.style.filter) {
-          item.el.style.filter = '';
-        }
+        if (item.el.style.transform) item.el.style.transform = '';
+        if (item.el.style.fill) item.el.style.fill = '';
+        if (item.el.style.filter) item.el.style.filter = '';
       });
     });
   }

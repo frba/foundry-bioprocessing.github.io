@@ -1192,7 +1192,7 @@
           .plate-well {
             transform-box: fill-box;
             transform-origin: center;
-            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: fill 0.35s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
           }
 
           .well-cyan {
@@ -1208,6 +1208,8 @@
           }
 
           .plate-well:hover {
+            transform: scale(1.5) !important;
+            filter: drop-shadow(0 0 6px currentColor);
             cursor: pointer;
           }
 
