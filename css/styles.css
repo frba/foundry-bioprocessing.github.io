@@ -2629,16 +2629,21 @@ section[id] {
   right: 20px;
   font-size: 5rem;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.07);
+  color: #e2e8f0;
   pointer-events: none;
+  font-family: "Georgia", "Times New Roman", serif;
+  /* Changes the shape of the curly quote */
+  font-weight: 700;
+  /* 400 (regular), 700 (bold), 900 (ultra-bold) */
+
 }
 
 .testimonial-tag {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #a0b2c6;
-  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  background: #00576f;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 4px 10px;
   border-radius: 20px;
