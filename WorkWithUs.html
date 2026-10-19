@@ -381,7 +381,7 @@
 
         <div class="redesign-jump-links">
           <a href="#ways-to-engage" class="redesign-jump-link">Ways to Work Together &darr;</a>
-          <a href="#startup-residency" class="redesign-jump-link">Foundry Residency &darr;</a>
+          <a href="#startup-residency" class="redesign-jump-link">Startup Residency &darr;</a>
           <a href="#contact" class="redesign-jump-link">Submit a Request &darr;</a>
         </div>
       </div>
@@ -1057,7 +1057,7 @@
       .lab-to-market-footer {
         margin-top: 1.5rem;
         padding-top: 1.15rem;
-        border-top: 1px solid #e2e8f0;
+        /* border-top: 1px solid #e2e8f0; */
       }
 
       .lab-to-market-disclaimer {
@@ -1078,7 +1078,7 @@
             </div>
             <div class="lab-to-market-v-divider" aria-hidden="true"></div>
             <p class="lab-to-market-desc">
-              Developing a research project with commercial potential? Limited in-kind support may be available for selected projects moving toward translation.
+              Developing a research project with commercial potential? Financial support may be available for selected projects moving toward translation.
             </p>
           </div>
           <div class="lab-to-market-action">
@@ -1090,6 +1090,160 @@
         </div>
         <div class="lab-to-market-footer">
           <p class="lab-to-market-disclaimer">Availability, eligibility, and support scope are assessed case by case.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: District 3 Incubator Partnership -->
+    <style>
+      .district3-section {
+        background-color: #ffffff;
+        padding: 2.5rem 0 2.75rem 0;
+        position: relative;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .district3-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      @media (min-width: 900px) {
+        .district3-inner {
+          padding: 0 2rem;
+        }
+      }
+
+      .district3-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+      }
+
+      @media (min-width: 960px) {
+        .district3-row {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 2.5rem;
+        }
+      }
+
+      .district3-media-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: flex-start;
+      }
+
+      @media (min-width: 680px) {
+        .district3-media-content {
+          flex-direction: row;
+          align-items: center;
+          gap: 2.25rem;
+          flex: 1;
+        }
+      }
+
+      .district3-logo-wrap {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .district3-logo {
+        height: 58px;
+        width: auto;
+        max-width: 125px;
+        object-fit: contain;
+        display: block;
+      }
+
+      .district3-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .district3-title {
+        font-size: clamp(1.2rem, 1.7vw, 1.38rem);
+        font-weight: 800;
+        color: #0B2540;
+        letter-spacing: -0.015em;
+        line-height: 1.25;
+        margin: 0;
+      }
+
+      .district3-desc {
+        font-size: 0.95rem;
+        color: #334155;
+        line-height: 1.55;
+        margin: 0;
+        max-width: 640px;
+      }
+
+      .district3-action {
+        flex-shrink: 0;
+      }
+
+      .district3-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.72rem 1.4rem;
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: #1761cc;
+        background-color: #ffffff;
+        border: 1.5px solid #70aef5;
+        border-radius: 8px;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .district3-btn:hover,
+      .district3-btn:focus-visible {
+        background-color: #f0f7ff;
+        border-color: #1761cc;
+        color: #0f4aa6;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(23, 97, 204, 0.14);
+        outline: none;
+      }
+
+      .district3-btn .arrow {
+        display: inline-block;
+        transition: transform 0.2s ease;
+      }
+
+      .district3-btn:hover .arrow {
+        transform: translateX(3px);
+      }
+    </style>
+
+    <section class="district3-section" id="district-3" aria-labelledby="district3-title">
+      <div class="district3-inner">
+        <div class="district3-row">
+          <div class="district3-media-content">
+            <div class="district3-logo-wrap">
+              <img src="assets/images/partners/D3.webp" alt="District 3 Innovation Hub logo" class="district3-logo" width="104" height="58" loading="lazy">
+            </div>
+            <div class="district3-content">
+              <h2 id="district3-title" class="district3-title">Entrepreneurship support through District 3</h2>
+              <p class="district3-desc">
+                Through our connection with Concordia's District 3 incubator, startups can explore additional venture coaching, laboratory facilities, and resources to support their growth.
+              </p>
+            </div>
+          </div>
+          <div class="district3-action">
+            <a href="https://www.district3.co/" target="_blank" rel="noopener noreferrer" class="district3-btn" aria-label="Explore District 3 (opens in a new tab)">
+              <span>Explore District 3</span>
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
