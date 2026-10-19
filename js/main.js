@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: "Institut national de la recherche scientifique", file: "INRS.webp", url: "https://inrs.ca/en/", status: "pending", visible: true, category: "ecosystem", order: 360 },
     { name: "Institut de recherches cliniques de Montréal", file: "IRCM.webp", url: "https://www.ircm.qc.ca", status: "pending", visible: true, category: "ecosystem", order: 370 },
     { name: "Université de Sherbrooke", file: "USherbrooke.webp", url: "https://www.usherbrooke.ca/", status: "pending", visible: true, category: "ecosystem", order: 380 },
-    { name: "Nucleate", file: "Nucleate.webp", url: "https://nucleate.org/", status: "pending", visible: true, category: "ecosystem", order: 390 }
+    { name: "Nucleate", file: "nucleate.webp", url: "https://nucleate.org/", status: "pending", visible: true, category: "ecosystem", order: 390 }
   ];
 
   const visiblePartners = partners.filter(
