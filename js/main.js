@@ -724,7 +724,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Interactive Microplate Grid Animation
+  // Interactive Microplate Grid Animation (Cursor Follow)
   const microplateSvg = document.querySelector('.microplate-animated');
   if (microplateSvg) {
     const wells = microplateSvg.querySelectorAll('.plate-well');
@@ -734,19 +734,9 @@ document.addEventListener('DOMContentLoaded', () => {
       wellData.push({
         el: well,
         cx: parseFloat(well.getAttribute('data-cx')),
-        cy: parseFloat(well.getAttribute('data-cy')),
-        baseFill: well.getAttribute('data-base-fill')
+        cy: parseFloat(well.getAttribute('data-cy'))
       });
     });
-
-    const activeBioPalette = [
-      '#00d2ff', // Electric cyan
-      '#10b981', // GFP Green
-      '#f59e0b', // Reporter Gold
-      '#ec4899', // Fluorescent Pink
-      '#8b5cf6', // Violet
-      '#06b6d4'  // Luminous teal
-    ];
 
     let rafId = null;
     let mousePos = null;
@@ -767,22 +757,10 @@ document.addEventListener('DOMContentLoaded', () => {
           const moveX = (dx / (dist || 1)) * factor * 3.0;
           const moveY = (dy / (dist || 1)) * factor * 3.0;
 
-          const angle = Math.atan2(dy, dx);
-          const colorIdx = Math.abs(Math.floor(((angle + Math.PI) / (2 * Math.PI)) * activeBioPalette.length)) % activeBioPalette.length;
-          const targetColor = activeBioPalette[colorIdx];
-
           item.el.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
-          item.el.style.fill = targetColor;
-          if (dist < 22) {
-            item.el.style.filter = `drop-shadow(0 0 5px ${targetColor})`;
-          } else {
-            item.el.style.filter = '';
-          }
         } else {
-          if (item.el.style.transform || item.el.style.fill || item.el.style.filter) {
+          if (item.el.style.transform) {
             item.el.style.transform = '';
-            item.el.style.fill = '';
-            item.el.style.filter = '';
           }
         }
       });
@@ -809,8 +787,15 @@ document.addEventListener('DOMContentLoaded', () => {
         rafId = null;
       }
       wellData.forEach(item => {
-        item.el.style.transform = '';
-        item.el.style.fill = '';
+        if (item.el.style.transform) {
+          item.el.style.transform = '';
+        }
+        if (item.el.style.fill) {
+          item.el.style.fill = '';
+        }
+        if (item.el.style.filter) {
+          item.el.style.filter = '';
+        }
       });
     });
   }

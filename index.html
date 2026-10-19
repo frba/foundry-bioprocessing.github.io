@@ -1100,7 +1100,7 @@
           <div class="redesign-exec-item">
             <h2 class="redesign-exec-title">Learn <span class="exec-arrow">↻</span></h2>
             <p class="redesign-exec-desc">Review results, select promising directions, and steer the next
-              build&ndash;test cycle.</p>
+              <strong>design&ndash;build&ndash;test</strong> cycle.</p>
           </div>
           <div class="redesign-exec-item">
             <h2 class="redesign-exec-title redesign-exec-scale-title">Scale</h2>
@@ -1192,7 +1192,7 @@
           .plate-well {
             transform-box: fill-box;
             transform-origin: center;
-            transition: fill 0.4s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
           }
 
           .well-cyan {
@@ -1207,207 +1207,8 @@
             fill: #c4d6e2;
           }
 
-          .plate-scanline {
-            opacity: 0;
-            pointer-events: none;
-          }
-
-          .redesign-scope-card:hover .plate-scanline,
-          .redesign-scope-graphic:hover .plate-scanline {
-            opacity: 1;
-            animation: plateScanBeam 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-          }
-
-          @keyframes plateScanBeam {
-            0% {
-              transform: translateX(-40px);
-              opacity: 0;
-            }
-            15% {
-              opacity: 0.95;
-            }
-            85% {
-              opacity: 0.95;
-            }
-            100% {
-              transform: translateX(390px);
-              opacity: 0;
-            }
-          }
-
-          /* On Hover: Dynamic Traveling Wave Across Columns & Rows */
-          .redesign-scope-card:hover .well-cyan,
-          .redesign-scope-graphic:hover .well-cyan {
-            animation: cyanWaveMove 2.6s ease-in-out infinite;
-            animation-delay: calc(var(--col) * 0.10s + var(--row) * 0.03s);
-          }
-
-          .redesign-scope-card:hover .well-magenta,
-          .redesign-scope-graphic:hover .well-magenta {
-            animation: magentaWaveMove 2.6s ease-in-out infinite;
-            animation-delay: calc(var(--col) * 0.10s + var(--row) * 0.03s);
-          }
-
-          .redesign-scope-card:hover .well-inactive.tier-0,
-          .redesign-scope-graphic:hover .well-inactive.tier-0 {
-            animation: inactiveWaveCyan 2.6s ease-in-out infinite;
-            animation-delay: calc(var(--col) * 0.10s + var(--row) * 0.02s);
-          }
-
-          .redesign-scope-card:hover .well-inactive.tier-1,
-          .redesign-scope-graphic:hover .well-inactive.tier-1 {
-            animation: inactiveWaveMagenta 2.6s ease-in-out infinite;
-            animation-delay: calc(var(--col) * 0.10s + var(--row) * 0.02s);
-          }
-
-          .redesign-scope-card:hover .well-inactive.tier-2,
-          .redesign-scope-graphic:hover .well-inactive.tier-2 {
-            animation: inactiveWaveEmerald 2.6s ease-in-out infinite;
-            animation-delay: calc(var(--col) * 0.10s + var(--row) * 0.02s);
-          }
-
-          .redesign-scope-card:hover .well-inactive.tier-3,
-          .redesign-scope-graphic:hover .well-inactive.tier-3 {
-            animation: inactiveWaveAmber 2.6s ease-in-out infinite;
-            animation-delay: calc(var(--col) * 0.10s + var(--row) * 0.02s);
-          }
-
-          .redesign-scope-card:hover .well-inactive.tier-4,
-          .redesign-scope-graphic:hover .well-inactive.tier-4 {
-            animation: inactiveWaveViolet 2.6s ease-in-out infinite;
-            animation-delay: calc(var(--col) * 0.10s + var(--row) * 0.02s);
-          }
-
-          @keyframes cyanWaveMove {
-            0%, 100% {
-              fill: #1ba0cc;
-              transform: scale(1) translateY(0);
-            }
-            25% {
-              fill: #00e5ff;
-              transform: scale(1.4) translateY(-3px);
-            }
-            50% {
-              fill: #10b981;
-              transform: scale(1.28) translateY(0);
-            }
-            75% {
-              fill: #6366f1;
-              transform: scale(1.2) translateY(2px);
-            }
-          }
-
-          @keyframes magentaWaveMove {
-            0%, 100% {
-              fill: #c454ae;
-              transform: scale(1) translateY(0);
-            }
-            25% {
-              fill: #ff2a85;
-              transform: scale(1.4) translateY(-3px);
-            }
-            50% {
-              fill: #f59e0b;
-              transform: scale(1.3) translateY(0);
-            }
-            75% {
-              fill: #8b5cf6;
-              transform: scale(1.2) translateY(2px);
-            }
-          }
-
-          @keyframes inactiveWaveCyan {
-            0%, 100% {
-              fill: #c4d6e2;
-              transform: scale(1);
-            }
-            35% {
-              fill: #38bdf8;
-              transform: scale(1.3);
-            }
-            65% {
-              fill: #bae6fd;
-              transform: scale(1.12);
-            }
-          }
-
-          @keyframes inactiveWaveMagenta {
-            0%, 100% {
-              fill: #c4d6e2;
-              transform: scale(1);
-            }
-            35% {
-              fill: #f472b6;
-              transform: scale(1.3);
-            }
-            65% {
-              fill: #fbcfe8;
-              transform: scale(1.12);
-            }
-          }
-
-          @keyframes inactiveWaveEmerald {
-            0%, 100% {
-              fill: #c4d6e2;
-              transform: scale(1);
-            }
-            35% {
-              fill: #34d399;
-              transform: scale(1.3);
-            }
-            65% {
-              fill: #a7f3d0;
-              transform: scale(1.12);
-            }
-          }
-
-          @keyframes inactiveWaveAmber {
-            0%, 100% {
-              fill: #c4d6e2;
-              transform: scale(1);
-            }
-            35% {
-              fill: #fbbf24;
-              transform: scale(1.3);
-            }
-            65% {
-              fill: #fef08a;
-              transform: scale(1.12);
-            }
-          }
-
-          @keyframes inactiveWaveViolet {
-            0%, 100% {
-              fill: #c4d6e2;
-              transform: scale(1);
-            }
-            35% {
-              fill: #c084fc;
-              transform: scale(1.3);
-            }
-            65% {
-              fill: #e9d5ff;
-              transform: scale(1.12);
-            }
-          }
-
           .plate-well:hover {
-            transform: scale(1.55) !important;
-            filter: drop-shadow(0 0 6px currentColor);
             cursor: pointer;
-          }
-
-          @media (prefers-reduced-motion: reduce) {
-            .redesign-scope-card:hover .well-cyan,
-            .redesign-scope-card:hover .well-magenta,
-            .redesign-scope-card:hover .well-inactive,
-            .redesign-scope-card:hover .plate-scanline,
-            .redesign-scope-graphic:hover .well-cyan,
-            .redesign-scope-graphic:hover .well-magenta,
-            .redesign-scope-graphic:hover .well-inactive,
-            .redesign-scope-graphic:hover .plate-scanline {
-              animation: none !important;
-            }
           }
 
           @media (min-width: 992px) {
@@ -1453,13 +1254,7 @@
             <div class="redesign-scope-card">
               <svg class="redesign-scope-graphic microplate-animated" viewBox="0 0 460 246" width="460" height="246" role="img" aria-label="Automated microplate screening grid showing high-throughput biological variants">
                 <defs>
-                  <linearGradient id="plateScanlineGrad" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
-                    <stop offset="30%" stop-color="#38bdf8" stop-opacity="0.15"/>
-                    <stop offset="50%" stop-color="#0ea5e9" stop-opacity="0.45"/>
-                    <stop offset="70%" stop-color="#c454ae" stop-opacity="0.2"/>
-                    <stop offset="100%" stop-color="#c454ae" stop-opacity="0"/>
-                  </linearGradient>
+
                   <filter id="wellGlow" x="-50%" y="-50%" width="200%" height="200%">
                     <feGaussianBlur stdDeviation="2.5" result="blur"/>
                     <feMerge>
@@ -1472,8 +1267,7 @@
                 <rect class="plate-frame" x="1" y="1" width="458" height="244" rx="20" ry="20" fill="#fcfdfe" stroke="#e2e8f0" stroke-width="1.5"/>
                 <!-- Inner Microplate Tray -->
                 <rect class="plate-tray" x="24" y="18" width="412" height="210" rx="12" ry="12" fill="#ebf4fb" stroke="#dce7f2" stroke-width="1.5"/>
-                <!-- Optical Scanline Beam -->
-                <rect class="plate-scanline" x="24" y="18" width="36" height="210" rx="6" fill="url(#plateScanlineGrad)" pointer-events="none"/>
+
                 <!-- 10x20 Wells Grid -->
                 <g class="plate-wells-group">
                   <circle class="plate-well well-cyan" cx="47.0" cy="37.0" r="4.2" data-row="0" data-col="0" data-cx="47.0" data-cy="37.0" data-base-fill="#1ba0cc" style="--col:0; --row:0;"/>
