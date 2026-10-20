@@ -516,12 +516,12 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: "pHathom",
       file: "pHathom_Logo_Dark_Horizontal.webp",
-      url: "https://www.linkedin.com/company/phathomtech/home/"
+      url: "https://phathom.tech/"
     },
     {
       name: "Nanomère",
       file: "Nanomere.webp",
-      url: "https://www.linkedin.com/company/nanom%C3%A8re/home/"
+      url: "https://nanomere.ca/fr"
     }
   ];
 
