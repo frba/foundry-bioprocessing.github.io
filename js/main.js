@@ -58,13 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isSamePage = currentFile === linkFile;
 
-    const isDropdownToggle = link.classList.contains('nav-dropdown-toggle');
     const isCapabilitiesSection =
-      isDropdownToggle &&
       linkFile === 'capabilities.html' &&
       (currentFile === 'instrumentation.html' || currentFile === 'capabilities.html');
     const isWorkWithUsSection =
-      isDropdownToggle &&
       linkFile === 'WorkWithUs.html' &&
       (currentFile === 'collaboration.html' || currentFile === 'WorkWithUs.html');
 
