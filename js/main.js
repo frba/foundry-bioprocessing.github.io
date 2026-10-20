@@ -770,7 +770,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Interactive Microplate Grid Animation (Spotlight Hover & Cursor Follow)
+  // Interactive Microplate Grid Animation (Spotlight Hover & Cursor Follow + Mobile Ambient Scan & Touch)
   const microplateSvg = document.querySelector('.microplate-animated');
   if (microplateSvg) {
     const wells = microplateSvg.querySelectorAll('.plate-well');
@@ -804,12 +804,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let rafId = null;
-    let mousePos = null;
+    let autoRafId = null;
+    let isTouching = false;
+    let touchResumeTimeout = null;
+    let isVisible = false;
+    let isMouseOver = false;
 
-    function renderMouseWave() {
-      if (!mousePos) return;
-      const { x, y } = mousePos;
-      const maxRadius = 55;
+    function isMobileMode() {
+      return window.innerWidth <= 991 || ('ontouchstart' in window && window.innerWidth <= 1024);
+    }
+
+    function prefersReducedMotion() {
+      return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+
+    function renderSpotlight(pos, maxRadius = 55) {
+      if (!pos) return;
+      const { x, y } = pos;
 
       wellData.forEach(item => {
         const dx = item.cx - x;
@@ -837,31 +848,143 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    function resetWells() {
+      wellData.forEach(item => {
+        if (item.el.style.transform) item.el.style.transform = '';
+        if (item.el.style.fill) item.el.style.fill = '';
+        if (item.el.style.filter) item.el.style.filter = '';
+      });
+    }
+
+    // Auto-scan ambient loop for mobile mode
+    function autoLoop(timestamp) {
+      if (!isVisible || prefersReducedMotion()) {
+        autoRafId = null;
+        return;
+      }
+
+      if (!isMobileMode()) {
+        autoRafId = null;
+        if (!isMouseOver) resetWells();
+        return;
+      }
+
+      if (!isTouching) {
+        // Continuous Lissajous / figure-eight path traversing the microplate wells
+        const t = timestamp * 0.0014;
+        const x = 230 + 155 * Math.sin(t);
+        const y = 120 + 55 * Math.sin(t * 2);
+        const radius = 60 + 6 * Math.sin(t * 1.5);
+        renderSpotlight({ x, y }, radius);
+      }
+
+      autoRafId = requestAnimationFrame(autoLoop);
+    }
+
+    function startAutoLoop() {
+      if (autoRafId) return;
+      if (!isMobileMode() || !isVisible || prefersReducedMotion()) return;
+      autoRafId = requestAnimationFrame(autoLoop);
+    }
+
+    function stopAutoLoop() {
+      if (autoRafId) {
+        cancelAnimationFrame(autoRafId);
+        autoRafId = null;
+      }
+    }
+
+    // Desktop Mouse Events
     microplateSvg.addEventListener('mousemove', (e) => {
+      isMouseOver = true;
+      stopAutoLoop();
       const rect = microplateSvg.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 460;
       const y = ((e.clientY - rect.top) / rect.height) * 246;
-      mousePos = { x, y };
 
       if (!rafId) {
         rafId = requestAnimationFrame(() => {
-          renderMouseWave();
+          renderSpotlight({ x, y }, 55);
           rafId = null;
         });
       }
     });
 
     microplateSvg.addEventListener('mouseleave', () => {
-      mousePos = null;
+      isMouseOver = false;
       if (rafId) {
         cancelAnimationFrame(rafId);
         rafId = null;
       }
-      wellData.forEach(item => {
-        if (item.el.style.transform) item.el.style.transform = '';
-        if (item.el.style.fill) item.el.style.fill = '';
-        if (item.el.style.filter) item.el.style.filter = '';
-      });
+      if (isMobileMode()) {
+        startAutoLoop();
+      } else {
+        resetWells();
+      }
+    });
+
+    // Mobile Touch Events
+    function handleTouch(e) {
+      if (!e.touches || e.touches.length === 0) return;
+      isTouching = true;
+      clearTimeout(touchResumeTimeout);
+      const touch = e.touches[0];
+      const rect = microplateSvg.getBoundingClientRect();
+      const x = ((touch.clientX - rect.left) / rect.width) * 460;
+      const y = ((touch.clientY - rect.top) / rect.height) * 246;
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          renderSpotlight({ x, y }, 62);
+          rafId = null;
+        });
+      }
+    }
+
+    microplateSvg.addEventListener('touchstart', handleTouch, { passive: true });
+    microplateSvg.addEventListener('touchmove', handleTouch, { passive: true });
+
+    const endTouch = () => {
+      clearTimeout(touchResumeTimeout);
+      touchResumeTimeout = setTimeout(() => {
+        isTouching = false;
+      }, 1200);
+    };
+
+    microplateSvg.addEventListener('touchend', endTouch, { passive: true });
+    microplateSvg.addEventListener('touchcancel', endTouch, { passive: true });
+
+    // IntersectionObserver for performance (only animate when in viewport)
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isVisible = entry.isIntersecting;
+          if (isVisible) {
+            if (isMobileMode()) startAutoLoop();
+          } else {
+            stopAutoLoop();
+            resetWells();
+          }
+        });
+      }, { threshold: 0.1 });
+      observer.observe(microplateSvg);
+    } else {
+      isVisible = true;
+      if (isMobileMode()) startAutoLoop();
+    }
+
+    // Dynamic resize handler between desktop and mobile modes
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (isMobileMode() && isVisible) {
+          startAutoLoop();
+        } else if (!isMobileMode()) {
+          stopAutoLoop();
+          if (!isMouseOver) resetWells();
+        }
+      }, 150);
     });
   }
 });
