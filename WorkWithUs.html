@@ -666,6 +666,35 @@
         margin: 0;
       }
 
+      .redesign-engage-card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-top: auto;
+        padding-top: 1.25rem;
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: #900707;
+        text-decoration: none;
+        transition: color 0.15s ease;
+      }
+
+      .redesign-engage-card-link:hover,
+      .redesign-engage-card-link:focus-visible {
+        color: #b02a46;
+        text-decoration: underline;
+      }
+
+      .redesign-engage-card-link .card-link-arrow {
+        transition: transform 0.2s ease;
+        display: inline-block;
+      }
+
+      .redesign-engage-card:hover .redesign-engage-card-link .card-link-arrow,
+      .redesign-engage-card-link:hover .card-link-arrow {
+        transform: translateX(4px);
+      }
+
       .redesign-engage-footnote {
         font-size: 0.85rem;
         color: #64748b;
@@ -691,6 +720,7 @@
             <div class="redesign-engage-content">
               <h3 class="redesign-engage-card-title">Research Services</h3>
               <p class="redesign-engage-card-desc">Defined experimental work, including protocol onboarding, automation, and execution with agreed deliverables.</p>
+              <a href="capabilities.html" class="redesign-engage-card-link">Explore capabilities <span class="card-link-arrow">&rarr;</span></a>
             </div>
           </div>
 
@@ -701,6 +731,7 @@
             <div class="redesign-engage-content">
               <h3 class="redesign-engage-card-title">Collaborative Projects</h3>
               <p class="redesign-engage-card-desc">Joint research and method development, including project co-design and potential funding partnerships.</p>
+              <a href="collaboration.html" class="redesign-engage-card-link">Find a research partner <span class="card-link-arrow">&rarr;</span></a>
             </div>
           </div>
 
@@ -711,6 +742,7 @@
             <div class="redesign-engage-content">
               <h3 class="redesign-engage-card-title">Training &amp; Direct Access</h3>
               <p class="redesign-engage-card-desc">Training and access to suitable instrumentation and workflows for qualified users.</p>
+              <a href="instrumentation.html" class="redesign-engage-card-link">Explore instruments <span class="card-link-arrow">&rarr;</span></a>
             </div>
           </div>
 
@@ -721,6 +753,7 @@
             <div class="redesign-engage-content">
               <h3 class="redesign-engage-card-title">Hosting &amp; Residency</h3>
               <p class="redesign-engage-card-desc">Dedicated laboratory or office space for startups and teams seeking an ongoing presence.</p>
+              <a href="WorkWithUs.html#startup-residency" class="redesign-engage-card-link">Explore residency <span class="card-link-arrow">&darr;</span></a>
             </div>
           </div>
         </div>

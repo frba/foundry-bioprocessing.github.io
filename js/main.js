@@ -102,24 +102,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  // Smooth scroll for anchor links (both #hash and Page.html#hash on current page)
+  document.querySelectorAll('a[href^="#"], a[href*="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
-      if (href === '#') return;
+      if (!href || href === '#') return;
 
-      e.preventDefault();
-      const targetElement = document.querySelector(href);
+      const hashIndex = href.indexOf('#');
+      if (hashIndex === -1) return;
+      const hash = href.substring(hashIndex);
+      const pathPart = href.substring(0, hashIndex);
 
-      if (targetElement) {
-        const offset = 80; // Navbar height
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
+      if (pathPart) {
+        const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+        const targetFile = pathPart.split('/').pop();
+        if (targetFile && targetFile !== currentFile) {
+          return;
+        }
+      }
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+      try {
+        const targetElement = document.querySelector(hash);
+        if (targetElement) {
+          e.preventDefault();
+          const offset = 80; // Navbar height
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+          if (history.pushState) {
+            history.pushState(null, '', hash);
+          }
+        }
+      } catch (err) {
+        // Fallback for non-standard selector hashes
       }
     });
   });
