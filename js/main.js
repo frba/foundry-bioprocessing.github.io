@@ -59,11 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const isSamePage = currentFile === linkFile;
 
     const isDropdownToggle = link.classList.contains('nav-dropdown-toggle');
-    const isDropdownSection =
+    const isCapabilitiesSection =
       isDropdownToggle &&
+      linkFile === 'capabilities.html' &&
       (currentFile === 'instrumentation.html' || currentFile === 'capabilities.html');
+    const isWorkWithUsSection =
+      isDropdownToggle &&
+      linkFile === 'WorkWithUs.html' &&
+      (currentFile === 'collaboration.html' || currentFile === 'WorkWithUs.html');
 
-    if (isHome || isSamePage || isDropdownSection) {
+    if (isHome || isSamePage || isCapabilitiesSection || isWorkWithUsSection) {
       link.classList.add('active');
     }
   });
@@ -74,6 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let timeout;
     dropdown.addEventListener('mouseenter', () => {
       clearTimeout(timeout);
+      navDropdowns.forEach(d => {
+        if (d !== dropdown) {
+          d.classList.remove('is-open');
+        }
+      });
       dropdown.classList.add('is-open');
     });
     dropdown.addEventListener('mouseleave', () => {

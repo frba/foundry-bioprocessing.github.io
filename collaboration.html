@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Expertise &amp; Collaboration | Concordia Genome Foundry</title>
+  <meta name="description"
+    content="Explore Concordia University faculty researchers and scientific experts available for collaboration and scientific support on projects at the Concordia Genome Foundry and Bioprocessing Centre.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <style>
+    /* PAGE ROOT & COLOR TOKENS */
+    :root {
+      --dir-navy: #0b1120;
+      --dir-navy-light: #152238;
+      --dir-accent-cyan: #0284c7;
+      --dir-accent-cyan-light: #e0f2fe;
+      --dir-burgundy: #912338;
+      --dir-burgundy-light: #fbf0f4;
+      --dir-card-bg: #ffffff;
+      --dir-border: #e2e8f0;
+      --dir-text-muted: #64748b;
+      --dir-text-dark: #0f172a;
+    }
+
+    /* REDESIGN HERO (Matching Instrumentation & Capabilities) */
+    .redesign-hero {
+      background-color: #0b1120;
+      color: #f8fafc;
+      position: relative;
+      overflow: hidden;
+      padding: calc(94px + 3rem) 1.5rem 0 1.5rem;
+      min-height: auto;
+    }
+
+    .redesign-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+      z-index: 2;
+    }
+
+    .redesign-hero-content {
+      max-width: 620px;
+      padding-bottom: 3rem;
+    }
+
+    .redesign-crumb {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .redesign-crumb a {
+      color: #38bdf8;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .redesign-crumb a:hover {
+      color: #bae6fd;
+      text-decoration: underline;
+    }
+
+    .redesign-crumb-separator {
+      opacity: 0.5;
+    }
+
+    .redesign-eyebrow {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #bae6fd;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .redesign-hero-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .redesign-hero-body {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 2.25rem;
+    }
+
+    .redesign-jump-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 1000px) {
+      .redesign-jump-links {
+        flex-wrap: nowrap;
+      }
+
+      .redesign-jump-link {
+        white-space: nowrap;
+      }
+    }
+
+    .redesign-jump-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #38bdf8;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-bottom-color 0.2s;
+    }
+
+    .redesign-jump-link:hover,
+    .redesign-jump-link:focus-visible {
+      color: #bae6fd;
+      border-bottom-color: #bae6fd;
+      outline: none;
+    }
+
+    .redesign-hero-image-col {
+      position: relative;
+      width: calc(100% + 3rem);
+      margin-left: -1.5rem;
+      height: 260px;
+      border-radius: 0;
+    }
+
+    .redesign-hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Desktop layout */
+    @media (min-width: 900px) {
+      .redesign-hero {
+        padding: 94px 0 0 0;
+        height: clamp(420px, 50vh, 480px);
+        display: flex;
+        align-items: center;
+      }
+
+      .redesign-hero-inner {
+        grid-template-columns: 55% 45%;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        gap: 2rem;
+        padding: 0 2rem;
+      }
+
+      .redesign-hero-content {
+        padding-bottom: 0;
+        max-width: none;
+      }
+
+      .redesign-hero-image-col {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 55%;
+        height: 100%;
+        margin-left: 0;
+      }
+
+      /* Fade gradient on left edge of the image to blend into background */
+      .redesign-hero-image-col::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35%;
+        height: 100%;
+        background: linear-gradient(to right, #0b1120 0%, transparent 100%);
+      }
+    }
+
+    /* MAIN CONTENT WRAPPER */
+    .collab-main {
+      background-color: #f8fafc;
+      padding: 3.5rem 0 5rem 0;
+      min-height: 800px;
+    }
+
+    .collab-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* INTRO SECTION */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(285px, 0.9fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid #e2e8f0;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 800px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .intro-eyebrow {
+      font-size: 0.75rem;
+      color: #912338;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .intro-title {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 750;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      color: #0f172a;
+      margin: 0 0 0.85rem 0;
+    }
+
+    .intro-desc {
+      color: #475569;
+      font-size: 1rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .intro-aside {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #912338;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    }
+
+    .intro-aside strong {
+      display: block;
+      font-size: 0.95rem;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .intro-aside p {
+      font-size: 0.875rem;
+      color: #64748b;
+      line-height: 1.55;
+      margin: 0 0 0.85rem 0;
+    }
+
+    .intro-aside-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: #912338;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .intro-aside-link:hover {
+      color: #b02a46;
+      text-decoration: underline;
+    }
+
+    /* SEARCH & FILTER TOOLBAR */
+    .browse-toolbar {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1.75rem;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+      margin-bottom: 2.5rem;
+    }
+
+    .browse-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .browse-head h2 {
+      margin: 0 0 0.25rem 0;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.015em;
+    }
+
+    .browse-head-desc {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin: 0;
+    }
+
+    .browse-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* Search input and department select grid */
+    .fields-row {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .fields-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .field-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .search-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      width: 18px;
+      height: 18px;
+      color: #94a3b8;
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      height: 48px;
+      padding: 0 2.5rem 0 2.75rem;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      color: #0f172a;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .search-input::-webkit-search-cancel-button,
+    .search-input::-webkit-search-decoration {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .search-clear-btn {
+      position: absolute;
+      right: 0.75rem;
+      width: 26px;
+      height: 26px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: #e2e8f0;
+      border: none;
+      border-radius: 50%;
+      color: #475569;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.15s;
+    }
+
+    .search-clear-btn:hover {
+      background: #cbd5e1;
+      color: #0f172a;
+    }
+
+    .dept-select {
+      width: 100%;
+      height: 48px;
+      padding: 0 1rem;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      color: #0f172a;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .dept-select:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* BROAD RESEARCH AREAS (PILLS) */
+    .filter-section-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 0.85rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.825rem;
+      font-weight: 500;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+
+    .pill:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      color: #0f172a;
+    }
+
+    .pill.active {
+      background: #0f172a;
+      border-color: #0f172a;
+      color: #ffffff;
+    }
+
+    .pill span {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(100, 116, 139, 0.15);
+      color: inherit;
+    }
+
+    .pill.active span {
+      background: rgba(255, 255, 255, 0.22);
+      color: #ffffff;
+    }
+
+    /* SPECIFIC EXPERTISE TOPICS */
+    .topic-strip {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 1.25rem;
+    }
+
+    .topic-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 0.75rem;
+    }
+
+    .topic-heading-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+    }
+
+    .topic-hint {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+
+    .topic-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .topic-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.75rem;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .topic-pill:hover {
+      border-color: #f43f5e;
+      color: #912338;
+      background: #fff5f7;
+    }
+
+    .topic-pill.active {
+      background: #fbf0f4;
+      border-color: #912338;
+      color: #912338;
+      font-weight: 600;
+    }
+
+    .topic-pill span {
+      font-size: 0.7rem;
+      color: #94a3b8;
+    }
+
+    .topic-pill.active span {
+      color: #912338;
+      opacity: 0.8;
+    }
+
+    /* DIRECTORY SECTION */
+    #directory {
+      scroll-margin-top: 90px;
+    }
+
+    .results-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .results-head h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.015em;
+      margin: 0 0 0.25rem 0;
+    }
+
+    .results-count {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin: 0;
+    }
+
+    .reset-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: none;
+      border: none;
+      color: #0284c7;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      transition: background 0.15s;
+    }
+
+    .reset-btn:hover {
+      background: #e0f2fe;
+    }
+
+    /* CARDS GRID */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* RESEARCHER CARD */
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.08);
+      border-color: #cbd5e1;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .avatar {
+      height: 52px;
+      width: 52px;
+      flex: 0 0 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e2e8f0;
+      color: #334155;
+      border-radius: 50%;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      font-size: 1.05rem;
+    }
+
+    .avatar[data-tone="Cells & health"] {
+      background: #e9e6f3;
+      color: #655495;
+    }
+
+    .avatar[data-tone="Microbes & plants"] {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .avatar[data-tone="Proteins & molecules"] {
+      background: #fbf0f4;
+      color: #912338;
+    }
+
+    .avatar[data-tone="Analytics & omics"] {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .avatar[data-tone="Automation & devices"] {
+      background: #ccfbf1;
+      color: #0f766e;
+    }
+
+    .avatar[data-tone="Computation & genomics"] {
+      background: #ede9fe;
+      color: #6d28d9;
+    }
+
+    .avatar[data-tone="Biomaterials & translation"] {
+      background: #fef3c7;
+      color: #b45309;
+    }
+
+    .profile-category {
+      font-size: 0.7rem;
+      color: #64748b;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      margin: 0 0 0.25rem 0;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .afftag {
+      display: inline-block;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+      color: #92400e;
+      font-size: 0.65rem;
+      font-weight: 700;
+      background: #fef3c7;
+      border-radius: 4px;
+      padding: 0.15rem 0.45rem;
+    }
+
+    .dept {
+      color: #64748b;
+      font-size: 0.8rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .description {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin: 0.5rem 0 1.25rem 0;
+      color: #334155;
+      min-height: 60px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: auto;
+      margin-bottom: 1.25rem;
+    }
+
+    .tag {
+      font-size: 0.725rem;
+      color: #475569;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.25rem 0.55rem;
+      line-height: 1.25;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .tag:hover {
+      background: #fbf0f4;
+      border-color: #f43f5e;
+      color: #912338;
+    }
+
+    .tag:focus-visible {
+      outline: 2px solid #912338;
+      outline-offset: 2px;
+    }
+
+    .card-footer {
+      padding-top: 0.85rem;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .profile-link {
+      font-weight: 600;
+      font-size: 0.825rem;
+      color: #0284c7;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color 0.15s;
+    }
+
+    .profile-link:hover {
+      color: #0369a1;
+      text-decoration: underline;
+    }
+
+    .arrow {
+      font-size: 1.1rem;
+      line-height: 1;
+      color: #94a3b8;
+    }
+
+    .empty {
+      background: #ffffff;
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      color: #64748b;
+      grid-column: 1 / -1;
+    }
+
+    .empty h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.25rem;
+      color: #0f172a;
+    }
+
+    .empty p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* SECTION: FURTHER */
+    .further {
+      margin-top: 3.5rem;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 2.25rem 2.5rem;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+    }
+
+    @media (max-width: 768px) {
+      .further {
+        grid-template-columns: 1fr;
+        padding: 1.75rem;
+        gap: 1.5rem;
+      }
+    }
+
+    .further-eyebrow {
+      font-size: 0.75rem;
+      color: #912338;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .further h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin: 0 0 0.6rem 0;
+    }
+
+    .further p {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .further-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding-left: 2rem;
+      border-left: 1px solid #e2e8f0;
+    }
+
+    @media (max-width: 768px) {
+      .further-right {
+        padding-left: 0;
+        border-left: none;
+      }
+    }
+
+    .btn-concordia {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #912338;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.15s;
+    }
+
+    .btn-concordia:hover {
+      background: #781c2e;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .further-right span {
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+
+    /* SECTION: CONNECTION */
+    .connection {
+      background: linear-gradient(135deg, #0b1120 0%, #152745 100%);
+      color: #ffffff;
+      margin-top: 1.75rem;
+      padding: 2.5rem 2.75rem;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    @media (max-width: 768px) {
+      .connection {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 1.5rem;
+      }
+    }
+
+    .connection-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #bae6fd;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .connection h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.015em;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .connection p {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0;
+      max-width: 680px;
+    }
+
+    .btn-connection {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #0284c7;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.15s, transform 0.15s;
+    }
+
+    .btn-connection:hover {
+      background: #0369a1;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SITE NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/icons/genome_foundry_logo.svg" alt="Genome Foundry Logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="capabilities.html" class="nav-dropdown-toggle">
+            Capabilities
+            <svg class="dropdown-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="instrumentation.html" class="nav-dropdown-item">Instrumentation</a>
+          </div>
+        </div>
+        <a href="publications.html">Research &amp; Impact</a>
+        <div class="nav-dropdown">
+          <a href="WorkWithUs.html" class="nav-dropdown-toggle active">
+            Work With Us
+            <svg class="dropdown-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="collaboration.html" class="nav-dropdown-item active">Collaboration</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="mobile-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-nav" class="mobile-nav">
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="instrumentation.html" class="mobile-nav-sublink">&mdash; Instrumentation</a>
+        <a href="publications.html">Research &amp; Impact</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="collaboration.html" class="mobile-nav-sublink active">&mdash; Collaboration</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="mobile-nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="redesign-hero" aria-label="Research Collaboration &amp; Expertise Hero">
+    <div class="redesign-hero-inner">
+      <div class="redesign-hero-content">
+        <!-- <div class="redesign-crumb">
+          <a href="WorkWithUs.html">Work With Us</a>
+          <span class="redesign-crumb-separator">&rsaquo;</span>
+          <span>Research Collaboration</span>
+        </div> -->
+        <!-- <span class="redesign-eyebrow">RESEARCH CONNECTIONS &amp; SCIENTIFIC SUPPORT</span> -->
+        <h1 class="redesign-hero-title">Connect with Research Expertise</h1>
+        <p class="redesign-hero-body">Explore Concordia researchers who can provide scientific guidance, domain expertise, and project collaboration across the life sciences, engineering, health, chemistry, physics, and computation.</p>
+
+        <div class="redesign-jump-links">
+          <a href="#directory" class="redesign-jump-link">Browse Researchers &darr;</a>
+          <a href="WorkWithUs.html" class="redesign-jump-link">Work With Us &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="redesign-hero-image-col" aria-hidden="true">
+      <img src="assets/images/collaborative-projects.webp" alt="Concordia researchers collaborating on scientific projects"
+        class="redesign-hero-image">
+    </div>
+  </section>
+
+  <!-- MAIN COLLABORATION DIRECTORY -->
+  <main class="collab-main">
+    <div class="collab-container">
+
+      <!-- INTRO SECTION -->
+      <section class="intro-grid">
+        <div>
+          <span class="intro-eyebrow">RESEARCH AREAS &amp; SCIENTIFIC INTERESTS</span>
+          <h2 class="intro-title">Find a potential research collaborator</h2>
+          <p class="intro-desc">Explore this curated selection of Concordia researchers who can support new initiatives at the Concordia Genome Foundry or Bioprocessing Centre. Search by researcher name, department, research specialty, or experimental method.</p>
+        </div>
+        <aside class="intro-aside">
+          <strong>Not sure who to approach?</strong>
+          <p>Tell us a little about your project. We can help identify potential academic connections and guide initial discussions.</p>
+          <a class="intro-aside-link" href="mailto:genomefoundry@concordia.ca?subject=Potential%20research%20collaboration">
+            Discuss a project &rarr;
+          </a>
+        </aside>
+      </section>
+
+      <!-- SEARCH & FILTER TOOLBAR -->
+      <section class="browse-toolbar" aria-label="Search and filter researchers">
+        <div class="browse-head">
+          <div>
+            <h2>Browse research expertise</h2>
+            <p class="browse-head-desc">Search by researcher, technique, research interest, or scientific specialty. Try &ldquo;enzyme engineering&rdquo;, &ldquo;yeast&rdquo;, or &ldquo;fermentation&rdquo;.</p>
+          </div>
+          <span class="browse-badge">CURATED DIRECTORY &middot; 33 RESEARCHERS</span>
+        </div>
+
+        <div class="fields-row">
+          <div>
+            <label class="field-label" for="search">SEARCH</label>
+            <div class="search-wrap">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input id="search" class="search-input" type="search" placeholder="Try ‘enzyme engineering’, ‘yeast’, ‘fermentation’, ‘CRISPR’…" autocomplete="off" aria-label="Search researchers">
+              <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Clear search">&times;</button>
+            </div>
+          </div>
+          <div>
+            <label class="field-label" for="department">DEPARTMENT</label>
+            <select class="dept-select" id="department" aria-label="Filter by department">
+              <option>All departments</option>
+            </select>
+          </div>
+        </div>
+
+        <span class="filter-section-title">BROAD RESEARCH AREAS</span>
+        <div class="pills-container" id="chips" role="group" aria-label="Filter by broad research area"></div>
+
+        <div class="topic-strip">
+          <div class="topic-heading">
+            <span class="topic-heading-title">SPECIFIC EXPERTISE</span>
+            <span class="topic-hint">Choose a topic, or click any specialty tag on a profile</span>
+          </div>
+          <div class="topic-filters" id="topicChips" role="group" aria-label="Filter by scientific specialty"></div>
+        </div>
+      </section>
+
+      <!-- SECTION: DIRECTORY -->
+      <section id="directory" aria-label="Researchers Directory">
+        <div class="results-head">
+          <div>
+            <h2>Researcher directory</h2>
+            <p id="resultCount" class="results-count" aria-live="polite">Showing 33 of 33 researchers</p>
+          </div>
+          <button class="reset-btn" id="reset">Reset filters &#8634;</button>
+        </div>
+        <div id="cards" class="cards"></div>
+      </section>
+
+      <!-- SECTION: FURTHER -->
+      <section class="further" aria-labelledby="more-title">
+        <div>
+          <span class="further-eyebrow">EXPLORE FURTHER</span>
+          <h2 id="more-title">Looking beyond this selection?</h2>
+          <p>Concordia's university-wide faculty directory covers a much broader range of research expertise. Search by name, academic department, or research keyword to discover additional potential collaborators.</p>
+        </div>
+        <div class="further-right">
+          <a class="btn-concordia" href="https://www.concordia.ca/faculty-search.html" target="_blank" rel="noopener noreferrer">
+            Explore Concordia faculty directory &nearr;
+          </a>
+          <span>Opens Concordia University's official search tool.</span>
+        </div>
+      </section>
+
+      <!-- SECTION: CONNECTION -->
+      <section class="connection" aria-label="Start a collaboration">
+        <div>
+          <span class="connection-eyebrow">START A CONVERSATION</span>
+          <h2>Have a collaboration in mind?</h2>
+          <p>We can help identify relevant researchers and explore potential academic partnerships for projects done at the Genome Foundry or Bioprocessing Centre. Collaborations are considered on a project-by-project basis.</p>
+        </div>
+        <a class="btn-connection" href="mailto:genomefoundry@concordia.ca?subject=Collaborative%20research%20project">
+          Contact the Foundry &rarr;
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="footer" style="background-color: #0b1120; color: #f0f2f5; padding: 4.5rem 0 2rem 0; border-top: 1px solid rgba(255,255,255,0.08);">
+    <div class="container-wide footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; position: relative;">
+      <!-- Main Content Grid -->
+      <div class="footer-grid"
+        style="display: grid; grid-template-columns: 2fr 3fr; gap: 4rem; margin-bottom: 3.5rem;">
+
+        <!-- Left Side: Brand & Description -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Genome Foundry Home">
+            <img src="assets/icons/genome_foundry_logo.svg" alt="Concordia Genome Foundry"
+              style="max-width: 150px; width: 100%; height: auto; margin-bottom: 1rem; display: block; filter: brightness(0) invert(1);">
+          </a>
+          <p style="font-size: 14px; line-height: 1.5; color: #a1a1aa; margin-bottom: 0.75rem; max-width: 480px;">
+            Integrated research infrastructure for high-throughput bioengineering, microbial and mammalian
+            workflow development, and microbial bioprocessing.
+          </p>
+          <p
+            style="font-size: 13px; font-weight: 600; color: #d4d4d8; letter-spacing: 0.05em; text-transform: uppercase; margin: 0;">
+            A CONCORDIA UNIVERSITY RESEARCH PLATFORM.
+          </p>
+        </div>
+
+        <!-- Right Side: Links -->
+        <div class="footer-contact" style="display: flex; flex-wrap: wrap; gap: 3rem; padding-top: 0.25rem;">
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">EXPLORE</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="about.html" style="color: inherit; text-decoration: none; transition: opacity 0.2s;">About</a>
+              <a href="capabilities.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Capabilities</a>
+              <a href="instrumentation.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrumentation</a>
+              <a href="collaboration.html"
+                style="color: #38bdf8; text-decoration: none; transition: opacity 0.2s;">Collaboration</a>
+              <a href="publications.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Research &amp; Impact</a>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">CONNECT</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="mailto:genomefoundry@concordia.ca" class="footer-link-item"
+                style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg> genomefoundry@concordia.ca
+              </a>
+              <a href="https://www.linkedin.com/company/concordia-genome-foundry/" target="_blank" rel="noopener"
+                class="footer-link-item"
+                style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+                LinkedIn
+              </a>
+              <a href="WorkWithUs.html" class="footer-link-item"
+                style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+                Work With Us
+              </a>
+              <a href="partners.html" class="footer-link-item"
+                style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Our Partners &amp; Supporters
+              </a>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">User
+              Tools</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="https://foundry.concordia.ca/bookr/" target="_blank" rel="noopener noreferrer"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrument
+                Booking</a>
+              <a href="https://foundry-lims.concordia.ca/" target="_blank" rel="noopener noreferrer"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;"
+                title="Concordia network or authorized access may be required."
+                aria-label="LIMS, Concordia access may be required">LIMS (Concordia access)</a>
+            </div>
+            <span
+              style="font-size: 0.75rem; color: #6b7280; display: block; margin-top: 0.75rem; max-width: 150px; line-height: 1.4;">For
+              trained users with active accounts.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom-row"
+        style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 13px; color: #a1a1aa;">
+        <p style="margin: 0;">&copy; 2026 Concordia Genome Foundry. All rights reserved.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="https://www.concordia.ca/privacy.html" target="_blank" rel="noopener noreferrer"
+            style="color: #a1a1aa; text-decoration: none; transition: color 0.2s;">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CLIENT-SIDE SCRIPT FOR SEARCH & FILTERING -->
+  <script>
+
+const researchers = [{"name":"Alisa Piekny","department":"Biology","group":"Cells & health","description":"Cell division and migration, cytoskeletal regulation, gene editing, and mechanisms relevant to cancer cell biology.","tags":["Cell biology","Cytokinesis","Cytoskeleton","Cell migration","Gene editing","Cancer biology","Microtubules","Drug discovery"],"url":"https://www.concordia.ca/faculty/alisa-piekny.html","affiliate":false,"aliases":[]},{"name":"Anan Chen","department":"Chemistry & Biochemistry","group":"Cells & health","description":"Virology, RNA-virus replication organelles, biochemical and cell-based assays.","tags":["Virology","RNA viruses","Viral replication","Replication organelles","RNA biology","Cell-based assays","Biochemistry"],"url":"https://www.concordia.ca/faculty/anan-chen.html","affiliate":false,"aliases":[]},{"name":"Andrew Tait","department":"Chemistry & Biochemistry","group":"Biomaterials & translation","description":"Applied biochemistry, extraction and sustainable manufacturing processes.","tags":["Applied biochemistry","Extraction","Sustainable manufacturing","Process development","Translational R&D"],"url":"https://ca.linkedin.com/in/andrewrtait","affiliate":true,"linkLabel":"View LinkedIn profile","aliases":[]},{"name":"Brandon Findlay","department":"Chemistry & Biochemistry","group":"Microbes & plants","description":"Antibiotics, antimicrobial resistance, natural products and directed evolution.","tags":["Antibiotics","Antimicrobial resistance","Drug discovery","Natural products","Directed evolution","Microbiology","Biochemistry"],"url":"https://www.concordia.ca/faculty/brandon-findlay.html","affiliate":false,"aliases":["antibiotic discovery"]},{"name":"Brandon Helfield","department":"Physics","group":"Cells & health","description":"Molecular biophysics, ultrasound technologies and biomedical imaging.","tags":["Biophysics","Biomedical ultrasound","Biomedical imaging","Therapeutic technologies","Molecular biophysics"],"url":"https://www.concordia.ca/faculty/brandon-helfield.html","affiliate":false,"aliases":[]},{"name":"Christine DeWolf","department":"Chemistry & Biochemistry","group":"Proteins & molecules","description":"Biophysical chemistry, model lipid membranes and lipid–protein interactions.","tags":["Biophysical chemistry","Model membranes","Liposomes","Lipid–protein interactions","Langmuir monolayers","Nanopatterning"],"url":"https://www.concordia.ca/faculty/christine-dewolf.html","affiliate":false,"aliases":[]},{"name":"Christopher J. Wilds","department":"Chemistry & Biochemistry","group":"Proteins & molecules","description":"Chemically modified DNA and RNA, nucleic-acid nanoscience and DNA repair.","tags":["DNA chemistry","RNA chemistry","Chemically modified nucleic acids","DNA repair","Nucleic acid nanoscience","Nucleic acid synthesis"],"url":"https://www.concordia.ca/faculty/christopher-wilds.html","affiliate":false,"aliases":[]},{"name":"Christopher L. Brett","department":"Biology","group":"Cells & health","description":"Synthetic-biology approaches to engineering baker’s yeast extracellular vesicles and exosomes for biomedical delivery.","tags":["Synthetic biology","Yeast engineering","Saccharomyces cerevisiae","Extracellular vesicles","Exosomes","Drug delivery","Cell biology","Engineered biologics"],"url":"https://www.concordia.ca/faculty/christopher-brett.html","affiliate":false,"aliases":["yeast engineer","S. cerevisiae","yeast extracellular vesicles","EV engineering","engineered exosomes"]},{"name":"Dajana Vuckovic","department":"Chemistry & Biochemistry","group":"Analytics & omics","description":"Mass-spectrometry-based metabolomics and lipidomics, analytical chemistry, bioanalysis and biomarker discovery.","tags":["Metabolomics","Lipidomics","Mass spectrometry","Analytical chemistry","Bioanalysis","Biomarker discovery","Sample preparation","Oxylipins"],"url":"https://www.concordia.ca/faculty/dajana-vuckovic.html","affiliate":false,"aliases":[]},{"name":"David H. Kwan","department":"Biology","group":"Proteins & molecules","description":"Enzyme and protein engineering through directed evolution, glycosyltransferase research, biocatalysis and chemical biology.","tags":["Enzyme engineering","Protein engineering","Directed evolution","Glycosyltransferases","Biocatalysis","Glycoengineering","Synthetic biology","Enzyme screening","Chemical biology"],"url":"https://www.concordia.ca/faculty/david-kwan.html","affiliate":false,"aliases":["enzymology","enzyme engineer","glycosyl transferase","glycosyltransferase engineering","protein engineer","enzyme evolution"]},{"name":"David Walsh","department":"Biology","group":"Microbes & plants","description":"Marine microbial ecology, environmental genomics and microbial evolution.","tags":["Microbial ecology","Marine microbiology","Metagenomics","Environmental genomics","Microbial evolution","Environmental biology"],"url":"https://www.concordia.ca/faculty/david-walsh.html","affiliate":false,"aliases":[]},{"name":"Dylan Fraser","department":"Biology","group":"Computation & genomics","description":"Population and conservation genetics, evolutionary ecology and environmental adaptation.","tags":["Population genetics","Conservation genetics","Evolutionary ecology","Environmental adaptation","Biodiversity"],"url":"https://www.concordia.ca/faculty/dylan-fraser.html","affiliate":false,"aliases":[]},{"name":"Elena Kuzmin","department":"Biology","group":"Microbes & plants","description":"Yeast and human functional genomics, genetic interaction networks, genome engineering and CRISPR-based screening.","tags":["Yeast genetics","Functional genomics","Genetic interaction networks","Genetic screens","CRISPR screening","Genome engineering","Synthetic biology","Cancer genomics"],"url":"https://www.concordia.ca/faculty/elena-kuzmin.html","affiliate":false,"aliases":["yeast biology","synthetic genetic arrays","CRISPR screens","functional genetics"]},{"name":"Guillem Esber","department":"Psychology","group":"Cells & health","description":"Neural mechanisms of learning and memory, electrophysiology and optogenetics.","tags":["Neuroscience","Learning & memory","Neural circuits","Electrophysiology","Optogenetics","Neural plasticity"],"url":"https://www.concordia.ca/faculty/guillem-esber.html","affiliate":false,"aliases":[]},{"name":"Isabelle Benoit Gelber","department":"Biology","group":"Microbes & plants","description":"Genomics of filamentous fungi, microbial interactions, secondary metabolism and natural-product biosynthesis.","tags":["Fungal genomics","Filamentous fungi","Aspergillus","Natural products","Secondary metabolism","Molecular microbiology","Microbial interactions","Protein production"],"url":"https://www.concordia.ca/faculty/isabelle-benoit-gelber.html","affiliate":false,"aliases":["fungal secondary metabolites","fungal biotechnology"]},{"name":"Jaehoon Hwang","department":"Building, Civil & Environmental Engineering","group":"Microbes & plants","description":"Fermentative biohydrogen and bioalcohol production from biomass, with research in resource recovery and environmental bioenergy.","tags":["Fermentation","Biohydrogen","Bioethanol","Biobutanol","Biomass conversion","Bioenergy","Resource recovery","Wastewater treatment"],"url":"https://www.concordia.ca/faculty/jaehoon-hwang.html","affiliate":false,"aliases":["bioprocess fermentation","biohydrogen fermentation","bioalcohol fermentation"]},{"name":"Jin Suk Lee","department":"Biology","group":"Microbes & plants","description":"Plant molecular genetics, developmental signalling and functional genomics.","tags":["Plant genetics","Plant development","Functional genomics","Peptide signalling","Molecular genetics","Plant biology"],"url":"https://www.concordia.ca/faculty/jin-suk-lee.html","affiliate":false,"aliases":[]},{"name":"Jung Kwon (John) Oh","department":"Chemistry & Biochemistry","group":"Biomaterials & translation","description":"Polymer-based nanomaterials, drug-delivery carriers and biomedical imaging platforms.","tags":["Polymer nanomaterials","Biomaterials","Drug delivery","Biomedical imaging","Nanomedicine","Polymer chemistry"],"url":"https://www.concordia.ca/faculty/jung-oh.html","affiliate":false,"aliases":[]},{"name":"Lars H. Kruse","department":"Biology","group":"Microbes & plants","description":"Plant synthetic biology and metabolic engineering focused on specialized metabolism, enzyme discovery and natural products.","tags":["Synthetic biology","Metabolic engineering","Plant specialized metabolism","Enzyme discovery","Plant natural products","Biosynthesis","Plant biotechnology"],"url":"https://www.concordia.ca/faculty/lars-kruse.html","affiliate":false,"aliases":["plant metabolic engineering","plant biosynthesis","natural product biosynthesis"]},{"name":"Marek B. Majewski","department":"Chemistry & Biochemistry","group":"Proteins & molecules","description":"Photochemistry, photocatalysis and artificial photosynthesis for solar energy conversion.","tags":["Photochemistry","Photocatalysis","Artificial photosynthesis","Solar energy conversion","Photophysics"],"url":"https://www.concordia.ca/faculty/marek-majewski.html","affiliate":false,"aliases":[]},{"name":"Marie-Julie Favé","department":"Biology","group":"Computation & genomics","description":"Computational genomics, human genetics and gene–environment interactions.","tags":["Computational genomics","Human genetics","Genomics","Gene–environment interactions","Computational biology"],"url":"https://www.concordia.ca/faculty/marie-julie-fave.html","affiliate":false,"aliases":[]},{"name":"Melissa K. Passarelli","department":"Chemistry & Biochemistry","group":"Analytics & omics","description":"Imaging mass spectrometry and spatial omics in biological samples.","tags":["Imaging mass spectrometry","Spatial omics","MALDI","SIMS","Mass spectrometry","Molecular imaging"],"url":"https://www.concordia.ca/faculty/melissa-passarelli.html","affiliate":false,"aliases":[]},{"name":"Michael Sacher","department":"Biology","group":"Cells & health","description":"Membrane trafficking, vesicle biology and mechanisms underlying rare genetic disease.","tags":["Membrane trafficking","Vesicle transport","TRAPP complex","TANGO2","Rare genetic disease","Cell biology","Secretory pathway"],"url":"https://www.concordia.ca/faculty/michael-sacher.html","affiliate":false,"aliases":[]},{"name":"Pat Forgione","department":"Chemistry & Biochemistry","group":"Proteins & molecules","description":"Medicinal and synthetic organic chemistry, drug discovery and green catalysis.","tags":["Medicinal chemistry","Organic synthesis","Drug discovery","Anticancer compounds","Green chemistry","Catalysis","Biomass"],"url":"https://www.concordia.ca/faculty/pat-forgione.html","affiliate":false,"aliases":[]},{"name":"Patricia Comeau","department":"Chemical & Materials Engineering","group":"Biomaterials & translation","description":"Bioinspired materials, drug delivery, tissue regeneration and antimicrobial systems.","tags":["Biomaterials","Bioinspired materials","Drug delivery","Tissue regeneration","Antimicrobial materials","Tissue engineering"],"url":"https://www.concordia.ca/faculty/patricia-comeau.html","affiliate":false,"aliases":[]},{"name":"Paul Joyce","department":"Chemistry & Biochemistry","group":"Proteins & molecules","description":"Biochemistry, genomics, proteomics and molecular and cell biology.","tags":["Proteomics","Genomics","Biochemistry","Molecular biology","Cell biology"],"url":"https://www.concordia.ca/faculty/paul-joyce.html","affiliate":false,"aliases":[]},{"name":"Peter Darlington","department":"Health, Kinesiology & Applied Physiology","group":"Cells & health","description":"Immune-cell function, T-cell biology, autoimmunity and cancer immunotherapy.","tags":["Immunology","T-cell biology","Autoimmunity","Cancer immunotherapy","Immune-cell function","Cell-based assays"],"url":"https://www.concordia.ca/faculty/peter-darlington.html","affiliate":false,"aliases":[]},{"name":"Peter Pawelek","department":"Chemistry & Biochemistry","group":"Proteins & molecules","description":"Bacterial pathogenesis, membrane proteins, molecular interactions and structural protein biochemistry.","tags":["Bacterial pathogenesis","Protein–protein interactions","Membrane proteins","Structural biology","Phage display","X-ray crystallography","Bacterial iron uptake"],"url":"https://www.concordia.ca/faculty/peter-pawelek.html","affiliate":false,"aliases":[]},{"name":"Rachael (Ré) A. Mansbach","department":"Physics","group":"Computation & genomics","description":"Computational biophysics, molecular dynamics and deep learning.","tags":["Computational biophysics","Molecular dynamics","Deep learning","Molecular simulation","Computational biology","Machine learning"],"url":"https://www.concordia.ca/faculty/rachael-mansbach.html","affiliate":false,"aliases":[]},{"name":"Rassim Khelifa","department":"Biology","group":"Microbes & plants","description":"Global-change ecology, conservation and the evolution of life-history traits.","tags":["Ecology","Evolution","Conservation biology","Climate change","Life-history traits","Biodiversity"],"url":"https://www.concordia.ca/faculty/rassim-khelifa.html","affiliate":false,"aliases":[]},{"name":"Sana Jahanshahi Anbuhi","department":"Chemical & Materials Engineering","group":"Automation & devices","description":"Paper-based microfluidics, biosensors, point-of-care diagnostics and stabilization of biologics.","tags":["Microfluidics","Paper microfluidics","Biosensors","Point-of-care diagnostics","Biologics stabilization","Diagnostic devices"],"url":"https://www.concordia.ca/faculty/sana-jahanshahianbuhi.html","affiliate":false,"aliases":["lab-on-paper","microfluidic biosensors"]},{"name":"Steve C. C. Shih","department":"Electrical & Computer Engineering","group":"Automation & devices","description":"Microfluidics and synthetic biology, including droplet-based methods for biological experiments and screening.","tags":["Synthetic biology","Microfluidics","Digital microfluidics","Droplet microfluidics","Lab-on-chip","Biological screening","DNA construction"],"url":"https://www.concordia.ca/faculty/steve-shih.html","affiliate":false,"aliases":["lab on chip","digital droplet microfluidics"]},{"name":"William Zerges","department":"Biology","group":"Microbes & plants","description":"Molecular biology of photosynthetic algae and thylakoid membrane formation.","tags":["Algal molecular biology","Photosynthesis","Chlamydomonas","Thylakoid biogenesis","Chloroplast biology"],"url":"https://www.concordia.ca/faculty/william-zerges.html","affiliate":false,"aliases":[]}];
+const groupOrder=['All expertise','Microbes & plants','Cells & health','Proteins & molecules','Analytics & omics','Automation & devices','Computation & genomics','Biomaterials & translation'];
+const topicDefinitions={"Synthetic biology":["Synthetic biology"],"Enzyme engineering":["Enzyme engineering"],"Yeast research":["Yeast engineering","Yeast genetics"],"Metabolic engineering":["Metabolic engineering"],"Fermentation":["Fermentation"],"Functional genomics":["Functional genomics"],"Microfluidics":["Microfluidics","Digital microfluidics","Paper microfluidics"],"Drug discovery":["Drug discovery"],"Mass spectrometry":["Mass spectrometry","Imaging mass spectrometry"],"Biomaterials":["Biomaterials"],"Cell biology":["Cell biology"],"Computational biology":["Computational biology","Computational genomics","Computational biophysics"]};
+const search=document.getElementById('search'),dept=document.getElementById('department'),chips=document.getElementById('chips'),topicChips=document.getElementById('topicChips'),cards=document.getElementById('cards'),resultCount=document.getElementById('resultCount'),reset=document.getElementById('reset');
+let activeGroup='All expertise',activeTopic='All topics';
+const initial=name=>name.replace(/\([^)]*\)/g,'').replace(/[.]/g,'').trim().split(/\s+/).filter(x=>x.length>1).map(x=>x[0].toUpperCase()).slice(0,2).join('');
+const escapeHtml=s=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const fold=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[–—]/g,'-');
+function belongsToTopic(p,t){if(t==='All topics')return true;return topicDefinitions[t].some(x=>p.tags.some(tag=>fold(tag).includes(fold(x))));}
+function buildChips(){chips.innerHTML=groupOrder.map(g=>{const n=g==='All expertise'?researchers.length:researchers.filter(p=>p.group===g).length;return `<button class="pill ${activeGroup===g?'active':''}" aria-pressed="${activeGroup===g}" data-group="${escapeHtml(g)}">${escapeHtml(g)} <span>${n}</span></button>`}).join('');}
+function buildTopics(){topicChips.innerHTML=Object.keys(topicDefinitions).map(t=>{const n=researchers.filter(p=>belongsToTopic(p,t)).length;return `<button class="topic-pill ${activeTopic===t?'active':''}" aria-pressed="${activeTopic===t}" data-topic="${escapeHtml(t)}">${escapeHtml(t)} <span>${n}</span></button>`}).join('');}
+function makeCard(p){return `<article class="card"><div class="card-top"><div class="avatar" data-tone="${escapeHtml(p.group)}" aria-hidden="true">${initial(p.name)}</div><div><div class="profile-category">${escapeHtml(p.group)}</div><h3>${escapeHtml(p.name)}${p.affiliate?'<span class="afftag" title="Affiliate appointment">Affiliate</span>':''}</h3><div class="dept">${escapeHtml(p.department)}</div></div></div><p class="description">${escapeHtml(p.description)}</p><div class="tags" aria-label="Research specialties">${p.tags.map(t=>`<button type="button" class="tag" data-tag="${escapeHtml(t)}" title="Search for ${escapeHtml(t)}">${escapeHtml(t)}</button>`).join('')}</div><div class="card-footer"><a class="profile-link" href="${escapeHtml(p.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(p.linkLabel||'View Concordia profile')} of ${escapeHtml(p.name)}">${escapeHtml(p.linkLabel||'View Concordia profile')} ↗</a><span class="arrow" aria-hidden="true">→</span></div></article>`}
+function render(){const term=fold(search.value.trim());const words=term.split(/\s+/).filter(Boolean);const found=researchers.filter(p=>{const hay=fold([p.name,p.department,p.group,p.description,...p.tags,...(p.aliases||[])].join(' '));return (activeGroup==='All expertise'||p.group===activeGroup)&&belongsToTopic(p,activeTopic)&&(dept.value==='All departments'||p.department===dept.value)&&(!term||hay.includes(term));});cards.innerHTML=found.length?found.map(makeCard).join(''):`<div class="empty"><h3>No matching researchers</h3><p>Try another keyword or reset your filters.</p></div>`;resultCount.textContent=`Showing ${found.length} of ${researchers.length} researchers`+(activeTopic!=='All topics'?` · ${activeTopic}`:'');}
+[...new Set(researchers.map(p=>p.department))].sort().forEach(d=>dept.add(new Option(d,d)));
+chips.addEventListener('click',e=>{const b=e.target.closest('button[data-group]');if(!b)return;activeGroup=b.dataset.group;buildChips();render();});
+topicChips.addEventListener('click',e=>{const b=e.target.closest('button[data-topic]');if(!b)return;activeTopic=activeTopic===b.dataset.topic?'All topics':b.dataset.topic;buildTopics();render();});
+cards.addEventListener('click',e=>{const b=e.target.closest('button[data-tag]');if(!b)return;search.value=b.dataset.tag;activeGroup='All expertise';activeTopic='All topics';dept.value='All departments';buildChips();buildTopics();render();document.getElementById('search').focus();});
+search.addEventListener('input',render);dept.addEventListener('change',render);
+reset.addEventListener('click',()=>{search.value='';dept.value='All departments';activeGroup='All expertise';activeTopic='All topics';buildChips();buildTopics();render();search.focus();});
+// Mobile menu handled by js/main.js
+buildChips();buildTopics();render();
+
+  // Search input clear button functionality
+  const searchClear = document.getElementById('searchClearBtn');
+  if (searchClear && search) {
+    function toggleClearBtn() {
+      searchClear.style.display = search.value.trim() ? 'flex' : 'none';
+    }
+    search.addEventListener('input', toggleClearBtn);
+    searchClear.addEventListener('click', () => {
+      search.value = '';
+      toggleClearBtn();
+      render();
+      search.focus();
+    });
+    reset.addEventListener('click', () => {
+      toggleClearBtn();
+    });
+    cards.addEventListener('click', e => {
+      if (e.target.closest('button[data-tag]')) {
+        toggleClearBtn();
+      }
+    });
+    toggleClearBtn();
+  }
+  </script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
