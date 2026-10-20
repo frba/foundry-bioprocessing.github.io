@@ -323,10 +323,10 @@ section[id] {
 .nav-dropdown-menu {
   position: absolute;
   top: calc(100% + 4px);
-  left: 50%;
-  transform: translateX(-50%) translateY(6px);
+  left: 0;
+  transform: translateY(6px);
   background: #ffffff;
-  min-width: 190px;
+  min-width: 170px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.1), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
@@ -357,12 +357,14 @@ section[id] {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 
 .nav-dropdown-item {
   display: flex !important;
   align-items: center;
+  justify-content: flex-start;
+  text-align: left;
   gap: 0.5rem;
   padding: 0.6rem 0.85rem !important;
   font-size: 0.85rem !important;
