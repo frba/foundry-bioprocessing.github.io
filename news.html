@@ -540,12 +540,21 @@
     /* --------------------------------------------------
        SOCIAL SIDEBAR (LinkedIn)
        -------------------------------------------------- */
+    .social {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      align-self: start;
+      height: fit-content;
+    }
+
     .social-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 0.75rem;
       margin-bottom: 1.4rem;
+      flex-shrink: 0;
     }
 
     .social-head h2 {
@@ -576,6 +585,12 @@
       box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
       border-radius: var(--radius-sm, 8px);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      min-height: 0;
+      max-height: 100%;
+      position: relative;
     }
 
     .social-brand {
@@ -585,6 +600,7 @@
       gap: 0.75rem;
       border-bottom: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
       background: #fafbfc;
+      flex-shrink: 0;
     }
 
     .li-mark {
@@ -684,6 +700,7 @@
       gap: 0.5rem;
       background: #fafbfc;
       border-top: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+      flex-shrink: 0;
     }
 
     .social-footer a {
@@ -705,6 +722,7 @@
       font-size: 0.72rem;
       line-height: 1.55;
       border-top: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+      flex-shrink: 0;
     }
 
     .social-note b {
@@ -720,10 +738,47 @@
        ELFSIGHT LINKEDIN WIDGET INTEGRATION & STYLING
        (Styled to match .social-shell & .social-posts)
        -------------------------------------------------- */
-    .embed-target {
+    .embed-target,
+    #linkedin-live-embed,
+    .social-fallback {
       position: relative;
       background: #ffffff;
-      min-height: auto;
+      flex: 1 1 0px;
+      min-height: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: #94a3b8 #f1f5f9;
+      scrollbar-gutter: stable;
+    }
+
+    .embed-target::-webkit-scrollbar,
+    #linkedin-live-embed::-webkit-scrollbar,
+    .social-fallback::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    .embed-target::-webkit-scrollbar-track,
+    #linkedin-live-embed::-webkit-scrollbar-track,
+    .social-fallback::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 4px;
+    }
+
+    .embed-target::-webkit-scrollbar-thumb,
+    #linkedin-live-embed::-webkit-scrollbar-thumb,
+    .social-fallback::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+    }
+
+    .embed-target::-webkit-scrollbar-thumb:hover,
+    #linkedin-live-embed::-webkit-scrollbar-thumb:hover,
+    .social-fallback::-webkit-scrollbar-thumb:hover {
+      background: #64748b;
     }
 
     .preview-pill.live {
@@ -1850,7 +1905,69 @@
   <!-- News Page Interactions & Main Scripts -->
   <script>
     (() => {
-      // 1. Live LinkedIn Feed (Elfsight) Integration & Style Polish
+      // 1. Social Sidebar Height Synchronization & Scroll Containment
+      function syncSocialHeight() {
+        const latest = document.getElementById('latest-stories');
+        const social = document.getElementById('social-feed');
+        const socialShell = document.querySelector('.social-shell');
+        const bioContainer = document.querySelector('.bioprocessing-feed-container');
+        if (!latest || !social || !socialShell) return;
+
+        if (window.innerWidth > 850) {
+          let targetBottom;
+          // Determine the target bottom: end of bioprocessing-feed-container if visible, else end of stories column
+          if (bioContainer && !bioContainer.hidden && bioContainer.style.display !== 'none' && bioContainer.offsetHeight > 50) {
+            targetBottom = bioContainer.getBoundingClientRect().bottom + window.scrollY;
+          } else {
+            targetBottom = latest.getBoundingClientRect().bottom + window.scrollY;
+          }
+
+          const socialShellTop = socialShell.getBoundingClientRect().top + window.scrollY;
+          const targetShellHeight = Math.round(targetBottom - socialShellTop);
+
+          if (targetShellHeight > 250) {
+            socialShell.style.height = `${targetShellHeight}px`;
+            socialShell.style.maxHeight = `${targetShellHeight}px`;
+            social.style.height = '';
+            social.style.maxHeight = 'none';
+          }
+        } else {
+          social.style.height = '';
+          social.style.maxHeight = '';
+          socialShell.style.height = '580px';
+          socialShell.style.maxHeight = '580px';
+        }
+      }
+
+      let syncScheduled = false;
+      function scheduleSync() {
+        if (syncScheduled) return;
+        syncScheduled = true;
+        requestAnimationFrame(() => {
+          syncScheduled = false;
+          syncSocialHeight();
+        });
+      }
+
+      // Observe size changes of the left stories column & bioprocessing container
+      const latestStories = document.getElementById('latest-stories');
+      const bioFeedEl = document.querySelector('.bioprocessing-feed-container');
+      if (window.ResizeObserver) {
+        const resizeObs = new ResizeObserver(() => {
+          scheduleSync();
+        });
+        if (latestStories) resizeObs.observe(latestStories);
+        if (bioFeedEl) resizeObs.observe(bioFeedEl);
+      }
+
+      window.addEventListener('resize', scheduleSync);
+      window.addEventListener('load', scheduleSync);
+
+      // Periodically sync for initial load settling
+      const syncInterval = setInterval(scheduleSync, 350);
+      setTimeout(() => clearInterval(syncInterval), 8000);
+
+      // 2. Live LinkedIn Feed (Elfsight) Integration & Style Polish
       const shell = document.querySelector('.social-shell');
       const widget = document.querySelector('.elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880');
       const pill = document.getElementById('preview-pill');
@@ -1938,6 +2055,9 @@
           document.querySelectorAll('#linkedin-live-embed [class*="Container"], #linkedin-live-embed [class*="Footer"], #linkedin-live-embed [class*="Layout"]').forEach(box => {
             box.style.setProperty('background-color', '#ffffff', 'important');
           });
+
+          // Trigger height synchronization when feed content updates
+          scheduleSync();
         };
 
         // Observe continuous DOM changes (posts loading, button clicks, etc.)
@@ -1955,7 +2075,25 @@
         setTimeout(() => clearInterval(intervalId), 12000);
       }
 
-      // 2. Story Filtering
+      // Wheel scroll forwarding: smooth scrolling anywhere on social aside card
+      const socialShellEl = document.querySelector('.social-shell');
+      if (socialShellEl) {
+        socialShellEl.addEventListener('wheel', (e) => {
+          const liveEmbed = document.getElementById('linkedin-live-embed');
+          const fallback = document.getElementById('linkedin-static-preview');
+          const target = (socialShellEl.classList.contains('has-live-feed') && liveEmbed) ? liveEmbed :
+                         (liveEmbed && liveEmbed.offsetParent !== null && liveEmbed.scrollHeight > liveEmbed.clientHeight) ? liveEmbed :
+                         (fallback && fallback.offsetParent !== null) ? fallback : null;
+          if (target && target.scrollHeight > target.clientHeight) {
+            if (!target.contains(e.target)) {
+              target.scrollTop += e.deltaY;
+              e.preventDefault();
+            }
+          }
+        }, { passive: false });
+      }
+
+      // 3. Story Filtering
       const buttons = document.querySelectorAll('.filter');
       const cards = document.querySelectorAll('.story-card');
       const noResults = document.getElementById('no-results');
@@ -1988,6 +2126,10 @@
           if (noResults) {
             noResults.style.display = (visible === 0) ? 'block' : 'none';
           }
+
+          scheduleSync();
+          setTimeout(scheduleSync, 50);
+          setTimeout(scheduleSync, 200);
         });
       });
 
