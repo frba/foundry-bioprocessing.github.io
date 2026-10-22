@@ -717,6 +717,376 @@
     }
 
     /* --------------------------------------------------
+       ELFSIGHT LINKEDIN WIDGET INTEGRATION & STYLING
+       (Styled to match .social-shell & .social-posts)
+       -------------------------------------------------- */
+    .embed-target {
+      position: relative;
+      background: #ffffff;
+      min-height: auto;
+    }
+
+    .preview-pill.live {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      color: #065f46;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+      animation: pulse-live 2s infinite ease-in-out;
+      display: inline-block;
+    }
+
+    @keyframes pulse-live {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 5px rgba(16, 185, 129, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
+    }
+
+    /* Hide static preview when live feed is loaded */
+    .social-shell.has-live-feed #linkedin-static-preview {
+      display: none !important;
+    }
+
+    /* Reset Elfsight outer container paddings, background & fonts */
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 *,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 *::before,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 *::after {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+      box-sizing: border-box !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 > div,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="WidgetBackground__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="FeedContainer"] {
+      padding: 0 !important;
+      margin: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    /* List & Grid reset: vertical stacked flow */
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-posts,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="PostsList__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="PostsGrid__Container"] {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0 !important;
+      row-gap: 0 !important;
+      column-gap: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+    }
+
+    /* Style each post card identically to .social-post */
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-post,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="PostCard__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Post__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Card__Container"] {
+      background: #ffffff !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      border-bottom: 1px solid var(--border-color, rgba(15, 23, 42, 0.08)) !important;
+      padding: 1.25rem 1.25rem 1.15rem !important;
+      margin: 0 !important;
+      width: 100% !important;
+      transition: background 0.2s ease !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-post:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="PostCard__Container"]:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Post__Container"]:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Card__Container"]:hover {
+      background: #f8fafc !important;
+    }
+
+    /* Post Author Header */
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-header {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.65rem !important;
+      margin-bottom: 0.65rem !important;
+      padding: 0 !important;
+      background: transparent !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__AvatarLink"] img,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__Avatar"] {
+      width: 28px !important;
+      height: 28px !important;
+      border-radius: 4px !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__NameLink"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__Name"] {
+      font-size: 0.8rem !important;
+      font-weight: 700 !important;
+      color: var(--text-primary, #0f172a) !important;
+      line-height: 1.25 !important;
+      text-decoration: none !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__Date"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Post__Date"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 time {
+      font-size: 0.72rem !important;
+      color: #94a3b8 !important;
+      font-weight: 500 !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="SourceLink__StyledLink"] {
+      margin-left: auto !important;
+      opacity: 0.6 !important;
+      transition: opacity 0.2s !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="SourceLink__StyledLink"]:hover {
+      opacity: 1 !important;
+    }
+
+    /* Post Text Body */
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Text__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Post__Text"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Content__Text"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-text-shortener-text {
+      font-size: 0.82rem !important;
+      line-height: 1.6 !important;
+      color: var(--text-secondary, #475569) !important;
+      margin: 0 0 0.5rem !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 a {
+      color: #0284c7 !important;
+      text-decoration: none !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 a:hover {
+      text-decoration: underline !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="TextControl__BaseControl"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-text-shortener-control {
+      font-size: 0.76rem !important;
+      font-weight: 700 !important;
+      color: #004d96 !important;
+      cursor: pointer !important;
+      display: inline-block !important;
+      margin-top: 0.25rem !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="TextControl__BaseControl"]:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-text-shortener-control:hover {
+      color: var(--accent-primary, #912338) !important;
+      text-decoration: underline !important;
+    }
+
+    /* Embedded Media & Repost Cards */
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Media__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Repost__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Article__Container"] {
+      margin-top: 0.65rem !important;
+      margin-bottom: 0.5rem !important;
+      border-radius: 6px !important;
+      overflow: hidden !important;
+      border: 1px solid var(--border-color, rgba(15, 23, 42, 0.08)) !important;
+      background: #fafbfc !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 img {
+      border-radius: 4px !important;
+      max-width: 100% !important;
+    }
+
+    /* Engagement Counters & Share */
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Counters__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Actions__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-counters {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding-top: 0.55rem !important;
+      margin-top: 0.5rem !important;
+      border-top: 1px solid rgba(15, 23, 42, 0.06) !important;
+      font-size: 0.72rem !important;
+      color: #64748b !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Counters__Counter"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-share-button {
+      font-size: 0.72rem !important;
+      color: #64748b !important;
+      text-decoration: none !important;
+      transition: color 0.15s !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Counters__Counter"]:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-share-button:hover {
+      color: #004d96 !important;
+    }
+
+    /* Load More Button Container & Button */
+    #linkedin-live-embed,
+    #linkedin-live-embed > div,
+    #linkedin-live-embed [class*="Container"],
+    #linkedin-live-embed [class*="Footer"],
+    #linkedin-live-embed [class*="Layout"],
+    #linkedin-live-embed [class*="Feed"],
+    #linkedin-live-embed [class*="WidgetBackground"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreContainer"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMore__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreBlock"] {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+    }
+
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreContainer"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMore__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreBlock"] {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      padding: 1.25rem 1rem !important;
+      margin: 0 !important;
+    }
+
+    #social-feed button,
+    #social-feed .es-load-more-button,
+    #social-feed [class*="es-load-more-button"],
+    #social-feed [class*="ButtonContainer"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 button,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [role="button"][class*="LoadMore"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMore__Button"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreButton"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Button__Container"][role="button"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-load-more-button,
+    .c-styled-load-more,
+    #social-feed .c-styled-load-more {
+      background: #ffffff !important;
+      color: #004d96 !important;
+      border: 1px solid #d9e0e7 !important;
+      border-radius: 6px !important;
+      font-size: 0.8rem !important;
+      font-weight: 700 !important;
+      padding: 0.6rem 1.4rem !important;
+      margin: 0.5rem auto !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    #social-feed button:hover,
+    #social-feed .es-load-more-button:hover,
+    #social-feed [class*="es-load-more-button"]:hover,
+    #social-feed [class*="ButtonContainer"]:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 button:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [role="button"][class*="LoadMore"]:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMore__Button"]:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreButton"]:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Button__Container"][role="button"]:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-load-more-button:hover,
+    .c-styled-load-more:hover,
+    #social-feed .c-styled-load-more:hover {
+      background: #f8fafc !important;
+      border-color: #004d96 !important;
+      color: var(--accent-primary, #912338) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    /* Universal Hide for Watermark & Free Badge */
+    a[href*="elfsight.com"],
+    a[href*="linkedin-feed-widget"],
+    #social-feed a[href*="elfsight"],
+    #social-feed [class*="badge"],
+    #social-feed [class*="Badge"],
+    #social-feed [class*="watermark"],
+    #social-feed [class*="Watermark"],
+    #social-feed [class*="branding"],
+    #social-feed [class*="Branding"],
+    #social-feed [class*="FreeWidget"],
+    #social-feed [class*="free-link"],
+    #social-feed [class*="FreeWidget__Container"],
+    #social-feed [class*="Badge__BadgeContainer"],
+    #social-feed [class*="Badge__Container"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 a[href*="elfsight"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 a[href*="linkedin-feed-widget"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="badge"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Badge"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="watermark"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Watermark"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="branding"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Branding"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="FreeWidget"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="free-link"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="FreeWidget__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 a[href*="elfsight"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 a[href*="social-feed-widget"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 a[href*="linkedin-feed-widget"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="badge"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Badge"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="watermark"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Watermark"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="branding"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Branding"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="FreeWidget"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="free-link"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="FreeWidget__Container"],
+    .bioprocessing-feed-container [class*="FreeWidget"],
+    .bioprocessing-feed-container [class*="free-link"],
+    .bioprocessing-feed-container [class*="Badge__BadgeContainer"],
+    .bioprocessing-feed-container [class*="Badge__Container"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      pointer-events: none !important;
+      border: none !important;
+    }
+
+    /* Bioprocessing Feed Container */
+    .bioprocessing-feed-container {
+      grid-column: 1 / -1;
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: var(--radius-sm, 8px);
+    }
+
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 * {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    }
+
+    /* --------------------------------------------------
        NEWSLETTER SECTION
        -------------------------------------------------- */
     .newsletter {
@@ -1054,7 +1424,7 @@
     </div>
 
     <div class="redesign-hero-image-col" aria-hidden="true">
-      <img src="assets/images/collaborative-projects.webp" alt="Researchers collaborating at Concordia Genome Foundry"
+      <img src="assets/images/news_hero.png" alt="Researchers collaborating at Concordia Genome Foundry"
         class="redesign-hero-image">
     </div>
   </section>
@@ -1154,24 +1524,119 @@
             <!-- Card 3: Facilities (Wide) -->
             <article class="story-card wide" data-cat="facilities">
               <a class="story-cover"
-                href="https://www.concordia.ca/offices/facilities/projects-on-campus/genome-foundry-expansion.html"
-                target="_blank" rel="noopener noreferrer" aria-label="Read Foundry facility expansion article">
-                <img src="assets/images/news/foundry-facility-expansion.webp"
+                href="https://www.cbc.ca/news/canada/montreal/concordia-genome-robotics-lab-1.4784090"
+                target="_blank" rel="noopener noreferrer" aria-label="Read CBC News coverage of the Concordia Genome Foundry">
+                <img src="assets/images/news/cbc-news.avif"
                   alt="Robotic laboratory instrumentation at Concordia"
                   style="object-position: 68% 50%; filter: saturate(.9);" loading="lazy">
                 <span class="archive-label">From the archive</span>
               </a>
               <div class="story-content">
-                <div class="meta">Facilities <em>/</em> Completed September 2025</div>
-                <h3>Inside the Genome Foundry expansion</h3>
-                <p>Renovated laboratory space, new fermentation equipment and microfluidics upgrades added capacity for research and collaborations.</p>
+                <div class="meta">Facilities <em>/</em> August 14, 2018</div>
+                <h3>Concordia unveils Canada's first genome lab where 'robots do biology'</h3>
+                <p>CBC News reports on the launch of the automated Genome Foundry at the Centre for Applied Synthetic Biology, highlighting how robotic platforms accelerate experimental workflows and precision research.</p>
                 <a class="text-link"
-                  href="https://www.concordia.ca/offices/facilities/projects-on-campus/genome-foundry-expansion.html"
+                  href="https://www.cbc.ca/news/canada/montreal/concordia-genome-robotics-lab-1.4784090"
                   target="_blank" rel="noopener noreferrer">
-                  Explore the project <span aria-hidden="true">&nearr;</span>
+                  Read the CBC News story <span aria-hidden="true">&nearr;</span>
                 </a>
               </div>
             </article>
+
+            <!-- Configure Elfsight Widget Settings & Intercept Boot Data -->
+            <script>
+              (() => {
+                try {
+                  const origOpen = XMLHttpRequest.prototype.open;
+                  const origSend = XMLHttpRequest.prototype.send;
+                  XMLHttpRequest.prototype.open = function(method, url) {
+                    this._elfUrl = url;
+                    return origOpen.apply(this, arguments);
+                  };
+                  XMLHttpRequest.prototype.send = function() {
+                    if (this._elfUrl && (typeof this._elfUrl === 'string') && this._elfUrl.includes('/p/boot/')) {
+                      this.addEventListener('readystatechange', () => {
+                        if (this.readyState === 4 && this.status === 200) {
+                          try {
+                            const json = JSON.parse(this.responseText);
+                            if (json && json.data && json.data.widgets) {
+                              Object.values(json.data.widgets).forEach(w => {
+                                if (w && w.data) {
+                                  if (w.data.preferences) {
+                                    w.data.preferences.display_free_link = false;
+                                    w.data.preferences.display_elfsight_powered_by = false;
+                                    w.data.preferences.display_free_link_remove = false;
+                                  }
+                                  const patchSettings = s => {
+                                    if (!s) return;
+                                    if (s.loadMoreButton) {
+                                      s.loadMoreButton.color = '#ffffff';
+                                      s.loadMoreButton.fontColor = '#004d96';
+                                      s.loadMoreButton.borderRadius = 6;
+                                    }
+                                    s.cardBackground = '#ffffff';
+                                    s.feedBackground = '#ffffff';
+                                    s.panelBackground = '#ffffff';
+                                  };
+                                  if (typeof w.data.settings === 'string') {
+                                    try {
+                                      const s = JSON.parse(w.data.settings);
+                                      patchSettings(s);
+                                      w.data.settings = JSON.stringify(s);
+                                    } catch (e) {}
+                                  } else if (typeof w.data.settings === 'object') {
+                                    patchSettings(w.data.settings);
+                                  }
+                                }
+                              });
+                              const modified = JSON.stringify(json);
+                              Object.defineProperty(this, 'response', { get: () => modified });
+                              Object.defineProperty(this, 'responseText', { get: () => modified });
+                            }
+                          } catch (e) {}
+                        }
+                      });
+                    }
+                    return origSend.apply(this, arguments);
+                  };
+
+                  if (window.fetch) {
+                    const origFetch = window.fetch;
+                    window.fetch = async function(...args) {
+                      const resp = await origFetch.apply(this, args);
+                      const url = typeof args[0] === 'string' ? args[0] : (args[0] && args[0].url) || '';
+                      if (url.includes('/p/boot/')) {
+                        try {
+                          const clone = resp.clone();
+                          const json = await clone.json();
+                          if (json && json.data && json.data.widgets) {
+                            Object.values(json.data.widgets).forEach(w => {
+                              if (w && w.data && w.data.preferences) {
+                                w.data.preferences.display_free_link = false;
+                                w.data.preferences.display_elfsight_powered_by = false;
+                                w.data.preferences.display_free_link_remove = false;
+                              }
+                            });
+                            return new Response(JSON.stringify(json), {
+                              status: resp.status,
+                              statusText: resp.statusText,
+                              headers: resp.headers
+                            });
+                          }
+                        } catch (e) {}
+                      }
+                      return resp;
+                    };
+                  }
+                } catch (e) {}
+              })();
+            </script>
+
+            <!-- Elfsight Social Feed | Bioprocessing -->
+            <div class="bioprocessing-feed-container">
+              <script src="https://elfsightcdn.com/platform.js" async></script>
+              <div class="elfsight-app-15638c72-2a65-4908-a335-0cba85e97639" data-elfsight-app-lazy></div>
+            </div>
 
             <div class="no-results" id="no-results">No stories in this category yet.</div>
           </div>
@@ -1192,14 +1657,17 @@
                 <b>Concordia Genome Foundry</b>
                 <span>Company updates</span>
               </div>
-              <div class="preview-pill" id="preview-pill">PREVIEW</div>
+              <div class="preview-pill" id="preview-pill">UPDATES</div>
             </div>
 
-            <!-- Target for optional live LinkedIn feed widget -->
-            <div class="embed-target" id="linkedin-live-embed"></div>
+            <!-- Target for live LinkedIn feed widget -->
+            <div class="embed-target" id="linkedin-live-embed">
+              <!-- Elfsight LinkedIn Feed | News -->
+              <div class="elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880" data-elfsight-app-lazy></div>
+            </div>
 
-            <!-- Static Preview Feed -->
-            <div id="linkedin-static-preview">
+            <!-- Fallback Preview Feed (hidden automatically when live widget loads) -->
+            <div id="linkedin-static-preview" class="social-fallback">
               <div class="social-posts">
                 <a class="social-post" href="https://www.linkedin.com/company/concordia-genome-foundry" target="_blank"
                   rel="noopener noreferrer">
@@ -1228,16 +1696,12 @@
                   <p>Supporting this year's <b>RRCancer Symposium</b> in Montr&eacute;al and sharing how our platform helps researchers build and test more designs in parallel. <span class="tag">#CancerResearch</span></p>
                 </a>
               </div>
+            </div>
 
-              <div class="social-footer">
-                <a href="https://www.linkedin.com/company/concordia-genome-foundry" target="_blank"
-                  rel="noopener noreferrer">See all updates on LinkedIn &nearr;</a>
-                <span style="font-size: 11px; color: #8d99a2;">&nearr;</span>
-              </div>
-
-              <div class="social-note">
-                <b>Mock-up feed.</b> Shortened previews of public posts. A live version can be connected through an approved LinkedIn feed service.
-              </div>
+            <div class="social-footer">
+              <a href="https://www.linkedin.com/company/concordia-genome-foundry" target="_blank"
+                rel="noopener noreferrer">See all updates on LinkedIn &nearr;</a>
+              <span style="font-size: 11px; color: #8d99a2;">&nearr;</span>
             </div>
           </div>
         </aside>
@@ -1386,34 +1850,116 @@
   <!-- News Page Interactions & Main Scripts -->
   <script>
     (() => {
-      // 1. Optional Live LinkedIn Feed Configuration
-      // Replace with your external widget iframe URL if enabled (e.g. SociableKIT, Elfsight)
-      const LINKEDIN_WIDGET_IFRAME_URL = '';
+      // 1. Live LinkedIn Feed (Elfsight) Integration & Style Polish
+      const shell = document.querySelector('.social-shell');
+      const widget = document.querySelector('.elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880');
+      const pill = document.getElementById('preview-pill');
 
-      if (LINKEDIN_WIDGET_IFRAME_URL && /^https:\/\//i.test(LINKEDIN_WIDGET_IFRAME_URL)) {
-        const area = document.getElementById('linkedin-live-embed');
-        const preview = document.getElementById('linkedin-static-preview');
-        const pill = document.getElementById('preview-pill');
+      if (shell && widget) {
+        const cleanAndStyleFeed = () => {
+          // Detect when Elfsight content has loaded
+          if (widget.children.length > 0) {
+            shell.classList.add('has-live-feed');
+            if (pill && !pill.classList.contains('live')) {
+              pill.classList.add('live');
+              pill.innerHTML = '<span class="live-dot" aria-hidden="true"></span>LIVE';
+            }
+          }
 
-        if (area) {
-          const frame = document.createElement('iframe');
-          frame.src = LINKEDIN_WIDGET_IFRAME_URL;
-          frame.title = 'Concordia Genome Foundry live LinkedIn feed';
-          frame.loading = 'lazy';
-          frame.referrerPolicy = 'strict-origin-when-cross-origin';
-          frame.style.width = '100%';
-          frame.style.border = '0';
-          frame.style.minHeight = '480px';
-          area.appendChild(frame);
-          if (preview) preview.style.display = 'none';
-          if (pill) pill.textContent = 'FEED';
+          // 1. Remove Elfsight watermark links & badge containers
+          const watermarkLinks = document.querySelectorAll(
+            'a[href*="elfsight.com"], a[href*="linkedin-feed-widget"], a[href*="social-feed-widget"], [class*="Badge__BadgeContainer"], [class*="Badge__Container"], [class*="FreeWidget"], [class*="free-link"]'
+          );
+          watermarkLinks.forEach(link => {
+            const parent = link.parentElement;
+            link.remove();
+            if (parent && parent.children.length === 0) {
+              parent.remove();
+            }
+          });
+
+          // Text-content based removal for watermark
+          document.querySelectorAll('#social-feed *, .bioprocessing-feed-container *').forEach(el => {
+            if (el.children.length === 0 && el.textContent) {
+              const txt = el.textContent.trim().toLowerCase();
+              if (txt.includes('free linkedin feed') || txt.includes('free social feed') || txt === 'free widget') {
+                const p = el.parentElement;
+                el.remove();
+                if (p && p.children.length === 0) p.remove();
+              }
+            }
+          });
+
+          // 2. Style "Load More" button to match Concordia brand button
+          document.querySelectorAll('#social-feed .es-load-more-button, #social-feed button').forEach(btn => {
+            if (btn.textContent && btn.textContent.toLowerCase().includes('load more')) {
+              btn.classList.add('c-styled-load-more');
+              btn.style.setProperty('background', '#ffffff', 'important');
+              btn.style.setProperty('color', '#004d96', 'important');
+              btn.style.setProperty('border', '1px solid #d9e0e7', 'important');
+              btn.style.setProperty('border-radius', '6px', 'important');
+              btn.style.setProperty('font-size', '0.8rem', 'important');
+              btn.style.setProperty('font-weight', '700', 'important');
+              btn.style.setProperty('padding', '0.6rem 1.4rem', 'important');
+              btn.style.setProperty('margin', '0 auto', 'important');
+              btn.style.setProperty('box-shadow', '0 1px 3px rgba(0, 0, 0, 0.04)', 'important');
+              btn.style.setProperty('cursor', 'pointer', 'important');
+              btn.style.setProperty('transition', 'all 0.2s ease', 'important');
+
+              btn.onmouseenter = () => {
+                btn.style.setProperty('background', '#f8fafc', 'important');
+                btn.style.setProperty('border-color', '#004d96', 'important');
+                btn.style.setProperty('color', '#912338', 'important');
+                btn.style.setProperty('box-shadow', '0 2px 6px rgba(0, 0, 0, 0.08)', 'important');
+              };
+              btn.onmouseleave = () => {
+                btn.style.setProperty('background', '#ffffff', 'important');
+                btn.style.setProperty('border-color', '#d9e0e7', 'important');
+                btn.style.setProperty('color', '#004d96', 'important');
+                btn.style.setProperty('box-shadow', '0 1px 3px rgba(0, 0, 0, 0.04)', 'important');
+              };
+
+              // Ensure container has crisp white background
+              if (btn.parentElement) {
+                btn.parentElement.style.setProperty('background', '#ffffff', 'important');
+                btn.parentElement.style.setProperty('padding', '1.25rem 1rem', 'important');
+                btn.parentElement.style.setProperty('margin', '0', 'important');
+                btn.parentElement.style.setProperty('display', 'flex', 'important');
+                btn.parentElement.style.setProperty('justify-content', 'center', 'important');
+                btn.parentElement.style.setProperty('align-items', 'center', 'important');
+                if (btn.parentElement.parentElement) {
+                  btn.parentElement.parentElement.style.setProperty('background', '#ffffff', 'important');
+                }
+              }
+            }
+          });
+
+          // Ensure any feed footer or outer container background is white
+          document.querySelectorAll('#linkedin-live-embed [class*="Container"], #linkedin-live-embed [class*="Footer"], #linkedin-live-embed [class*="Layout"]').forEach(box => {
+            box.style.setProperty('background-color', '#ffffff', 'important');
+          });
+        };
+
+        // Observe continuous DOM changes (posts loading, button clicks, etc.)
+        const feedObserver = new MutationObserver(cleanAndStyleFeed);
+        feedObserver.observe(shell, { childList: true, subtree: true });
+
+        const bioFeedContainer = document.querySelector('.bioprocessing-feed-container');
+        if (bioFeedContainer) {
+          feedObserver.observe(bioFeedContainer, { childList: true, subtree: true });
         }
+
+        // Initial checks & periodic verification
+        cleanAndStyleFeed();
+        const intervalId = setInterval(cleanAndStyleFeed, 300);
+        setTimeout(() => clearInterval(intervalId), 12000);
       }
 
       // 2. Story Filtering
       const buttons = document.querySelectorAll('.filter');
       const cards = document.querySelectorAll('.story-card');
       const noResults = document.getElementById('no-results');
+      const bioFeed = document.querySelector('.bioprocessing-feed-container');
 
       buttons.forEach(button => {
         button.addEventListener('click', () => {
@@ -1431,6 +1977,13 @@
             card.style.display = show ? '' : 'none';
             if (show) visible++;
           });
+
+          if (bioFeed) {
+            const showBio = (wanted === 'all' || wanted === 'facilities');
+            bioFeed.hidden = !showBio;
+            bioFeed.style.display = showBio ? '' : 'none';
+            if (showBio) visible++;
+          }
 
           if (noResults) {
             noResults.style.display = (visible === 0) ? 'block' : 'none';
