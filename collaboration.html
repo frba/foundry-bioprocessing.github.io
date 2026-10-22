@@ -1169,16 +1169,17 @@
     </div>
   </main>
 
-  <!-- SITE FOOTER -->
-  <footer class="footer" style="background-color: #0b1120; color: #f0f2f5; padding: 4.5rem 0 2rem 0; border-top: 1px solid rgba(255,255,255,0.08);">
-    <div class="container-wide footer-container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; position: relative;">
-      <!-- Main Content Grid -->
-      <div class="footer-grid"
-        style="display: grid; grid-template-columns: 2fr 3fr; gap: 4rem; margin-bottom: 3.5rem;">
+<!-- Footer -->
+  <footer class="footer"
+    style="margin-top: 0; background: #07111F; color: #f0f2f5; padding: clamp(32px, 5vw, 48px) 1.5rem clamp(18px, 3vw, 24px);">
+    <div class="container-wide" style="max-width: 1200px; margin: 0 auto;">
+      <div class="footer-main-row"
+        style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem; margin-bottom: 2rem;">
 
-        <!-- Left Side: Brand & Description -->
-        <div class="footer-brand">
-          <a href="index.html" class="footer-logo" aria-label="Genome Foundry Home">
+        <!-- Left Side: Brand -->
+        <div class="footer-brand" style="flex: 1 1 300px;">
+          <a href="index.html" aria-label="Concordia Genome Foundry homepage"
+            style="display: block; width: fit-content; text-decoration: none;">
             <img src="assets/icons/genome_foundry_logo.svg" alt="Concordia Genome Foundry"
               style="max-width: 150px; width: 100%; height: auto; margin-bottom: 1rem; display: block; filter: brightness(0) invert(1);">
           </a>
@@ -1202,22 +1203,22 @@
                 style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Capabilities</a>
               <a href="instrumentation.html"
                 style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrumentation</a>
-              <a href="collaboration.html"
-                style="color: #38bdf8; text-decoration: none; transition: opacity 0.2s;">Collaboration</a>
               <a href="publications.html"
                 style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Research &amp; Impact</a>
+              <a href="news.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">News &amp; Updates</a>
             </div>
           </div>
           <div style="display: flex; flex-direction: column;">
             <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">CONNECT</span>
             <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
               <a href="mailto:genomefoundry@concordia.ca" class="footer-link-item"
-                style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                  stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg> genomefoundry@concordia.ca
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg> genomefoundry@concordia.ca
               </a>
               <a href="https://www.linkedin.com/company/concordia-genome-foundry/" target="_blank" rel="noopener"
                 class="footer-link-item"
@@ -1258,10 +1259,10 @@
               style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">User
               Tools</span>
             <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
-              <a href="https://foundry.concordia.ca/bookr/" target="_blank" rel="noopener noreferrer"
+              <a href="https://foundry.concordia.ca/bookr/"
                 style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrument
                 Booking</a>
-              <a href="https://foundry-lims.concordia.ca/" target="_blank" rel="noopener noreferrer"
+              <a href="https://foundry-lims.concordia.ca/"
                 style="color: inherit; text-decoration: none; transition: opacity 0.2s;"
                 title="Concordia network or authorized access may be required."
                 aria-label="LIMS, Concordia access may be required">LIMS (Concordia access)</a>

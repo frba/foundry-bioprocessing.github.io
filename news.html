@@ -4,104 +4,996 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Concordia Genome Foundry</title>
+  <title>News &amp; Updates | Concordia Genome Foundry</title>
   <meta name="description"
-    content="Stay up to date with the latest research, announcements, and instrumentation updates from Concordia Genome Foundry.">
+    content="Discover the latest news, research breakthroughs, collaborations, and facility updates from the Concordia Genome Foundry.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
   <style>
-    .page-header {
-      padding: 140px 0 60px;
-      text-align: center;
-      background: linear-gradient(180deg, var(--bg-secondary) 0%, rgba(255, 255, 255, 0) 100%);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .blog-card {
-      background: #fff;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
+    /* --------------------------------------------------
+       HERO SECTION (Matching capabilities.html & about.html)
+       -------------------------------------------------- */
+    .redesign-hero {
+      background-color: #0b1120;
+      color: #f8fafc;
+      position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: all var(--transition-normal);
+      padding: calc(94px + 3rem) 1.5rem 0 1.5rem;
+      min-height: auto;
     }
 
-    .blog-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
-      border-color: rgba(145, 35, 56, 0.15);
+    #featured-story,
+    #latest-stories,
+    #social-feed,
+    #newsletter {
+      scroll-margin-top: 110px;
     }
 
-    .blog-card-img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: var(--bg-secondary);
-      object-fit: cover;
-      border-bottom: 1px solid var(--border-color);
+    .redesign-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+      z-index: 2;
     }
 
-    .blog-card-content {
-      padding: 1.75rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
+    .redesign-hero-content {
+      max-width: 600px;
+      padding-bottom: 3rem;
     }
 
-    .blog-tag {
-      font-size: 0.72rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent-primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .blog-title {
-      font-size: 1.35rem;
+    .redesign-eyebrow {
+      font-size: 0.875rem;
       font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 0.75rem;
-      color: var(--text-primary);
+      color: #bae6fd;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+      display: block;
     }
 
-    .blog-excerpt {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
+    .redesign-hero-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #ffffff;
       margin-bottom: 1.5rem;
-      flex-grow: 1;
+      letter-spacing: -0.02em;
     }
 
-    .blog-footer {
+    .redesign-hero-body {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 2.25rem;
+    }
+
+    .redesign-jump-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 1000px) {
+      .redesign-jump-links {
+        flex-wrap: nowrap;
+      }
+
+      .redesign-jump-link {
+        white-space: nowrap;
+      }
+    }
+
+    .redesign-jump-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #38bdf8;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-bottom-color 0.2s;
+    }
+
+    .redesign-jump-link:hover,
+    .redesign-jump-link:focus-visible {
+      color: #bae6fd;
+      border-bottom-color: #bae6fd;
+      outline: none;
+    }
+
+    .redesign-hero-image-col {
+      position: relative;
+      width: calc(100% + 3rem);
+      margin-left: -1.5rem;
+      height: 250px;
+      border-radius: 0;
+    }
+
+    .redesign-hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    @media (min-width: 900px) {
+      .redesign-hero {
+        padding: 94px 0 0 0;
+        height: clamp(400px, 50vh, 470px);
+        display: flex;
+        align-items: center;
+      }
+
+      .redesign-hero-inner {
+        grid-template-columns: 55% 45%;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        gap: 2rem;
+        padding: 0 2rem;
+      }
+
+      .redesign-hero-content {
+        padding-bottom: 0;
+        max-width: none;
+      }
+
+      .redesign-hero-image-col {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 55%;
+        height: 100%;
+        margin-left: 0;
+      }
+
+      .redesign-hero-image-col::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 38%;
+        height: 100%;
+        background: linear-gradient(to right, #0b1120 0%, transparent 100%);
+      }
+    }
+
+    /* --------------------------------------------------
+       MAIN CONTENT CONTAINER
+       -------------------------------------------------- */
+    main.news-main {
+      background-color: var(--bg-secondary, #f8f9fa);
+      padding: 3.5rem 0 6rem;
+    }
+
+    main.news-main .container-wide {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+      main.news-main .container-wide {
+        padding: 0 2rem;
+      }
+    }
+
+    /* Section Headings */
+    .section-heading {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      border-top: 1px solid var(--border-color);
-      padding-top: 1rem;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
-    .blog-date {
+    .section-heading h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-heading .section-note {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+
+    .accent-bar {
+      display: inline-block;
+      height: 3px;
+      width: 24px;
+      margin-right: 12px;
+      background: var(--accent-primary, #912338);
+      border-radius: 2px;
+      vertical-align: middle;
+    }
+
+    /* --------------------------------------------------
+       FEATURED STORY
+       -------------------------------------------------- */
+    .feature {
+      background: #ffffff;
+      border: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+      display: grid;
+      grid-template-columns: 54% 46%;
+      min-height: 390px;
+      overflow: hidden;
+      border-radius: var(--radius-sm, 8px);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .feature:hover {
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .feature-image {
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+      background: #e2e8f0;
+      display: block;
+    }
+
+    .feature-image img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      object-position: center center;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .feature:hover .feature-image img {
+      transform: scale(1.03);
+    }
+
+    .feature-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(11, 17, 32, 0.25), transparent 60%);
+      pointer-events: none;
+    }
+
+    .image-flag {
+      position: absolute;
+      z-index: 2;
+      top: 1.25rem;
+      left: 1.25rem;
+      color: #ffffff;
+      background: rgba(11, 17, 32, 0.82);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 0.45rem 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+      font-weight: 700;
+      border-radius: 4px;
+    }
+
+    .feature-text {
+      padding: clamp(1.75rem, 3.2vw, 3.25rem);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .meta {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-primary, #912338);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    .meta em {
+      font-style: normal;
+      color: #cbd5e1;
+      margin: 0 0.5rem;
+    }
+
+    .feature h2 {
+      font-size: clamp(1.6rem, 2.2vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin: 1.1rem 0 0.9rem;
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin: 0 0 1.75rem;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.01em;
+      color: var(--text-primary);
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 0.3rem;
+      transition: gap 0.2s ease, color 0.2s ease, border-bottom-color 0.2s ease;
+    }
+
+    .text-link:hover {
+      color: var(--accent-primary, #912338);
+      border-bottom-color: var(--accent-primary, #912338);
+      gap: 0.75rem;
+    }
+
+    .text-link span {
+      transition: transform 0.2s ease;
+    }
+
+    .text-link:hover span {
+      transform: translate(2px, -2px);
+    }
+
+    /* --------------------------------------------------
+       LOWER SECTION: STORIES GRID & SOCIAL ASIDE
+       -------------------------------------------------- */
+    .lower {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 2.75rem;
+      margin-top: 4.5rem;
+      align-items: start;
+    }
+
+    .story-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: flex-end;
+      margin-bottom: 1.5rem;
+    }
+
+    .story-head h2 {
+      margin: 0;
+      font-size: 1.65rem;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .story-head p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin: 0.35rem 0 0;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .filter {
+      border: 1px solid #d9e0e4;
+      background: #ffffff;
+      border-radius: var(--radius-sm, 6px);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.5rem 0.9rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .filter:hover {
+      border-color: #94a3b8;
+      color: var(--text-primary);
+    }
+
+    .filter.active {
+      background: #0b1120;
+      border-color: #0b1120;
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(11, 17, 32, 0.15);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .story-card {
+      border: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+      background: #ffffff;
+      border-radius: var(--radius-sm, 8px);
+      overflow: hidden;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.02);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.07);
+    }
+
+    .story-card.wide {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 38% 62%;
+      min-height: 230px;
+    }
+
+    .story-cover {
+      height: 220px;
+      overflow: hidden;
+      background: #e2e8f0;
+      position: relative;
+      display: block;
+    }
+
+    .story-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .story-card:hover .story-cover img {
+      transform: scale(1.04);
+    }
+
+    .story-card.wide .story-cover {
+      height: 100%;
+      min-height: 230px;
+    }
+
+    .archive-label {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 0.6rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.65rem;
+      color: #475569;
+      font-weight: 700;
+      border-radius: 4px;
+    }
+
+    .story-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .story-content h3 {
+      font-size: 1.25rem;
+      line-height: 1.3;
+      letter-spacing: -0.025em;
+      font-weight: 700;
+      margin: 0.75rem 0 0.65rem;
+      color: var(--text-primary);
+    }
+
+    .story-content p {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0 0 1.25rem;
+    }
+
+    .story-content .text-link {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    .no-results {
+      display: none;
+      border: 1px dashed #cbd5e1;
+      background: #ffffff;
+      padding: 2.5rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      border-radius: 8px;
+      grid-column: 1 / -1;
+    }
+
+    /* --------------------------------------------------
+       SOCIAL SIDEBAR (LinkedIn)
+       -------------------------------------------------- */
+    .social-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .social-head h2 {
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin: 0;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .social-head a {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #004d96;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+
+    .social-head a:hover {
+      color: var(--accent-primary, #912338);
+    }
+
+    .social-shell {
+      background: #ffffff;
+      border: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
+      border-radius: var(--radius-sm, 8px);
+      overflow: hidden;
+    }
+
+    .social-brand {
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-bottom: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+      background: #fafbfc;
+    }
+
+    .li-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      background: #0a66c2;
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: -1.5px;
+      padding-right: 2px;
+      flex-shrink: 0;
+    }
+
+    .social-brand b {
+      font-size: 0.82rem;
+      display: block;
+      line-height: 1.25;
+      color: var(--text-primary);
+    }
+
+    .social-brand span {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+    }
+
+    .preview-pill {
+      margin-left: auto;
+      border: 1px solid #d9e0e7;
+      background: #ffffff;
+      color: #64748b;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .social-posts {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .social-post {
+      padding: 1.25rem 1.25rem 1.15rem;
+      border-bottom: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+      text-decoration: none;
+      display: block;
+      transition: background 0.2s ease;
+      color: inherit;
+    }
+
+    .social-post:hover {
+      background: #f8fafc;
+    }
+
+    .post-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .post-line strong {
+      font-size: 0.78rem;
+      color: var(--text-primary);
+    }
+
+    .post-line time {
+      font-size: 0.72rem;
+      color: #94a3b8;
+    }
+
+    .social-post p {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .social-post .tag {
+      color: #0284c7;
       font-weight: 500;
     }
+
+    .social-footer {
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      background: #fafbfc;
+      border-top: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+    }
+
+    .social-footer a {
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: #004d96;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+
+    .social-footer a:hover {
+      color: var(--accent-primary, #912338);
+    }
+
+    .social-note {
+      background: #f1f5f9;
+      padding: 0.85rem 1.25rem;
+      color: #64748b;
+      font-size: 0.72rem;
+      line-height: 1.55;
+      border-top: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+    }
+
+    .social-note b {
+      color: var(--text-primary);
+    }
+
+    .social-note a {
+      color: #004d96;
+      text-decoration: underline;
+    }
+
+    /* --------------------------------------------------
+       NEWSLETTER SECTION
+       -------------------------------------------------- */
+    .newsletter {
+      margin-top: 5rem;
+      border: 1px solid #cbd5e1;
+      background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 65%, #fdf2f4 100%);
+      border-radius: var(--radius-sm, 8px);
+      padding: 2.75rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 390px;
+      gap: 2.5rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+    }
+
+    .newsletter::after {
+      content: '';
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border: 45px solid rgba(145, 35, 56, 0.04);
+      border-radius: 50%;
+      right: -80px;
+      top: -80px;
+      pointer-events: none;
+    }
+
+    .newsletter small.tagline {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-primary, #912338);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter h2 {
+      font-size: 1.85rem;
+      letter-spacing: -0.035em;
+      color: var(--text-primary);
+      margin: 0 0 0.65rem;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .newsletter p {
+      max-width: 480px;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .newsletter-input-group {
+      display: flex;
+      gap: 0;
+    }
+
+    .newsletter-input-group input {
+      min-width: 0;
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 0.85rem 1rem;
+      outline: 0;
+      font-size: 0.88rem;
+      border-radius: 6px 0 0 6px;
+      font-family: inherit;
+      color: var(--text-primary);
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-input-group input:focus {
+      border-color: var(--accent-primary, #912338);
+      box-shadow: 0 0 0 3px rgba(145, 35, 56, 0.1);
+    }
+
+    .newsletter-input-group button {
+      border: 0;
+      background: var(--accent-primary, #912338);
+      color: #ffffff;
+      padding: 0 1.4rem;
+      white-space: nowrap;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 0 6px 6px 0;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+
+    .newsletter-input-group button:hover {
+      background: #781c2e;
+    }
+
+    .newsletter-input-group button:active {
+      transform: scale(0.98);
+    }
+
+    .newsletter-form small.disclaimer {
+      color: #64748b;
+      font-size: 0.72rem;
+      letter-spacing: 0;
+      text-transform: none;
+      font-weight: 500;
+      margin-top: 0.25rem;
+    }
+
+    .form-result {
+      font-size: 0.85rem;
+      color: #047857;
+      display: none;
+      margin: 0.5rem 0 0;
+      font-weight: 600;
+    }
+
+    .form-result.show {
+      display: block;
+    }
+
+    /* --------------------------------------------------
+       RESPONSIVE BREAKPOINTS
+       -------------------------------------------------- */
+    @media (max-width: 1024px) {
+      .lower {
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 2rem;
+      }
+
+      .newsletter {
+        grid-template-columns: 1fr 340px;
+        padding: 2.25rem 2.5rem;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .lower {
+        grid-template-columns: 1fr;
+      }
+
+      .social {
+        margin-top: 2rem;
+      }
+
+      .social-posts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .social-post {
+        border-right: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+        border-bottom: 0;
+      }
+
+      .newsletter {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 650px) {
+      main.news-main {
+        padding-top: 2.25rem;
+      }
+
+      .section-heading {
+        margin-bottom: 1rem;
+      }
+
+      .feature {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-image {
+        min-height: 240px;
+      }
+
+      .feature-text {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .feature h2 {
+        font-size: 1.4rem;
+        margin: 0.85rem 0;
+      }
+
+      .feature p {
+        margin-bottom: 1.25rem;
+      }
+
+      .lower {
+        margin-top: 3.5rem;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .story-card.wide {
+        grid-column: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .story-card.wide .story-cover {
+        height: 210px;
+        min-height: 0;
+      }
+
+      .story-cover {
+        height: 200px;
+      }
+
+      .story-content {
+        padding: 1.25rem;
+      }
+
+      .social-posts {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .social-post {
+        border-right: 0;
+        border-bottom: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+      }
+
+      .newsletter {
+        padding: 1.75rem 1.25rem;
+        margin-top: 3.5rem;
+      }
+
+      .newsletter h2 {
+        font-size: 1.5rem;
+      }
+
+      .newsletter-input-group {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .newsletter-input-group input {
+        border-radius: 6px;
+      }
+
+      .newsletter-input-group button {
+        border-radius: 6px;
+        padding: 0.75rem 1.25rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
   </style>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
+  <!-- Navigation Bar (Standard across project) -->
   <nav class="navbar" id="navbar">
     <div class="container-wide nav-container">
       <a href="index.html" class="logo">
@@ -110,7 +1002,7 @@
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="capabilities.html">Capabilities</a>
-        <a href="publications.html">Research & Impact</a>
+        <a href="publications.html">Research &amp; Impact</a>
         <a href="WorkWithUs.html">Work With Us</a>
         <a href="about.html">About</a>
       </div>
@@ -132,7 +1024,7 @@
       <div class="mobile-nav-links">
         <a href="index.html">Home</a>
         <a href="capabilities.html">Capabilities</a>
-        <a href="publications.html">Research & Impact</a>
+        <a href="publications.html">Research &amp; Impact</a>
         <a href="WorkWithUs.html">Work With Us</a>
         <a href="about.html">About</a>
       </div>
@@ -145,77 +1037,235 @@
     </div>
   </nav>
 
-  <header class="page-header">
-    <div class="container-wide">
-      <div class="badge">Updates &amp; Insights</div>
-      <h1 class="h1">News &amp; Announcements</h1>
-      <p class="subtitle" style="margin: 1.5rem auto 0;">The latest developments in synthetic biology, automation, and
-        bioprocessing workflows.</p>
-    </div>
-  </header>
+  <!-- Redesign Hero (Matching capabilities.html, about.html, publications.html) -->
+  <section class="redesign-hero" aria-label="News and Updates Overview">
+    <div class="redesign-hero-inner">
+      <div class="redesign-hero-content">
+        <span class="redesign-eyebrow">From the Foundry</span>
+        <h1 class="redesign-hero-title">News &amp; Updates</h1>
+        <p class="redesign-hero-body">Research developments, collaborations, facilities, and people advancing synthetic biology at Concordia and beyond.</p>
 
-  <main>
-    <section class="section" style="padding: 5rem 0;">
-      <div class="container-wide">
-
-        <div class="blog-grid">
-
-          <!-- Post 1 -->
-          <article class="blog-card">
-            <img class="blog-card-img" src="assets/images/biomek-01.webp" alt="Automation integration">
-            <div class="blog-card-content">
-              <span class="blog-tag">Platform Update</span>
-              <h3 class="blog-title"><a href="#">Foundry Expands Mammalian Cell Line Automation Platform</a></h3>
-              <p class="blog-excerpt">We are excited to announce new hardware integrations that expand our
-                high-throughput mammalian cell line transfection, selection, and imaging capabilities, saving weeks of
-                manual work for iPSC developers.</p>
-              <div class="blog-footer">
-                <span class="blog-date">June 2, 2026</span>
-                <span>4 min read</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Post 2 -->
-          <article class="blog-card">
-            <img class="blog-card-img" src="assets/images/bioengineering150-02_panel.webp" alt="Bioreactor facility">
-            <div class="blog-card-content">
-              <span class="blog-tag">Funding</span>
-              <h3 class="blog-title"><a href="#">Concordia Bio-Infrastructure Receives CFI Funding for Scale-up
-                  Platform</a></h3>
-              <p class="blog-excerpt">The Canada Foundation for Innovation (CFI) has awarded new funding to support the
-                acquisition of continuous centrifugation, advanced analytical detection, and automated bioreactor
-                suites.</p>
-              <div class="blog-footer">
-                <span class="blog-date">March 14, 2026</span>
-                <span>3 min read</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Post 3 -->
-          <article class="blog-card">
-            <img class="blog-card-img" src="assets/images/biomek-01.webp" alt="Liquid Handler pipette">
-            <div class="blog-card-content">
-              <span class="blog-tag">Infrastructure</span>
-              <h3 class="blog-title"><a href="#">New 100L SIP Bioreactor Installed and Validated for Strains Scaling</a>
-              </h3>
-              <p class="blog-excerpt">The scale-up core has completed validation runs for its new 100L Steam-In-Place
-                bioreactor, enabling high-density microbial fermentation for biopolymer and enzyme production.</p>
-              <div class="blog-footer">
-                <span class="blog-date">January 20, 2026</span>
-                <span>5 min read</span>
-              </div>
-            </div>
-          </article>
-
+        <div class="redesign-jump-links">
+          <a href="#featured-story" class="redesign-jump-link">Featured Story &darr;</a>
+          <a href="#latest-stories" class="redesign-jump-link">Latest Stories &darr;</a>
+          <a href="#social-feed" class="redesign-jump-link">LinkedIn Updates &darr;</a>
         </div>
+      </div>
+    </div>
+
+    <div class="redesign-hero-image-col" aria-hidden="true">
+      <img src="assets/images/collaborative-projects.webp" alt="Researchers collaborating at Concordia Genome Foundry"
+        class="redesign-hero-image">
+    </div>
+  </section>
+
+  <!-- Main Content Layout (Using layout from scratch/concordia_foundry_news_mockup.html) -->
+  <main id="main" class="news-main">
+    <div class="container-wide">
+
+      <!-- Featured Story Section -->
+      <section id="featured-story" aria-label="Featured Story">
+        <div class="section-heading">
+          <h2><span class="accent-bar"></span>Featured story</h2>
+          <span class="section-note">Research infrastructure</span>
+        </div>
+        <article class="feature">
+          <a class="feature-image"
+            href="https://www.concordia.ca/news/stories/2025/12/11/concordia-expands-its-sustainable-biomanufacturing-capacity-with-5m-cfi-investment.html"
+            target="_blank" rel="noopener noreferrer" aria-label="Read Concordia CFI investment story">
+            <img src="assets/images/news/cfi-sustainable-biomanufacturing.webp"
+              alt="Concordia laboratory automation system behind glass" loading="lazy">
+            <span class="image-flag">Featured</span>
+          </a>
+          <div class="feature-text">
+            <div class="meta">Infrastructure <em>/</em> December 11, 2025</div>
+            <h2>Concordia expands sustainable biomanufacturing capacity with $5M investment</h2>
+            <p>New investment supports upgrades to the Genome Foundry and Bioprocessing facilities, expanding research capacity from early biological design through process development.</p>
+            <a class="text-link"
+              href="https://www.concordia.ca/news/stories/2025/12/11/concordia-expands-its-sustainable-biomanufacturing-capacity-with-5m-cfi-investment.html"
+              target="_blank" rel="noopener noreferrer">
+              Read the Concordia story <span aria-hidden="true">&nearr;</span>
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <!-- Lower Section: Latest Stories & Social Updates -->
+      <div class="lower">
+
+        <!-- Latest Stories Column -->
+        <section class="latest" id="latest-stories" aria-label="Latest stories">
+          <div class="story-head">
+            <div>
+              <h2>Latest stories</h2>
+              <p>Updates and perspectives from across our community.</p>
+            </div>
+          </div>
+
+          <!-- Category Filters -->
+          <div class="filters" role="group" aria-label="Filter news stories">
+            <button class="filter active" data-filter="all" aria-pressed="true">All updates</button>
+            <button class="filter" data-filter="research" aria-pressed="false">Research</button>
+            <button class="filter" data-filter="people" aria-pressed="false">People</button>
+            <button class="filter" data-filter="facilities" aria-pressed="false">Facilities</button>
+          </div>
+
+          <!-- Stories Grid -->
+          <div class="story-grid" id="story-grid">
+
+            <!-- Card 1: People -->
+            <article class="story-card" data-cat="people">
+              <a class="story-cover" href="https://www.synbiocanada.org/news/interview-with-angela-quach"
+                target="_blank" rel="noopener noreferrer" aria-label="Read Angela Quach interview">
+                <img src="assets/images/news/angela-quach-interview.webp"
+                  alt="Illuminated DNA display in the Foundry laboratory" loading="lazy">
+              </a>
+              <div class="story-content">
+                <div class="meta">People &amp; perspectives <em>/</em> June 22, 2026</div>
+                <h3>Design. Build. Test. Repeat. A conversation with Angela Quach</h3>
+                <p>Angela discusses the role of lab automation, interdisciplinary teams and iterative experimentation in synthetic biology.</p>
+                <a class="text-link" href="https://www.synbiocanada.org/news/interview-with-angela-quach"
+                  target="_blank" rel="noopener noreferrer">
+                  Read the SynBio Canada interview <span aria-hidden="true">&nearr;</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 2: Research -->
+            <article class="story-card" data-cat="research">
+              <a class="story-cover"
+                href="https://nrc.canada.ca/en/stories/made-canada-medicine-shaping-future-cell-gene-therapy"
+                target="_blank" rel="noopener noreferrer" aria-label="Read NRC collaboration story">
+                <img src="assets/images/news/nrc-cell-gene-therapy.webp"
+                  alt="Illustrative cellular engineering structures" loading="lazy">
+              </a>
+              <div class="story-content">
+                <div class="meta">Research <em>/</em> April 20, 2026</div>
+                <h3>Shaping the future of cell and gene therapy in Canada</h3>
+                <p>How the NRC and Concordia Genome Foundry are developing automated genome-engineering platforms to support advanced cell research.</p>
+                <a class="text-link"
+                  href="https://nrc.canada.ca/en/stories/made-canada-medicine-shaping-future-cell-gene-therapy"
+                  target="_blank" rel="noopener noreferrer">
+                  Read the NRC story <span aria-hidden="true">&nearr;</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 3: Facilities (Wide) -->
+            <article class="story-card wide" data-cat="facilities">
+              <a class="story-cover"
+                href="https://www.concordia.ca/offices/facilities/projects-on-campus/genome-foundry-expansion.html"
+                target="_blank" rel="noopener noreferrer" aria-label="Read Foundry facility expansion article">
+                <img src="assets/images/news/foundry-facility-expansion.webp"
+                  alt="Robotic laboratory instrumentation at Concordia"
+                  style="object-position: 68% 50%; filter: saturate(.9);" loading="lazy">
+                <span class="archive-label">From the archive</span>
+              </a>
+              <div class="story-content">
+                <div class="meta">Facilities <em>/</em> Completed September 2025</div>
+                <h3>Inside the Genome Foundry expansion</h3>
+                <p>Renovated laboratory space, new fermentation equipment and microfluidics upgrades added capacity for research and collaborations.</p>
+                <a class="text-link"
+                  href="https://www.concordia.ca/offices/facilities/projects-on-campus/genome-foundry-expansion.html"
+                  target="_blank" rel="noopener noreferrer">
+                  Explore the project <span aria-hidden="true">&nearr;</span>
+                </a>
+              </div>
+            </article>
+
+            <div class="no-results" id="no-results">No stories in this category yet.</div>
+          </div>
+        </section>
+
+        <!-- Social Sidebar Column -->
+        <aside class="social" id="social-feed" aria-label="LinkedIn updates">
+          <div class="social-head">
+            <h2>From LinkedIn</h2>
+            <a href="https://www.linkedin.com/company/concordia-genome-foundry" target="_blank"
+              rel="noopener noreferrer">View page &nearr;</a>
+          </div>
+
+          <div class="social-shell">
+            <div class="social-brand">
+              <div class="li-mark" aria-hidden="true">in</div>
+              <div>
+                <b>Concordia Genome Foundry</b>
+                <span>Company updates</span>
+              </div>
+              <div class="preview-pill" id="preview-pill">PREVIEW</div>
+            </div>
+
+            <!-- Target for optional live LinkedIn feed widget -->
+            <div class="embed-target" id="linkedin-live-embed"></div>
+
+            <!-- Static Preview Feed -->
+            <div id="linkedin-static-preview">
+              <div class="social-posts">
+                <a class="social-post" href="https://www.linkedin.com/company/concordia-genome-foundry" target="_blank"
+                  rel="noopener noreferrer">
+                  <div class="post-line">
+                    <strong>Concordia Genome Foundry</strong>
+                    <time>Oct 2026</time>
+                  </div>
+                  <p>Joining District 3 Innovation and CENSR for <b>Exploring Innovation in the Life Sciences</b>, a workshop on pathways from research to real-world application. <span class="tag">#ResearchInnovation</span></p>
+                </a>
+
+                <a class="social-post" href="https://www.linkedin.com/company/concordia-genome-foundry" target="_blank"
+                  rel="noopener noreferrer">
+                  <div class="post-line">
+                    <strong>Concordia Genome Foundry</strong>
+                    <time>Oct 2026</time>
+                  </div>
+                  <p>A new preprint featuring work with our <b>MAESTRO automation platform</b> describes a directed-evolution system for GPCRs in yeast. <span class="tag">#LabAutomation</span></p>
+                </a>
+
+                <a class="social-post" href="https://www.linkedin.com/company/concordia-genome-foundry" target="_blank"
+                  rel="noopener noreferrer">
+                  <div class="post-line">
+                    <strong>Concordia Genome Foundry</strong>
+                    <time>Oct 2026</time>
+                  </div>
+                  <p>Supporting this year's <b>RRCancer Symposium</b> in Montr&eacute;al and sharing how our platform helps researchers build and test more designs in parallel. <span class="tag">#CancerResearch</span></p>
+                </a>
+              </div>
+
+              <div class="social-footer">
+                <a href="https://www.linkedin.com/company/concordia-genome-foundry" target="_blank"
+                  rel="noopener noreferrer">See all updates on LinkedIn &nearr;</a>
+                <span style="font-size: 11px; color: #8d99a2;">&nearr;</span>
+              </div>
+
+              <div class="social-note">
+                <b>Mock-up feed.</b> Shortened previews of public posts. A live version can be connected through an approved LinkedIn feed service.
+              </div>
+            </div>
+          </div>
+        </aside>
 
       </div>
-    </section>
+
+      <!-- Newsletter Section -->
+      <section class="newsletter" id="newsletter" aria-label="Newsletter subscription preview">
+        <div>
+          <small class="tagline">Stay informed</small>
+          <h2>Updates worth sharing.</h2>
+          <p>Occasional news about programs, projects, collaborations and events from the Concordia Genome Foundry.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form">
+          <label for="email" style="font-size: 12px; font-weight: 700; color: var(--text-primary);">Get occasional updates</label>
+          <div class="newsletter-input-group">
+            <input id="email" type="email" placeholder="Your email address" autocomplete="email" required>
+            <button type="submit">Subscribe &nearr;</button>
+          </div>
+          <small class="disclaimer">Design preview only. No email is collected or saved.</small>
+          <p class="form-result" id="form-result" role="status"></p>
+        </form>
+      </section>
+
+    </div>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (Matching capabilities.html, about.html, etc.) -->
   <footer class="footer"
     style="margin-top: 0; background: #07111F; color: #f0f2f5; padding: clamp(32px, 5vw, 48px) 1.5rem clamp(18px, 3vw, 24px);">
     <div class="container-wide" style="max-width: 1200px; margin: 0 auto;">
@@ -251,8 +1301,8 @@
                 style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrumentation</a>
               <a href="publications.html"
                 style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Research &amp; Impact</a>
-              <!-- <a href="news.html" -->
-                <!-- style="color: inherit; text-decoration: none; transition: opacity 0.2s;">News &amp; Updates</a> -->
+              <a href="news.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">News &amp; Updates</a>
             </div>
           </div>
           <div style="display: flex; flex-direction: column;">
@@ -333,6 +1383,79 @@
     </div>
   </footer>
 
+  <!-- News Page Interactions & Main Scripts -->
+  <script>
+    (() => {
+      // 1. Optional Live LinkedIn Feed Configuration
+      // Replace with your external widget iframe URL if enabled (e.g. SociableKIT, Elfsight)
+      const LINKEDIN_WIDGET_IFRAME_URL = '';
+
+      if (LINKEDIN_WIDGET_IFRAME_URL && /^https:\/\//i.test(LINKEDIN_WIDGET_IFRAME_URL)) {
+        const area = document.getElementById('linkedin-live-embed');
+        const preview = document.getElementById('linkedin-static-preview');
+        const pill = document.getElementById('preview-pill');
+
+        if (area) {
+          const frame = document.createElement('iframe');
+          frame.src = LINKEDIN_WIDGET_IFRAME_URL;
+          frame.title = 'Concordia Genome Foundry live LinkedIn feed';
+          frame.loading = 'lazy';
+          frame.referrerPolicy = 'strict-origin-when-cross-origin';
+          frame.style.width = '100%';
+          frame.style.border = '0';
+          frame.style.minHeight = '480px';
+          area.appendChild(frame);
+          if (preview) preview.style.display = 'none';
+          if (pill) pill.textContent = 'FEED';
+        }
+      }
+
+      // 2. Story Filtering
+      const buttons = document.querySelectorAll('.filter');
+      const cards = document.querySelectorAll('.story-card');
+      const noResults = document.getElementById('no-results');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const wanted = button.dataset.filter;
+          buttons.forEach(b => {
+            const isActive = (b === button);
+            b.classList.toggle('active', isActive);
+            b.setAttribute('aria-pressed', String(isActive));
+          });
+
+          let visible = 0;
+          cards.forEach(card => {
+            const show = (wanted === 'all' || card.dataset.cat === wanted);
+            card.hidden = !show;
+            card.style.display = show ? '' : 'none';
+            if (show) visible++;
+          });
+
+          if (noResults) {
+            noResults.style.display = (visible === 0) ? 'block' : 'none';
+          }
+        });
+      });
+
+      // 3. Newsletter Preview Form Submission
+      const newsletterForm = document.getElementById('newsletter-form');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', event => {
+          event.preventDefault();
+          const note = document.getElementById('form-result');
+          const emailInput = document.getElementById('email');
+          if (note) {
+            note.textContent = 'Thank you for your interest! (Preview mode: your email was not stored).';
+            note.classList.add('show');
+          }
+          if (emailInput) {
+            emailInput.value = '';
+          }
+        });
+      }
+    })();
+  </script>
   <script src="js/main.js"></script>
 </body>
 
