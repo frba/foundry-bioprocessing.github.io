@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       (currentFile === 'instrumentation.html' || currentFile === 'capabilities.html');
     const isWorkWithUsSection =
       linkFile === 'WorkWithUs.html' &&
-      (currentFile === 'collaboration.html' || currentFile === 'WorkWithUs.html');
+      (currentFile === 'WorkWithUs.html' || currentFile === 'partners.html');
 
     if (isHome || isSamePage || isCapabilitiesSection || isWorkWithUsSection) {
       link.classList.add('active');

@@ -258,7 +258,7 @@ section[id] {
 
 .nav-links {
   display: flex;
-  gap: 3rem;
+  gap: clamp(1rem, 1.8vw, 2.25rem);
   align-items: center;
 }
 
@@ -267,6 +267,7 @@ section[id] {
   font-size: 0.9rem;
   color: var(--text-secondary);
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-links a.active {
