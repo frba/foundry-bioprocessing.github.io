@@ -432,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: "Michael Dennis",
       title: "VP Research",
       organization: "pHathom Technologies",
-      tag: "Hosted Access",
+      tag: "Research Services & Residency",
       photo: "assets/images/clients/Michael Dennis.webp",
       logo: "assets/images/startups/pHathom_Logo_Dark_Horizontal.webp",
       active: true,
@@ -443,20 +443,9 @@ document.addEventListener('DOMContentLoaded', () => {
       name: "Wilf Jefferies",
       title: "CSO & Founder",
       organization: "Eyam Health",
-      tag: "Hosted Access",
+      tag: "Research Services",
       photo: "assets/images/clients/Wilf Jefferies.png",
       logo: "assets/images/clients/eyam_health.png",
-      active: true,
-      placeholder: true
-    },
-    {
-      quote: "The bioprocessing team has been a valuable partner for our development work. Their expertise and experience facilitated onboarding our fungal organism, adapting our protocol, and transferring our process from shake flasks to 3- to 20-liter bioreactor scale. Along the way, they were accessible, flexible, and collaborative, and welcomed our on-site presence during the work. We look forward to continuing this work with them as we move toward pilot scale.",
-      name: "Mahsa Alimi",
-      title: "Co-Founder & CSO",
-      organization: "Biosam",
-      tag: "Research Services - Bioprocessing",
-      photo: "assets/images/clients/Mahsa Alimi.webp",
-      logo: "assets/images/clients/BioSam_logo.webp",
       active: true,
       placeholder: true
     },
@@ -468,6 +457,17 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: "Training & Direct Access",
       photo: "assets/images/clients/Vahid Hamidi.webp",
       logo: "assets/images/clients/Labionyx.webp",
+      active: true,
+      placeholder: true
+    },
+    {
+      quote: "The bioprocessing team has been a valuable partner for our development work. Their expertise and experience facilitated onboarding our fungal organism, adapting our protocol, and transferring our process from shake flasks to 3- to 20-liter bioreactor scale. Along the way, they were accessible, flexible, and collaborative, and welcomed our on-site presence during the work. We look forward to continuing this work with them as we move toward pilot scale.",
+      name: "Mahsa Alimi",
+      title: "Co-Founder & CSO",
+      organization: "Biosam",
+      tag: "Research Services",
+      photo: "assets/images/clients/Mahsa Alimi.webp",
+      logo: "assets/images/clients/BioSam_logo.webp",
       active: true,
       placeholder: true
     },
