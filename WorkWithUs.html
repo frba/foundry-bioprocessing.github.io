@@ -1286,17 +1286,39 @@
     </section>
 
     <!-- Section: Partner Voices -->
-    <section class="section" id="partner-voices" style="background: #071A2F;">
+    <section class="section" id="partner-voices">
       <div class="container-wide">
         <div class="partner-voices-header">
-          <h2 class="h2 section-heading-large" style="color: #F8FAFC;">In their words</h2>
-          <!-- <p class="subtitle" style="color: #CBD5E1;">Researchers and companies work with us in different ways — from -->
-            <!-- hosted access and direct instrument use to services and collaborative projects.</p> -->
+          <div class="partner-voices-header-top">
+            <div class="partner-voices-title-group">
+              <span class="partner-voices-eyebrow">PARTNERS &amp; COLLABORATORS</span>
+              <h2 class="h2 section-heading-large">In their words</h2>
+              <p class="subtitle">Researchers and organizations share their experience working with the Genome Foundry and Bioprocessing platform.</p>
+            </div>
+            <div class="testimonial-carousel-controls" aria-label="Testimonial navigation">
+              <button type="button" class="testimonial-nav-btn prev" id="testimonial-prev" aria-label="Previous testimonials" title="Previous">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button type="button" class="testimonial-nav-btn next" id="testimonial-next" aria-label="Next testimonials" title="Next">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div class="testimonial-grid" id="testimonial-grid">
-          <!-- Testimonials dynamically loaded via js/main.js -->
+        <div class="testimonial-carousel-wrapper">
+          <div class="testimonial-carousel-viewport" id="testimonial-viewport" tabindex="0" role="region" aria-label="Partner testimonials carousel">
+            <div class="testimonial-grid" id="testimonial-grid">
+              <!-- Testimonials dynamically loaded via js/main.js -->
+            </div>
+          </div>
         </div>
+
+        <div class="testimonial-dots" id="testimonial-dots" role="tablist" aria-label="Testimonial pagination"></div>
       </div>
     </section>
 
@@ -1320,7 +1342,7 @@
 
       /* Section Pricing & project terms */
       .pricing-terms-section {
-        background-color: #f8fafc;
+        background-color: #f1f5f9;
         padding: 5rem 0;
         border-top: 1px solid #e2e8f0;
         border-bottom: 1px solid #e2e8f0;

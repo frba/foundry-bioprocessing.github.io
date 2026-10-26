@@ -428,14 +428,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // Placeholder testimonials — replace with approved quotes before launch.
   const testimonials = [
     {
-      quote: "Being embedded at the Foundry gave our team direct access to the infrastructure, technical environment, and day-to-day support we needed to keep moving quickly. Hiring Concordia grads who already had a familiarity with the platforms also shortened our ramp-up time significantly.",
+      quote: "We initially began working with the Genome Foundry through a service contract and eventually decided to embed a team on-site. Having direct access to their equipment, technical expertise, and support has significantly accelerated our progress, from strain prototyping to bioprocessing and production scale-up. Additionally, hiring Concordia graduates who were already familiar with the platforms has made our onboarding process much smoother.",
       name: "Michael Dennis",
-      title: "Vice-President, Research",
-      organization: "pHathom",
+      title: "VP Research",
+      organization: "pHathom Technologies",
       tag: "Hosted Access",
       photo: "assets/images/clients/Michael Dennis.webp",
-      logo: "assets/images/clients/pHathom.svg",
-      active: false,
+      logo: "assets/images/startups/pHathom_Logo_Dark_Horizontal.webp",
+      active: true,
+      placeholder: true
+    },
+    {
+      quote: "We brought the Concordia Genome Foundry a challenging project: dozens of complex DNA constructs, some reaching 30 kb. These were not straightforward assemblies, and the team worked through several technical hurdles along the way. What stood out was their willingness to try different approaches and find solutions rather than simply stick to the original plan. They were knowledgeable, responsive, and genuinely invested in making the project succeed. Throughout, they kept us informed and treated the work as a shared problem rather than a handoff. It is exactly the kind of collaborative partnership we value, and we would gladly work with them again.",
+      name: "Wilf Jefferies",
+      title: "CSO & Founder",
+      organization: "Eyam Health",
+      tag: "Hosted Access",
+      photo: "assets/images/clients/Wilf Jefferies.png",
+      logo: "assets/images/clients/eyam_health.png",
+      active: true,
       placeholder: true
     },
     {
@@ -445,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
       organization: "Biosam",
       tag: "Research Services - Bioprocessing",
       photo: "assets/images/clients/Mahsa Alimi.webp",
-      logo: "assets/images/clients/BioSam.webp",
+      logo: "assets/images/clients/BioSam_logo.webp",
       active: true,
       placeholder: true
     },
@@ -506,7 +517,14 @@ document.addEventListener('DOMContentLoaded', () => {
         ? `<div class="testimonial-photo"><img src="${t.photo}" alt="${t.name}"></div>`
         : `<div class="testimonial-photo">${initials}</div>`;
 
-      const extraClass = t.organization === 'pHathom' ? ' testimonial-logo-phathom' : '';
+      const orgClassMap = {
+        'pHathom Technologies': 'testimonial-logo-phathom',
+        'pHathom': 'testimonial-logo-phathom',
+        'Eyam Health': 'testimonial-logo-eyam',
+        'Biosam': 'testimonial-logo-biosam',
+        'Labionyx': 'testimonial-logo-labionyx'
+      };
+      const extraClass = orgClassMap[t.organization] ? ` ${orgClassMap[t.organization]}` : '';
       const logoHtml = t.logo
         ? `<img src="${t.logo}" alt="${t.organization} logo" class="testimonial-logo${extraClass}">`
         : `<div class="testimonial-org">${t.organization}</div>`;
@@ -529,6 +547,160 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
       testimonialGrid.appendChild(card);
     });
+
+    initTestimonialCarousel();
+  }
+
+  // Partner Voices Carousel Controller
+  function initTestimonialCarousel() {
+    const viewport = document.getElementById('testimonial-viewport');
+    const track = document.getElementById('testimonial-grid');
+    const prevBtn = document.getElementById('testimonial-prev');
+    const nextBtn = document.getElementById('testimonial-next');
+    const dotsContainer = document.getElementById('testimonial-dots');
+
+    if (!viewport || !track) return;
+
+    const cards = track.querySelectorAll('.testimonial-card');
+    if (cards.length === 0) return;
+
+    function getCardsPerView() {
+      return window.innerWidth >= 768 ? 2 : 1;
+    }
+
+    function getTotalPages() {
+      const perView = getCardsPerView();
+      return Math.ceil(cards.length / perView);
+    }
+
+    function getCurrentPage() {
+      const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+      if (maxScroll <= 2) return 0;
+      const totalPages = getTotalPages();
+      const ratio = viewport.scrollLeft / maxScroll;
+      return Math.min(Math.round(ratio * (totalPages - 1)), totalPages - 1);
+    }
+
+    function renderDots() {
+      if (!dotsContainer) return;
+      const totalPages = getTotalPages();
+      const currentPage = getCurrentPage();
+
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'testimonial-dot' + (i === currentPage ? ' active' : '');
+        dot.setAttribute('type', 'button');
+        dot.setAttribute('aria-label', `Go to testimonial slide ${i + 1} of ${totalPages}`);
+        dot.addEventListener('click', () => {
+          goToPage(i);
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateActiveDot() {
+      if (!dotsContainer) return;
+      const totalPages = getTotalPages();
+      if (dotsContainer.children.length !== totalPages) {
+        renderDots();
+        return;
+      }
+      const currentPage = getCurrentPage();
+      Array.from(dotsContainer.children).forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentPage);
+      });
+    }
+
+    function goToPage(pageIndex) {
+      const perView = getCardsPerView();
+      const cardIndex = Math.min(pageIndex * perView, cards.length - 1);
+      const targetCard = cards[cardIndex];
+      if (targetCard) {
+        viewport.scrollTo({
+          left: targetCard.offsetLeft - track.offsetLeft,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+        if (viewport.scrollLeft >= maxScroll - 15) {
+          viewport.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          viewport.scrollBy({ left: viewport.clientWidth, behavior: 'smooth' });
+        }
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        if (viewport.scrollLeft <= 15) {
+          viewport.scrollTo({ left: viewport.scrollWidth, behavior: 'smooth' });
+        } else {
+          viewport.scrollBy({ left: -viewport.clientWidth, behavior: 'smooth' });
+        }
+      });
+    }
+
+    // Keyboard support when viewport is focused
+    viewport.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextBtn?.click();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevBtn?.click();
+      }
+    });
+
+    // Mouse drag-to-scroll support for desktop
+    let isDown = false;
+    let startX = 0;
+    let scrollStart = 0;
+
+    viewport.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - viewport.offsetLeft;
+      scrollStart = viewport.scrollLeft;
+      viewport.classList.add('is-dragging');
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (isDown) {
+        isDown = false;
+        viewport.classList.remove('is-dragging');
+      }
+    });
+
+    viewport.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - viewport.offsetLeft;
+      const walk = (x - startX);
+      viewport.scrollLeft = scrollStart - walk;
+    });
+
+    // Update active dot on scroll
+    let scrollTimeout;
+    viewport.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(updateActiveDot, 50);
+    }, { passive: true });
+
+    // Handle screen resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        renderDots();
+      }, 100);
+    });
+
+    // Initial render of dots
+    renderDots();
   }
 
   // Startup Residency Logic
