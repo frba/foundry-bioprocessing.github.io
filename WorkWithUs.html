@@ -1291,9 +1291,9 @@
         <div class="partner-voices-header">
           <div class="partner-voices-header-top">
             <div class="partner-voices-title-group">
-              <span class="partner-voices-eyebrow">PARTNERS &amp; COLLABORATORS</span>
+              <span class="partner-voices-eyebrow">USER EXPERIENCES</span>
               <h2 class="h2 section-heading-large">In their words</h2>
-              <p class="subtitle">Researchers and organizations share their experience working with the Genome Foundry and Bioprocessing platform.</p>
+              <!-- <p class="subtitle">Researchers and organizations share their experience working with the Genome Foundry and Bioprocessing platform.</p> -->
             </div>
             <div class="testimonial-carousel-controls" aria-label="Testimonial navigation">
               <button type="button" class="testimonial-nav-btn prev" id="testimonial-prev" aria-label="Previous testimonials" title="Previous">
@@ -1337,6 +1337,27 @@
       @media (min-width: 900px) {
         #partner-voices .container-wide {
           padding: 0 2rem;
+        }
+      }
+
+      @media (max-width: 767px) {
+        #partner-voices .testimonial-grid {
+          align-items: flex-start;
+        }
+
+        #partner-voices .testimonial-card {
+          height: auto;
+          align-self: flex-start;
+          justify-content: flex-start;
+        }
+
+        #partner-voices .testimonial-quote {
+          flex-grow: 0;
+          margin-bottom: 1.5rem;
+        }
+
+        #partner-voices .testimonial-person {
+          margin-top: 0;
         }
       }
 
