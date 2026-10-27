@@ -522,9 +522,88 @@
       margin: 0 0 1.25rem 0;
       flex: 1;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
       overflow: hidden;
+    }
+
+    /* Expandable details for cards (e.g. integrated instruments) */
+    .dir-card:has(.dir-card-expandable) .dir-card-desc,
+    .dir-card-desc:has(+ .dir-card-expandable) {
+      margin-bottom: 0.65rem;
+      flex: 0 0 auto;
+    }
+
+    .dir-card-expandable {
+      margin-top: auto;
+      margin-bottom: 0.85rem;
+    }
+
+    .dir-card:has(.dir-card-expandable) .dir-card-footer,
+    .dir-card-expandable + .dir-card-footer {
+      margin-top: 0;
+    }
+
+    .dir-expand-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #0284c7;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+      padding: 0.2rem 0;
+      transition: color 0.15s ease;
+    }
+
+    .dir-expand-btn::-webkit-details-marker {
+      display: none;
+    }
+
+    .dir-expand-btn:hover {
+      color: #0369a1;
+      text-decoration: underline;
+    }
+
+    .dir-expand-btn:focus-visible {
+      outline: 2px solid #0284c7;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    .dir-expand-icon {
+      transition: transform 0.2s ease;
+      stroke: currentColor;
+      flex-shrink: 0;
+    }
+
+    details[open] .dir-expand-icon {
+      transform: rotate(180deg);
+    }
+
+    .dir-expand-content {
+      font-size: 0.78rem;
+      line-height: 1.55;
+      color: #334155;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.6rem 0.75rem;
+      margin-top: 0.45rem;
+      animation: expandFadeIn 0.2s ease-out;
+    }
+
+    @keyframes expandFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-3px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .dir-card-footer {
@@ -865,7 +944,7 @@
           </div>
 
           <div class="dir-grid">
-            <article class="dir-card" data-id="1" data-category="Automation &amp; liquid handling" data-search="inspire integrated automation platform integrated robotic workflow platform for dna assembly, pcr, rt-pcr, in vitro transcription, and nucleic-acid analysis. automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
+            <article class="dir-card" data-id="1" data-category="Automation &amp; liquid handling" data-search="inspire integrated automation platform integrated robotic workflow platform for dna assembly, pcr, rt-pcr, in vitro transcription, and nucleic-acid analysis. spinnaker robotic arm echo 550 mantis odtc viia 7 fragment analyzer alps 3000 hig 3 xpeel integrated instruments automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
               <div class="dir-card-visual">
                 <img src="assets/images/instruments/inSPIRE.png" alt="inSPIRE integrated automation platform" loading="lazy" decoding="async">
               </div>
@@ -874,7 +953,18 @@
                   <span class="dir-facility-badge synbio">SynBio Suite</span>
                 </div>
                 <h3 class="dir-card-title">inSPIRE integrated automation platform</h3>
-                <p class="dir-card-desc">Programmable, scheduled workflows coordinating multiple instruments for DNA assembly, PCR, RT-qPCR, in vitro transcription, nucleic-acid analysis, and automated plate processing.​</p>
+                <p class="dir-card-desc">Programmable, scheduled workflows coordinating multiple instruments for DNA assembly, PCR, RT-qPCR, in vitro transcription, nucleic-acid analysis, and automated plate processing.</p>
+                <details class="dir-card-expandable">
+                  <summary class="dir-expand-btn">
+                    <span>Integrated instruments</span>
+                    <svg class="dir-expand-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </summary>
+                  <div class="dir-expand-content">
+                    Spinnaker robotic arm · Echo 550 · Mantis · 4 × 384-well ODTC · 1 × 96-well ODTC · ViiA 7 · Fragment Analyzer · ALPS 3000 · HiG 3 · XPeel
+                  </div>
+                </details>
                 <div class="dir-card-footer">
               <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=289" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
                 View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -882,7 +972,7 @@
                 </div>
               </div>
             </article>
-            <article class="dir-card" data-id="2" data-category="Automation &amp; liquid handling" data-search="microbial phenotyping platform integrated robotic workflow for microbial normalization, culture, passaging, growth monitoring, and plate-based measurements. automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
+            <article class="dir-card" data-id="2" data-category="Automation &amp; liquid handling" data-search="microbial phenotyping platform integrated robotic workflow for microbial normalization, culture, passaging, growth monitoring, and plate-based measurements. spinnaker robotic arm robotized enzyscreen culture system lynx lm900 ensight multimode plate reader automated plate washer integrated instruments automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
               <div class="dir-card-visual">
                 <img src="assets/images/instruments/MAESTRO.png" alt="Microbial Phenotyping Platform" loading="lazy" decoding="async">
               </div>
@@ -890,8 +980,19 @@
                 <div class="dir-card-topline">
                   <span class="dir-facility-badge synbio">SynBio Suite</span>
                 </div>
-                <h3 class="dir-card-title">MAESTRO - Microbial Phenotyping Platform</h3>
-                <p class="dir-card-desc">Integrated robotic platform for scheduled microbial cultivation, normalization, passaging, and phenotyping, including coordinated growth monitoring and plate-based measurements.​</p>
+                <h3 class="dir-card-title">MAESTRO - Microbial Phenotyping platform</h3>
+                <p class="dir-card-desc">Integrated robotic platform for scheduled microbial cultivation, normalization, passaging, and phenotyping, including coordinated growth monitoring and plate-based measurements.</p>
+                <details class="dir-card-expandable">
+                  <summary class="dir-expand-btn">
+                    <span>Integrated instruments</span>
+                    <svg class="dir-expand-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </summary>
+                  <div class="dir-expand-content">
+                    Spinnaker robotic arm · Robotized Enzyscreen culture system · Lynx LM900 · EnSight multimode plate reader · Automated plate washer
+                  </div>
+                </details>
                 <div class="dir-card-footer">
               <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=292" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
                 View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -899,7 +1000,7 @@
                 </div>
               </div>
             </article>
-            <article class="dir-card" data-id="3" data-category="Automation &amp; liquid handling" data-search="biomek i7 liquid handling platform programmable liquid handling for microbial transformation, sample normalization, re-arraying, pcr, and library preparation. automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
+            <article class="dir-card" data-id="3" data-category="Automation &amp; liquid handling" data-search="biomek i7 liquid handling platform programmable liquid handling for microbial transformation, sample normalization, re-arraying, pcr, and library preparation. 96-well odtc peltier integrated instruments automation &amp; liquid handling synbio suite foundry build &amp; test synbio suite">
               <div class="dir-card-visual">
                 <img src="assets/images/instruments/Biomek i7.png" alt="Biomek i7 liquid handling platform" loading="lazy" decoding="async">
               </div>
@@ -909,6 +1010,17 @@
                 </div>
                 <h3 class="dir-card-title">Biomek i7 liquid handling platform</h3>
                 <p class="dir-card-desc">Programmable liquid handling with integrated thermal cycling and temperature-controlled deck positions for multistep molecular biology and sample preparation workflows.​</p>
+                <details class="dir-card-expandable">
+                  <summary class="dir-expand-btn">
+                    <span>Integrated instruments</span>
+                    <svg class="dir-expand-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </summary>
+                  <div class="dir-expand-content">
+                    Biomek i7 · 96-well ODTC · 6 × Peltier temperature-controlled deck positions​
+                  </div>
+                </details>
                 <div class="dir-card-footer">
               <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=245" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
                 View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -950,7 +1062,7 @@
                 </div>
               </div>
             </article>
-            <article class="dir-card" data-id="6" data-category="Automation &amp; liquid handling" data-search="microlab vantage workstation integrated mammalian-cell automation for seeding, feeding, passaging, nucleofection, and phenotyping. automation &amp; liquid handling mammalian studio foundry mammalian systems studio">
+            <article class="dir-card" data-id="6" data-category="Automation &amp; liquid handling" data-search="microlab vantage workstation integrated mammalian-cell automation for seeding, feeding, passaging, nucleofection, and phenotyping. track-mounted gripper arm liconic incubator lonza 4d-nucleofector cytation 5 automated capper decapper integrated instruments automation &amp; liquid handling mammalian studio foundry mammalian systems studio">
               <div class="dir-card-visual">
                 <img src="assets/images/instruments/Vantage Workstation.png" alt="Microlab VANTAGE workstation" loading="lazy" decoding="async">
               </div>
@@ -960,6 +1072,17 @@
                 </div>
                 <h3 class="dir-card-title">Microlab VANTAGE workstation</h3>
                 <p class="dir-card-desc">Integrated automation for scheduled mammalian cell culture and assay workflows, coordinating seeding, feeding, passaging, nucleofection, incubation, and phenotypic readouts.​</p>
+                <details class="dir-card-expandable">
+                  <summary class="dir-expand-btn">
+                    <span>Integrated instruments</span>
+                    <svg class="dir-expand-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </summary>
+                  <div class="dir-expand-content">
+                    Microlab VANTAGE with track-mounted gripper arm · LiCONiC incubator · Lonza 4D-Nucleofector · Cytation 5 · Automated capper/decapper​
+                  </div>
+                </details>
                 <div class="dir-card-footer">
               <a href="https://foundry.concordia.ca/BookR/browse.asp?asset=253" target="_blank" rel="noopener noreferrer" class="dir-card-link" title="View in BookR (Concordia access)">
                 View in BookR <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
