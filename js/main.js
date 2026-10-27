@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNav = document.getElementById('mobile-nav');
 
   if (mobileMenuToggle && mobileNav) {
+    if (mobileMenuToggle.dataset.menuBound === 'true') return;
+    mobileMenuToggle.dataset.menuBound = 'true';
+
     function closeMobileMenu() {
       mobileMenuToggle.setAttribute('aria-expanded', 'false');
       mobileNav.classList.remove('is-open');
@@ -60,12 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isCapabilitiesSection =
       linkFile === 'capabilities.html' &&
-      (currentFile === 'instrumentation.html' || currentFile === 'capabilities.html');
+      currentFile === 'capabilities.html';
     const isWorkWithUsSection =
       linkFile === 'WorkWithUs.html' &&
       (currentFile === 'WorkWithUs.html' || currentFile === 'partners.html');
+    const isResourcesSection =
+      (link.classList.contains('nav-dropdown-toggle') || link.getAttribute('data-nav') === 'resources') &&
+      (currentFile === 'instrumentation.html' || currentFile === 'collaboration.html');
 
-    if (isHome || isSamePage || isCapabilitiesSection || isWorkWithUsSection) {
+    if (isHome || isSamePage || isCapabilitiesSection || isWorkWithUsSection || isResourcesSection) {
       link.classList.add('active');
     }
   });
@@ -74,19 +80,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const navDropdowns = document.querySelectorAll('.nav-dropdown');
   navDropdowns.forEach(dropdown => {
     let timeout;
-    dropdown.addEventListener('mouseenter', () => {
+    const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+
+    const openDropdown = () => {
       clearTimeout(timeout);
       navDropdowns.forEach(d => {
         if (d !== dropdown) {
           d.classList.remove('is-open');
+          const t = d.querySelector('.nav-dropdown-toggle');
+          if (t) t.setAttribute('aria-expanded', 'false');
         }
       });
       dropdown.classList.add('is-open');
-    });
-    dropdown.addEventListener('mouseleave', () => {
+      if (toggle) toggle.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeDropdown = () => {
       timeout = setTimeout(() => {
         dropdown.classList.remove('is-open');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
       }, 180);
+    };
+
+    dropdown.addEventListener('mouseenter', openDropdown);
+    dropdown.addEventListener('mouseleave', closeDropdown);
+    dropdown.addEventListener('focusin', openDropdown);
+    dropdown.addEventListener('focusout', (e) => {
+      if (!dropdown.contains(e.relatedTarget)) {
+        closeDropdown();
+      }
     });
   });
 
