@@ -368,7 +368,7 @@
       display: grid;
       grid-template-columns: minmax(0, 1fr) 340px;
       gap: 2.75rem;
-      margin-top: 4.5rem;
+      margin-top: 0;
       align-items: start;
     }
 
@@ -740,6 +740,8 @@
        -------------------------------------------------- */
     .embed-target,
     #linkedin-live-embed,
+    #bioprocessing-live-embed,
+    .bioprocessing-feed-container,
     .social-fallback {
       position: relative;
       background: #ffffff;
@@ -756,12 +758,16 @@
 
     .embed-target::-webkit-scrollbar,
     #linkedin-live-embed::-webkit-scrollbar,
+    #bioprocessing-live-embed::-webkit-scrollbar,
+    .bioprocessing-feed-container::-webkit-scrollbar,
     .social-fallback::-webkit-scrollbar {
       width: 7px;
     }
 
     .embed-target::-webkit-scrollbar-track,
     #linkedin-live-embed::-webkit-scrollbar-track,
+    #bioprocessing-live-embed::-webkit-scrollbar-track,
+    .bioprocessing-feed-container::-webkit-scrollbar-track,
     .social-fallback::-webkit-scrollbar-track {
       background: #f1f5f9;
       border-radius: 4px;
@@ -769,6 +775,8 @@
 
     .embed-target::-webkit-scrollbar-thumb,
     #linkedin-live-embed::-webkit-scrollbar-thumb,
+    #bioprocessing-live-embed::-webkit-scrollbar-thumb,
+    .bioprocessing-feed-container::-webkit-scrollbar-thumb,
     .social-fallback::-webkit-scrollbar-thumb {
       background: #94a3b8;
       border-radius: 4px;
@@ -777,8 +785,49 @@
 
     .embed-target::-webkit-scrollbar-thumb:hover,
     #linkedin-live-embed::-webkit-scrollbar-thumb:hover,
+    #bioprocessing-live-embed::-webkit-scrollbar-thumb:hover,
+    .bioprocessing-feed-container::-webkit-scrollbar-thumb:hover,
     .social-fallback::-webkit-scrollbar-thumb:hover {
       background: #64748b;
+    }
+
+    /* Divider between Genome Foundry & Bioprocessing widgets */
+    .social-feed-divider {
+      display: none;
+      padding: 0.65rem 1.15rem;
+      background: #fafbfc;
+      border-top: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+      border-bottom: 1px solid var(--border-color, rgba(15, 23, 42, 0.08));
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-shrink: 0;
+      z-index: 2;
+    }
+
+    .social-shell.has-live-feed .social-feed-divider {
+      display: flex;
+    }
+
+    .social-feed-divider-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-primary, #0f172a);
+      letter-spacing: -0.01em;
+    }
+
+    .social-feed-divider-pill {
+      border: 1px solid #d9e0e7;
+      background: #ffffff;
+      color: #64748b;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
     }
 
     .preview-pill.live {
@@ -821,18 +870,30 @@
     }
 
     /* Reset Elfsight outer container paddings, background & fonts */
+    #social-feed [class*="elfsight-app-"],
+    #social-feed [class*="elfsight-app-"] *,
+    #social-feed [class*="elfsight-app-"] *::before,
+    #social-feed [class*="elfsight-app-"] *::after,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 *,
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 *::before,
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 *::after {
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 * {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
       box-sizing: border-box !important;
     }
 
+    #social-feed [class*="elfsight-app-"],
+    #social-feed [class*="elfsight-app-"] > div,
+    #social-feed [class*="elfsight-app-"] [class*="WidgetBackground__Container"],
+    #social-feed [class*="elfsight-app-"] [class*="FeedContainer"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 > div,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="WidgetBackground__Container"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="FeedContainer"] {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="FeedContainer"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 > div,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="WidgetBackground__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="FeedContainer"] {
       padding: 0 !important;
       margin: 0 !important;
       background: transparent !important;
@@ -844,9 +905,15 @@
     }
 
     /* List & Grid reset: vertical stacked flow */
+    #social-feed .es-posts,
+    #social-feed [class*="PostsList__Container"],
+    #social-feed [class*="PostsGrid__Container"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-posts,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="PostsList__Container"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="PostsGrid__Container"] {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="PostsGrid__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 .es-posts,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="PostsList__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="PostsGrid__Container"] {
       display: flex !important;
       flex-direction: column !important;
       gap: 0 !important;
@@ -858,10 +925,18 @@
     }
 
     /* Style each post card identically to .social-post */
+    #social-feed .es-post,
+    #social-feed [class*="PostCard__Container"],
+    #social-feed [class*="Post__Container"],
+    #social-feed [class*="Card__Container"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-post,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="PostCard__Container"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Post__Container"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Card__Container"] {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Card__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 .es-post,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="PostCard__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Post__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Card__Container"] {
       background: #ffffff !important;
       border: none !important;
       border-radius: 0 !important;
@@ -873,16 +948,28 @@
       transition: background 0.2s ease !important;
     }
 
+    #social-feed .es-post:hover,
+    #social-feed [class*="PostCard__Container"]:hover,
+    #social-feed [class*="Post__Container"]:hover,
+    #social-feed [class*="Card__Container"]:hover,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-post:hover,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="PostCard__Container"]:hover,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Post__Container"]:hover,
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Card__Container"]:hover {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Card__Container"]:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 .es-post:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="PostCard__Container"]:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Post__Container"]:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Card__Container"]:hover {
       background: #f8fafc !important;
     }
 
     /* Post Author Header */
+    #social-feed [class*="User__Container"],
+    #social-feed .es-header,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__Container"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-header {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-header,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="User__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 .es-header {
       display: flex !important;
       align-items: center !important;
       gap: 0.65rem !important;
@@ -891,15 +978,23 @@
       background: transparent !important;
     }
 
+    #social-feed [class*="User__AvatarLink"] img,
+    #social-feed [class*="User__Avatar"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__AvatarLink"] img,
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__Avatar"] {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__Avatar"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="User__AvatarLink"] img,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="User__Avatar"] {
       width: 28px !important;
       height: 28px !important;
       border-radius: 4px !important;
     }
 
+    #social-feed [class*="User__NameLink"],
+    #social-feed [class*="User__Name"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__NameLink"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__Name"] {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__Name"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="User__NameLink"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="User__Name"] {
       font-size: 0.8rem !important;
       font-weight: 700 !important;
       color: var(--text-primary, #0f172a) !important;
@@ -907,46 +1002,72 @@
       text-decoration: none !important;
     }
 
+    #social-feed [class*="User__Date"],
+    #social-feed [class*="Post__Date"],
+    #social-feed time,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="User__Date"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Post__Date"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 time {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 time,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="User__Date"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Post__Date"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 time {
       font-size: 0.72rem !important;
       color: #94a3b8 !important;
       font-weight: 500 !important;
     }
 
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="SourceLink__StyledLink"] {
+    #social-feed [class*="SourceLink__StyledLink"],
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="SourceLink__StyledLink"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="SourceLink__StyledLink"] {
       margin-left: auto !important;
       opacity: 0.6 !important;
       transition: opacity 0.2s !important;
     }
 
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="SourceLink__StyledLink"]:hover {
+    #social-feed [class*="SourceLink__StyledLink"]:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="SourceLink__StyledLink"]:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="SourceLink__StyledLink"]:hover {
       opacity: 1 !important;
     }
 
     /* Post Text Body */
+    #social-feed [class*="Text__Container"],
+    #social-feed [class*="Post__Text"],
+    #social-feed [class*="Content__Text"],
+    #social-feed .es-text-shortener-text,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Text__Container"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Post__Text"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Content__Text"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-text-shortener-text {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-text-shortener-text,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Text__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Post__Text"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Content__Text"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 .es-text-shortener-text {
       font-size: 0.82rem !important;
       line-height: 1.6 !important;
       color: var(--text-secondary, #475569) !important;
       margin: 0 0 0.5rem !important;
     }
 
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 a {
+    #social-feed a,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 a,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 a {
       color: #0284c7 !important;
       text-decoration: none !important;
     }
 
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 a:hover {
+    #social-feed a:hover,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 a:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 a:hover {
       text-decoration: underline !important;
     }
 
+    #social-feed [class*="TextControl__BaseControl"],
+    #social-feed .es-text-shortener-control,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="TextControl__BaseControl"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-text-shortener-control {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-text-shortener-control,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="TextControl__BaseControl"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 .es-text-shortener-control {
       font-size: 0.76rem !important;
       font-weight: 700 !important;
       color: #004d96 !important;
@@ -955,16 +1076,26 @@
       margin-top: 0.25rem !important;
     }
 
+    #social-feed [class*="TextControl__BaseControl"]:hover,
+    #social-feed .es-text-shortener-control:hover,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="TextControl__BaseControl"]:hover,
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-text-shortener-control:hover {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-text-shortener-control:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="TextControl__BaseControl"]:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 .es-text-shortener-control:hover {
       color: var(--accent-primary, #912338) !important;
       text-decoration: underline !important;
     }
 
     /* Embedded Media & Repost Cards */
+    #social-feed [class*="Media__Container"],
+    #social-feed [class*="Repost__Container"],
+    #social-feed [class*="Article__Container"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Media__Container"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Repost__Container"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Article__Container"] {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Article__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Media__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Repost__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Article__Container"] {
       margin-top: 0.65rem !important;
       margin-bottom: 0.5rem !important;
       border-radius: 6px !important;
@@ -973,15 +1104,23 @@
       background: #fafbfc !important;
     }
 
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 img {
+    #social-feed img,
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 img,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 img {
       border-radius: 4px !important;
       max-width: 100% !important;
     }
 
     /* Engagement Counters & Share */
+    #social-feed [class*="Counters__Container"],
+    #social-feed [class*="Actions__Container"],
+    #social-feed .es-counters,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Counters__Container"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Actions__Container"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-counters {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-counters,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Counters__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Actions__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 .es-counters {
       display: flex !important;
       align-items: center !important;
       justify-content: space-between !important;
@@ -992,16 +1131,24 @@
       color: #64748b !important;
     }
 
+    #social-feed [class*="Counters__Counter"],
+    #social-feed .es-share-button,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Counters__Counter"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-share-button {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-share-button,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Counters__Counter"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 .es-share-button {
       font-size: 0.72rem !important;
       color: #64748b !important;
       text-decoration: none !important;
       transition: color 0.15s !important;
     }
 
+    #social-feed [class*="Counters__Counter"]:hover,
+    #social-feed .es-share-button:hover,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Counters__Counter"]:hover,
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-share-button:hover {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-share-button:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Counters__Counter"]:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 .es-share-button:hover {
       color: #004d96 !important;
     }
 
@@ -1013,16 +1160,29 @@
     #linkedin-live-embed [class*="Layout"],
     #linkedin-live-embed [class*="Feed"],
     #linkedin-live-embed [class*="WidgetBackground"],
+    #bioprocessing-live-embed,
+    #bioprocessing-live-embed > div,
+    #bioprocessing-live-embed [class*="Container"],
+    #bioprocessing-live-embed [class*="Footer"],
+    #bioprocessing-live-embed [class*="Layout"],
+    #bioprocessing-live-embed [class*="Feed"],
+    #bioprocessing-live-embed [class*="WidgetBackground"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreContainer"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMore__Container"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreBlock"] {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreBlock"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="LoadMoreContainer"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="LoadMore__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="LoadMoreBlock"] {
       background: #ffffff !important;
       background-color: #ffffff !important;
     }
 
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreContainer"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMore__Container"],
-    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreBlock"] {
+    .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreBlock"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="LoadMoreContainer"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="LoadMore__Container"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="LoadMoreBlock"] {
       display: flex !important;
       justify-content: center !important;
       align-items: center !important;
@@ -1040,6 +1200,12 @@
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreButton"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Button__Container"][role="button"],
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-load-more-button,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 button,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [role="button"][class*="LoadMore"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="LoadMore__Button"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="LoadMoreButton"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Button__Container"][role="button"],
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 .es-load-more-button,
     .c-styled-load-more,
     #social-feed .c-styled-load-more {
       background: #ffffff !important;
@@ -1068,6 +1234,12 @@
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="LoadMoreButton"]:hover,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 [class*="Button__Container"][role="button"]:hover,
     .elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880 .es-load-more-button:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 button:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [role="button"][class*="LoadMore"]:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="LoadMore__Button"]:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="LoadMoreButton"]:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 [class*="Button__Container"][role="button"]:hover,
+    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 .es-load-more-button:hover,
     .c-styled-load-more:hover,
     #social-feed .c-styled-load-more:hover {
       background: #f8fafc !important;
@@ -1128,17 +1300,18 @@
       border: none !important;
     }
 
-    /* Bioprocessing Feed Container */
+    /* Bioprocessing Feed Container in Social Sidebar */
     .bioprocessing-feed-container {
-      grid-column: 1 / -1;
       width: 100%;
-      margin-top: 1rem;
-      border-radius: var(--radius-sm, 8px);
-    }
-
-    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639,
-    .elfsight-app-15638c72-2a65-4908-a335-0cba85e97639 * {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+      position: relative;
+      background: #ffffff;
+      flex: 1 1 0px;
+      min-height: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      margin: 0;
+      border: none;
+      border-radius: 0;
     }
 
     /* --------------------------------------------------
@@ -1492,33 +1665,6 @@
   <main id="main" class="news-main">
     <div class="container-wide">
 
-      <!-- Featured Story Section -->
-      <section id="featured-story" aria-label="Featured Story">
-        <div class="section-heading">
-          <h2><span class="accent-bar"></span>Featured story</h2>
-          <span class="section-note">Research infrastructure</span>
-        </div>
-        <article class="feature">
-          <a class="feature-image"
-            href="https://www.concordia.ca/news/stories/2025/12/11/concordia-expands-its-sustainable-biomanufacturing-capacity-with-5m-cfi-investment.html"
-            target="_blank" rel="noopener noreferrer" aria-label="Read Concordia CFI investment story">
-            <img src="assets/images/news/cfi-sustainable-biomanufacturing.webp"
-              alt="Concordia laboratory automation system behind glass" loading="lazy">
-            <span class="image-flag">Featured</span>
-          </a>
-          <div class="feature-text">
-            <div class="meta">Infrastructure <em>/</em> December 11, 2025</div>
-            <h2>Concordia expands sustainable biomanufacturing capacity with $5M investment</h2>
-            <p>New investment supports upgrades to the Genome Foundry and Bioprocessing facilities, expanding research capacity from early biological design through process development.</p>
-            <a class="text-link"
-              href="https://www.concordia.ca/news/stories/2025/12/11/concordia-expands-its-sustainable-biomanufacturing-capacity-with-5m-cfi-investment.html"
-              target="_blank" rel="noopener noreferrer">
-              Read the Concordia story <span aria-hidden="true">&nearr;</span>
-            </a>
-          </div>
-        </article>
-      </section>
-
       <!-- Lower Section: Latest Stories & Social Updates -->
       <div class="lower">
 
@@ -1526,18 +1672,18 @@
         <section class="latest" id="latest-stories" aria-label="Latest stories">
           <div class="story-head">
             <div>
-              <h2>Top stories</h2>
+              <h2>Stories</h2>
               <p>Updates and perspectives from across our community.</p>
             </div>
           </div>
 
-          <!-- Category Filters -->
+          <!-- Category Filters
           <div class="filters" role="group" aria-label="Filter news stories">
             <button class="filter active" data-filter="all" aria-pressed="true">All updates</button>
             <button class="filter" data-filter="research" aria-pressed="false">Research</button>
             <button class="filter" data-filter="people" aria-pressed="false">People</button>
             <button class="filter" data-filter="facilities" aria-pressed="false">Facilities</button>
-          </div>
+          </div> -->
 
           <!-- Stories Grid -->
           <div class="story-grid" id="story-grid">
@@ -1550,7 +1696,7 @@
                   alt="Illuminated DNA display in the Foundry laboratory" loading="lazy">
               </a>
               <div class="story-content">
-                <div class="meta">People &amp; perspectives <em>/</em> June 22, 2026</div>
+                <div class="meta">SYNBIO Canada <em>/</em> June 22, 2026</div>
                 <h3>Design. Build. Test. Repeat. A conversation with Angela Quach</h3>
                 <p>Angela discusses the role of lab automation, interdisciplinary teams and iterative experimentation in synthetic biology.</p>
                 <a class="text-link" href="https://www.synbiocanada.org/news/interview-with-angela-quach"
@@ -1560,8 +1706,26 @@
               </div>
             </article>
 
-            <!-- Card 2: Research -->
-            <article class="story-card" data-cat="research">
+            <!-- Card 2: Facilities / Community -->
+            <article class="story-card" data-cat="facilities research">
+              <a class="story-cover" href="https://www.linkedin.com/company/lrig-canada/"
+                target="_blank" rel="noopener noreferrer" aria-label="Explore LRIG Canada on LinkedIn">
+                <img src="assets/images/news/lrig-canada-symposium.webp"
+                  alt="Presentation on precision fermentation at the LRIG Canada Annual Symposium &amp; Exhibit at Concordia University" loading="lazy">
+              </a>
+              <div class="story-content">
+                <div class="meta">LRIG Canada <em>/</em> June 11, 2026</div>
+                <h3>Hosting the 2026 LRIG Canada Annual Symposium &amp; Exhibit in Montréal</h3>
+                <p>Concordia University’s Loyola Campus hosted LRIG Canada’s annual gathering, bringing together automation specialists, bioengineers, and researchers for discussions on laboratory robotics, precision fermentation, and high-throughput workflows.</p>
+                <a class="text-link" href="https://www.linkedin.com/company/lrig-canada/"
+                  target="_blank" rel="noopener noreferrer">
+                  View on LinkedIn <span aria-hidden="true">&nearr;</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 3: Research (Wide) -->
+            <article class="story-card wide" data-cat="research">
               <a class="story-cover"
                 href="https://nrc.canada.ca/en/stories/made-canada-medicine-shaping-future-cell-gene-therapy"
                 target="_blank" rel="noopener noreferrer" aria-label="Read NRC collaboration story">
@@ -1569,7 +1733,7 @@
                   alt="Illustrative cellular engineering structures" loading="lazy">
               </a>
               <div class="story-content">
-                <div class="meta">Research <em>/</em> April 20, 2026</div>
+                <div class="meta">NRC <em>/</em> April 20, 2026</div>
                 <h3>Shaping the future of cell and gene therapy in Canada</h3>
                 <p>How the NRC and Concordia Genome Foundry are developing automated genome-engineering platforms to support advanced cell research.</p>
                 <a class="text-link"
@@ -1580,8 +1744,28 @@
               </div>
             </article>
 
-            <!-- Card 3: Facilities (Wide) -->
-            <article class="story-card wide" data-cat="facilities">
+            <!-- Card 4: Facilities -->
+            <article class="story-card" data-cat="facilities">
+              <a class="story-cover"
+                href="https://www.concordia.ca/news/stories/2025/12/11/concordia-expands-its-sustainable-biomanufacturing-capacity-with-5m-cfi-investment.html"
+                target="_blank" rel="noopener noreferrer" aria-label="Read Concordia CFI investment story">
+                <img src="assets/images/news/cfi-sustainable-biomanufacturing.webp"
+                  alt="Concordia laboratory automation system behind glass" loading="lazy">
+              </a>
+              <div class="story-content">
+                <div class="meta">Concordia News <em>/</em> December 11, 2025</div>
+                <h3>Concordia expands sustainable biomanufacturing capacity with $5M investment</h3>
+                <p>New investment supports upgrades to the Genome Foundry and Bioprocessing facilities, expanding research capacity from early biological design through process development.</p>
+                <a class="text-link"
+                  href="https://www.concordia.ca/news/stories/2025/12/11/concordia-expands-its-sustainable-biomanufacturing-capacity-with-5m-cfi-investment.html"
+                  target="_blank" rel="noopener noreferrer">
+                  Read the Concordia story <span aria-hidden="true">&nearr;</span>
+                </a>
+              </div>
+            </article>
+            
+            <!-- Card 5: Facilities -->
+            <article class="story-card" data-cat="facilities">
               <a class="story-cover"
                 href="https://www.cbc.ca/news/canada/montreal/concordia-genome-robotics-lab-1.4784090"
                 target="_blank" rel="noopener noreferrer" aria-label="Read CBC News coverage of the Concordia Genome Foundry">
@@ -1591,7 +1775,7 @@
                 <span class="archive-label">From the archive</span>
               </a>
               <div class="story-content">
-                <div class="meta">Facilities <em>/</em> August 14, 2018</div>
+                <div class="meta">CBC News <em>/</em> August 14, 2018</div>
                 <h3>Concordia unveils Canada's first genome lab where 'robots do biology'</h3>
                 <p>CBC News reports on the launch of the automated Genome Foundry at the Centre for Applied Synthetic Biology, highlighting how robotic platforms accelerate experimental workflows and precision research.</p>
                 <a class="text-link"
@@ -1691,12 +1875,6 @@
               })();
             </script>
 
-            <!-- Elfsight Social Feed | Bioprocessing -->
-            <div class="bioprocessing-feed-container">
-              <script src="https://elfsightcdn.com/platform.js" async></script>
-              <div class="elfsight-app-15638c72-2a65-4908-a335-0cba85e97639" data-elfsight-app-lazy></div>
-            </div>
-
             <div class="no-results" id="no-results">No stories in this category yet.</div>
           </div>
         </section>
@@ -1708,21 +1886,42 @@
             <a href="https://www.linkedin.com/company/concordia-genome-foundry" target="_blank"
               rel="noopener noreferrer">View page &nearr;</a>
           </div>
-
-          <div class="social-shell">
-            <div class="social-brand">
-              <div class="li-mark" aria-hidden="true">in</div>
-              <div>
-                <b>Concordia Genome Foundry</b>
-                <span>Company updates</span>
+          <!-- Divider & Brand Label for Foundry -->
+            <div class="social-feed-divider">
+              <div class="social-feed-divider-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="#004d96" aria-hidden="true" style="flex-shrink:0;">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.54a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
+                </svg>
+                <span>Concordia Genome Foundry</span>
               </div>
-              <div class="preview-pill" id="preview-pill">UPDATES</div>
+              <span class="social-feed-divider-pill">UPDATES</span>
             </div>
 
-            <!-- Target for live LinkedIn feed widget -->
-            <div class="embed-target" id="linkedin-live-embed">
-              <!-- Elfsight LinkedIn Feed | News -->
+          <div class="social-shell">
+            <!-- Elfsight Platform Script for both feeds -->
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+
+            <!-- Target 1: Concordia Genome Foundry live LinkedIn feed widget (top half) -->
+            <div class="embed-target" id="linkedin-live-embed" aria-label="Concordia Genome Foundry LinkedIn feed">
+              <!-- Elfsight LinkedIn Feed | Genome Foundry -->
               <div class="elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880" data-elfsight-app-lazy></div>
+            </div>
+
+            <!-- Divider & Brand Label for Bioprocessing -->
+            <div class="social-feed-divider">
+              <div class="social-feed-divider-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="#004d96" aria-hidden="true" style="flex-shrink:0;">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.54a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
+                </svg>
+                <span>Concordia Bioprocessing</span>
+              </div>
+              <span class="social-feed-divider-pill">UPDATES</span>
+            </div>
+
+            <!-- Target 2: Concordia Bioprocessing live LinkedIn feed widget (bottom half) -->
+            <div class="embed-target bioprocessing-feed-container" id="bioprocessing-live-embed" aria-label="Concordia Bioprocessing LinkedIn feed">
+              <!-- Elfsight LinkedIn Feed | Bioprocessing -->
+              <div class="elfsight-app-15638c72-2a65-4908-a335-0cba85e97639" data-elfsight-app-lazy></div>
             </div>
 
             <!-- Fallback Preview Feed (hidden automatically when live widget loads) -->
@@ -1921,22 +2120,14 @@
         const latest = document.getElementById('latest-stories');
         const social = document.getElementById('social-feed');
         const socialShell = document.querySelector('.social-shell');
-        const bioContainer = document.querySelector('.bioprocessing-feed-container');
         if (!latest || !social || !socialShell) return;
 
         if (window.innerWidth > 850) {
-          let targetBottom;
-          // Determine the target bottom: end of bioprocessing-feed-container if visible, else end of stories column
-          if (bioContainer && !bioContainer.hidden && bioContainer.style.display !== 'none' && bioContainer.offsetHeight > 50) {
-            targetBottom = bioContainer.getBoundingClientRect().bottom + window.scrollY;
-          } else {
-            targetBottom = latest.getBoundingClientRect().bottom + window.scrollY;
-          }
-
+          const targetBottom = latest.getBoundingClientRect().bottom + window.scrollY;
           const socialShellTop = socialShell.getBoundingClientRect().top + window.scrollY;
           const targetShellHeight = Math.round(targetBottom - socialShellTop);
 
-          if (targetShellHeight > 250) {
+          if (targetShellHeight > 350) {
             socialShell.style.height = `${targetShellHeight}px`;
             socialShell.style.maxHeight = `${targetShellHeight}px`;
             social.style.height = '';
@@ -1945,8 +2136,8 @@
         } else {
           social.style.height = '';
           social.style.maxHeight = '';
-          socialShell.style.height = '580px';
-          socialShell.style.maxHeight = '580px';
+          socialShell.style.height = '750px';
+          socialShell.style.maxHeight = '750px';
         }
       }
 
@@ -1960,15 +2151,13 @@
         });
       }
 
-      // Observe size changes of the left stories column & bioprocessing container
+      // Observe size changes of the left stories column
       const latestStories = document.getElementById('latest-stories');
-      const bioFeedEl = document.querySelector('.bioprocessing-feed-container');
       if (window.ResizeObserver) {
         const resizeObs = new ResizeObserver(() => {
           scheduleSync();
         });
         if (latestStories) resizeObs.observe(latestStories);
-        if (bioFeedEl) resizeObs.observe(bioFeedEl);
       }
 
       window.addEventListener('resize', scheduleSync);
@@ -1978,15 +2167,16 @@
       const syncInterval = setInterval(scheduleSync, 350);
       setTimeout(() => clearInterval(syncInterval), 8000);
 
-      // 2. Live LinkedIn Feed (Elfsight) Integration & Style Polish
+      // 2. Live LinkedIn Feeds (Elfsight) Integration & Style Polish
       const shell = document.querySelector('.social-shell');
       const widget = document.querySelector('.elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880');
+      const bioWidget = document.querySelector('.elfsight-app-15638c72-2a65-4908-a335-0cba85e97639');
       const pill = document.getElementById('preview-pill');
 
-      if (shell && widget) {
+      if (shell) {
         const cleanAndStyleFeed = () => {
-          // Detect when Elfsight content has loaded
-          if (widget.children.length > 0) {
+          // Detect when Elfsight content has loaded in either widget
+          if ((widget && widget.children.length > 0) || (bioWidget && bioWidget.children.length > 0)) {
             shell.classList.add('has-live-feed');
             if (pill && !pill.classList.contains('live')) {
               pill.classList.add('live');
@@ -2007,7 +2197,7 @@
           });
 
           // Text-content based removal for watermark
-          document.querySelectorAll('#social-feed *, .bioprocessing-feed-container *').forEach(el => {
+          document.querySelectorAll('#social-feed *').forEach(el => {
             if (el.children.length === 0 && el.textContent) {
               const txt = el.textContent.trim().toLowerCase();
               if (txt.includes('free linkedin feed') || txt.includes('free social feed') || txt === 'free widget') {
@@ -2063,7 +2253,7 @@
           });
 
           // Ensure any feed footer or outer container background is white
-          document.querySelectorAll('#linkedin-live-embed [class*="Container"], #linkedin-live-embed [class*="Footer"], #linkedin-live-embed [class*="Layout"]').forEach(box => {
+          document.querySelectorAll('#social-feed [class*="Container"], #social-feed [class*="Footer"], #social-feed [class*="Layout"]').forEach(box => {
             box.style.setProperty('background-color', '#ffffff', 'important');
           });
 
@@ -2071,14 +2261,9 @@
           scheduleSync();
         };
 
-        // Observe continuous DOM changes (posts loading, button clicks, etc.)
+        // Observe continuous DOM changes inside the social shell
         const feedObserver = new MutationObserver(cleanAndStyleFeed);
         feedObserver.observe(shell, { childList: true, subtree: true });
-
-        const bioFeedContainer = document.querySelector('.bioprocessing-feed-container');
-        if (bioFeedContainer) {
-          feedObserver.observe(bioFeedContainer, { childList: true, subtree: true });
-        }
 
         // Initial checks & periodic verification
         cleanAndStyleFeed();
@@ -2091,10 +2276,29 @@
       if (socialShellEl) {
         socialShellEl.addEventListener('wheel', (e) => {
           const liveEmbed = document.getElementById('linkedin-live-embed');
+          const bioEmbed = document.getElementById('bioprocessing-live-embed');
           const fallback = document.getElementById('linkedin-static-preview');
-          const target = (socialShellEl.classList.contains('has-live-feed') && liveEmbed) ? liveEmbed :
-                         (liveEmbed && liveEmbed.offsetParent !== null && liveEmbed.scrollHeight > liveEmbed.clientHeight) ? liveEmbed :
-                         (fallback && fallback.offsetParent !== null) ? fallback : null;
+
+          let target = null;
+          if (liveEmbed && liveEmbed.contains(e.target)) {
+            target = liveEmbed;
+          } else if (bioEmbed && bioEmbed.contains(e.target)) {
+            target = bioEmbed;
+          } else if (fallback && fallback.contains(e.target)) {
+            target = fallback;
+          } else {
+            if (bioEmbed && liveEmbed) {
+              const dividerRect = document.querySelector('.social-feed-divider')?.getBoundingClientRect();
+              if (dividerRect && e.clientY > dividerRect.top) {
+                target = bioEmbed;
+              } else {
+                target = liveEmbed;
+              }
+            } else {
+              target = liveEmbed || fallback;
+            }
+          }
+
           if (target && target.scrollHeight > target.clientHeight) {
             if (!target.contains(e.target)) {
               target.scrollTop += e.deltaY;
@@ -2108,7 +2312,6 @@
       const buttons = document.querySelectorAll('.filter');
       const cards = document.querySelectorAll('.story-card');
       const noResults = document.getElementById('no-results');
-      const bioFeed = document.querySelector('.bioprocessing-feed-container');
 
       buttons.forEach(button => {
         button.addEventListener('click', () => {
@@ -2121,18 +2324,11 @@
 
           let visible = 0;
           cards.forEach(card => {
-            const show = (wanted === 'all' || card.dataset.cat === wanted);
+            const show = (wanted === 'all' || (card.dataset.cat && card.dataset.cat.split(/\s+/).includes(wanted)));
             card.hidden = !show;
             card.style.display = show ? '' : 'none';
             if (show) visible++;
           });
-
-          if (bioFeed) {
-            const showBio = (wanted === 'all' || wanted === 'facilities');
-            bioFeed.hidden = !showBio;
-            bioFeed.style.display = showBio ? '' : 'none';
-            if (showBio) visible++;
-          }
 
           if (noResults) {
             noResults.style.display = (visible === 0) ? 'block' : 'none';
