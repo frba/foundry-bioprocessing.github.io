@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navLinks.forEach(link => {
     link.classList.remove('active');
+    if (link.classList.contains('header-contact')) return;
 
     const href = link.getAttribute('href');
     if (!href) return;
