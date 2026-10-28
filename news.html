@@ -739,13 +739,13 @@
        (Styled to match .social-shell & .social-posts)
        -------------------------------------------------- */
     .embed-target,
-    #linkedin-live-embed,
     #bioprocessing-live-embed,
     .bioprocessing-feed-container,
     .social-fallback {
       position: relative;
       background: #ffffff;
-      flex: 1 1 0px;
+      flex: 1 1 100%;
+      height: 100%;
       min-height: 0;
       overflow-y: auto;
       overflow-x: hidden;
@@ -1303,9 +1303,10 @@
     /* Bioprocessing Feed Container in Social Sidebar */
     .bioprocessing-feed-container {
       width: 100%;
+      height: 100%;
       position: relative;
       background: #ffffff;
-      flex: 1 1 0px;
+      flex: 1 1 100%;
       min-height: 0;
       overflow-y: auto;
       overflow-x: hidden;
@@ -1899,39 +1900,11 @@
             <a href="https://www.linkedin.com/company/concordia-genome-foundry" target="_blank"
               rel="noopener noreferrer">View page &nearr;</a>
           </div>
-          <!-- Divider & Brand Label for Foundry -->
-            <div class="social-feed-divider">
-              <div class="social-feed-divider-title">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="#004d96" aria-hidden="true" style="flex-shrink:0;">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.54a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
-                </svg>
-                <span>Concordia Genome Foundry</span>
-              </div>
-              <span class="social-feed-divider-pill">UPDATES</span>
-            </div>
-
           <div class="social-shell">
-            <!-- Elfsight Platform Script for both feeds -->
+            <!-- Elfsight Platform Script -->
             <script src="https://elfsightcdn.com/platform.js" async></script>
 
-            <!-- Target 1: Concordia Genome Foundry live LinkedIn feed widget (top half) -->
-            <div class="embed-target" id="linkedin-live-embed" aria-label="Concordia Genome Foundry LinkedIn feed">
-              <!-- Elfsight LinkedIn Feed | Genome Foundry -->
-              <div class="elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880" data-elfsight-app-lazy></div>
-            </div>
-
-            <!-- Divider & Brand Label for Bioprocessing -->
-            <div class="social-feed-divider">
-              <div class="social-feed-divider-title">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="#004d96" aria-hidden="true" style="flex-shrink:0;">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.54a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
-                </svg>
-                <span>Concordia Bioprocessing</span>
-              </div>
-              <span class="social-feed-divider-pill">UPDATES</span>
-            </div>
-
-            <!-- Target 2: Concordia Bioprocessing live LinkedIn feed widget (bottom half) -->
+            <!-- Concordia Bioprocessing live LinkedIn feed widget (fills entire social feed) -->
             <div class="embed-target bioprocessing-feed-container" id="bioprocessing-live-embed" aria-label="Concordia Bioprocessing LinkedIn feed">
               <!-- Elfsight LinkedIn Feed | Bioprocessing -->
               <div class="elfsight-app-15638c72-2a65-4908-a335-0cba85e97639" data-elfsight-app-lazy></div>
@@ -2180,16 +2153,15 @@
       const syncInterval = setInterval(scheduleSync, 350);
       setTimeout(() => clearInterval(syncInterval), 8000);
 
-      // 2. Live LinkedIn Feeds (Elfsight) Integration & Style Polish
+      // 2. Live LinkedIn Feed (Elfsight) Integration & Style Polish
       const shell = document.querySelector('.social-shell');
-      const widget = document.querySelector('.elfsight-app-7ede42f6-f8d9-4dde-b45d-2dd78fb35880');
       const bioWidget = document.querySelector('.elfsight-app-15638c72-2a65-4908-a335-0cba85e97639');
       const pill = document.getElementById('preview-pill');
 
       if (shell) {
         const cleanAndStyleFeed = () => {
-          // Detect when Elfsight content has loaded in either widget
-          if ((widget && widget.children.length > 0) || (bioWidget && bioWidget.children.length > 0)) {
+          // Detect when Elfsight content has loaded in the widget
+          if (bioWidget && bioWidget.children.length > 0) {
             shell.classList.add('has-live-feed');
             if (pill && !pill.classList.contains('live')) {
               pill.classList.add('live');
@@ -2288,28 +2260,16 @@
       const socialShellEl = document.querySelector('.social-shell');
       if (socialShellEl) {
         socialShellEl.addEventListener('wheel', (e) => {
-          const liveEmbed = document.getElementById('linkedin-live-embed');
           const bioEmbed = document.getElementById('bioprocessing-live-embed');
           const fallback = document.getElementById('linkedin-static-preview');
 
           let target = null;
-          if (liveEmbed && liveEmbed.contains(e.target)) {
-            target = liveEmbed;
-          } else if (bioEmbed && bioEmbed.contains(e.target)) {
+          if (bioEmbed && bioEmbed.contains(e.target)) {
             target = bioEmbed;
           } else if (fallback && fallback.contains(e.target)) {
             target = fallback;
           } else {
-            if (bioEmbed && liveEmbed) {
-              const dividerRect = document.querySelector('.social-feed-divider')?.getBoundingClientRect();
-              if (dividerRect && e.clientY > dividerRect.top) {
-                target = bioEmbed;
-              } else {
-                target = liveEmbed;
-              }
-            } else {
-              target = liveEmbed || fallback;
-            }
+            target = bioEmbed || fallback;
           }
 
           if (target && target.scrollHeight > target.clientHeight) {
