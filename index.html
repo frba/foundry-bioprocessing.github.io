@@ -184,13 +184,13 @@
               For academic researchers, startups, industry teams, and translational partners.
             </p>
             <div class="dark-hero-cta">
-              <a href="WorkWithUs.html" class="dark-btn">
-                Work With Us
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
+              <a href="capabilities.html#redesign-microbial-engineering" class="dark-btn">
+                <span class="dark-btn-label">Foundry <br>capabilities</span>
+                <span class="dark-btn-arrow" aria-hidden="true">&#x2197;</span>
+              </a>
+              <a href="capabilities.html#redesign-bioprocessing" class="dark-btn dark-btn-bioprocessing">
+                <span class="dark-btn-label">Bioprocessing <br>capabilities</span>
+                <span class="dark-btn-arrow" aria-hidden="true">&#x2197;</span>
               </a>
             </div>
           </div>
@@ -273,28 +273,68 @@
           margin-bottom: 2.5rem;
         }
 
+        .dark-hero-cta {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 3rem;
+          align-items: stretch;
+        }
+
         .dark-hero-cta .dark-btn {
           display: inline-flex;
           align-items: center;
-          gap: 0.5rem;
+          justify-content: space-between;
+          gap: 1rem;
+          flex: 1 1 180px;
+          max-width: 235px;
           background: #ffffff;
           color: #0f172a;
-          padding: 0.85rem 1.75rem;
-          border-radius: 6px;
-          font-weight: 600;
+          padding: 0.85rem 1.25rem;
+          border-radius: 8px;
+          border: 1px solid rgba(255, 255, 255, 0.9);
+          font-size: 0.95rem;
+          font-weight: 700;
+          line-height: 1.25;
+          letter-spacing: -0.01em;
           text-decoration: none;
-          transition: background 0.2s ease, transform 0.2s ease;
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+          transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .dark-hero-cta .dark-btn svg {
+        .dark-hero-cta .dark-btn-label {
+          text-align: left;
+        }
+
+        .dark-hero-cta .dark-btn-arrow {
+          flex-shrink: 0;
+          font-size: 1.15rem;
+          line-height: 1;
           transition: transform 0.2s ease;
         }
 
         .dark-hero-cta .dark-btn:hover,
         .dark-hero-cta .dark-btn:focus {
-          background: #f8fafc;
-          transform: translateY(-1px);
+          background: #f1f5f9;
+          color: #0f172a;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.32);
           outline: none;
+        }
+
+        .dark-hero-cta .dark-btn.dark-btn-bioprocessing {
+          /* background: #6effd1;
+          border-color: #6effd1;
+          color: #0f172a; */
+          background: #92d7e8;
+          color: #0f172a;
+          border-color: #92d7e8;
+        }
+
+        .dark-hero-cta .dark-btn.dark-btn-bioprocessing:hover,
+        .dark-hero-cta .dark-btn.dark-btn-bioprocessing:focus {
+          background: #bae6fd;
+          border-color: #bae6fd;
+          color: #0f172a;
         }
 
         .dark-hero-cta .dark-btn:focus-visible {
@@ -302,9 +342,9 @@
           outline-offset: 4px;
         }
 
-        .dark-hero-cta .dark-btn:hover svg,
-        .dark-hero-cta .dark-btn:focus svg {
-          transform: translateX(2px);
+        .dark-hero-cta .dark-btn:hover .dark-btn-arrow,
+        .dark-hero-cta .dark-btn:focus .dark-btn-arrow {
+          transform: translate(2px, -2px);
         }
 
         .dark-hero-media {
