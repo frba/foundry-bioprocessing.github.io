@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
       (currentFile === 'WorkWithUs.html' || currentFile === 'partners.html');
     const isResourcesSection =
       (link.classList.contains('nav-dropdown-toggle') || link.getAttribute('data-nav') === 'resources') &&
-      (currentFile === 'instrumentation.html' || currentFile === 'collaboration.html');
+      (currentFile === 'instrumentation.html' || currentFile === 'collaboration.html' || currentFile === 'funding.html');
 
     if (isHome || isSamePage || isCapabilitiesSection || isWorkWithUsSection || isResourcesSection) {
       link.classList.add('active');

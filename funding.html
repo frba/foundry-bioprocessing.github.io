@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funding Opportunities | Concordia Genome Foundry</title>
+  <meta name="description"
+    content="Explore a non-exhaustive directory of external funding programs for academic research, collaborative projects and industry R&amp;D.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <style>
+    /* PAGE ROOT & TOKENS (Matching Instrumentation & Collaboration) */
+    :root {
+      --dir-navy: #0b1120;
+      --dir-navy-light: #152238;
+      --dir-accent-cyan: #0284c7;
+      --dir-accent-cyan-light: #e0f2fe;
+      --dir-burgundy: #912338;
+      --dir-burgundy-light: #fbf0f4;
+      --dir-card-bg: #ffffff;
+      --dir-border: #e2e8f0;
+      --dir-text-muted: #64748b;
+      --dir-text-dark: #0f172a;
+    }
+
+    /* REDESIGN HERO (Matching Instrumentation) */
+    .redesign-hero {
+      background-color: #0b1120;
+      color: #f8fafc;
+      position: relative;
+      overflow: hidden;
+      padding: calc(94px + 3rem) 1.5rem 0 1.5rem;
+      min-height: auto;
+    }
+
+    .redesign-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+      z-index: 2;
+    }
+
+    .redesign-hero-content {
+      max-width: 600px;
+      padding-bottom: 3rem;
+    }
+
+    .redesign-eyebrow {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #bae6fd;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .redesign-hero-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .redesign-hero-body {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+
+    .redesign-jump-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 1000px) {
+      .redesign-jump-links {
+        flex-wrap: nowrap;
+      }
+
+      .redesign-jump-link {
+        white-space: nowrap;
+      }
+    }
+
+    .redesign-jump-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #38bdf8;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-bottom-color 0.2s;
+    }
+
+    .redesign-jump-link:hover,
+    .redesign-jump-link:focus-visible {
+      color: #bae6fd;
+      border-bottom-color: #bae6fd;
+      outline: none;
+    }
+
+    .redesign-hero-image-col {
+      position: relative;
+      width: calc(100% + 3rem);
+      margin-left: -1.5rem;
+      height: 250px;
+      border-radius: 0;
+    }
+
+    .redesign-hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Desktop layout */
+    @media (min-width: 900px) {
+      .redesign-hero {
+        padding: 94px 0 0 0;
+        height: clamp(400px, 50vh, 470px);
+        display: flex;
+        align-items: center;
+      }
+
+      .redesign-hero-inner {
+        grid-template-columns: 55% 45%;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        gap: 2rem;
+        padding: 0 2rem;
+      }
+
+      .redesign-hero-content {
+        padding-bottom: 0;
+        max-width: none;
+      }
+
+      .redesign-hero-image-col {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 55%;
+        height: 100%;
+        margin-left: 0;
+      }
+
+      /* Fade gradient on left edge of the image to blend into background */
+      .redesign-hero-image-col::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35%;
+        height: 100%;
+        background: linear-gradient(to right, #0b1120 0%, transparent 100%);
+      }
+    }
+
+    /* DIRECTORY MAIN SECTION */
+    .dir-main {
+      background-color: #f8fafc;
+      padding: 3rem 0 5rem 0;
+      min-height: 800px;
+    }
+
+    .dir-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* INTRO SECTION */
+    .intro {
+      display: flex;
+      justify-content: space-between;
+      gap: 2.5rem;
+      align-items: flex-start;
+      margin-bottom: 1.75rem;
+    }
+
+    .intro-copy {
+      max-width: 720px;
+    }
+
+    .intro h2 {
+      font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      margin: 0 0 0.65rem 0;
+    }
+
+    .intro p {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: #475569;
+      margin: 0;
+    }
+
+    .intro-note {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #0284c7;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      max-width: 300px;
+      font-size: 0.825rem;
+      line-height: 1.55;
+      color: #64748b;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+      flex-shrink: 0;
+    }
+
+    .intro-note strong {
+      display: block;
+      color: #0f172a;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    @media (max-width: 800px) {
+      .intro {
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .intro-note {
+        max-width: none;
+        width: 100%;
+      }
+    }
+
+    /* STALE NOTICE & ABOUT LISTINGS NOTICE */
+    .stale-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 4px solid #d97706;
+      border-radius: 10px;
+      font-size: 0.875rem;
+      color: #92400e;
+      line-height: 1.6;
+    }
+
+    .stale-notice[hidden] {
+      display: none !important;
+    }
+
+    .stale-notice .stale-icon {
+      font-size: 1.15rem;
+      line-height: 1.3;
+      color: #d97706;
+      flex: none;
+    }
+
+    .stale-notice a {
+      color: #92400e;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .notice {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #64748b;
+      border-radius: 12px;
+      padding: 1rem 1.35rem;
+      margin-bottom: 2rem;
+      color: #475569;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+    }
+
+    .notice .mark {
+      font-size: 1.15rem;
+      line-height: 1.4;
+      color: #0284c7;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .notice strong {
+      display: block;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #0f172a;
+      margin-bottom: 0.2rem;
+    }
+
+    .notice p {
+      margin: 0;
+    }
+
+    /* CONTROLS TOOLBAR (Matching Instrumentation .dir-toolbar) */
+    .curate-tools {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1.75rem;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin: 0 0 0.35rem 0;
+      letter-spacing: -0.015em;
+      color: #0f172a;
+    }
+
+    .filter-intro {
+      margin: 0 0 1.5rem 0;
+      color: #64748b;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .pathways-head,
+    .find-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .find-label,
+    .filter-group-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+      display: block;
+    }
+
+    .find-sub {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 0.2rem;
+    }
+
+    .pathway-show-all {
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      white-space: nowrap;
+      color: #0f172a;
+      cursor: pointer;
+    }
+
+    .pathway-show-all input {
+      width: 16px;
+      height: 16px;
+      accent-color: #0284c7;
+      cursor: pointer;
+    }
+
+    .pathway-choices {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 0.85rem;
+    }
+
+    @media (max-width: 800px) {
+      .pathway-choices {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pathway-choice {
+      position: relative;
+      display: block;
+      cursor: pointer;
+    }
+
+    .pathway-choice input {
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+      pointer-events: none;
+    }
+
+    .pathway-tile {
+      height: 100%;
+      padding: 1rem 1.15rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
+      transition: all 0.15s ease;
+    }
+
+    .pathway-tile strong {
+      font-size: 0.925rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #0f172a;
+    }
+
+    .pathway-tile small {
+      font-size: 0.8rem;
+      line-height: 1.45;
+      color: #64748b;
+    }
+
+    .pathway-choice:hover .pathway-tile {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    .pathway-choice input:checked + .pathway-tile {
+      background: #0f172a;
+      border-color: #0f172a;
+      color: #ffffff;
+    }
+
+    .pathway-choice input:checked + .pathway-tile strong {
+      color: #ffffff;
+    }
+
+    .pathway-choice input:checked + .pathway-tile small {
+      color: #cbd5e1;
+    }
+
+    .pathway-choice input:focus-visible + .pathway-tile {
+      outline: 2px solid #0284c7;
+      outline-offset: 2px;
+    }
+
+    .pathway-help {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: #64748b;
+      margin: 0.85rem 0 0 0;
+    }
+
+    .filter-separator {
+      border-top: 1px solid #f1f5f9;
+      margin: 1.5rem 0;
+    }
+
+    /* AREA PILLS (Matching .dir-pill-btn) */
+    .area-picker {
+      margin-top: 1.15rem;
+    }
+
+    .filter-group-title {
+      margin-bottom: 0.65rem;
+    }
+
+    .area-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .area-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 0.9rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.825rem;
+      font-weight: 500;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+
+    .area-pill:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      color: #0f172a;
+    }
+
+    .area-pill.selected {
+      background: #0f172a;
+      border-color: #0f172a;
+      color: #ffffff;
+    }
+
+    .area-pill:focus-visible {
+      outline: 2px solid #0284c7;
+      outline-offset: 2px;
+    }
+
+    /* SEARCH & SELECT FIELDS ROW */
+    .frow {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.25fr;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .mobile-area-select {
+      display: none !important;
+    }
+
+    @media (max-width: 800px) {
+      .frow {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .frow label:first-child {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .area-picker {
+        display: none;
+      }
+
+      .mobile-area-select {
+        display: grid !important;
+      }
+
+      .frow {
+        grid-template-columns: 1fr;
+      }
+
+      .frow label:first-child {
+        grid-column: span 1;
+      }
+    }
+
+    .frow label {
+      display: grid;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+    }
+
+    .curate-tools input[type="search"],
+    .curate-tools select {
+      width: 100%;
+      height: 46px;
+      padding: 0 0.9rem;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 0.925rem;
+      font-weight: 400;
+      color: #0f172a;
+      transition: all 0.2s;
+    }
+
+    .curate-tools input[type="search"]:focus,
+    .curate-tools select:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* RESULTS STATUS BAR (Matching .dir-status-bar) */
+    .toolbox-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+      font-size: 0.85rem;
+      color: #64748b;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .toolbox-footer button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: none;
+      border: none;
+      color: #0284c7;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+
+    .toolbox-footer button:hover {
+      background: #e0f2fe;
+    }
+
+    /* SECTION HEADER (Matching .dir-group-header) */
+    .results-layout {
+      display: block;
+    }
+
+    #opportunities {
+      padding: 0;
+      margin-top: 0;
+      scroll-margin-top: 90px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.85rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    @media (max-width: 640px) {
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #0284c7;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem !important;
+      font-weight: 700;
+      line-height: 1.25 !important;
+      color: #0f172a;
+      letter-spacing: -0.015em !important;
+      margin: 0 0 0.25rem 0 !important;
+      text-align: left;
+    }
+
+    .section-intro {
+      font-size: 0.9rem !important;
+      color: #64748b;
+      margin: 0 !important;
+      line-height: 1.45 !important;
+      text-align: left;
+    }
+
+    .result-count {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* OPPORTUNITY CARDS GRID (Matching .dir-grid & .dir-card) */
+    .opportunity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      .opportunity-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .opportunity-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .simplified-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .simplified-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.08);
+      border-color: #cbd5e1;
+    }
+
+    .funder-label {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background: #e0f2fe;
+      color: #0369a1;
+      margin-bottom: 0.65rem;
+    }
+
+    .simplified-card h3 {
+      font-size: 1.075rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #0f172a;
+      margin: 0 0 0.5rem 0;
+      letter-spacing: -0.01em;
+    }
+
+    .card-description {
+      font-size: 0.85rem;
+      line-height: 1.55;
+      color: #64748b;
+      margin: 0 0 1rem 0;
+      flex: 1;
+    }
+
+    .card-facts {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 0.85rem;
+      margin: 0 0 1rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .card-facts span {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+    }
+
+    .card-facts strong {
+      display: block;
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 0.2rem;
+      line-height: 1.3;
+    }
+
+    .concise-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: auto;
+      margin-bottom: 1rem;
+    }
+
+    .concise-tags span {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #475569;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.2rem 0.5rem;
+    }
+
+    .concise-tags .eligibility-pill {
+      background: #fef3c7;
+      border-color: #fde68a;
+      color: #b45309;
+      border-radius: 999px;
+    }
+
+    .card-actions {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .card-actions > a {
+      color: #0284c7;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color 0.15s;
+    }
+
+    .card-actions > a:hover {
+      color: #0369a1;
+      text-decoration: underline;
+    }
+
+    .more-details {
+      position: relative;
+      font-weight: 500;
+    }
+
+    .more-details summary {
+      cursor: pointer;
+      color: #475569;
+      font-size: 0.8rem;
+      font-weight: 600;
+      list-style: none;
+      user-select: none;
+      transition: color 0.15s;
+    }
+
+    .more-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .more-details summary::after {
+      content: ' +';
+      font-weight: 700;
+      color: #0284c7;
+    }
+
+    .more-details[open] summary::after {
+      content: ' −';
+    }
+
+    .more-details summary:hover {
+      color: #0284c7;
+    }
+
+    .more-details[open] {
+      width: 100%;
+    }
+
+    .more-details[open] summary {
+      margin: 0.25rem 0 0.5rem 0;
+    }
+
+    .expanded-details {
+      font-size: 0.78rem;
+      line-height: 1.55;
+      color: #334155;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.65rem 0.8rem;
+    }
+
+    .expanded-details p {
+      margin: 0 0 0.5rem 0;
+    }
+
+    .expanded-details p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* EMPTY STATE */
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 3.5rem 2rem;
+      background: #ffffff;
+      border: 1px dashed #cbd5e1;
+      border-radius: 16px;
+      color: #64748b;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+    }
+
+    .empty-state.show {
+      display: block;
+    }
+
+    /* FUNDERS DIRECTORY ACCORDION */
+    .funders-sidebar {
+      margin-top: 2.5rem;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+    }
+
+    .funders-sidebar > summary {
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+    }
+
+    .funders-sidebar > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .funders-sidebar > summary::after {
+      content: 'Expand +';
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #0284c7;
+    }
+
+    .funders-sidebar[open] > summary::after {
+      content: 'Collapse −';
+    }
+
+    .funder-list {
+      margin-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .funder-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #f1f5f9;
+      color: #0f172a;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .funder-row:last-child {
+      border-bottom: 0;
+    }
+
+    .funder-row strong {
+      font-size: 0.925rem;
+      display: block;
+      color: #0f172a;
+    }
+
+    .funder-row small {
+      display: block;
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 0.15rem;
+    }
+
+    .funder-row:hover strong {
+      color: #0284c7;
+      text-decoration: underline;
+    }
+
+    .more-funders summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #0284c7;
+      padding: 0.85rem 0 0.25rem 0;
+    }
+
+    .funders-sidebar .result-count {
+      display: inline-block;
+      margin-top: 0.75rem;
+    }
+
+    /* UNIVERSITY RESOURCE CALLOUT */
+    .university-resource {
+      margin-top: 2rem;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+    }
+
+    .university-resource strong {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .university-resource span {
+      font-size: 0.875rem;
+      color: #64748b;
+      line-height: 1.55;
+      display: block;
+      max-width: 680px;
+    }
+
+    .university-resource a {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #0284c7;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .university-resource a:hover {
+      color: #0369a1;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      .university-resource {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* METHOD / NOTES STRIP */
+    .method-line {
+      border-top: 1px solid #e2e8f0;
+      margin-top: 2.25rem;
+      padding-top: 1.25rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    /* BOTTOM CTA SECTION (Matching .dir-cta-section) */
+    .dir-cta-section {
+      background: linear-gradient(135deg, #0b1120 0%, #152745 100%);
+      color: #ffffff;
+      padding: 4.5rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .dir-cta-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .dir-cta-content {
+      max-width: 700px;
+    }
+
+    .dir-cta-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #bae6fd;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .dir-cta-title {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #ffffff;
+    }
+
+    .dir-cta-text {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin: 0;
+    }
+
+    .dir-cta-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .dir-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #0284c7;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.65rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .dir-btn-primary:hover {
+      background: #0369a1;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .dir-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.65rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .dir-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SITE NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/icons/genome_foundry_logo.svg" alt="Genome Foundry Logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="publications.html">Research &amp; Impact</a>
+        <a href="news.html">News &amp; Updates</a>
+        <div class="nav-dropdown">
+          <a href="collaboration.html" class="nav-dropdown-toggle active" data-nav="resources" aria-haspopup="true" aria-expanded="false">
+            Resources
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="instrumentation.html" class="nav-dropdown-item" role="menuitem">Instrumentation</a>
+            <a href="collaboration.html" class="nav-dropdown-item" role="menuitem">Concordia Researcher Directory</a>
+            <a href="funding.html" class="nav-dropdown-item active" role="menuitem">Funding Opportunities</a>
+          </div>
+        </div>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="mobile-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-nav" class="mobile-nav">
+      <div class="mobile-nav-links">
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="WorkWithUs.html">Work With Us</a>
+        <a href="publications.html">Research &amp; Impact</a>
+        <a href="news.html">News &amp; Updates</a>
+        <a href="collaboration.html" class="active" data-nav="resources">Resources</a>
+        <a href="instrumentation.html" class="mobile-nav-sublink">Instrumentation</a>
+        <a href="collaboration.html" class="mobile-nav-sublink">Concordia Researcher Directory</a>
+        <a href="funding.html" class="mobile-nav-sublink active">Funding Opportunities</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="mobile-nav-utility">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="redesign-hero" aria-label="Funding Opportunities Hero">
+    <div class="redesign-hero-inner">
+      <div class="redesign-hero-content">
+        <span class="redesign-eyebrow">Explore research funding programs</span>
+        <h1 class="redesign-hero-title">Funding Opportunities</h1>
+        <p class="redesign-hero-body">A snapshot of funding programs for academic research, collaborative projects, and industry R&amp;D.</p>
+
+        <div class="redesign-jump-links">
+          <a href="#opportunities" class="redesign-jump-link">Browse Funding Programs &darr;</a>
+          <a href="WorkWithUs.html" class="redesign-jump-link">Work With Us &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="redesign-hero-image-col" aria-hidden="true">
+      <img src="assets/images/funding_hero.png" alt="Research funding and laboratory collaboration at Concordia Genome Foundry"
+        class="redesign-hero-image">
+    </div>
+  </section>
+
+  <!-- EDITING NOTE for monthly updates: After re-verifying sources, change ONLY main[data-last-reviewed] (ISO YYYY-MM-DD) for the review date; the visible reviewed dates and 60-day notice are computed from it. Program calls with fixed deadlines must have accurate deadline_iso; passed calls are automatically omitted from current opportunities and shown as past deadlines in the funder directory. -->
+  <main class="dir-main" data-last-reviewed="2026-10-21">
+    <div class="dir-container">
+
+      <section aria-labelledby="introTitle" class="intro">
+        <div class="intro-copy">
+          <h2 id="introTitle">Explore funding programs.</h2>
+          <p>Browse programs for academic research, university–industry collaborations, and industry-led R&amp;D. Each listing links to the funder’s official program information.</p>
+        </div>
+        <aside class="intro-note">
+          <strong id="lastReviewedLabel">Last reviewed &middot; 21 October 2026</strong>
+          Reviewed monthly. Please confirm program deadlines and allowable expenses with the funder.
+        </aside>
+      </section>
+
+      <aside aria-live="polite" class="stale-notice" hidden id="staleNotice" role="status">
+        <span aria-hidden="true" class="stale-icon">&#9719;</span>
+        <span>This directory has not been reviewed for 60 days or more. For additional or more recent opportunities, see <a href="https://fis.encs.concordia.ca/fund/Action/public/browsefund.mvc" rel="noopener noreferrer" target="_blank">Concordia University’s funding directory &nearr;</a>. Please verify current terms with each funder.</span>
+      </aside>
+
+      <div class="notice" role="note">
+        <div aria-hidden="true" class="mark">&#9432;</div>
+        <div>
+          <strong>About these listings</strong>
+          <p>This is a non-exhaustive reference directory. Please check each funder’s current requirements, including applicant and project eligibility, partnership conditions, deadlines, and whether funding can cover research services or facility costs at the Foundry.</p>
+        </div>
+      </div>
+
+      <section aria-label="Filter funding resources" class="curate-tools">
+        <h2 class="filter-title">Browse funding opportunities</h2>
+        <p class="filter-intro">Search by program, funder or research area, and explore different project types. Filters are for browsing, not eligibility screening.</p>
+
+        <div class="pathways-head">
+          <div>
+            <div class="find-label">What kind of research project?</div>
+            <div class="find-sub">Select a funding pathway, or view all three.</div>
+          </div>
+          <label class="pathway-show-all">
+            <input checked name="pathway" type="radio" value="all"> All pathways
+          </label>
+        </div>
+
+        <div aria-label="Funding pathway" class="pathway-choices" role="group">
+          <label class="pathway-choice">
+            <input name="pathway" type="radio" value="Academic Research">
+            <span class="pathway-tile">
+              <strong>Academic Research</strong>
+              <small>University research without an industry partner</small>
+            </span>
+          </label>
+          <label class="pathway-choice">
+            <input name="pathway" type="radio" value="Academic–Industry Collaborative R&amp;D">
+            <span class="pathway-tile centered">
+              <strong>Academic–Industry Collaborative R&amp;D</strong>
+              <small>Research projects involving academic and industry partners</small>
+            </span>
+          </label>
+          <label class="pathway-choice">
+            <input name="pathway" type="radio" value="Industry R&amp;D">
+            <span class="pathway-tile">
+              <strong>Industry R&amp;D</strong>
+              <small>Company-led research and development projects</small>
+            </span>
+          </label>
+        </div>
+        <p class="pathway-help">Academic and industry partners generally arrange their own collaborations. The Foundry can discuss a potential technical contribution but does not arrange research partners.</p>
+
+        <div class="filter-separator"></div>
+
+        <div class="find-top">
+          <div>
+            <div class="find-label">Refine results</div>
+            <div class="find-sub">Choose a research area or search by program, funder, applicant location and funding type.</div>
+          </div>
+        </div>
+
+        <div class="area-picker">
+          <div class="filter-group-title">Research area</div>
+          <div aria-label="Research area filters" class="area-pills">
+            <button aria-pressed="true" class="area-pill selected" data-area="all" type="button">All areas</button>
+            <button aria-pressed="false" class="area-pill" data-area="Genomics" type="button">Genomics &amp; SynBio</button>
+            <button aria-pressed="false" class="area-pill" data-area="Cell &amp; gene therapy" type="button">Cell &amp; gene therapy</button>
+            <button aria-pressed="false" class="area-pill" data-area="Industrial biotech" type="button">Industrial biotech</button>
+            <button aria-pressed="false" class="area-pill" data-area="Agriculture &amp; food" type="button">Agriculture &amp; food</button>
+            <button aria-pressed="false" class="area-pill" data-area="AI &amp; machine learning" type="button">AI &amp; machine learning</button>
+          </div>
+        </div>
+
+        <div class="frow">
+          <label>Search
+            <input autocomplete="off" id="search" placeholder="Program, funder or research area…" type="search">
+          </label>
+          <label>Applicant location
+            <select id="geography">
+              <option value="all">Any location</option>
+              <option value="Quebec">Québec</option>
+              <option value="Canada">Canada-wide</option>
+              <option value="International">International</option>
+            </select>
+          </label>
+          <label class="mobile-area-select">Research area
+            <select id="area">
+              <option value="all">All research areas</option>
+              <option value="Genomics">Genomics &amp; SynBio</option>
+              <option value="Cell &amp; gene therapy">Cell &amp; gene therapy</option>
+              <option value="Industrial biotech">Industrial biotech</option>
+              <option value="Agriculture &amp; food">Agriculture &amp; food</option>
+              <option value="AI &amp; machine learning">AI &amp; machine learning</option>
+            </select>
+          </label>
+          <label>Funding type
+            <select id="mechanism">
+              <option value="all">All funding types</option>
+              <option value="Research grants">Research grants</option>
+              <option value="Collaborative R&amp;D">Collaborative R&amp;D</option>
+              <option value="Technology development &amp; commercialization">Technology development &amp; commercialization</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="toolbox-footer">
+          <span>Québec results include Canada-wide funding programs.</span>
+          <button id="reset" type="button">Clear filters</button>
+        </div>
+      </section>
+
+      <div class="results-layout">
+        <section class="section" id="opportunities">
+          <div class="section-header">
+            <div>
+              <div class="eyebrow">Programs in this directory</div>
+              <h1>Funding opportunities</h1>
+              <p class="section-intro">Browse the programs below and follow the official links for current requirements, deadlines, and eligible expenses.</p>
+            </div>
+            <div class="result-count" id="opCount"></div>
+          </div>
+          <div class="opportunity-grid" id="opGrid"></div>
+          <div class="empty-state" id="opEmpty">No programs match these filters. Try adjusting your search.</div>
+        </section>
+      </div>
+
+      <details class="funders-sidebar" id="directory">
+        <summary id="funderTitle">Explore funding organizations</summary>
+        <div class="funder-list" id="funderGrid"></div>
+        <div class="result-count" id="funderCount"></div>
+        <div class="empty-state" id="funderEmpty">No funding organizations match those filters.</div>
+      </details>
+
+      <aside aria-labelledby="moreFundingTitle" class="university-resource">
+        <div>
+          <strong id="moreFundingTitle">Looking for more funding opportunities?</strong>
+          <span>Concordia University maintains a broader directory of research funding opportunities across disciplines, including grants, partnerships and international programs.</span>
+        </div>
+        <a href="https://fis.encs.concordia.ca/fund/Action/public/browsefund.mvc" rel="noopener noreferrer" target="_blank">Explore Concordia's funding directory &nearr;</a>
+      </aside>
+
+      <div class="method-line">
+        <span id="footerReviewedLabel">Last directory review: 21 October 2026</span>
+        <span>Review frequency: monthly</span>
+        <span>Deadlines and rules may change between reviews</span>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CTA BOTTOM SECTION -->
+  <section class="dir-cta-section" aria-labelledby="projectTitle">
+    <div class="dir-cta-inner">
+      <div class="dir-cta-content">
+        <span class="dir-cta-eyebrow">Ideas into experiments</span>
+        <h2 class="dir-cta-title" id="projectTitle">Have a project in mind?</h2>
+        <p class="dir-cta-text">
+          The Concordia Genome Foundry develops and adapts automated experimental workflows for academic and industry projects. Talk to us about the technical scope of your research.
+        </p>
+      </div>
+      <div class="dir-cta-actions">
+        <a href="WorkWithUs.html#contact" class="dir-btn-primary">
+          Explore working with us
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="mailto:genomefoundry@concordia.ca?subject=Funding%20%26%20Research%20Project%20Inquiry" class="dir-btn-secondary">
+          Contact Foundry
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer"
+    style="margin-top: 0; background: #07111F; color: #f0f2f5; padding: clamp(32px, 5vw, 48px) 1.5rem clamp(18px, 3vw, 24px);">
+    <div class="container-wide" style="max-width: 1200px; margin: 0 auto;">
+      <div class="footer-main-row"
+        style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem; margin-bottom: 2rem;">
+
+        <!-- Left Side: Brand -->
+        <div class="footer-brand" style="flex: 1 1 300px;">
+          <div class="footer-logos" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+            <a href="index.html" aria-label="Concordia Genome Foundry homepage"
+              style="display: block; width: fit-content; text-decoration: none;">
+              <img src="assets/icons/genome_foundry_logo.svg" alt="Concordia Genome Foundry"
+                style="height: 38px; width: auto; max-width: 150px; display: block; filter: brightness(0) invert(1);">
+            </a>
+            <a href="index.html" aria-label="Concordia Bioprocessing"
+              style="display: block; width: fit-content; text-decoration: none;">
+              <img src="assets/icons/CBP_logo_white.png" alt="Concordia Bioprocessing"
+                style="height: 25px; width: auto; max-width: 160px; display: block; filter: brightness(0) invert(1);">
+            </a>
+          </div>
+          <p style="font-size: 14px; line-height: 1.5; color: #a1a1aa; margin-bottom: 0.75rem; max-width: 480px;">
+            Integrated research infrastructure for high-throughput bioengineering, microbial and mammalian
+            workflow development, and microbial bioprocessing.
+          </p>
+          <p
+            style="font-size: 13px; font-weight: 600; color: #d4d4d8; letter-spacing: 0.05em; text-transform: uppercase; margin: 0;">
+            A CONCORDIA UNIVERSITY RESEARCH PLATFORM.
+          </p>
+        </div>
+
+        <!-- Right Side: Links -->
+        <div class="footer-contact" style="display: flex; flex-wrap: wrap; gap: 3rem; padding-top: 0.25rem;">
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">EXPLORE</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="about.html" style="color: inherit; text-decoration: none; transition: opacity 0.2s;">About</a>
+              <a href="capabilities.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Capabilities</a>
+              <a href="instrumentation.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrumentation</a>
+              <a href="publications.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Research &amp; Impact</a>
+              <a href="news.html"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">News &amp; Updates</a>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">CONNECT</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="mailto:genomefoundry@concordia.ca" class="footer-link-item"
+              style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg> genomefoundry@concordia.ca
+              </a>
+              <a href="https://www.linkedin.com/company/concordia-genome-foundry/" target="_blank" rel="noopener"
+                class="footer-link-item"
+                style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+                LinkedIn
+              </a>
+              <a href="WorkWithUs.html" class="footer-link-item"
+                style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+                Work With Us
+              </a>
+              <a href="partners.html" class="footer-link-item"
+                style="display: flex; align-items: center; gap: 0.5rem; color: #f0f2f5; text-decoration: none; font-size: 14px; transition: opacity 0.2s;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Ecosystem
+              </a>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column;">
+            <span
+              style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #a1a1aa; display: block; margin-bottom: 0.75rem;">User
+              Tools</span>
+            <div style="font-size: 0.85rem; color: #f0f2f5; display: flex; flex-direction: column; gap: 14px;">
+              <a href="https://foundry.concordia.ca/bookr/"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;">Instrument
+                Booking</a>
+              <a href="https://foundry-lims.concordia.ca/"
+                style="color: inherit; text-decoration: none; transition: opacity 0.2s;"
+                title="Concordia network or authorized access may be required."
+                aria-label="LIMS, Concordia access may be required">LIMS (Concordia access)</a>
+            </div>
+            <span
+              style="font-size: 0.75rem; color: #6b7280; display: block; margin-top: 0.75rem; max-width: 150px; line-height: 1.4;">For
+              trained users with active accounts.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="footer-bottom-row"
+        style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; font-size: 13px; color: #a1a1aa;">
+        <p style="margin: 0;">&copy; 2026 Concordia Genome Foundry. All rights reserved.</p>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="https://www.concordia.ca/privacy.html" target="_blank" rel="noopener noreferrer"
+            style="color: #a1a1aa; text-decoration: none; transition: color 0.2s;">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script id="funding-data" type="application/json">{"programs": [{"id": "cqdm-synergiqc", "funder": "CQDM", "name": "SynergiQc", "area": ["Cell & gene therapy", "Genomics"], "region": ["Quebec"], "audience": ["academic", "startup", "industry", "partnership"], "mechanisms": ["Collaborative R&D"], "route": "Facility fees through a Québec research partner", "status": "Open — deadline published", "deadline": "2026-11-04", "description": "Biopharmaceutical R&D between eligible Québec companies and public research institutions.", "evidence": "CQDM explicitly identifies laboratory platform fees among eligible institutional project costs.", "program_url": "https://cqdm.org/en/programs/synergiqc/", "evidence_url": "https://cqdm.org/en/programs/synergiqc/", "feature": true, "note": "Eligible research expenses are incurred by the Québec public research institution; this is not a general contract-services subsidy.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "deadline_iso": "2026-11-04", "display_deadline": "4 Nov 2026", "date_label": "Deadline", "short_status": "Open — new applications", "verification_status": "pending", "amount": "Varies by project", "verification_label": "Confirm eligible expenses", "verification_needed": "Confirm project and platform expenses with CQDM; notice of intent is required at least seven days before the deadline."}, {"id": "npc-poc", "funder": "Natural Products Canada", "name": "Proof of Concept Program", "area": ["Industrial biotech", "Agriculture & food", "Cell & gene therapy"], "region": ["Canada"], "audience": ["startup", "industry"], "mechanisms": ["Technology development & commercialization"], "pathways": ["Industry R&D"], "route": "Subcontracted experimental work is an eligible expense category; the applicant must demonstrate commercial feasibility and obtain NPC approval for the proposed scope and budget.", "status": "Applications accepted on an ongoing basis", "deadline": "Rolling intake", "description": "Support for commercial proof-of-concept and validation of Canadian bio-based products and technologies.", "evidence": "NPC specifies eligible subcontractor/consultant expenses and allows applications on an ongoing basis. Eligible companies require NPC membership and a Canadian incorporation.", "program_url": "https://www.naturalproductscanada.com/proof-of-concept/", "evidence_url": "https://www.naturalproductscanada.com/how-we-help/", "feature": true, "note": "Up to $350,000, normally up to 50% of eligible project costs. Only applied commercial feasibility work at TRL 4–9; no basic research. Applicants must contact NPC first; specific Foundry costs require approval.", "verified": "2026-10-21", "deadline_iso": null, "display_deadline": "Rolling", "date_label": "Applications", "short_status": "No fixed deadline", "verification_status": "verified", "amount": "Up to $350,000"}, {"id": "nserc-international", "funder": "NSERC", "name": "Alliance International Collaboration Grants", "area": ["Genomics", "Industrial biotech"], "region": ["Canada"], "audience": ["academic", "partnership"], "mechanisms": ["Research grants"], "route": "Canadian university research partner and facility access", "status": "Open — deadline published", "deadline": "2026-11-25", "description": "Funding for Canadian university researchers working with an internationally funded research team; no industry partner is required.", "evidence": "Application instructions explicitly permit facility-use fees to be itemized in the Canadian research budget.", "program_url": "https://nserc-crsng.canada.ca/en/funding-opportunity/alliance-international-collaboration-grants", "evidence_url": "https://nserc-crsng.canada.ca/en/alliance-international-collaboration-grants-instructions-completing-application-form-101", "feature": true, "note": "Funding is awarded to the Canadian research team; the foreign team must obtain its own eligible funding.", "verified": "2026-10-21", "pathways": ["Academic Research"], "deadline_iso": "2026-11-25", "display_deadline": "25 Nov 2026", "date_label": "Deadline", "short_status": "Open — eligible academic teams", "verification_status": "verified"}, {"id": "nserc-advantage", "funder": "NSERC", "name": "Alliance Advantage", "area": ["Genomics", "Industrial biotech"], "region": ["Canada"], "audience": ["academic", "startup", "industry", "partnership"], "mechanisms": ["Collaborative R&D", "Research grants"], "route": "Research collaboration via eligible university", "status": "Rolling — no deadline", "deadline": "No fixed deadline", "description": "Partner-driven natural-sciences and engineering research led by an eligible Canadian university researcher.", "evidence": "NSERC funds university research costs, but expressly excludes contract research and purchases from partner organizations.", "program_url": "https://nserc-crsng.canada.ca/en/funding-opportunity/alliance-advantage", "evidence_url": "https://nserc-crsng.canada.ca/en/funding-opportunity/alliance-advantage", "feature": true, "note": "Collaboration route only. Do not present as paying the Foundry as an independent contractor.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "deadline_iso": null, "display_deadline": "Rolling", "date_label": "Applications", "short_status": "No fixed deadline", "verification_status": "verified", "amount": "$20,000–$1 million/year"}, {"id": "aafc-agriscience", "funder": "Agriculture and Agri-Food Canada", "name": "AgriScience — Projects", "area": ["Agriculture & food", "Genomics", "Industrial biotech"], "region": ["Canada"], "audience": ["startup", "industry", "partnership"], "mechanisms": ["Research grants", "Collaborative R&D"], "route": "Contracted research services at a Canadian university", "status": "Intake listed — reconfirm", "deadline": "Until intake closes or funds committed", "description": "Pre-commercial agricultural and agri-food R&D led by eligible industry or not-for-profit applicants.", "evidence": "AAFC guidance explicitly covers research agreements, contracted services, university providers and Canadian service providers.", "program_url": "https://agriculture.canada.ca/en/programs/agriscience-projects", "evidence_url": "https://agriculture.canada.ca/en/programs/agriscience-projects/step-5-complete-application-apply", "feature": true, "note": "Academic institutions cannot apply directly, but can serve under an eligible research agreement.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D", "Industry R&D"], "deadline_iso": null, "display_deadline": "Open until funds committed", "date_label": "Applications", "short_status": "No fixed date announced", "verification_status": "verified"}, {"id": "genome-gapp", "funder": "Genome Canada", "name": "Genomic Applications Partnership Program (GAPP / PPAG)", "area": ["Genomics", "Industrial biotech", "Agriculture & food", "Cell & gene therapy"], "region": ["Canada"], "audience": ["academic", "startup", "industry", "partnership"], "mechanisms": ["Collaborative R&D", "Technology development & commercialization"], "route": "Research partner or quoted technical service provider", "status": "Check current call", "deadline": "See funder", "description": "Genomics commercialization projects pairing a Canadian business with an eligible academic research partner.", "evidence": "Genome Canada’s 2026 guidelines explicitly permit fee-for-service providers and require technical scope, prices and provider letters.", "program_url": "https://genomequebec.com/possibilites-de-financement/concours-genome-canada-programme-de-partenariats-pour-les-applications-de-la-genomique-ppag/", "evidence_url": "https://genomecanada.ca/wp-content/uploads/2026/02/Guidelines-for-Funding_2026_final.pdf", "feature": true, "note": "Applications use regional genome centres; individual competitions may add rules.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "deadline_iso": null, "short_status": "Check current call", "verification_status": "pending", "amount": "Up to $2 million (national stream)", "display_deadline": "Consult Genome Centre", "date_label": "Application timing", "verification_label": "Confirm eligible expenses", "verification_needed": "Apply through a regional Genome Centre; confirm the current intake and eligible facility expenses."}, {"id": "mapaq-pib", "funder": "MAPAQ", "name": "Programme Innovation bioalimentaire — applied research (Volet 2)", "area": ["Agriculture & food", "Industrial biotech", "Genomics"], "region": ["Quebec"], "audience": ["academic", "industry", "partnership"], "mechanisms": ["Research grants", "Collaborative R&D"], "route": "Specialized research contracts and external lab analyses in Québec", "status": "Call-dependent", "deadline": "Consult current Volet 2 call", "description": "Applied research, experimental development and adaptation of technology in the Québec bio-food sector.", "evidence": "Official program guide explicitly permits contracts for specialized research-institution services and external laboratory analyses.", "program_url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/agriculture/aide-financiere/programme-innovation-bioalimentaire", "evidence_url": "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/agriculture-pecheries-alimentation/programmes/innovation-bioalimentaire/PG_programme-innovation-bioalimentaire_MAPAQ.pdf", "feature": false, "note": "Volet 2 is call-dependent; the rolling March 2028 deadline on the webpage applies to Volet 1, not Volet 2.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "deadline_iso": null, "short_status": "Call-dependent", "verification_status": "verified"}, {"id": "cribiq-research", "funder": "CRIBIQ", "name": "PSO — Bioprocesses & Bioproducts", "area": ["Industrial biotech", "Agriculture & food"], "region": ["Quebec"], "audience": ["academic", "startup", "industry", "partnership"], "mechanisms": ["Collaborative R&D"], "route": "Platform fees at participating research institution", "status": "LOI accepted continuously", "deadline": "See CRIBIQ calls", "description": "Collaborative development of bioproducts and bioprocesses, including fermentation, purification and scale-up.", "evidence": "CRIBIQ’s published research-program guidelines expressly include platform fees among eligible direct costs.", "program_url": "https://cribiq.bio/programmes-generaux/bioprocedes-et-bioproduits/", "evidence_url": "https://cribiq.bio/programmes-generaux/bioprocedes-et-bioproduits/", "feature": true, "note": "The public cost evidence comes from a previous program guide: only feature a new call after confirming it uses equivalent rules.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "deadline_iso": "2027-02-16", "short_status": "Next call unconfirmed", "verification_status": "pending", "display_deadline": "16 Feb 2027", "date_label": "Detailed application", "amount": "Consult program", "verification_label": "Confirm eligible expenses", "verification_needed": "A letter of intent is required first and accepted continuously. Confirm eligible facility expenses with CRIBIQ."}, {"id": "gq-human", "funder": "Génome Québec", "name": "Genomics Integration — Human Health", "area": ["Genomics", "Cell & gene therapy"], "region": ["Quebec"], "audience": ["academic", "startup", "industry", "partnership"], "mechanisms": ["Research grants", "Collaborative R&D"], "route": "Funded research through a Québec academic institution", "status": "Previous 2026 call closed", "deadline": "2026-05-11 (past)", "description": "Genomics proof-of-concept collaborations between Québec public researchers and nonacademic users.", "evidence": "Program explicitly funds Québec academic research in partnership with a user; Genome Québec funds go to the academic partner.", "program_url": "https://genomequebec.com/possibilites-de-financement/70-programme-dintegration-de-la-genomique-sante-humaine/", "evidence_url": "https://genomequebec.com/possibilites-de-financement/70-programme-dintegration-de-la-genomique-sante-humaine/", "feature": true, "note": "Previous deadline shown for transparency; do not describe as currently open.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "deadline_iso": null, "short_status": "Previous 2026 call closed", "verification_status": "verified", "amount": "$50,000–$200,000 (previous round)", "display_deadline": "Previous round closed", "date_label": "Status"}, {"id": "gq-agri", "funder": "Génome Québec", "name": "Genomics Integration — Agri-food, Forestry & Environment", "area": ["Genomics", "Agriculture & food"], "region": ["Quebec"], "audience": ["academic", "startup", "industry", "partnership"], "mechanisms": ["Research grants", "Collaborative R&D"], "route": "Funded research through a Québec academic institution", "status": "Open", "deadline": "Consult next call", "description": "Genomics and other omics projects with a Québec research partner and a nonacademic user.", "evidence": "Program requires a Québec research institution and nonacademic partner; research project takes place through that institution.", "program_url": "https://genomequebec.com/possibilites-de-financement/programme-dintegration-de-la-genomique-volet-agriculture-et-bioalimentaire-foresterie-et-environnement/", "evidence_url": "https://genomequebec.com/possibilites-de-financement/programme-dintegration-de-la-genomique-volet-agriculture-et-bioalimentaire-foresterie-et-environnement/", "feature": true, "note": "Requires a Québec academic partner and a non-academic user, with at least 1:1 co-funding. Confirm platform fees with Génome Québec and the institution.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "deadline_iso": "2027-01-12", "short_status": "Previous round; next unconfirmed", "verification_status": "verified", "display_deadline": "12 Jan 2027", "date_label": "Application deadline", "amount": "$50,000–$150,000"}, {"id": "horizon-pillar2", "funder": "Horizon Europe", "name": "Pillar II collaborative research calls", "area": ["Genomics", "Cell & gene therapy", "Industrial biotech", "Agriculture & food"], "region": ["International", "Canada"], "audience": ["academic", "startup", "industry", "partnership"], "mechanisms": ["Collaborative R&D", "Research grants"], "route": "Canadian beneficiary or contracted Montréal research services", "status": "Call-dependent", "deadline": "Varies by EU call", "description": "Eligible international research and innovation consortia, including Canadian participation in associated Pillar II calls.", "evidence": "Canadian government guidance explicitly lists subcontracting, purchased services, and internally invoiced services as eligible categories subject to grant terms.", "program_url": "https://research-and-innovation.ec.europa.eu/strategy/strategy-research-and-innovation/europe-world/international-cooperation/association-horizon-europe/canada_en", "evidence_url": "https://ised-isde.canada.ca/site/ised/en/horizon-europe-applicant-resources/eligible-costs", "feature": true, "note": "Only eligible Pillar II calls and grant-agreement-approved costs. No blanket eligibility across all Horizon schemes.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "deadline_iso": null, "short_status": "Call-dependent", "verification_status": "pending", "amount": "Varies by call", "display_deadline": "Varies by call", "date_label": "Application timing", "verification_label": "Confirm eligible expenses", "verification_needed": "Verify the specific call, Canadian participation rules and eligible project expenses."}, {"id": "nserc-discovery", "funder": "NSERC", "name": "Discovery Grants (individual)", "area": ["Genomics", "Industrial biotech", "Agriculture & food"], "region": ["Canada"], "audience": ["academic"], "mechanisms": ["Research grants"], "pathways": ["Academic Research"], "route": "Fees for the use of equipment or a research facility by an eligible university grant holder", "status": "2026 competition — NOI closed", "deadline": "2026-11-02 (full application, NOI required)", "description": "Research programs in the natural sciences and engineering led by eligible Canadian university researchers; no industry partner is required.", "evidence": "NSERC application instructions explicitly require applicants to describe equipment or facility-use fees, including hours and rates.", "program_url": "https://nserc-crsng.canada.ca/en/funding-opportunity/discovery-grants-program-individual", "evidence_url": "https://nserc-crsng.canada.ca/en/funding-opportunity/discovery-grants-program-individual", "feature": true, "note": "The 2026 notice-of-intent deadline has passed. Fees must be legitimate research costs approved under the grant and institutional rules.", "verified": "2026-10-21", "deadline_iso": null, "short_status": "2026 competition — NOI closed", "verification_status": "verified", "amount": "Varies by award", "display_deadline": "Check competition", "date_label": "Application timing"}, {"id": "cihr-project", "funder": "CIHR", "name": "Project Grants", "area": ["Cell & gene therapy", "Genomics"], "region": ["Canada"], "audience": ["academic"], "mechanisms": ["Research grants"], "pathways": ["Academic Research"], "route": "Eligible direct research-service expenses under a Canadian institution’s approved project budget", "status": "Fall 2026 application closed", "deadline": "Fall 2026: 2026-09-09 (passed)", "description": "Investigator-led health research grants available through eligible Canadian institutions, without an industry partner requirement.", "evidence": "CIHR Project Grant application guidance lists services among allowable direct research costs; each expense must be justified against the research plan.", "program_url": "https://cihr-irsc.gc.ca/e/49051.html", "evidence_url": "https://cihr-irsc.gc.ca/e/49560.html", "feature": true, "note": "Current autumn round is closed. Verify upcoming competition rules before a future round is featured.", "verified": "2026-10-21", "deadline_iso": null, "short_status": "Fall 2026 application closed", "verification_status": "verified", "amount": "Varies by award", "display_deadline": "Check next competition", "date_label": "Application timing"}, {"id": "prompt-collaborative", "funder": "PROMPT", "name": "Collaborative Innovation — Research / Industry", "area": ["AI & machine learning"], "region": ["Quebec"], "audience": ["academic", "startup", "industry", "partnership"], "mechanisms": ["Collaborative R&D"], "route": "Québec public university or research institution participates as funded research partner; the research centre manages the award. This does not independently establish permission for an ordinary fee-for-service invoice.", "status": "Accepting inquiries — check program intake", "deadline": "Contact PROMPT for current intake", "description": "Supports Québec company–university research collaborations, including AI-enabled R&D. Projects with experimental biology must fit program objectives.", "evidence": "PROMPT identifies Québec universities and public research institutions as eligible research partners, and funding is managed by the research centre.", "program_url": "https://promptinnov.com/opportunites/innovation-collaborative/", "evidence_url": "https://promptinnov.com/opportunites/innovation-collaborative/", "feature": true, "note": "Application timing and project budgets are confirmed with PROMPT. The program is not dedicated exclusively to biotechnology or AI.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "display_deadline": "Ask PROMPT", "date_label": "Application timing", "short_status": "Contact program", "verification_status": "verified"}, {"id": "partenar-ia-enterprise", "funder": "CRIBIQ", "name": "PARTENAR-IA Entreprise", "area": ["AI & machine learning", "Industrial biotech"], "region": ["Quebec"], "audience": ["startup", "industry", "partnership"], "mechanisms": ["Collaborative R&D", "Technology development & commercialization"], "route": "CRIBIQ identifies AI projects involving Québec companies and public research institutions, but the current program-specific treatment of Foundry invoices and/or facility fees is not established.", "status": "Needs verification — spending route and current intake", "deadline": "Next deadline not confirmed", "description": "Québec AI innovation for the bioeconomy, including company partnerships with eligible public research institutions.", "evidence": "The CRIBIQ page confirms the company–research partnership model but does not provide sufficient current details on eligible external laboratory expenditures.", "program_url": "https://cribiq.bio/financement-entreprises/partenar-ia-entreprise/", "evidence_url": "https://cribiq.bio/financement-entreprises/partenar-ia-entreprise/", "feature": true, "note": "Do not treat as eligible for Foundry services until current program guidance is checked.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D", "Industry R&D"], "display_deadline": "Not confirmed", "date_label": "Next deadline", "short_status": "Under review", "verification_status": "pending", "verification_needed": "Confirm current competition status and whether a Québec university facility can charge eligible project costs.", "amount": "Consult program", "verification_label": "Confirm eligible expenses"}, {"id": "partenar-ia-academic", "funder": "CRIBIQ", "name": "PARTENAR-IA Académique", "area": ["AI & machine learning", "Industrial biotech"], "region": ["Quebec"], "audience": ["academic", "industry", "partnership", "startup"], "mechanisms": ["Collaborative R&D"], "route": "The published model allows Québec public research institutions and industry partners to run funded AI collaborative R&D, but the public application timetable located is from 2022.", "status": "Needs verification — current call", "deadline": "New round not confirmed", "description": "Academic–industry AI research partnership funding through Québec sectoral research organizations.", "evidence": "RSRI program rules describe public research centres as eligible project performers; published call dates shown are from 2022.", "program_url": "https://cribiq.bio/programmes-thematiques/partenar-ia/", "evidence_url": "https://rsri.quebec/appel-a-projets-en-intelligence-artificielle-partenar-ia/appel-a-projets-partenar-ia-academique/", "feature": true, "note": "Historical funding route; no currently open call confirmed. Reverify applicable 2026–27 terms.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "display_deadline": "Not announced", "date_label": "Next call", "short_status": "Under review", "verification_status": "pending", "verification_needed": "Confirm an active or upcoming round and its current budget and facility-use rules.", "amount": "Consult program", "verification_label": "Confirm eligible expenses"}, {"id": "ngen-genomake", "funder": "NGen", "name": "GenoMAKE — Genomics Advanced Manufacturing Challenge", "area": ["AI & machine learning", "Genomics", "Industrial biotech"], "region": ["Canada"], "audience": ["startup", "industry", "partnership"], "mechanisms": ["Collaborative R&D", "Technology development & commercialization"], "route": "NGen confirms industry-led Canadian consortia but the GenoMAKE-specific rules for subcontracting to a Montréal university facility are not publicly confirmed.", "status": "Open for screening — Foundry eligibility pending", "deadline": "2026-11-20", "description": "Industry-led genomics, AI and automation projects that advance Canadian manufacturing capability.", "evidence": "NGen posts the competition and deadlines; full current financial guidance requires a member login. General NGen subcontracting rules cannot automatically be applied to GenoMAKE.", "program_url": "https://www.ngen.ca/funding/genomake", "evidence_url": "https://www.ngen.ca/funding/genomake", "feature": true, "note": "Screening 20 Nov 2026; detailed application 18 Dec 2026. Confirmation of Foundry spend is pending.", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D", "Industry R&D"], "deadline_iso": "2026-11-20", "display_deadline": "20 Nov 2026", "date_label": "Screening deadline", "short_status": "Eligibility under review", "verification_status": "pending", "verification_needed": "Check the GenoMAKE 2026 cost guide for academic subcontractors, outside research services and facility charges in Canada.", "amount": "$150,000–$300,000", "verification_label": "Confirm eligible expenses"}, {"id": "mitacs-accelerate", "funder": "Mitacs", "name": "Accelerate", "area": ["Genomics", "Cell & gene therapy", "Industrial biotech", "Agriculture & food", "AI & machine learning"], "region": ["Canada"], "audience": ["academic", "industry", "startup", "partnership"], "mechanisms": ["Collaborative R&D"], "route": "Research expenses administered through the academic institution", "status": "Consult Mitacs", "description": "Research internships connecting academic researchers and trainees with eligible partner organizations on collaborative projects.", "program_url": "https://www.mitacs.ca/our-programs/accelerate/", "evidence_url": "https://www.mitacs.ca/our-programs/accelerate/", "feature": true, "pathways": ["Academic–Industry Collaborative R&D"], "display_deadline": "Contact Mitacs", "date_label": "Application timing", "verification_status": "pending", "verification_label": "Confirm eligible expenses", "verification_needed": "Confirm with Mitacs and Concordia whether the proposed Foundry fees are allowable project expenses. Up to $5,000 per standard internship unit may support eligible research costs.", "amount": "$15,000 per standard unit"}, {"id": "pic-technology", "name": "Technology Leadership", "funder": "Protein Industries Canada", "area": ["Agriculture & food", "Industrial biotech", "Genomics"], "region": ["Canada"], "audience": ["academic", "industry", "startup", "partnership"], "mechanisms": ["Collaborative R&D"], "route": "Confirm the project and proposed expenses with the funder", "description": "Collaborative projects developing ingredients, products and technologies for the plant-based food ecosystem.", "program_url": "https://www.proteinindustriescanada.ca/technology", "evidence_url": "https://www.proteinindustriescanada.ca/technology", "feature": true, "pathways": ["Academic–Industry Collaborative R&D", "Industry R&D"], "display_deadline": "Rolling", "date_label": "Application timing", "amount": "Consult program", "verification_status": "pending", "verification_label": "Confirm eligible expenses", "verification_needed": "The program guide identifies certain subcontractor and equipment or facility costs as eligible. Confirm project fit and the proposed Foundry expenses."}, {"id": "arena-rna", "name": "RNA Innovation for Companies", "funder": "CQDM / AReNA", "area": ["Cell & gene therapy", "Genomics"], "region": ["Quebec"], "audience": ["academic", "industry", "startup", "partnership"], "mechanisms": ["Collaborative R&D"], "route": "Confirm the project and proposed expenses with the funder", "description": "Supports Québec companies developing technologies for RNA therapeutics.", "program_url": "https://cqdm.org/programs/innovation-arn-en-entreprise-arena/", "evidence_url": "https://cqdm.org/programs/innovation-arn-en-entreprise-arena/", "feature": true, "pathways": ["Industry R&D", "Academic–Industry Collaborative R&D"], "display_deadline": "Next round not announced", "date_label": "Application timing", "amount": "Consult program", "verification_status": "pending", "verification_label": "Confirm eligible expenses", "verification_needed": "The previous round is closed. Confirm next intake and allowable Foundry expenses with CQDM."}, {"id": "med-platform", "name": "Industrial Access to Academic Platforms", "funder": "Médicament Québec", "area": ["Cell & gene therapy", "Genomics"], "region": ["Quebec"], "audience": ["academic", "industry", "startup", "partnership"], "mechanisms": ["Collaborative R&D"], "route": "Confirm the project and proposed expenses with the funder", "description": "Collaborative drug and vaccine R&D using academic expertise and infrastructure.", "program_url": "https://medicamentquebec.ca/wp-content/uploads/2026/02/Guide-daccompagnement_2026-02-25_FR_FINAL-1.pdf", "evidence_url": "https://medicamentquebec.ca/wp-content/uploads/2026/02/Guide-daccompagnement_2026-02-25_FR_FINAL-1.pdf", "feature": true, "pathways": ["Academic–Industry Collaborative R&D"], "display_deadline": "Next call unconfirmed", "date_label": "Application timing", "amount": "Consult program", "verification_status": "pending", "verification_label": "Confirm current call", "verification_needed": "The cited guide describes a previous call. Confirm a future round and the project conditions with Médicament Québec."}, {"id": "scn-research", "name": "Regenerative Medicine Research Awards", "funder": "Stem Cell Network", "area": ["Cell & gene therapy"], "region": ["Canada"], "audience": ["academic", "industry", "startup", "partnership"], "mechanisms": ["Collaborative R&D"], "route": "Confirm the project and proposed expenses with the funder", "description": "Research funding for stem cell and regenerative medicine innovation and translation.", "program_url": "https://stemcellnetwork.ca/funding/research-funding/", "evidence_url": "https://stemcellnetwork.ca/funding/research-funding/", "feature": true, "pathways": ["Academic Research", "Academic–Industry Collaborative R&D"], "display_deadline": "Initial applications closed", "date_label": "Application timing", "amount": "Varies by award", "verification_status": "pending", "verification_label": "Confirm eligible expenses", "verification_needed": "The 2026 letter-of-intent stage is closed; the full application is restricted to invited applicants. Confirm future rounds and platform expenses."}, {"id": "irap-rd", "name": "Industrial Research Assistance Program", "funder": "NRC IRAP", "area": ["Genomics", "Cell & gene therapy", "Industrial biotech", "Agriculture & food", "AI & machine learning"], "region": ["Canada"], "audience": ["academic", "industry", "startup", "partnership"], "mechanisms": ["Technology development & commercialization"], "route": "Confirm the project and proposed expenses with the funder", "description": "Advisory support and possible funding for Canadian SMEs developing innovative products or processes.", "program_url": "https://nrc.canada.ca/en/support-technology-innovation/financial-support-technology-innovation", "evidence_url": "https://nrc.canada.ca/en/support-technology-innovation/financial-support-technology-innovation", "feature": true, "pathways": ["Industry R&D"], "display_deadline": "Contact an advisor", "date_label": "Application timing", "amount": "Project-dependent", "verification_status": "pending", "verification_label": "Confirm eligible expenses", "verification_needed": "Funding is assessed individually; confirm whether external experimental research or Foundry fees are allowable."}, {"id": "cfin-booster", "name": "Innovation Booster", "funder": "Canadian Food Innovation Network", "area": ["Agriculture & food", "Industrial biotech"], "region": ["Canada"], "audience": ["academic", "industry", "startup", "partnership"], "mechanisms": ["Technology development & commercialization"], "route": "Confirm the project and proposed expenses with the funder", "description": "Helps eligible Canadian SMEs address food innovation challenges and technical barriers.", "program_url": "https://cfin-rcia.ca/funding/booster", "evidence_url": "https://cfin-rcia.ca/funding/booster", "feature": true, "pathways": ["Industry R&D"], "display_deadline": "Next intake unconfirmed", "date_label": "Application timing", "amount": "Up to $100,000", "verification_status": "pending", "verification_label": "Confirm eligible expenses", "verification_needed": "Verify the next intake, sector scope and eligibility of external research expenses."}], "funders": [{"name": "Agriculture and Agri-Food Canada", "area": "Agriculture and food research", "region": "Canada", "pathway": "Contracted research and Canadian university services are eligible", "programs": ["AgriScience — Projects"], "audience": ["industry", "partnership", "startup"], "areas": ["Agriculture & food", "Genomics", "Industrial biotech"], "regions": ["Canada"], "mechanisms": ["Collaborative R&D", "Research grants"], "url": "https://agriculture.canada.ca/en/programs/agriscience-projects", "evidence_url": "https://agriculture.canada.ca/en/programs/agriscience-projects/step-5-complete-application-apply", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D", "Industry R&D"], "verification_status": "verified"}, {"name": "CIHR", "area": "Investigator-led health research", "region": "Canada", "pathway": "Eligible direct research services under approved project budgets", "programs": ["Project Grants"], "audience": ["academic"], "areas": ["Cell & gene therapy", "Genomics"], "regions": ["Canada"], "mechanisms": ["Research grants"], "pathways": ["Academic Research"], "url": "https://cihr-irsc.gc.ca/e/49051.html", "evidence_url": "https://cihr-irsc.gc.ca/e/49560.html", "verified": "2026-10-21", "verification_status": "verified"}, {"name": "CQDM", "area": "Biopharmaceutical R&D", "region": "Québec", "pathway": "Includes laboratory platform fees for public research partners", "programs": ["SynergiQc"], "audience": ["academic", "industry", "partnership", "startup"], "areas": ["Cell & gene therapy", "Genomics"], "regions": ["Quebec"], "mechanisms": ["Collaborative R&D"], "url": "https://cqdm.org/en/programs/synergiqc/", "evidence_url": "https://cqdm.org/en/programs/synergiqc/", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "verification_status": "verified"}, {"name": "CRIBIQ", "area": "Industrial bioprocessing", "region": "Québec", "pathway": "Published research guides permit platform fees", "programs": ["Collaborative Industrial Bioprocess Research"], "audience": ["academic", "industry", "partnership", "startup"], "areas": ["Agriculture & food", "Industrial biotech"], "regions": ["Quebec"], "mechanisms": ["Collaborative R&D"], "url": "https://cribiq.qc.ca/", "evidence_url": "https://cribiq.qc.ca/app/uploads/2023/08/CRIBIQ_PR_23-24_Guide_BPI_VF.pdf", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "verification_status": "verified"}, {"name": "Genome Canada", "area": "Genomics and applied biotechnology", "region": "Canada", "pathway": "Allows quoted fee-for-service technical work under its funding rules", "programs": ["Genomic Applications Partnership Program (GAPP / PPAG)"], "audience": ["academic", "industry", "partnership", "startup"], "areas": ["Agriculture & food", "Cell & gene therapy", "Genomics", "Industrial biotech"], "regions": ["Canada"], "mechanisms": ["Collaborative R&D", "Technology development & commercialization"], "url": "https://genomequebec.com/possibilites-de-financement/concours-genome-canada-programme-de-partenariats-pour-les-applications-de-la-genomique-ppag/", "evidence_url": "https://genomecanada.ca/wp-content/uploads/2026/02/Guidelines-for-Funding_2026_final.pdf", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "verification_status": "verified"}, {"name": "Génome Québec", "area": "Genomics and omics integration", "region": "Québec", "pathway": "Funds research conducted by eligible Québec academic partners", "programs": ["Genomics Integration — Human Health", "Genomics Integration — Agri-food, Forestry & Environment"], "audience": ["academic", "industry", "partnership", "startup"], "areas": ["Agriculture & food", "Cell & gene therapy", "Genomics"], "regions": ["Quebec"], "mechanisms": ["Collaborative R&D", "Research grants"], "url": "https://genomequebec.com/possibilites-de-financement/70-programme-dintegration-de-la-genomique-sante-humaine/", "evidence_url": "https://genomequebec.com/possibilites-de-financement/70-programme-dintegration-de-la-genomique-sante-humaine/", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "verification_status": "verified"}, {"name": "Horizon Europe", "area": "International collaborative research", "region": "International", "pathway": "Eligible costs include subcontracting and purchased services", "programs": ["Pillar II collaborative research calls"], "audience": ["academic", "industry", "partnership", "startup"], "areas": ["Agriculture & food", "Cell & gene therapy", "Genomics", "Industrial biotech"], "regions": ["Canada", "International"], "mechanisms": ["Collaborative R&D", "Research grants"], "url": "https://research-and-innovation.ec.europa.eu/strategy/strategy-research-and-innovation/europe-world/international-cooperation/association-horizon-europe/canada_en", "evidence_url": "https://ised-isde.canada.ca/site/ised/en/horizon-europe-applicant-resources/eligible-costs", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "verification_status": "verified"}, {"name": "MAPAQ", "area": "Agri-food innovation", "region": "Québec", "pathway": "Specialized research services and external lab analysis in program rules", "programs": ["Programme Innovation bioalimentaire — applied research (Volet 2)"], "audience": ["academic", "industry", "partnership"], "areas": ["Agriculture & food", "Genomics", "Industrial biotech"], "regions": ["Quebec"], "mechanisms": ["Collaborative R&D", "Research grants"], "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/agriculture/aide-financiere/programme-innovation-bioalimentaire", "evidence_url": "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/agriculture-pecheries-alimentation/programmes/innovation-bioalimentaire/PG_programme-innovation-bioalimentaire_MAPAQ.pdf", "verified": "2026-10-21", "pathways": ["Academic–Industry Collaborative R&D"], "verification_status": "verified"}, {"name": "Natural Products Canada", "area": "Bio-based products and commercial validation", "region": "Canada", "pathway": "NPC Proof of Concept guidance explicitly permits subcontractor and consultant costs in approved commercial validation projects.", "programs": ["Proof of Concept Program"], "audience": ["startup", "industry"], "areas": ["Industrial biotech", "Agriculture & food", "Cell & gene therapy"], "regions": ["Canada"], "mechanisms": ["Technology development & commercialization"], "pathways": ["Industry R&D"], "url": "https://www.naturalproductscanada.com/proof-of-concept/", "evidence_url": "https://www.naturalproductscanada.com/how-we-help/", "verified": "2026-10-21", "verification_status": "verified"}, {"name": "NSERC", "area": "University and industry research", "region": "Canada", "pathway": "University research collaborations; not contract research", "programs": ["Alliance Advantage", "Alliance International Collaboration Grants", "Discovery Grants (individual)"], "audience": ["academic", "industry", "partnership", "startup"], "areas": ["Agriculture & food", "Genomics", "Industrial biotech"], "regions": ["Canada"], "mechanisms": ["Collaborative R&D", "Research grants"], "url": "https://nserc-crsng.canada.ca/en/funding-opportunity/alliance-advantage", "evidence_url": "https://nserc-crsng.canada.ca/en/funding-opportunity/alliance-advantage", "verified": "2026-10-21", "pathways": ["Academic Research", "Academic–Industry Collaborative R&D"], "verification_status": "verified"}, {"name": "PROMPT", "area": "Collaborative AI and digital-technology R&D", "region": "Québec", "pathway": "Supports funded collaborative R&D involving Québec companies and public research organizations; the research centre can manage the award. Project cost approval is case-specific.", "programs": ["Collaborative Innovation — Research / Industry"], "audience": ["academic", "industry", "startup", "partnership"], "areas": ["AI & machine learning"], "regions": ["Quebec"], "mechanisms": ["Collaborative R&D"], "pathways": ["Academic–Industry Collaborative R&D"], "url": "https://promptinnov.com/opportunites/innovation-collaborative/", "evidence_url": "https://promptinnov.com/opportunites/innovation-collaborative/", "verified": "2026-10-21", "verification_status": "verified"}, {"name": "Mitacs", "area": "Research internships and academic–organization collaborations", "region": "Canada", "pathway": "Accelerate funding supports eligible internships and research expenses administered by the academic institution. Confirm Foundry fees with Mitacs and Concordia.", "programs": ["Accelerate"], "audience": ["academic", "industry", "startup", "partnership"], "areas": ["Genomics", "Cell & gene therapy", "Industrial biotech", "Agriculture & food", "AI & machine learning"], "regions": ["Canada"], "mechanisms": ["Collaborative R&D"], "url": "https://www.mitacs.ca/our-programs/accelerate/", "evidence_url": "https://www.mitacs.ca/our-programs/accelerate/", "pathways": ["Academic–Industry Collaborative R&D"], "verification_status": "pending"}, {"name": "Protein Industries Canada", "area": "Plant-based food and ingredient innovation", "region": "Canada", "pathway": "Check program rules", "audience": ["academic", "industry", "startup", "partnership"], "areas": ["Agriculture & food", "Industrial biotech", "Genomics"], "regions": ["Canada"], "mechanisms": ["Collaborative R&D", "Technology development & commercialization"], "url": "https://www.proteinindustriescanada.ca/technology", "evidence_url": "https://www.proteinindustriescanada.ca/technology", "pathways": ["Academic–Industry Collaborative R&D", "Industry R&D"], "verification_status": "pending"}, {"name": "Médicament Québec", "area": "Drug and vaccine research partnerships", "region": "Quebec", "pathway": "Check program rules", "audience": ["academic", "industry", "startup", "partnership"], "areas": ["Cell & gene therapy", "Genomics"], "regions": ["Quebec"], "mechanisms": ["Collaborative R&D", "Technology development & commercialization"], "url": "https://medicamentquebec.ca/", "evidence_url": "https://medicamentquebec.ca/", "pathways": ["Academic–Industry Collaborative R&D"], "verification_status": "pending"}, {"name": "Stem Cell Network", "area": "Stem cell and regenerative medicine research", "region": "Canada", "pathway": "Check program rules", "audience": ["academic", "industry", "startup", "partnership"], "areas": ["Cell & gene therapy"], "regions": ["Canada"], "mechanisms": ["Collaborative R&D", "Technology development & commercialization"], "url": "https://stemcellnetwork.ca/funding/research-funding/", "evidence_url": "https://stemcellnetwork.ca/funding/research-funding/", "pathways": ["Academic Research", "Academic–Industry Collaborative R&D"], "verification_status": "pending"}, {"name": "NRC IRAP", "area": "Technology development by Canadian SMEs", "region": "Canada", "pathway": "Check program rules", "audience": ["academic", "industry", "startup", "partnership"], "areas": ["Genomics", "Cell & gene therapy", "Industrial biotech", "Agriculture & food", "AI & machine learning"], "regions": ["Canada"], "mechanisms": ["Collaborative R&D", "Technology development & commercialization"], "url": "https://nrc.canada.ca/en/support-technology-innovation/financial-support-technology-innovation", "evidence_url": "https://nrc.canada.ca/en/support-technology-innovation/financial-support-technology-innovation", "pathways": ["Industry R&D"], "verification_status": "pending"}, {"name": "Canadian Food Innovation Network", "area": "Food innovation and technology", "region": "Canada", "pathway": "Check program rules", "audience": ["academic", "industry", "startup", "partnership"], "areas": ["Agriculture & food", "Industrial biotech"], "regions": ["Canada"], "mechanisms": ["Collaborative R&D", "Technology development & commercialization"], "url": "https://cfin-rcia.ca/funding/booster", "evidence_url": "https://cfin-rcia.ca/funding/booster", "pathways": ["Industry R&D"], "verification_status": "pending"}]}</script>
+
+  <script>
+    const { programs, funders } = JSON.parse(document.getElementById('funding-data').textContent);
+    const byId = id => document.getElementById(id);
+    const montrealISO = () => {
+      const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Toronto',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      }).formatToParts(new Date());
+      const get = t => parts.find(p => p.type === t).value;
+      return `${get('year')}-${get('month')}-${get('day')}`;
+    };
+    const dateHasPassed = (iso) => Boolean(iso && iso < montrealISO());
+
+    function updateFreshness() {
+      const reviewed = document.querySelector('main').dataset.lastReviewed;
+      const days = (Date.parse(montrealISO() + 'T00:00:00Z') - Date.parse(reviewed + 'T00:00:00Z')) / 86400000;
+      byId('staleNotice').hidden = !(Number.isFinite(days) && days >= 60);
+      const humanDate = new Intl.DateTimeFormat('en-GB', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'UTC'
+      }).format(new Date(reviewed + 'T12:00:00Z'));
+      byId('lastReviewedLabel').textContent = 'Last reviewed · ' + humanDate;
+      byId('footerReviewedLabel').textContent = 'Last directory review: ' + humanDate;
+    }
+
+    const escapeHtml = v => String(v ?? '').replace(/[&<>"']/g, m => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[m]));
+
+    const external = (url, label) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)} &nearr;</a>`;
+
+    function good(p) {
+      const text = byId('search').value.toLocaleLowerCase().trim();
+      const geo = byId('geography').value,
+        area = byId('area').value,
+        mech = byId('mechanism').value;
+      const route = document.querySelector('input[name="pathway"]:checked').value;
+      const regions = p.regions || p.region || [],
+        areas = p.areas || p.area || [],
+        mechanisms = p.mechanisms || [];
+      return (route === 'all' || (p.pathways || []).includes(route)) &&
+        (!text || JSON.stringify(p).toLocaleLowerCase().includes(text)) &&
+        (geo === 'all' || regions.includes(geo) || (geo === 'Quebec' && regions.includes('Canada'))) &&
+        (area === 'all' || areas.includes(area)) &&
+        (mech === 'all' || mechanisms.includes(mech));
+    }
+
+    function card(p) {
+      const unclear = p.verification_status === 'pending';
+      const timing = p.display_deadline || p.short_status || p.status || 'Consult program';
+      const details = unclear ?
+        `<p>${escapeHtml(p.verification_needed || 'Confirm eligibility and allowable expenses with the funder.')}</p>` :
+        `<p>${escapeHtml(p.evidence || p.route || 'Confirm program requirements with the funder.')}</p>${p.note ? `<p>${escapeHtml(p.note)}</p>` : ''}`;
+      return `<article class="verified-card simplified-card"><div class="funder-label">${escapeHtml(p.funder)}</div><h3>${escapeHtml(p.name)}</h3><p class="card-description">${escapeHtml(p.description)}</p><div class="card-facts"><div><span>APPLICATIONS</span><strong>${escapeHtml(timing)}</strong></div><div><span>FUNDING</span><strong>${escapeHtml(p.amount || 'Consult program')}</strong></div></div><div class="concise-tags">${(p.area || []).slice(0, 2).map(x => `<span class="area-tag">${escapeHtml(x)}</span>`).join('')}${unclear ? `<span class="eligibility-pill">${escapeHtml(p.verification_label || 'Confirm program details')}</span>` : ''}</div><div class="card-actions">${external(p.program_url, 'Official program')}<details class="more-details"><summary>Program notes</summary><div class="expanded-details">${details}</div></details></div></article>`;
+    }
+
+    function funder(f) {
+      return `<a class="funder-row" href="${escapeHtml(f.url || f.evidence_url)}" target="_blank" rel="noopener noreferrer"><span><strong>${escapeHtml(f.name)}</strong><small>${escapeHtml(f.area)}</small></span><span aria-hidden="true">&nearr;</span></a>`;
+    }
+
+    function syncArea(value) {
+      byId('area').value = value;
+      document.querySelectorAll('.area-pill').forEach(b => {
+        const selected = b.dataset.area === value;
+        b.classList.toggle('selected', selected);
+        b.setAttribute('aria-pressed', String(selected));
+      });
+      render();
+    }
+
+    function render() {
+      const current = programs.filter(p => (p.feature || p.verification_status === 'pending') && (!p.deadline_iso || !dateHasPassed(p.deadline_iso))).filter(good);
+      current.sort((a, b) => {
+        const aDate = a.deadline_iso ? Date.parse(a.deadline_iso) : Infinity;
+        const bDate = b.deadline_iso ? Date.parse(b.deadline_iso) : Infinity;
+        if (aDate !== bDate) return aDate - bDate;
+        return (a.verification_status === 'pending') - (b.verification_status === 'pending');
+      });
+      const fs = funders.filter(good);
+      byId('opGrid').innerHTML = current.map(card).join('');
+      byId('funderGrid').innerHTML = fs.slice(0, 6).map(funder).join('') + (fs.length > 6 ? `<details class="more-funders"><summary>View ${fs.length - 6} more funders</summary>${fs.slice(6).map(funder).join('')}</details>` : '');
+      byId('opCount').textContent = current.length + (current.length === 1 ? ' opportunity' : ' opportunities');
+      byId('funderCount').textContent = fs.length + (fs.length === 1 ? ' organization' : ' organizations');
+      byId('opEmpty').classList.toggle('show', !current.length);
+      byId('funderEmpty').classList.toggle('show', !fs.length);
+    }
+
+    ['search', 'geography', 'mechanism'].forEach(id => byId(id).addEventListener(id === 'search' ? 'input' : 'change', render));
+    byId('area').addEventListener('change', e => syncArea(e.target.value));
+    document.querySelectorAll('.area-pill').forEach(b => b.addEventListener('click', () => syncArea(b.dataset.area)));
+    document.querySelectorAll('input[name="pathway"]').forEach(el => el.addEventListener('change', render));
+    byId('reset').addEventListener('click', () => {
+      byId('search').value = '';
+      ['geography', 'mechanism'].forEach(id => byId(id).value = 'all');
+      document.querySelector('input[name="pathway"][value="all"]').checked = true;
+      syncArea('all');
+    });
+    updateFreshness();
+    render();
+  </script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+
