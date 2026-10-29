@@ -185,11 +185,11 @@
             </p>
             <div class="dark-hero-cta">
               <a href="capabilities.html#redesign-microbial-engineering" class="dark-btn">
-                <span class="dark-btn-label">Foundry <br>capabilities</span>
+                <span class="dark-btn-label">Explore all capabilities</span>
                 <span class="dark-btn-arrow" aria-hidden="true">&#x2197;</span>
               </a>
               <a href="capabilities.html#redesign-bioprocessing" class="dark-btn dark-btn-bioprocessing">
-                <span class="dark-btn-label">Bioprocessing <br>capabilities</span>
+                <span class="dark-btn-label">Bioprocessing & scale-up</span>
                 <span class="dark-btn-arrow" aria-hidden="true">&#x2197;</span>
               </a>
             </div>
@@ -275,39 +275,63 @@
 
         .dark-hero-cta {
           display: flex;
-          flex-wrap: wrap;
-          gap: 3rem;
+          flex-direction: column;
+          gap: 0.9rem;
           align-items: stretch;
         }
 
         .dark-hero-cta .dark-btn {
-          display: inline-flex;
+          display: flex;
           align-items: center;
           justify-content: space-between;
           gap: 1rem;
-          flex: 1 1 180px;
-          max-width: 235px;
+          width: 100%;
           background: #ffffff;
           color: #0f172a;
-          padding: 0.85rem 1.25rem;
+          padding: 1.05rem 1.35rem;
           border-radius: 8px;
-          border: 1px solid rgba(255, 255, 255, 0.9);
-          font-size: 0.95rem;
+          border: 1.5px solid #ffffff;
+          font-size: 1.0rem;
           font-weight: 700;
           line-height: 1.25;
           letter-spacing: -0.01em;
           text-decoration: none;
           box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-          transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+          transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .dark-hero-cta .dark-btn-label {
           text-align: left;
         }
 
+        .dark-hero-cta .dark-btn-label br {
+          display: none;
+        }
+
+        @media (min-width: 640px) {
+          .dark-hero-cta {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+          }
+
+          .dark-hero-cta .dark-btn {
+            display: inline-flex;
+            width: auto;
+            flex: 1 1 180px;
+            max-width: 235px;
+            padding: 0.85rem 1.25rem;
+            font-size: 0.8rem;
+          }
+
+          .dark-hero-cta .dark-btn-label br {
+            display: inline;
+          }
+        }
+
         .dark-hero-cta .dark-btn-arrow {
           flex-shrink: 0;
-          font-size: 1.15rem;
+          font-size: 1.25rem;
           line-height: 1;
           transition: transform 0.2s ease;
         }
@@ -315,6 +339,7 @@
         .dark-hero-cta .dark-btn:hover,
         .dark-hero-cta .dark-btn:focus {
           background: #f1f5f9;
+          border-color: #f1f5f9;
           color: #0f172a;
           transform: translateY(-2px);
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.32);
@@ -322,19 +347,16 @@
         }
 
         .dark-hero-cta .dark-btn.dark-btn-bioprocessing {
-          /* background: #6effd1;
-          border-color: #6effd1;
-          color: #0f172a; */
-          background: #92d7e8;
-          color: #0f172a;
-          border-color: #92d7e8;
+          background: rgba(146, 215, 232, 0.08);
+          color: #92d7e8;
+          border: 1.5px solid rgba(146, 215, 232, 0.65);
         }
 
         .dark-hero-cta .dark-btn.dark-btn-bioprocessing:hover,
         .dark-hero-cta .dark-btn.dark-btn-bioprocessing:focus {
-          background: #bae6fd;
-          border-color: #bae6fd;
-          color: #0f172a;
+          background: rgba(146, 215, 232, 0.16);
+          border-color: #92d7e8;
+          color: #bae6fd;
         }
 
         .dark-hero-cta .dark-btn:focus-visible {
