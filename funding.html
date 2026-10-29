@@ -327,25 +327,35 @@
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 16px;
-      padding: 1.75rem;
+      padding: 2rem;
       box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
       margin-bottom: 2.5rem;
     }
 
+    .filter-header-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-bottom: 1.15rem;
+      margin-bottom: 1.35rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
     .filter-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      line-height: 1.25;
-      margin: 0 0 0.35rem 0;
-      letter-spacing: -0.015em;
+      font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0;
+      letter-spacing: -0.02em;
       color: #0f172a;
     }
 
-    .filter-intro {
-      margin: 0 0 1.5rem 0;
+    .filter-reviewed-meta {
+      font-size: 0.85rem;
       color: #64748b;
-      font-size: 0.9rem;
-      line-height: 1.55;
+      font-weight: 500;
     }
 
     .pathways-head,
@@ -365,12 +375,6 @@
       letter-spacing: 0.06em;
       color: #64748b;
       display: block;
-    }
-
-    .find-sub {
-      font-size: 0.85rem;
-      color: #64748b;
-      margin-top: 0.2rem;
     }
 
     .pathway-show-all {
@@ -394,8 +398,8 @@
     .pathway-choices {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.85rem;
-      margin-top: 0.85rem;
+      gap: 1rem;
+      margin-top: 0.75rem;
     }
 
     @media (max-width: 800px) {
@@ -420,21 +424,57 @@
 
     .pathway-tile {
       height: 100%;
-      padding: 1.15rem 1.25rem;
-      border: 1px solid #e2e8f0;
+      padding: 1.25rem 1.35rem;
+      border: 1px solid transparent;
       border-radius: 12px;
       background: #f8fafc;
       display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 0.85rem;
+      transition: all 0.15s ease;
+    }
+
+    .pathway-radio-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1.5px solid #94a3b8;
+      background: transparent;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      position: relative;
+      transition: all 0.15s ease;
+    }
+
+    .pathway-choice input:checked + .pathway-tile .pathway-radio-dot {
+      border-color: #0284c7;
+      background: #0284c7;
+    }
+
+    .pathway-choice input:checked + .pathway-tile .pathway-radio-dot::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ffffff;
+      transform: translate(-50%, -50%);
+    }
+
+    .pathway-tile-text {
+      display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.35rem;
-      transition: all 0.15s ease;
+      gap: 0.3rem;
     }
 
     /* 1. Academic Research — Soft Rose */
     .pathway-choice:nth-child(1) .pathway-tile {
       background: #fdf2f4;
-      border-color: #f6ced7;
+      border-color: #f9dde3;
     }
 
     .pathway-choice:nth-child(1):hover .pathway-tile {
@@ -443,15 +483,14 @@
     }
 
     .pathway-choice:nth-child(1) input:checked + .pathway-tile {
-      background: #fce7eb;
-      border-color: #be123c;
-      box-shadow: 0 0 0 2px rgba(190, 18, 60, 0.2);
+      background: #fdf2f4;
+      border-color: #f3c1cd;
     }
 
     /* 2. Academic–Industry Collaborative R&D — Soft Lavender */
     .pathway-choice:nth-child(2) .pathway-tile {
       background: #f3effd;
-      border-color: #ddd0f8;
+      border-color: #e6dcfb;
     }
 
     .pathway-choice:nth-child(2):hover .pathway-tile {
@@ -460,15 +499,14 @@
     }
 
     .pathway-choice:nth-child(2) input:checked + .pathway-tile {
-      background: #ebe4fb;
-      border-color: #7e22ce;
-      /* box-shadow: 0 0 0 2px #7e22ce; */
+      background: #f3effd;
+      border-color: #cfb9f7;
     }
 
     /* 3. Industry R&D — Soft Sky Blue */
     .pathway-choice:nth-child(3) .pathway-tile {
       background: #eaf4fe;
-      border-color: #c3dff9;
+      border-color: #d5e9fc;
     }
 
     .pathway-choice:nth-child(3):hover .pathway-tile {
@@ -477,13 +515,12 @@
     }
 
     .pathway-choice:nth-child(3) input:checked + .pathway-tile {
-      background: #dcecfc;
-      border-color: #0284c7;
-      box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2);
+      background: #eaf4fe;
+      border-color: #b5d8fa;
     }
 
     .pathway-tile strong {
-      font-size: 1rem;
+      font-size: 0.975rem;
       font-weight: 700;
       line-height: 1.3;
       color: #0f172a;
@@ -492,19 +529,12 @@
     .pathway-tile small {
       font-size: 0.85rem;
       line-height: 1.45;
-      color: #5b6b7f;
+      color: #64748b;
     }
 
     .pathway-choice input:focus-visible + .pathway-tile {
       outline: 2px solid #0284c7;
       outline-offset: 2px;
-    }
-
-    .pathway-help {
-      font-size: 0.8rem;
-      line-height: 1.5;
-      color: #64748b;
-      margin: 0.85rem 0 0 0;
     }
 
     .filter-separator {
@@ -514,7 +544,7 @@
 
     /* AREA PILLS (Matching .dir-pill-btn) */
     .area-picker {
-      margin-top: 1.15rem;
+      margin-top: 0;
     }
 
     .filter-group-title {
@@ -531,13 +561,13 @@
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      padding: 0.5rem 0.9rem;
+      padding: 0.55rem 1rem;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 0.825rem;
       font-weight: 500;
-      color: #475569;
+      color: #334155;
       cursor: pointer;
       transition: all 0.15s ease;
       user-select: none;
@@ -563,9 +593,9 @@
     /* SEARCH & SELECT FIELDS ROW */
     .frow {
       display: grid;
-      grid-template-columns: 2fr 1fr 1.25fr;
-      gap: 1rem;
-      margin-top: 1.25rem;
+      grid-template-columns: 1.85fr 1fr 1fr;
+      gap: 1.15rem;
+      margin-top: 1.35rem;
     }
 
     .mobile-area-select {
@@ -583,6 +613,10 @@
     }
 
     @media (max-width: 640px) {
+      .curate-tools {
+        padding: 1.35rem;
+      }
+
       .area-picker {
         display: none;
       }
@@ -610,18 +644,41 @@
       color: #64748b;
     }
 
+    .search-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input-icon {
+      position: absolute;
+      left: 0.9rem;
+      color: #64748b;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+    }
+
     .curate-tools input[type="search"],
     .curate-tools select {
       width: 100%;
       height: 46px;
       padding: 0 0.9rem;
       background: #f8fafc;
-      border: 1px solid #cbd5e1;
+      border: 1px solid #e2e8f0;
       border-radius: 10px;
-      font-size: 0.925rem;
+      font-size: 0.9rem;
       font-weight: 400;
       color: #0f172a;
       transition: all 0.2s;
+    }
+
+    .curate-tools .search-input-wrap input[type="search"] {
+      padding-left: 2.5rem;
+    }
+
+    .curate-tools input[type="search"]::placeholder {
+      color: #94a3b8;
     }
 
     .curate-tools input[type="search"]:focus,
@@ -637,13 +694,27 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 1.25rem;
-      padding-top: 1rem;
+      margin-top: 1.5rem;
+      padding-top: 1.15rem;
       border-top: 1px solid #f1f5f9;
       font-size: 0.85rem;
       color: #64748b;
       gap: 1rem;
       flex-wrap: wrap;
+    }
+
+    .toolbox-footer-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: #64748b;
+    }
+
+    .toolbox-footer-icon {
+      color: #0284c7;
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
     }
 
     .toolbox-footer button {
@@ -1293,7 +1364,7 @@
   <main class="dir-main" data-last-reviewed="2026-10-21">
     <div class="dir-container">
 
-      <section aria-labelledby="introTitle" class="intro">
+      <!-- <section aria-labelledby="introTitle" class="intro">
         <div class="intro-copy">
           <h2 id="introTitle">Explore funding programs.</h2>
           <p>Browse programs for academic research, university–industry collaborations, and industry-led R&amp;D. Each listing links to the funder’s official program information.</p>
@@ -1307,25 +1378,24 @@
       <aside aria-live="polite" class="stale-notice" hidden id="staleNotice" role="status">
         <span aria-hidden="true" class="stale-icon">&#9719;</span>
         <span>This directory has not been reviewed for 60 days or more. For additional or more recent opportunities, see <a href="https://fis.encs.concordia.ca/fund/Action/public/browsefund.mvc" rel="noopener noreferrer" target="_blank">Concordia University’s funding directory &nearr;</a>. Please verify current terms with each funder.</span>
-      </aside>
+      </aside> -->
 
-      <div class="notice" role="note">
+      <!-- <div class="notice" role="note">
         <div aria-hidden="true" class="mark">&#9432;</div>
         <div>
           <strong>About these listings</strong>
           <p>This is a non-exhaustive reference directory. Please check each funder’s current requirements, including applicant and project eligibility, partnership conditions, deadlines, and whether funding can cover research services or facility costs at the Foundry.</p>
         </div>
-      </div>
+      </div> -->
 
       <section aria-label="Filter funding resources" class="curate-tools">
-        <h2 class="filter-title">Browse funding opportunities</h2>
-        <p class="filter-intro">Search by program, funder or research area, and explore different project types. Filters are for browsing, not eligibility screening.</p>
+        <div class="filter-header-row">
+          <h2 class="filter-title">Search &amp; Filter Funding Programs</h2>
+          <span class="filter-reviewed-meta"><span id="filterReviewedLabel">Last reviewed: 21 October 2026</span> &middot; Reviewed monthly</span>
+        </div>
 
         <div class="pathways-head">
-          <div>
-            <div class="find-label">What kind of research project?</div>
-            <div class="find-sub">Select a funding pathway, or view all three.</div>
-          </div>
+          <div class="find-label">Project type</div>
           <label class="pathway-show-all">
             <input checked name="pathway" type="radio" value="all"> All pathways
           </label>
@@ -1335,35 +1405,36 @@
           <label class="pathway-choice">
             <input name="pathway" type="radio" value="Academic Research">
             <span class="pathway-tile">
-              <strong>Academic Research</strong>
-              <small>University research without an industry partner</small>
+              <span class="pathway-radio-dot" aria-hidden="true"></span>
+              <span class="pathway-tile-text">
+                <strong>Academic Research</strong>
+                <small>University research without an industry partner</small>
+              </span>
             </span>
           </label>
           <label class="pathway-choice">
             <input name="pathway" type="radio" value="Academic–Industry Collaborative R&amp;D">
-            <span class="pathway-tile centered">
-              <strong>Academic–Industry Collaborative R&amp;D</strong>
-              <small>Research projects involving academic and industry partners</small>
+            <span class="pathway-tile">
+              <span class="pathway-radio-dot" aria-hidden="true"></span>
+              <span class="pathway-tile-text">
+                <strong>Academic–Industry Collaborative R&amp;D</strong>
+                <small>Research projects involving academic and industry partners</small>
+              </span>
             </span>
           </label>
           <label class="pathway-choice">
             <input name="pathway" type="radio" value="Industry R&amp;D">
             <span class="pathway-tile">
-              <strong>Industry R&amp;D</strong>
-              <small>Company-led research and development projects</small>
+              <span class="pathway-radio-dot" aria-hidden="true"></span>
+              <span class="pathway-tile-text">
+                <strong>Industry R&amp;D</strong>
+                <small>Company-led research and development projects</small>
+              </span>
             </span>
           </label>
         </div>
-        <p class="pathway-help">Academic and industry partners generally arrange their own collaborations. The Foundry can discuss a potential technical contribution but does not arrange research partners.</p>
 
         <div class="filter-separator"></div>
-
-        <div class="find-top">
-          <div>
-            <div class="find-label">Refine results</div>
-            <div class="find-sub">Choose a research area or search by program, funder, applicant location and funding type.</div>
-          </div>
-        </div>
 
         <div class="area-picker">
           <div class="filter-group-title">Research area</div>
@@ -1379,7 +1450,12 @@
 
         <div class="frow">
           <label>Search
-            <input autocomplete="off" id="search" placeholder="Program, funder or research area…" type="search">
+            <span class="search-input-wrap">
+              <span class="search-input-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </span>
+              <input autocomplete="off" id="search" placeholder="Program, funder or keyword..." type="search">
+            </span>
           </label>
           <label>Applicant location
             <select id="geography">
@@ -1410,7 +1486,12 @@
         </div>
 
         <div class="toolbox-footer">
-          <span>Québec results include Canada-wide funding programs.</span>
+          <span class="toolbox-footer-note">
+            <span class="toolbox-footer-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            </span>
+            <span>Check each funder's official information for current eligibility, deadlines, and eligible expenses.</span>
+          </span>
           <button id="reset" type="button">Clear filters</button>
         </div>
       </section>
@@ -1629,7 +1710,8 @@
         day: 'numeric',
         timeZone: 'UTC'
       }).format(new Date(reviewed + 'T12:00:00Z'));
-      byId('lastReviewedLabel').textContent = 'Last reviewed · ' + humanDate;
+      if (byId('lastReviewedLabel')) byId('lastReviewedLabel').textContent = 'Last reviewed · ' + humanDate;
+      if (byId('filterReviewedLabel')) byId('filterReviewedLabel').textContent = 'Last reviewed: ' + humanDate;
       byId('footerReviewedLabel').textContent = 'Last directory review: ' + humanDate;
     }
 
