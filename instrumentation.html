@@ -814,16 +814,16 @@
         <a href="publications.html">Research &amp; Impact</a>
         <a href="news.html">News &amp; Updates</a>
         <div class="nav-dropdown">
-          <a href="collaboration.html" class="nav-dropdown-toggle" data-nav="resources" aria-haspopup="true" aria-expanded="false">
+          <a href="#" class="nav-dropdown-toggle" data-nav="resources" aria-haspopup="true" aria-expanded="false">
             Resources
             <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </a>
           <div class="nav-dropdown-menu" role="menu">
-            <a href="instrumentation.html" class="nav-dropdown-item" role="menuitem">Instrumentation</a>
+            <a href="instrumentation.html" class="nav-dropdown-item" role="menuitem">Instrumentation List</a>
             <a href="collaboration.html" class="nav-dropdown-item" role="menuitem">Concordia Researcher Directory</a>
-            <a href="funding.html" class="nav-dropdown-item" role="menuitem">Funding Opportunities</a>
+            <a href="funding.html" class="nav-dropdown-item" role="menuitem">Research Funding Directory</a>
           </div>
         </div>
         <a href="about.html">About</a>
@@ -850,10 +850,10 @@
         <a href="WorkWithUs.html">Work With Us</a>
         <a href="publications.html">Research &amp; Impact</a>
         <a href="news.html">News &amp; Updates</a>
-        <a href="collaboration.html" data-nav="resources">Resources</a>
-        <a href="instrumentation.html" class="mobile-nav-sublink">Instrumentation</a>
+        <a href="#" data-nav="resources">Resources</a>
+        <a href="instrumentation.html" class="mobile-nav-sublink">Instrumentation List</a>
         <a href="collaboration.html" class="mobile-nav-sublink">Concordia Researcher Directory</a>
-        <a href="funding.html" class="mobile-nav-sublink">Funding Opportunities</a>
+        <a href="funding.html" class="mobile-nav-sublink">Research Funding Directory</a>
         <a href="about.html">About</a>
         <a class="header-contact" href="WorkWithUs.html#contact">Contact us &nearr;</a>
       </div>
@@ -923,7 +923,7 @@
             Screening, cytometry &amp; imaging <span class="dir-pill-count">10</span>
           </button>
           <button type="button" class="dir-pill-btn" data-category="Mammalian cell engineering &amp; culture">
-            Mammalian cell engineering &amp; culture <span class="dir-pill-count">5</span>
+            Mammalian cell engineering &amp; culture <span class="dir-pill-count">6</span>
           </button>
           <button type="button" class="dir-pill-btn" data-category="Analytical characterization">
             Analytical characterization <span class="dir-pill-count">5</span>
@@ -963,7 +963,7 @@
       </div>
 
       <!-- CATEGORY GROUPS -->
-      <div id="instrumentGroups">
+      <div id="instrumentGroups" style="scroll-margin-top: 110px;">
         <section class="dir-group" data-group-category="Automation &amp; liquid handling">
           <div class="dir-group-header">
             <div>
@@ -1092,7 +1092,7 @@
                 </div>
               </div>
             </article>
-            <article class="dir-card" data-id="6" data-category="Automation &amp; liquid handling" data-search="microlab vantage workstation integrated mammalian-cell automation for seeding, feeding, passaging, nucleofection, and phenotyping. track-mounted gripper arm liconic incubator lonza 4d-nucleofector cytation 5 automated capper decapper integrated instruments automation &amp; liquid handling mammalian studio foundry mammalian systems studio">
+            <article class="dir-card" data-id="6" data-category="Automation &amp; liquid handling|Mammalian cell engineering &amp; culture" data-search="microlab vantage workstation integrated mammalian-cell automation for seeding, feeding, passaging, nucleofection, and phenotyping. track-mounted gripper arm liconic incubator lonza 4d-nucleofector cytation 5 automated capper decapper integrated instruments automation &amp; liquid handling mammalian cell engineering &amp; culture mammalian studio foundry mammalian systems studio">
               <div class="dir-card-visual">
                 <img src="assets/images/instruments/Vantage Workstation.png" alt="Microlab VANTAGE workstation" loading="lazy" decoding="async">
               </div>
@@ -2325,36 +2325,38 @@
 
         groups.forEach(group => {
           const groupCat = group.getAttribute('data-group-category');
-          const isCategoryMatch = (activeCategory === 'All' || groupCat === activeCategory);
           const cardsInGroup = group.querySelectorAll('.dir-card');
           let groupVisibleCards = 0;
 
-          if (!isCategoryMatch) {
-            group.style.display = 'none';
-          } else {
-            cardsInGroup.forEach(card => {
-              const searchText = card.getAttribute('data-search') || '';
-              const matchesQuery = !query || searchText.includes(query);
+          cardsInGroup.forEach(card => {
+            const cardCatAttr = card.getAttribute('data-category') || groupCat || '';
+            const cardCategories = cardCatAttr.split('|').map(c => c.trim());
+            const isCategoryMatch = (
+              activeCategory === 'All' ||
+              groupCat === activeCategory ||
+              cardCategories.includes(activeCategory)
+            );
+            const searchText = card.getAttribute('data-search') || '';
+            const matchesQuery = !query || searchText.includes(query);
 
-              if (matchesQuery) {
-                card.style.display = 'flex';
-                groupVisibleCards++;
-                visibleCount++;
-              } else {
-                card.style.display = 'none';
-              }
-            });
-
-            if (groupVisibleCards > 0) {
-              group.style.display = 'block';
-              visibleGroups++;
-              const qtyBadge = group.querySelector('.dir-group-qty');
-              if (qtyBadge) {
-                qtyBadge.textContent = `${groupVisibleCards} ${groupVisibleCards === 1 ? 'entry' : 'entries'}`;
-              }
+            if (isCategoryMatch && matchesQuery) {
+              card.style.display = 'flex';
+              groupVisibleCards++;
+              visibleCount++;
             } else {
-              group.style.display = 'none';
+              card.style.display = 'none';
             }
+          });
+
+          if (groupVisibleCards > 0) {
+            group.style.display = 'block';
+            visibleGroups++;
+            const qtyBadge = group.querySelector('.dir-group-qty');
+            if (qtyBadge) {
+              qtyBadge.textContent = `${groupVisibleCards} ${groupVisibleCards === 1 ? 'entry' : 'entries'}`;
+            }
+          } else {
+            group.style.display = 'none';
           }
         });
 
@@ -2421,6 +2423,30 @@
 
       resetBtn.addEventListener('click', resetAll);
       clearSearchBtn.addEventListener('click', resetAll);
+
+      // Apply category filter from URL parameter if present (e.g., ?category=Mammalian%20cell%20engineering%20%26%20culture)
+      const urlParams = new URLSearchParams(window.location.search);
+      const categoryParam = urlParams.get('category');
+      if (categoryParam) {
+        const matchingPill = Array.from(categoryPills).find(
+          p => p.getAttribute('data-category') === categoryParam
+        );
+        if (matchingPill) {
+          categoryPills.forEach(p => p.classList.remove('active'));
+          matchingPill.classList.add('active');
+          activeCategory = categoryParam;
+          applyFilters();
+
+          if (window.location.hash === '#instrumentGroups') {
+            const groupsEl = document.getElementById('instrumentGroups');
+            if (groupsEl) {
+              setTimeout(() => {
+                groupsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 50);
+            }
+          }
+        }
+      }
     });
   </script>
   <script src="js/main.js"></script>

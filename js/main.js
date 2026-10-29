@@ -36,7 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close on link click
     navLinks.forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
+      link.addEventListener('click', (e) => {
+        if (link.getAttribute('href') === '#') {
+          e.preventDefault();
+          return;
+        }
+        closeMobileMenu();
+      });
     });
   }
 
@@ -48,8 +54,18 @@ document.addEventListener('DOMContentLoaded', () => {
     link.classList.remove('active');
     if (link.classList.contains('header-contact')) return;
 
+    const isResourcesToggle =
+      link.classList.contains('nav-dropdown-toggle') || link.getAttribute('data-nav') === 'resources';
+
+    if (isResourcesToggle) {
+      if (currentFile === 'instrumentation.html' || currentFile === 'collaboration.html' || currentFile === 'funding.html') {
+        link.classList.add('active');
+      }
+      return;
+    }
+
     const href = link.getAttribute('href');
-    if (!href) return;
+    if (!href || href === '#') return;
 
     // Use URL to safely parse the link path
     const linkUrl = new URL(href, window.location.href);
@@ -68,11 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const isWorkWithUsSection =
       linkFile === 'WorkWithUs.html' &&
       (currentFile === 'WorkWithUs.html' || currentFile === 'partners.html');
-    const isResourcesSection =
-      (link.classList.contains('nav-dropdown-toggle') || link.getAttribute('data-nav') === 'resources') &&
-      (currentFile === 'instrumentation.html' || currentFile === 'collaboration.html' || currentFile === 'funding.html');
 
-    if (isHome || isSamePage || isCapabilitiesSection || isWorkWithUsSection || isResourcesSection) {
+    if (isHome || isSamePage || isCapabilitiesSection || isWorkWithUsSection) {
       link.classList.add('active');
     }
   });
@@ -82,6 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
   navDropdowns.forEach(dropdown => {
     let timeout;
     const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+
+    if (toggle) {
+      toggle.addEventListener('click', (e) => {
+        if (toggle.getAttribute('href') === '#') {
+          e.preventDefault();
+        }
+      });
+    }
 
     const openDropdown = () => {
       clearTimeout(timeout);

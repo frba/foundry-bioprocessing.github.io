@@ -420,9 +420,9 @@
 
     .pathway-tile {
       height: 100%;
-      padding: 1rem 1.15rem;
+      padding: 1.15rem 1.25rem;
       border: 1px solid #e2e8f0;
-      border-radius: 10px;
+      border-radius: 12px;
       background: #f8fafc;
       display: flex;
       flex-direction: column;
@@ -431,36 +431,68 @@
       transition: all 0.15s ease;
     }
 
+    /* 1. Academic Research — Soft Rose */
+    .pathway-choice:nth-child(1) .pathway-tile {
+      background: #fdf2f4;
+      border-color: #f6ced7;
+    }
+
+    .pathway-choice:nth-child(1):hover .pathway-tile {
+      background: #fce7eb;
+      border-color: #f0b4c2;
+    }
+
+    .pathway-choice:nth-child(1) input:checked + .pathway-tile {
+      background: #fce7eb;
+      border-color: #be123c;
+      box-shadow: 0 0 0 2px rgba(190, 18, 60, 0.2);
+    }
+
+    /* 2. Academic–Industry Collaborative R&D — Soft Lavender */
+    .pathway-choice:nth-child(2) .pathway-tile {
+      background: #f3effd;
+      border-color: #ddd0f8;
+    }
+
+    .pathway-choice:nth-child(2):hover .pathway-tile {
+      background: #ebe4fb;
+      border-color: #c8b5f3;
+    }
+
+    .pathway-choice:nth-child(2) input:checked + .pathway-tile {
+      background: #ebe4fb;
+      border-color: #7e22ce;
+      /* box-shadow: 0 0 0 2px #7e22ce; */
+    }
+
+    /* 3. Industry R&D — Soft Sky Blue */
+    .pathway-choice:nth-child(3) .pathway-tile {
+      background: #eaf4fe;
+      border-color: #c3dff9;
+    }
+
+    .pathway-choice:nth-child(3):hover .pathway-tile {
+      background: #dcecfc;
+      border-color: #9ecbf5;
+    }
+
+    .pathway-choice:nth-child(3) input:checked + .pathway-tile {
+      background: #dcecfc;
+      border-color: #0284c7;
+      box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2);
+    }
+
     .pathway-tile strong {
-      font-size: 0.925rem;
+      font-size: 1rem;
       font-weight: 700;
       line-height: 1.3;
       color: #0f172a;
     }
 
     .pathway-tile small {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       line-height: 1.45;
-      color: #64748b;
-    }
-
-    .pathway-choice:hover .pathway-tile {
-      background: #f1f5f9;
-      border-color: #cbd5e1;
-    }
-
-    .pathway-choice input:checked + .pathway-tile {
-      background: #0f172a;
-      border-color: #0f172a;
-      color: #ffffff;
-    }
-
-    .pathway-choice input:checked + .pathway-tile strong {
-      color: #ffffff;
-    }
-
-    .pathway-choice input:checked + .pathway-tile small {
-      color: #cbd5e1;
+      color: #5b6b7f;
     }
 
     .pathway-choice input:focus-visible + .pathway-tile {
@@ -1184,16 +1216,16 @@
         <a href="publications.html">Research &amp; Impact</a>
         <a href="news.html">News &amp; Updates</a>
         <div class="nav-dropdown">
-          <a href="collaboration.html" class="nav-dropdown-toggle active" data-nav="resources" aria-haspopup="true" aria-expanded="false">
+          <a href="#" class="nav-dropdown-toggle active" data-nav="resources" aria-haspopup="true" aria-expanded="false">
             Resources
             <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </a>
           <div class="nav-dropdown-menu" role="menu">
-            <a href="instrumentation.html" class="nav-dropdown-item" role="menuitem">Instrumentation</a>
+            <a href="instrumentation.html" class="nav-dropdown-item" role="menuitem">Instrumentation List</a>
             <a href="collaboration.html" class="nav-dropdown-item" role="menuitem">Concordia Researcher Directory</a>
-            <a href="funding.html" class="nav-dropdown-item active" role="menuitem">Funding Opportunities</a>
+            <a href="funding.html" class="nav-dropdown-item active" role="menuitem">Research Funding Directory</a>
           </div>
         </div>
         <a href="about.html">About</a>
@@ -1220,10 +1252,10 @@
         <a href="WorkWithUs.html">Work With Us</a>
         <a href="publications.html">Research &amp; Impact</a>
         <a href="news.html">News &amp; Updates</a>
-        <a href="collaboration.html" class="active" data-nav="resources">Resources</a>
-        <a href="instrumentation.html" class="mobile-nav-sublink">Instrumentation</a>
+        <a href="#" class="active" data-nav="resources">Resources</a>
+        <a href="instrumentation.html" class="mobile-nav-sublink">Instrumentation List</a>
         <a href="collaboration.html" class="mobile-nav-sublink">Concordia Researcher Directory</a>
-        <a href="funding.html" class="mobile-nav-sublink active">Funding Opportunities</a>
+        <a href="funding.html" class="mobile-nav-sublink active">Research Funding Directory</a>
         <a href="about.html">About</a>
         <a class="header-contact" href="WorkWithUs.html#contact">Contact us &nearr;</a>
       </div>
@@ -1240,13 +1272,13 @@
   <section class="redesign-hero" aria-label="Funding Opportunities Hero">
     <div class="redesign-hero-inner">
       <div class="redesign-hero-content">
-        <span class="redesign-eyebrow">Explore research funding programs</span>
-        <h1 class="redesign-hero-title">Funding Opportunities</h1>
-        <p class="redesign-hero-body">A snapshot of funding programs for academic research, collaborative projects, and industry R&amp;D.</p>
+        <!-- <span class="redesign-eyebrow">Explore research funding programs</span> -->
+        <h1 class="redesign-hero-title">Research Funding Directory</h1>
+        <p class="redesign-hero-body">A snapshot of external funding programs for academic research, collaborative projects, and industry R&D.</p>
 
         <div class="redesign-jump-links">
           <a href="#opportunities" class="redesign-jump-link">Browse Funding Programs &darr;</a>
-          <a href="WorkWithUs.html" class="redesign-jump-link">Work With Us &rarr;</a>
+          <a href="#support" class="redesign-jump-link">Project Support &darr;</a>
         </div>
       </div>
     </div>
@@ -1423,13 +1455,14 @@
   </main>
 
   <!-- CTA BOTTOM SECTION -->
-  <section class="dir-cta-section" aria-labelledby="projectTitle">
+  <section id="support" class="dir-cta-section" aria-labelledby="projectTitle">
     <div class="dir-cta-inner">
       <div class="dir-cta-content">
-        <span class="dir-cta-eyebrow">Ideas into experiments</span>
-        <h2 class="dir-cta-title" id="projectTitle">Have a project in mind?</h2>
+        <span class="dir-cta-eyebrow">PROJECT SUPPORT</span>
+        <h2 class="dir-cta-title" id="projectTitle">Preparing a funding application?</h2>
         <p class="dir-cta-text">
-          The Concordia Genome Foundry develops and adapts automated experimental workflows for academic and industry projects. Talk to us about the technical scope of your research.
+          For projects that may involve the Foundry, we can provide a proposed scope of work, cost estimates, and 
+          letters of support to accompany funding applications.
         </p>
       </div>
       <div class="dir-cta-actions">
