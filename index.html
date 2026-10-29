@@ -174,6 +174,11 @@
       <section id="homepage-hero-dark-test" aria-label="Dark Homepage Hero">
         <div class="dark-hero-inner">
           <div class="dark-hero-content">
+            <a href="WorkWithUs.html" class="dark-hero-status-pill">
+              <span class="dark-hero-status-dot" aria-hidden="true"></span>
+              <span>Open for projects, collaborations and residencies</span>
+              <span class="dark-hero-status-arrow" aria-hidden="true">&rarr;</span>
+            </a>
             <span class="dark-hero-eyebrow">BUILD MORE. TEST MORE. LEARN MORE.</span>
             <h1 class="dark-hero-title">Engineer Biology <span style="color: #92d7e8;">with a Biofoundry.</span> </h1>
             <p class="dark-hero-body">
@@ -228,6 +233,51 @@
 
         .dark-hero-content {
           max-width: 600px;
+        }
+
+        .dark-hero-status-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.65rem;
+          padding: 0.45rem 1.05rem;
+          margin-bottom: 1.5rem;
+          border-radius: 9999px;
+          border: 1px solid rgba(126, 227, 95, 0.75);
+          background: rgba(126, 227, 95, 0.05);
+          color: #d8f3a2;
+          font-size: 0.85rem;
+          font-weight: 600;
+          line-height: 1.3;
+          text-decoration: none;
+          transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .dark-hero-status-pill:hover,
+        .dark-hero-status-pill:focus {
+          background: rgba(126, 227, 95, 0.12);
+          border-color: #7ee35f;
+          color: #e6f9be;
+          outline: none;
+        }
+
+        .dark-hero-status-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #7ee35f;
+          flex-shrink: 0;
+        }
+
+        .dark-hero-status-arrow {
+          color: #7ee35f;
+          font-size: 0.95rem;
+          line-height: 1;
+          transition: transform 0.2s ease;
+        }
+
+        .dark-hero-status-pill:hover .dark-hero-status-arrow,
+        .dark-hero-status-pill:focus .dark-hero-status-arrow {
+          transform: translateX(3px);
         }
 
         .dark-hero-eyebrow {
