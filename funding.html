@@ -1703,7 +1703,7 @@
     function updateFreshness() {
       const reviewed = document.querySelector('main').dataset.lastReviewed;
       const days = (Date.parse(montrealISO() + 'T00:00:00Z') - Date.parse(reviewed + 'T00:00:00Z')) / 86400000;
-      byId('staleNotice').hidden = !(Number.isFinite(days) && days >= 60);
+      if (byId('staleNotice')) byId('staleNotice').hidden = !(Number.isFinite(days) && days >= 60);
       const humanDate = new Intl.DateTimeFormat('en-GB', {
         year: 'numeric',
         month: 'long',
@@ -1712,7 +1712,7 @@
       }).format(new Date(reviewed + 'T12:00:00Z'));
       if (byId('lastReviewedLabel')) byId('lastReviewedLabel').textContent = 'Last reviewed · ' + humanDate;
       if (byId('filterReviewedLabel')) byId('filterReviewedLabel').textContent = 'Last reviewed: ' + humanDate;
-      byId('footerReviewedLabel').textContent = 'Last directory review: ' + humanDate;
+      if (byId('footerReviewedLabel')) byId('footerReviewedLabel').textContent = 'Last directory review: ' + humanDate;
     }
 
     const escapeHtml = v => String(v ?? '').replace(/[&<>"']/g, m => ({
@@ -1791,6 +1791,8 @@
       document.querySelector('input[name="pathway"][value="all"]').checked = true;
       syncArea('all');
     });
+    const defaultPathway = document.querySelector('input[name="pathway"][value="all"]');
+    if (defaultPathway) defaultPathway.checked = true;
     updateFreshness();
     render();
   </script>
