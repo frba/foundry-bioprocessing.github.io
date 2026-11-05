@@ -413,7 +413,7 @@ section[id] {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
   padding-left: 2rem;
   border-left: 1px solid var(--border-color);
 }
