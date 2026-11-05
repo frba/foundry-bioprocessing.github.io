@@ -184,26 +184,253 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Language Switcher Logic
+  // Language Switcher & Translation Engine (powered by js/translations.js)
   const langBtns = document.querySelectorAll('.lang-btn');
-  const translations = {
-    'fr': {
-      // Add translations here as needed
-    }
-  };
+  const SKIP_TAGS = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'SVG', 'CODE', 'PRE']);
+  const TRANSLATABLE_ATTRS = ['placeholder', 'title', 'aria-label'];
 
-  function setLanguage(lang) {
-    langBtns.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.lang === lang);
+  function normalizeI18nKey(str) {
+    return String(str || '')
+      .replace(/[\u200B-\u200D\uFEFF]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  // Build flat normalized dictionary from window.CGF_TRANSLATIONS
+  const frLookup = new Map();
+  function buildTranslationMap() {
+    frLookup.clear();
+    const dict = window.CGF_TRANSLATIONS || {};
+    Object.values(dict).forEach(section => {
+      if (section && typeof section === 'object') {
+        Object.entries(section).forEach(([en, fr]) => {
+          if (typeof fr === 'string') {
+            frLookup.set(normalizeI18nKey(en), fr);
+          }
+        });
+      }
     });
-    // Simplified for now - will expand as content grows
+  }
+
+  // Dynamic pattern translator for counts, dates, and status strings
+  function translateDynamicPattern(norm) {
+    if (frLookup.has(norm)) return frLookup.get(norm);
+
+    let m;
+    if ((m = norm.match(/^Showing (\d+) of (\d+) researchers(.*)$/i))) {
+      const suffix = m[3] ? m[3].replace(/^ · (.+)$/, (_, t) => ' · ' + (frLookup.get(normalizeI18nKey(t)) || t)) : '';
+      return `Affichage de ${m[1]} sur ${m[2]} chercheurs${suffix}`;
+    }
+    if ((m = norm.match(/^(\d+) entries$/i))) {
+      return `${m[1]} entrées`;
+    }
+    if (norm === '1 entry') {
+      return '1 entrée';
+    }
+    if ((m = norm.match(/^(\d+) opportunit(?:y|ies)$/i))) {
+      return `${m[1]} ${Number(m[1]) === 1 ? 'occasion' : 'occasions'}`;
+    }
+    if ((m = norm.match(/^(\d+) organizations?$/i))) {
+      return `${m[1]} ${Number(m[1]) === 1 ? 'organisme' : 'organismes'}`;
+    }
+    if ((m = norm.match(/^View (\d+) more funders$/i))) {
+      return `Voir ${m[1]} autres organismes`;
+    }
+    if ((m = norm.match(/^Last reviewed:\s*(.+)$/i))) {
+      return `Dernière révision : ${translateDateString(m[1])}`;
+    }
+    if ((m = norm.match(/^Last reviewed\s*·\s*(.+)$/i))) {
+      return `Dernière révision · ${translateDateString(m[1])}`;
+    }
+    if ((m = norm.match(/^Last directory review:\s*(.+)$/i))) {
+      return `Dernière révision du répertoire : ${translateDateString(m[1])}`;
+    }
+    return null;
+  }
+
+  function translateDateString(dateStr) {
+    const months = {
+      January: 'janvier', February: 'février', March: 'mars', April: 'avril',
+      May: 'mai', June: 'juin', July: 'juillet', August: 'août',
+      September: 'septembre', October: 'octobre', November: 'novembre', December: 'décembre'
+    };
+    return String(dateStr).replace(
+      /\b(January|February|March|April|May|June|July|August|September|October|November|December)\b/g,
+      match => months[match] || match
+    );
+  }
+
+  let currentLang = 'en';
+  let isTranslatingDOM = false;
+
+  function translateSubtree(root, lang) {
+    if (!root || isTranslatingDOM) return;
+    if (frLookup.size === 0 && window.CGF_TRANSLATIONS) {
+      buildTranslationMap();
+    }
+    isTranslatingDOM = true;
+    try {
+      // 1. Handle elements with explicit data-i18n or translatable attributes
+      const elements = root.nodeType === 1
+        ? [root, ...root.querySelectorAll('*')]
+        : [];
+
+      elements.forEach(el => {
+        if (SKIP_TAGS.has(el.tagName)) return;
+
+        // Explicit data-i18n key
+        const i18nKey = el.getAttribute('data-i18n');
+        if (i18nKey) {
+          if (el._origI18nHtml === undefined) {
+            el._origI18nHtml = el.innerHTML;
+          }
+          if (lang === 'fr') {
+            const tr = translateDynamicPattern(normalizeI18nKey(i18nKey)) ||
+                       translateDynamicPattern(normalizeI18nKey(el._origI18nHtml));
+            if (tr) el.innerHTML = tr;
+          } else {
+            el.innerHTML = el._origI18nHtml;
+          }
+        }
+
+        // Translatable attributes (placeholder, title, aria-label)
+        TRANSLATABLE_ATTRS.forEach(attr => {
+          if (!el.hasAttribute(attr)) return;
+          if (!el._origAttrs) el._origAttrs = {};
+          if (el._origAttrs[attr] === undefined) {
+            el._origAttrs[attr] = el.getAttribute(attr);
+          }
+          const origVal = el._origAttrs[attr];
+          if (lang === 'fr') {
+            const tr = translateDynamicPattern(normalizeI18nKey(origVal));
+            if (tr) el.setAttribute(attr, tr);
+          } else {
+            el.setAttribute(attr, origVal);
+          }
+        });
+      });
+
+      // 2. Walk all text nodes
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          const parent = node.parentElement;
+          if (!parent) return NodeFilter.FILTER_REJECT;
+          if (SKIP_TAGS.has(parent.tagName) || parent.closest('script, style, noscript, svg')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          if (parent.hasAttribute('data-i18n')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+
+      let textNode;
+      while ((textNode = walker.nextNode())) {
+        const currentVal = textNode.nodeValue;
+        if (!currentVal || !currentVal.trim()) continue;
+
+        // If DOM text was replaced externally by dynamic page JS, update stored original if in EN or if it's a fresh English string
+        if (textNode._origText === undefined || (currentVal !== textNode._lastTranslatedText && currentVal !== textNode._origText)) {
+          textNode._origText = currentVal;
+        }
+
+        const orig = textNode._origText;
+        if (lang === 'fr') {
+          const norm = normalizeI18nKey(orig);
+          const tr = translateDynamicPattern(norm);
+          if (tr) {
+            const leadMatch = orig.match(/^\s*/);
+            const trailMatch = orig.match(/\s*$/);
+            const leading = leadMatch ? leadMatch[0] : '';
+            const trailing = trailMatch ? trailMatch[0] : '';
+            const newVal = leading + tr + trailing;
+            textNode.nodeValue = newVal;
+            textNode._lastTranslatedText = newVal;
+          }
+        } else {
+          textNode.nodeValue = orig;
+          textNode._lastTranslatedText = orig;
+        }
+      }
+    } finally {
+      isTranslatingDOM = false;
+    }
+  }
+
+  function setLanguage(lang, persist = true) {
+    const normalizedLang = lang === 'fr' ? 'fr' : 'en';
+    currentLang = normalizedLang;
+    document.documentElement.setAttribute('lang', normalizedLang);
+
+    langBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === normalizedLang);
+    });
+
+    if (persist) {
+      try {
+        localStorage.setItem('cgf_lang', normalizedLang);
+      } catch (e) {
+        // Ignore storage errors in private mode
+      }
+    }
+
+    translateSubtree(document.body, normalizedLang);
   }
 
   langBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      setLanguage(e.target.dataset.lang);
+    btn.addEventListener('click', () => {
+      setLanguage(btn.dataset.lang, true);
     });
   });
+
+  // Observe dynamic DOM updates (e.g., filter results on funding/collaboration/instrumentation)
+  let mutationTimer = null;
+  if ('MutationObserver' in window && document.body) {
+    const domObserver = new MutationObserver(() => {
+      if (isTranslatingDOM || currentLang !== 'fr') return;
+      clearTimeout(mutationTimer);
+      mutationTimer = setTimeout(() => {
+        if (currentLang === 'fr') {
+          translateSubtree(document.body, 'fr');
+        }
+      }, 20);
+    });
+    domObserver.observe(document.body, { childList: true, subtree: true, characterData: true });
+  }
+
+  // Initialize language from URL (?lang=fr) or localStorage
+  function initLanguage() {
+    let initialLang = 'en';
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramLang = urlParams.get('lang');
+      const savedLang = localStorage.getItem('cgf_lang');
+      if (paramLang === 'fr' || paramLang === 'en') {
+        initialLang = paramLang;
+      } else if (savedLang === 'fr' || savedLang === 'en') {
+        initialLang = savedLang;
+      }
+    } catch (e) {
+      // Default to 'en'
+    }
+
+    if (window.CGF_TRANSLATIONS) {
+      buildTranslationMap();
+      setLanguage(initialLang, false);
+    } else {
+      // Automatically load js/translations.js if not explicitly included in the HTML
+      const script = document.createElement('script');
+      script.src = 'js/translations.js';
+      script.onload = () => {
+        buildTranslationMap();
+        setLanguage(initialLang, false);
+      };
+      document.head.appendChild(script);
+    }
+  }
+
+  initLanguage();
 
   // Easter egg: Click hero image column 4 times to swap
   function setupEasterEgg(container, videoEl, originalSrc, originalPoster) {
@@ -1202,6 +1429,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }, 150);
     });
+  }
+
+  // Re-apply translation pass after all dynamic elements (testimonials, partner grids, etc.) are rendered
+  if (currentLang === 'fr') {
+    translateSubtree(document.body, 'fr');
   }
 });
 
